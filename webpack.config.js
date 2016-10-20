@@ -36,8 +36,8 @@ module.exports = {
             loader: 'url?limit=25000',
             include: __dirname+"/assets/img"
           }
-		    ]
-		 },
+        ]
+		  },
  	resolve: {
    		extensions: ['', '.js', '.es6']
     },
