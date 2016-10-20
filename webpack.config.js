@@ -15,18 +15,28 @@ module.exports = {
 	      }
 	   ],
         loaders: [
-            { 
-            	test: /\.scss$/, 
-	        	loaders: ["style", "css", "sass"] },
-             {
-		       test: /\.es6$/,
-		       exclude: /node_modules/,
-		       loader: 'babel-loader',
-		       query: {
-		         presets: ['es2015'] 
-		       }
-		     }
-		   ]
+          {
+            test: /\.html$/,
+            loader: "html-loader"
+          },
+          { 
+          	test: /\.scss$/, 
+	        	loaders: ["style", "css", "sass"] 
+          },
+          {
+		        test: /\.es6$/,
+		        exclude: /node_modules/,
+		        loader: 'babel-loader',
+		        query: {
+              presets: ['es2015'] 
+		        }
+		      },
+          {
+            test: /\.(jpg|png)$/,
+            loader: 'url?limit=25000',
+            include: __dirname+"/assets/img"
+          }
+		    ]
 		 },
  	resolve: {
    		extensions: ['', '.js', '.es6']
