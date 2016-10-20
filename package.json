@@ -1,12 +1,11 @@
 {
   "name": "webpack-test",
   "version": "1.0.0",
-  "description": "",
+  "description": "Project by :  Camille Alvarez de Jesus, Gauthier Derilleux-Bes, David Taing, Arnaud Villani, Clément Vion, Claire Zunda.",
   "main": "bundle.js",
   "scripts": {
     "start": "webpack-dev-server",
     "build": "webpack config=webpack.config.js"
-
   },
   "author": "",
   "license": "ISC",
@@ -21,5 +20,18 @@
     "sass-loader": "^4.0.2",
     "webpack": "^1.13.2",
     "webpack-dev-server": "^1.16.2"
-  }
+  },
+  "dependencies": {
+    "css-loader": "^0.25.0",
+    "style-loader": "^0.13.1",
+    "webpack": "^1.13.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ClementVion/hetic-p2019-10.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ClementVion/hetic-p2019-10/issues"
+  },
+  "homepage": "https://github.com/ClementVion/hetic-p2019-10#readme"
 }
