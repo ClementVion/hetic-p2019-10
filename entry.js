@@ -1,3 +1,4 @@
 require('./assets/styles/main.scss');
-var content = require('./content.es6');
+require('./assets/html/page1.html');
+var content = require('./assets/scripts/content.es6');
 content.checkName('nader', 'dabit');

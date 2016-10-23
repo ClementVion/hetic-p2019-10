@@ -37,16 +37,8 @@ module.exports = {
             include: __dirname+"/assets/img"
           }
         ]
-		  },
+		 },
  	resolve: {
    		extensions: ['', '.js', '.es6']
-    },
-    devServer: {
-    	open: true,
-	    plugins: [
-			new webpack.HotModuleReplacementPlugin()
-		],
-    	colors: true,
-    	progress: true,
     },
 }
