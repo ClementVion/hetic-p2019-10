@@ -22,6 +22,7 @@
 //     }
 // }
 
+// Responsive manager
 @mixin small {
     @media (min-width: #{$small}) {
         @content;
