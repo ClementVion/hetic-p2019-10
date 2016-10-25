@@ -3,21 +3,33 @@
 /// @param {String} $breakpoint - Breakpoint
 /// @requires $breakpoints
 
-@mixin respond-to($breakpoint) {
-  $raw-query: map-get($breakpoints, $breakpoint);
+// @mixin respond-to($breakpoint) {
+// $raw-query: map-get($breakpoints, $breakpoint);
 
-  @if $raw-query {
-    $query: if(
-      type-of($raw-query) == 'string',
-      unquote($raw-query),
-      inspect($raw-query)
-    );
+//     @if $raw-query {
+//         $query: if(
+//             type-of($raw-query) == 'string',
+//             unquote($raw-query),
+//             inspect($raw-query)
+//         );
 
-    @media #{$query} {
-      @content;
+//         @media #{$query} {
+//             @content;
+//         }
+//     } @else {
+//         @error 'No value found for `#{$breakpoint}`. '
+//          + 'Please make sure it is defined in `$breakpoints` map.';
+//     }
+// }
+
+@mixin small {
+    @media (min-width: #{$small}) {
+        @content;
     }
-  } @else {
-    @error 'No value found for `#{$breakpoint}`. '
-         + 'Please make sure it is defined in `$breakpoints` map.';
-  }
+}
+
+// Size manager
+@mixin size($width,$height: auto) {
+    width: $width;
+    height: $height;
 }

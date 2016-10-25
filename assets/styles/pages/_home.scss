@@ -1,6 +1,55 @@
 // -----------------------------------------------------------------------------
 // This file contains styles that are specific to the home page.
 // -----------------------------------------------------------------------------
-body{
-	background-color: blue;	
+
+.project{
+	@include size(100%, 100vh);
+	position: relative;
+	display: flex;
+	flex-direction: column;
+}
+
+.project__informations-container{
+
+	.project__title{
+		margin-left: 10%;
+
+		@include small{
+			position: absolute;
+			bottom: 80px;
+		}
+	}
+
+	p.project__description, .project__see{
+
+		@include small {
+			display:none;
+		}
+	}
+
+}
+
+.project__img-container{
+
+	img.project__image-front{
+		z-index: 10;
+		top: 28%;
+		position: absolute;
+
+		@include small {
+			@include size(285px);
+		}
+	}
+
+	img.project__image-background{
+		z-index: 0;
+		opacity: 0.2;
+		position: absolute;
+
+		@include small {
+			top: 80px;
+			@include size(auto, 500px);
+			transform: translateX(70px);
+		}
+	}
 }
