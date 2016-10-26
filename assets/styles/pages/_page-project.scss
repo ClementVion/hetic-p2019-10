@@ -1,0 +1,82 @@
+// -----------------------------------------------------------------------------
+// This file contains styles that are specific to the single project page.
+// -----------------------------------------------------------------------------
+
+.single-project{
+
+  display: flex;
+  flex-direction: column;
+  font-family: 'Aktiv Grotesk Corp Reg';
+  margin: 0px auto 60px auto;
+  width: 288px;
+
+  @include small{
+    width: 335px;
+  }
+
+  .single-project__header{
+    color: #353535;
+  }
+
+  .single-project__title{
+    font-size: 24px;
+    font-family: 'ITC Avant Garde Pro Md';
+  }
+
+  .single-project__infos{
+    font-size: 13px;
+    margin: 30px 0 0 0;
+
+    .single-project__info{
+      display: flex;
+      flex-direction: row;
+      align-items: baseline;
+      margin: 8px 0 0 0;
+
+      p {
+        margin: 0;
+        padding: 0;
+      }
+    }
+
+    .single-project__subtitle{
+      margin: 0 5px 0 0;
+      font-weight: bold;
+      font-size: 13px;
+      font-family: 'ITC Avant Garde Pro Md';
+    }
+
+    .single-project__small-info{
+      color: #8E9093;
+    }
+  }
+
+
+  .single-project__description{
+    font-family: 'Aktiv Grotesk Corp Reg';
+    font-size: 13px;
+    margin: 40px 0 40px 0;
+    line-height: 1.7;
+  }
+
+  .single-project__photo{
+    width: 100%;
+    margin: 0 0 45px 0;
+  }
+
+  .single-project__teasing{
+    margin: 80px 0 0 0;
+
+    .single-project__subtitle{
+      font-size: 24px;
+      color: #353535;
+      margin: 0 0 18px 0;
+    }
+
+    .single-project__link{
+      text-decoration: none;
+      font-family: 'Aktiv Grotesk Corp Reg';
+      color: #8E9093;
+    }
+  }
+}
