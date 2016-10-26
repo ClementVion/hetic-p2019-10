@@ -1,4 +1,4 @@
-var exports = module.exports = {}
+/*var exports = module.exports = {}
 
 exports.checkName= (firstName, lastName) => {
  if(firstName !== 'nader' || lastName !== 'dabit') {
@@ -25,3 +25,4 @@ class Person {
 
 var John = new Person('John', 21, 'M')
 console.log(John.greet()) // Hello John!
+*/
