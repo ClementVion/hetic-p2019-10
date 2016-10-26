@@ -1,0 +1,47 @@
+.carousel{
+	position: fixed;
+	@include size(auto,170px);
+	right: 10px;
+	top: calc(50% - 85px);
+	margin: 0;
+}
+
+ul.carousel__select{
+	list-style: none;
+
+	li.carousel__option{
+		line-height: 2.2;
+		text-align: left;
+		color: #353535;
+		opacity: 1;
+		cursor: pointer;
+
+		span{
+			opacity: 1;
+		}
+
+		&:before{
+			opacity: 0;
+			transform: translateX(0px);
+			content:'';
+			display: inline-block;
+    		padding: 0 0 1.5px 0;
+    		width: 10px;
+			background: #707070;
+			vertical-align: middle;
+		}
+
+	}
+
+	li.carousel__option.carousel__option--on{
+		span{
+			opacity: 0;
+		}
+
+		&:before{
+			opacity: 1;
+			transform: translateX(13.5px);
+		}
+	}
+
+}

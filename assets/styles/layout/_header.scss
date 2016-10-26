@@ -30,14 +30,10 @@ ul.menu{
 		margin-left: 30px;
 	}
 
-	@include medium{
+	@include homeMedium{
 		justify-content: flex-start;	
 
 	}
 
-	@include small{
-		justify-content: space-between;
-		margin: 0;
-	}
 
 }
