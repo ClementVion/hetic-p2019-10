@@ -1,7 +1,7 @@
 .carousel{
 	position: fixed;
 	@include size(auto,170px);
-	right: 10px;
+	right: 20px;
 	top: calc(50% - 85px);
 	margin: 0;
 }
