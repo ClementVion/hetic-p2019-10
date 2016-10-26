@@ -6,15 +6,28 @@
 	@include size(100%, 100vh);
 	position: relative;
 	display: flex;
-	flex-direction: column;
+	flex-direction: row;
 	overflow: hidden;
 	font-family: 'ITC Avant Garde Pro Md';
+
+	@include small{
+		flex-direction: column;
+	}
 }
 
 .project__informations-container{
+	display: flex;
+	justify-content: inherit;
+   	flex-direction: column;
+   	padding: 33% 17% 0% 5%;
+
+    @include medium{
+    	justify-content: flex-end;
+    	@include size(50%);
+		padding: 0 2% 15% 10%;
+    }
 
 	.project__title{
-		margin-left: 10%;
 
 		@include small{
 			position: absolute;
@@ -24,38 +37,60 @@
 	}
 
 	p.project__description, .project__see{
+		line-height: 1.5;
 
 		@include small {
 			display:none;
 		}
 	}
+
+	.project__see{
+		margin-top: 60px;
+	}
 }
 
 .project__img-container{
+	@include size(50%);
 
 	img.project__image-front{
+		@include size(40%);
 		z-index: 10;
-		top: calc(50% - 142.5px);
+		top: 20%;
+		left: 40%;
 		position: absolute;
 
-		@include small {
-			@include size(285px);
+		@include medium{
+			@include size(60%);
+			left: 20%;
 		}
+
+		@include small {
+			top: calc(50% - 142.5px);
+			@include size(285px);
+			left: 0;
+		}
+	}
+	
+	.project__image-box{
+		@include size(90%,100vh);
+		overflow: hidden;
 	}
 
 	img.project__image-background{
+		@include size(auto, 100vh);
 		z-index: 0;
 		opacity: 0.2;
-		position: absolute;
+		transform: translateX(-25%);
 
 		@include small {
+			position: absolute;
 			top: 80px;
 			@include size(auto,500px);
 			transform: translateX(70px);
 		}
 	}
-}
 
+}
 
 .carousel{
 	position: fixed;

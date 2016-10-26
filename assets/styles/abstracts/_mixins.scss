@@ -24,7 +24,13 @@
 
 // Responsive manager
 @mixin small {
-    @media (min-width: #{$small}) {
+    @media (max-width: #{$small}) {
+        @content;
+    }
+}
+
+@mixin medium {
+    @media (max-width: #{$medium}) {
         @content;
     }
 }
