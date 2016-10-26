@@ -61,17 +61,12 @@
 /* 3 */,
 /* 4 */,
 /* 5 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ function(module, exports) {
 
-	module.exports = "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n\t<meta charset=\"UTF-8\">\n\t<title>Document</title>\n</head>\n<body>\n\t<img src=\"" + __webpack_require__(6) + "\" alt=\"\">\n</body>\n</html>";
-
-/***/ },
-/* 6 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = __webpack_require__.p + "./imgs/58a312f9796055004d9c2ad4f5234224.jpg";
+	// removed by extract-text-webpack-plugin
 
 /***/ },
+/* 6 */,
 /* 7 */
 /***/ function(module, exports) {
 

@@ -24,7 +24,7 @@ module.exports = {
         [
           {
             test: /\.html$/,
-            loader: "html-loader"
+            loader: ExtractTextPlugin.extract("html-loader"),
           },
           { 
           	test: /\.scss$/, 
@@ -48,7 +48,9 @@ module.exports = {
 		  },
       plugins : 
       [
-        new ExtractTextPlugin("./static/css/app.css")
+        new ExtractTextPlugin("./static/css/app.css"),
+        new ExtractTextPlugin("./static/html/[name].html")
+
       ],
  	    resolve: 
       {
