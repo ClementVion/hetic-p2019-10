@@ -19,7 +19,11 @@
 	display: flex;
 	justify-content: inherit;
    	flex-direction: column;
-   	padding: 33% 17% 0% 5%;
+   	padding: 25% 17% 0% 5%;
+
+   	@include mediumLarge{
+   		padding: 33% 17% 0% 5%;
+   	}
 
     @include medium{
     	justify-content: flex-end;
@@ -53,15 +57,23 @@
 	@include size(50%);
 
 	img.project__image-front{
-		@include size(40%);
 		z-index: 10;
 		top: 20%;
-		left: 40%;
+		left: 45%;
 		position: absolute;
 
+		@include large{
+			@include size(33%);
+		}
+
+		@include mediumLarge{
+   			@include size(40%);
+   			left: 40%;
+   		}
+
 		@include medium{
-			@include size(60%);
-			left: 20%;
+			@include size(50%);
+			left: 25%;
 		}
 
 		@include small {

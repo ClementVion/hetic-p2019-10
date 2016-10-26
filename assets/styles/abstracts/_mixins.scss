@@ -35,6 +35,18 @@
     }
 }
 
+@mixin mediumLarge {
+    @media (max-width: #{$large}) {
+        @content;
+    }
+}
+
+@mixin large {
+    @media (min-width: #{$large}) {
+        @content;
+    }
+}
+
 // Size manager
 @mixin size($width,$height: auto) {
     width: $width;
