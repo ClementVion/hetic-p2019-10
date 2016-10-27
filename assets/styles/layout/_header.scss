@@ -5,13 +5,15 @@
 header{
 	@include size(100%,0px);
 	position: fixed;
+	font-family: 'Aktiv Grotesk Corp';
 }
 
-ul.menu{
+.menu{
 	display: flex;
-	margin: 30px 30px;
+	margin: 30px 5%;
 	padding: 0;
 	font-size: 13px;
+	justify-content: space-between;
 
 	li{
 		list-style: none;
@@ -22,12 +24,16 @@ ul.menu{
 		}
 	}
 
-	li.menu__back-home{
-		display: none;	
+	@include homeMedium{
+		justify-content: flex-start;
 	}
 
-	@include small{
-		justify-content: space-between;
-	}
+}
 
+.menu__back-home{
+	display: none;	
+}
+
+.menu__about{
+	margin-left: 30px;
 }

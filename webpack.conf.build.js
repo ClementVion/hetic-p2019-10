@@ -1,6 +1,7 @@
 var webpack = require("webpack");
 var path = require("path");
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
+var OptimizeCssAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 
 module.exports = {
     devtool: 'cheap-module-source-map',
@@ -28,7 +29,7 @@ module.exports = {
           },
           { 
           	test: /\.scss$/, 
-	        	loader: ExtractTextPlugin.extract("style","css?minimize!sass"),
+	        	loader: ExtractTextPlugin.extract("style","css!sass"),
           },
           {
 		        test: /\.es6$/,
@@ -43,12 +44,16 @@ module.exports = {
             loaders: ['file?hash=sha512&digest=hex&name=./imgs/[hash].[ext]',
                     'image-webpack?bypassOnDebug&optimizationLevel=7&interlaced=false'],
             include: __dirname+"/assets/img"
+          },
+          {
+           test: /\.(png|woff|woff2|eot|ttf|svg)$/, loader: 'url-loader?limit=100000' 
           }
         ]
 		  },
       plugins : 
       [
-        new ExtractTextPlugin("./static/css/app.css")
+          new ExtractTextPlugin("./static/css/app.css"),
+          new OptimizeCssAssetsPlugin()
       ],
  	    resolve: 
       {

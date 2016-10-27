@@ -2,109 +2,200 @@
 // This file contains styles that are specific to the home page.
 // -----------------------------------------------------------------------------
 
-.project{
-	@include size(100%, 100vh);
-	position: relative;
-	display: flex;
-	flex-direction: column;
-	overflow: hidden;
-	font-family: 'ITC Avant Garde Pro Md';
-}
+.home{
 
-.project__informations-container{
+	.project{
+		@include size(100%, 100vh);
+		position: relative;
+		display: flex;
+		overflow: hidden;
+		font-family: 'Aktiv Grotesk Corp';
+		flex-direction: column;
 
-	.project__title{
-		margin-left: 10%;
+		@include homeMedium{
+			flex-direction: row;
+			width: 140%;
+		}
 
-		@include small{
+		@include homeSemiLarge{
+			flex-direction: row;
+			width: 140%;
+		}
+
+	}
+
+	.project__informationsContainer{
+		display: flex;
+		justify-content: inherit;
+	   	flex-direction: column;
+	   	padding: 25% 17% 0% 5%;
+
+	   	@include homeMedium{
+			padding: 0 17% 0% 5%;
+		}
+
+		@include homeSemiLarge{
+			padding: 0 26% 0% 4%;
+		}
+
+		.project__title{
+			font-family: 'ITC Avant Garde Pro';
 			position: absolute;
-			bottom: 80px;
+			bottom: 30px;
 			font-size: 24px;
+
+			@include homeSmall{
+				bottom: 60px;
+			}
+
+			@include homeMedium{
+				bottom: 100px;
+			}
+
+			@include homeSemiLarge{
+				bottom: 220px;
+			}
+
+			@include homeLarge{
+				bottom: 300px;
+			}
+
 		}
-	}
 
-	p.project__description, .project__see{
-
-		@include small {
+		p.project__description, .project__see{
+			line-height: 1.5;
 			display:none;
+			position: absolute;
+			bottom: 0;
+		}
+
+		p.project__description{
+			color: #8E9093;
+
+			@include homeSemiLarge{
+			    width: 290px;
+			    bottom: 120px;
+			    display: block;
+			}	
+
+			@include homeLarge{
+				bottom: 200px;
+			}
+		}
+
+		.project__see{
+			bottom: 80px;
+			cursor: pointer;
+			transform: translateX(0);
+			transition: ease-in-out 0.1s;
+			
+			@include homeMedium{
+				display: block;
+			}
+
+			@include homeLarge{
+				bottom: 120px;
+			}
+
+			&:before{
+				transform: scaleX(1);
+				transition: all .8s cubic-bezier(.19,1,.22,1);
+				transform-origin: 0 0;
+				content:'';
+				display: inline-block;
+	    		padding: 0 0 1.5px 0;
+	    		width: 20px;
+				background: #000;
+				vertical-align: middle;
+				margin-right: 30px;
+				cursor: pointer;
+			}
+
+			&:hover:before{
+				transform: scaleX(1.8);
+				transition: all .8s cubic-bezier(.19,1,.22,1);
+				margin-right: 50px;
+			}
+
 		}
 	}
-}
 
-.project__img-container{
-
-	img.project__image-front{
-		z-index: 10;
-		top: calc(50% - 142.5px);
-		position: absolute;
-
-		@include small {
-			@include size(285px);
+	.project__imgContainer{
+		@include size(50%);
+		
+		@include homeSemiLarge{
+			@include size(43%);
 		}
-	}
 
-	img.project__image-background{
-		z-index: 0;
-		opacity: 0.2;
-		position: absolute;
+		img.project__imageFront{
+			z-index: 10;
+			top: calc(50% - 112.5px);
+			left: 0;
+			@include size(225px);
+			position: absolute;
 
-		@include small {
-			top: 80px;
+			@include homeSmall{
+				@include size(285px);
+				top :calc(50% - 142.5px);
+			}
+
+			@include homeMedium{
+				@include size(480px);
+				top :calc(50% - 225px);
+				left: 5%;
+			}
+
+			@include homeSemiLarge{
+				left: 25%;
+			}
+			
+
+			// @include homeMedium{
+			// 	@include size(50%);
+			// 	left: 25%;
+			// }
+
+			// @include large{
+			// 	@include size(33%);
+			// }
+
+		}
+		
+		.project__imageBox{
+			@include size(90%,100vh);
+
+			@include homeMedium{
+				overflow: hidden;
+			}
+		}
+
+		img.project__imageBackground{
 			@include size(auto,500px);
+			top: 80px;
+			z-index: 0;
+			opacity: 0.2;
 			transform: translateX(70px);
-		}
-	}
-}
+			position: absolute;
 
+			@include homeSmall{
+				@include size(auto,100vh);
+				position: static;
+				// transform: translateX(-250px);
+			}
 
-.carousel{
-	position: fixed;
-	@include size(auto,170px);
-	right: 10px;
-	top: calc(50% - 85px);
-	margin: 0;
-}
+			@include homeMedium{
+				transform: translateX(-190px);
+			}
 
-ul.carousel__select{
-	list-style: none;
+			@include homeSemiLarge{
+				transform: translateX(110px);
+			}
 
-	li.carousel__option{
-		line-height: 2.2;
-		text-align: left;
-		color: #353535;
-		opacity: 1;
-		cursor: pointer;
-
-		span{
-			opacity: 1;
-		}
-
-		&:before{
-			opacity: 0;
-			transform: translateX(0px);
-			content:'';
-			display: inline-block;
-    		padding: 0 0 1.5px 0;
-    		width: 10px;
-			background: #707070;
-			vertical-align: middle;
 		}
 
 	}
 
-	li.carousel__option.carousel__option--on{
-		span{
-			opacity: 0;
-		}
-
-		&:before{
-			opacity: 1;
-			transform: translateX(13.5px);
-		}
-	}
-
 }
-
 
 
 

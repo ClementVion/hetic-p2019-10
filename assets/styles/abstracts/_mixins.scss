@@ -23,8 +23,26 @@
 // }
 
 // Responsive manager
-@mixin small {
-    @media (min-width: #{$small}) {
+@mixin homeSmall {
+    @media (min-width: #{$home-small}) {
+        @content;
+    }
+}
+
+@mixin homeMedium {
+    @media (min-width: #{$home-medium}) {
+        @content;
+    }
+}
+
+@mixin homeSemiLarge {
+    @media (min-width: #{$home-semi-large}) {
+        @content;
+    }
+}
+
+@mixin homeLarge {
+    @media (min-width: #{$home-large}) {
         @content;
     }
 }
