@@ -14,7 +14,7 @@
     width: 335px;
   }
 
-  @include large{
+  @include medium{
     flex-direction: row;
     margin-left: 245px;
     width: auto;
@@ -23,7 +23,7 @@
   .single-project__scroll{
     display: none;
 
-    @include large{
+    @include medium{
       display: inline;
       font-family: 'Aktiv Grotesk Corp Med';
       font-size: 13px;
@@ -49,7 +49,7 @@
   .single-project__header{
     color: #353535;
 
-    @include large{
+    @include medium{
       margin-right: -100px;
       z-index: -1;
     }
@@ -60,7 +60,7 @@
     font-family: 'ITC Avant Garde Pro Md';
     color: #000000;
 
-    @include large{
+    @include medium{
       font-size: 300px;
       opacity: 0.3;
       margin-left: 110px;
@@ -69,7 +69,7 @@
   }
 
   .single-project__card{
-    @include large{
+    @include medium{
       display: flex;
       flex-direction: row;
       align-items: baseline;
@@ -86,7 +86,7 @@
       align-items: baseline;
       margin: 8px 0 0 0;
 
-      @include large{
+      @include medium{
         margin: 0 70px 0 0;
       }
 
@@ -115,7 +115,7 @@
     margin: 40px 0 40px 0;
     line-height: 1.7;
 
-    @include large{
+    @include medium{
       display: block;
       width: 250px;
       margin: 0;
@@ -124,7 +124,7 @@
   }
 
   .single-project__main-content{
-    @include large{
+    @include medium{
       display: flex;
       flex-direction: row;
       margin-top: 165px;
@@ -134,7 +134,7 @@
     width: 100%;
     margin: 0 0 45px 0;
 
-    @include large{
+    @include medium{
       width: 837px;
       height: 551px;
       margin-right: 170px;
@@ -144,7 +144,7 @@
 
   .single-project__background-container{
     display: none;
-    @include large{
+    @include medium{
       display: block;
       width: 670px;
       height: 100%;
@@ -170,7 +170,7 @@
   .single-project__teasing{
     margin: 80px 0 0 0;
 
-    @include large{
+    @include medium{
       margin: 0;
       flex-shrink: 0;
       margin-top: 40%;
@@ -183,7 +183,7 @@
       margin: 0 0 18px 0;
       font-family: 'ITC Avant Garde Pro Md';
 
-      @include large{
+      @include medium{
         font-size: 30px;
       }
     }
