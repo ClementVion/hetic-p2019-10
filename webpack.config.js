@@ -21,7 +21,7 @@ module.exports = {
             loader: "html-loader"
           },
           { 
-            test: /\.hbs/, 
+            test: /\.hbs$/, 
             loader: "handlebars-template-loader" 
           },
           { 
