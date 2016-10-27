@@ -9,7 +9,7 @@
 		position: relative;
 		display: flex;
 		overflow: hidden;
-		font-family: 'Aktiv Grotesk Corp Reg';
+		font-family: 'Aktiv Grotesk Corp';
 		flex-direction: column;
 
 		@include homeMedium{
@@ -39,7 +39,7 @@
 		}
 
 		.project__title{
-			font-family: 'ITC Avant Garde Pro Md';
+			font-family: 'ITC Avant Garde Pro';
 			position: absolute;
 			bottom: 30px;
 			font-size: 24px;
