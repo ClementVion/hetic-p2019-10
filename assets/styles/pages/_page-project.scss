@@ -14,13 +14,66 @@
     width: 335px;
   }
 
+  @include large{
+    flex-direction: row;
+    margin-left: 245px;
+    width: auto;
+  }
+
+  .single-project__scroll{
+    display: none;
+
+    @include large{
+      display: inline;
+      font-family: 'Aktiv Grotesk Corp Med';
+      font-size: 13px;
+      opacity: 0.33;
+      width: 50px;
+      position: absolute;
+      transform: rotate(-90deg) translateX(-430px);
+      -webkit-transform: rotate(-90deg) translateX(-430px);
+    }
+
+  }
+
+  .single-project__scroll:after{
+    content: "";
+    position: absolute;
+    width: 18px;
+    height: 2px;
+    background: #000000;
+    opacity: 0.9;
+    transform: rotate(90deg) translate(30px, 23px);
+  }
+
   .single-project__header{
     color: #353535;
+
+    @include large{
+      margin-right: -100px;
+      z-index: -1;
+    }
   }
 
   .single-project__title{
     font-size: 24px;
     font-family: 'ITC Avant Garde Pro Md';
+    color: #000000;
+
+    @include large{
+      font-size: 300px;
+      opacity: 0.3;
+      margin-left: 110px;
+      margin-bottom: 0;
+    }
+  }
+
+  .single-project__card{
+    @include large{
+      display: flex;
+      flex-direction: row;
+      align-items: baseline;
+    }
   }
 
   .single-project__infos{
@@ -32,6 +85,10 @@
       flex-direction: row;
       align-items: baseline;
       margin: 8px 0 0 0;
+
+      @include large{
+        margin: 0 70px 0 0;
+      }
 
       p {
         margin: 0;
@@ -57,20 +114,78 @@
     font-size: 13px;
     margin: 40px 0 40px 0;
     line-height: 1.7;
+
+    @include large{
+      display: block;
+      width: 250px;
+      margin: 0;
+    }
+
   }
 
+  .single-project__main-content{
+    @include large{
+      display: flex;
+      flex-direction: row;
+      margin-top: 165px;
+    }
+  }
   .single-project__photo{
     width: 100%;
     margin: 0 0 45px 0;
+
+    @include large{
+      width: 837px;
+      height: 551px;
+      margin-right: 170px;
+      position: relative;
+    }
+  }
+
+  .single-project__background-container{
+    display: none;
+    @include large{
+      display: block;
+      width: 670px;
+      height: 100%;
+      overflow: hidden;
+      position: absolute;
+      margin-left: 400px;
+      z-index: -1;
+      top: 0;
+    }
+
+    .single-project__bg-photo{
+      height: 100%;
+      opacity: 0.1;
+    }
+
+    .single-project__bg-photo--teaser{
+      opacity: 0.5;
+      filter: grayscale(100%);
+    }
+
   }
 
   .single-project__teasing{
     margin: 80px 0 0 0;
 
+    @include large{
+      margin: 0;
+      flex-shrink: 0;
+      margin-top: 40%;
+      margin: 40% 0 0 110px;
+    }
+
     .single-project__subtitle{
       font-size: 24px;
       color: #353535;
       margin: 0 0 18px 0;
+      font-family: 'ITC Avant Garde Pro Md';
+
+      @include large{
+        font-size: 30px;
+      }
     }
 
     .single-project__link{
@@ -79,4 +194,5 @@
       color: #8E9093;
     }
   }
+
 }
