@@ -7,7 +7,7 @@ header{
 	position: fixed;
 }
 
-ul.menu{
+.menu{
 	display: flex;
 	margin: 30px 5%;
 	padding: 0;
@@ -23,17 +23,16 @@ ul.menu{
 		}
 	}
 
-	li.menu__back-home{
-		display: none;	
-	}
-
-	li.menu__about{
-		margin-left: 30px;
-	}
-
 	@include homeMedium{
 		justify-content: flex-start;
 	}
 
+}
 
+.menu__back-home{
+	display: none;	
+}
+
+.menu__about{
+	margin-left: 30px;
 }

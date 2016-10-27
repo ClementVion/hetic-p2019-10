@@ -3,6 +3,7 @@
 // -----------------------------------------------------------------------------
 
 .home{
+
 	.project{
 		@include size(100%, 100vh);
 		position: relative;
@@ -23,7 +24,7 @@
 
 	}
 
-	.project__informations-container{
+	.project__informationsContainer{
 		display: flex;
 		justify-content: inherit;
 	   	flex-direction: column;
@@ -119,14 +120,14 @@
 		}
 	}
 
-	.project__img-container{
+	.project__imgContainer{
 		@include size(50%);
 		
 		@include homeSemiLarge{
 			@include size(43%);
 		}
 
-		img.project__image-front{
+		img.project__imageFront{
 			z-index: 10;
 			top: calc(50% - 112.5px);
 			left: 0;
@@ -160,7 +161,7 @@
 
 		}
 		
-		.project__image-box{
+		.project__imageBox{
 			@include size(90%,100vh);
 
 			@include homeMedium{
@@ -168,7 +169,7 @@
 			}
 		}
 
-		img.project__image-background{
+		img.project__imageBackground{
 			@include size(auto,500px);
 			top: 80px;
 			z-index: 0;
