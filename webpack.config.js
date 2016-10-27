@@ -21,6 +21,10 @@ module.exports = {
             loader: "html-loader"
           },
           { 
+            test: /\.hbs/, 
+            loader: "handlebars-template-loader" 
+          },
+          { 
             test: /\.scss$/, 
             loaders: ["style", "css", "sass"] 
           },
