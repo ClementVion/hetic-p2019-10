@@ -111,7 +111,7 @@ document.addEventListener('DOMContentLoaded', function(){
 							resolve(); // return that all images has been loaded
 							window.clearInterval(interval);
 						}
-					}, 50);
+					}, 160);
 			});	
 	}
 

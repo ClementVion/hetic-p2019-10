@@ -45,8 +45,8 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	__webpack_require__(1);
-	__webpack_require__(5);
-	var content = __webpack_require__(7);
+	__webpack_require__(14);
+	var content = __webpack_require__(16);
 	content.checkName('nader', 'dabit');
 
 
@@ -60,64 +60,31 @@
 /* 2 */,
 /* 3 */,
 /* 4 */,
-/* 5 */
+/* 5 */,
+/* 6 */,
+/* 7 */,
+/* 8 */,
+/* 9 */,
+/* 10 */,
+/* 11 */,
+/* 12 */,
+/* 13 */,
+/* 14 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n\t<meta charset=\"UTF-8\">\n\t<title>Document</title>\n</head>\n<body>\n\t<img src=\"" + __webpack_require__(6) + "\" alt=\"\">\n</body>\n</html>";
+	module.exports = "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n\t<meta charset=\"UTF-8\">\n\t<title></title>\n\t<meta name=\"viewport\" content=\"initial-scale=1.0\">\n\t<link rel=\"stylesheet\" href=\"\">\n\t<script type=\"text/javascript\" src=\"../../bundle.js\" ></script>\n</head>\n<body>\n\n<div class=\"home\">\n\n\t<header>\n\t\t<ul class=\"menu\">\n\t\t\t<li class=\"menu__all-works\"> <a href=\"#\">All works</a></li>\n\t\t\t<li class=\"menu__about\"> <a href=\"#\">About</a></li>\n\t\t\t<li class=\"menu__back-home\"> <a href=\"#\">Back home</a></li>\n\t\t</ul>\n\t</header>\n\t\n\t<div class=\"project\">\n\t\t\n\t\t<div class=\"project__informations-container\">\n\t\t\t\n\t\t\t<h2 class=\"project__title\">Guerlain</h2>\n\n\t\t\t<p class=\"project__description\">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto quibusdam quaerat a officiis. </p>\n\n\t\t\t<div class=\"project__see\">Voir le projet</div>\n\n\t\t</div>\n\n\t\t<div class=\"project__img-container\">\n\t\t\t<img src=\"" + __webpack_require__(15) + "\" alt=\"\" class=\"project__image-front\">\n\t\t\t\n\t\t\t<div class=\"project__image-box\">\n\t\t\t\t<img src=\"" + __webpack_require__(15) + "\" alt=\"\" class=\"project__image-background\">\n\t\t\t</div>\n\t\t</div>\n\n\t</div>\n\n\t<div class=\"carousel\">\n\t\t<ul class=\"carousel__select\">\n\t\t\t<li class=\"carousel__option carousel__option--on\"> <span>1</span> </li>\n\t\t\t<li class=\"carousel__option carousel__option\"> <span>2</span> </li>\n\t\t\t<li class=\"carousel__option carousel__option\"> <span>3</span> </li>\n\t\t\t<li class=\"carousel__option carousel__option\"> <span>4</span> </li>\n\t\t\t<li class=\"carousel__option carousel__option\"> <span>5</span> </li>\n\t\t</ul>\n\t</div>\n\n</div>\n\n</body>\n</html>";
 
 /***/ },
-/* 6 */
+/* 15 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__.p + "./imgs/58a312f9796055004d9c2ad4f5234224.jpg";
+	module.exports = __webpack_require__.p + "./imgs/6638b6fbc773edc2023f341690c67ab9.jpg";
 
 /***/ },
-/* 7 */
+/* 16 */
 /***/ function(module, exports) {
 
-	'use strict';
-
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	var _exports = module.exports = {};
-
-	_exports.checkName = function (firstName, lastName) {
-	    if (firstName !== 'nader' || lastName !== 'dabit') {
-	        console.log('You are not Nader Dabit');
-	    } else {
-	        console.log('You are Nader Dabit');
-	        document.write('lol');
-	        document.write('<a href="assets/html/page1.html">a</a>');
-	    }
-	};
-
-	var Person = function () {
-	    function Person() {
-	        var name = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'John';
-	        var age = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0;
-	        var gender = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : '?';
-
-	        _classCallCheck(this, Person);
-
-	        this.name = name;
-	        this.age = age;
-	        this.gender = gender;
-	    }
-
-	    _createClass(Person, [{
-	        key: 'greet',
-	        value: function greet() {
-	            alert('Hello ' + this.name + '!');
-	        }
-	    }]);
-
-	    return Person;
-	}();
-
-	var John = new Person('John', 21, 'M');
-	console.log(John.greet()); // Hello John!
+	"use strict";
 
 /***/ }
 /******/ ]);

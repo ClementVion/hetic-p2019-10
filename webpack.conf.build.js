@@ -43,6 +43,9 @@ module.exports = {
             loaders: ['file?hash=sha512&digest=hex&name=./imgs/[hash].[ext]',
                     'image-webpack?bypassOnDebug&optimizationLevel=7&interlaced=false'],
             include: __dirname+"/assets/img"
+          },
+          {
+           test: /\.(png|woff|woff2|eot|ttf|svg)$/, loader: 'url-loader?limit=100000' 
           }
         ]
 		  },
