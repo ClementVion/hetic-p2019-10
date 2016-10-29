@@ -1,6 +1,5 @@
 var webpack = require("webpack");
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
-
 module.exports = {
     entry: "./entry.js",
     output: {
@@ -24,12 +23,16 @@ module.exports = {
             test: /\.hbs$/, 
             loader: "handlebars-template-loader" 
           },
+          {
+            test: /\.json$/,
+            loader: "json"
+          },
           { 
             test: /\.scss$/, 
             loaders: ["style", "css", "sass"] 
           },
           {
-            test: /\.es6$/,
+            test: /\.(es6|js)$/,
             exclude: /node_modules/,
             loader: 'babel-loader',
             query: {
