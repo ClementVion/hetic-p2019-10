@@ -1,5 +1,6 @@
 var webpack = require("webpack");
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
+
 module.exports = {
     entry: "./entry.js",
     output: {
@@ -19,24 +20,24 @@ module.exports = {
             test: /\.html$/,
             loader: "html-loader"
           },
-          { 
-            test: /\.hbs$/, 
-            loader: "handlebars-template-loader" 
+          {
+            test: /\.hbs$/,
+            loader: "handlebars-template-loader"
           },
           {
             test: /\.json$/,
             loader: "json"
           },
-          { 
-            test: /\.scss$/, 
-            loaders: ["style", "css", "sass"] 
+          {
+            test: /\.scss$/,
+            loaders: ["style", "css", "sass"]
           },
           {
             test: /\.(es6|js)$/,
             exclude: /node_modules/,
             loader: 'babel-loader',
             query: {
-              presets: ['es2015'] 
+              presets: ['es2015']
             }
           },
           {
@@ -45,7 +46,7 @@ module.exports = {
             include: __dirname+"/assets/img"
           },
           {
-           test: /\.(png|woff|woff2|eot|ttf|svg)$/, loader: 'url-loader?limit=100000' 
+           test: /\.(png|woff|woff2|eot|ttf|svg)$/, loader: 'url-loader?limit=100000'
           }
         ]
      },
@@ -54,6 +55,7 @@ module.exports = {
     },
   devServer: {
       open: true,
+      historyApiFallback: true,
       plugins: [
       new webpack.HotModuleReplacementPlugin()
     ],
