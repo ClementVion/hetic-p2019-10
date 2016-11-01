@@ -2,41 +2,46 @@
 // This file contains styles that are specific to the single project page.
 // -----------------------------------------------------------------------------
 
-.single-project{
-
-  display: flex;
-  flex-direction: column;
-  font-family: 'Aktiv Grotesk Corp Reg';
-  margin: 0px auto 60px auto;
-  width: 288px;
-
-  @include small{
-    width: 335px;
-  }
-
-  @include medium{
-    flex-direction: row;
-    margin-left: 245px;
-    width: auto;
-  }
-
-  .single-project__scroll{
-    display: none;
-
-    @include medium{
-      display: inline;
-      font-family: 'Aktiv Grotesk Corp Med';
-      font-size: 13px;
-      opacity: 0.33;
-      width: 50px;
-      position: absolute;
-      transform: rotate(-90deg) translateX(-430px);
-      -webkit-transform: rotate(-90deg) translateX(-430px);
+.single-project {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Aktiv Grotesk Corp Reg';
+    margin: 0 auto 60px;
+    width: 288px;
+    @include small {
+        width: 335px;
     }
+    @include medium-single {
+        flex-direction: row;
+        width: auto;
+        margin: 0 auto 0 200px;
+        align-items: center;
+    }
+    @include large {
+        margin: 0 auto 0 245px;
+        height: 100%;
+    }
+}
 
-  }
+.single-project__scroll {
+    display: none;
+    @include medium-single {
+        display: inline;
+        font-family: 'Aktiv Grotesk Corp Med';
+        font-size: 13px;
+        opacity: 0.33;
+        width: 50px;
+        position: absolute;
+        transform: rotate(-90deg) translateX(-430px);
+        -webkit-transform: rotate(-90deg) translateX(-630%);
+    }
+    @include large {
+        transform: rotate(-90deg) translateX(-430px);
+        -webkit-transform: rotate(-90deg) translateX(-630%);
+    }
+}
 
-  .single-project__scroll:after{
+.single-project__scroll:after {
     content: "";
     position: absolute;
     width: 18px;
@@ -44,155 +49,171 @@
     background: #000000;
     opacity: 0.9;
     transform: rotate(90deg) translate(30px, 23px);
-  }
+}
 
-  .single-project__header{
+.single-project__header {
     color: #353535;
-
-    @include medium{
-      margin-right: -100px;
-      z-index: -1;
+    @include medium-single {
+        margin-right: -80px;
+        z-index: -1;
     }
-  }
+    @include large {
+        margin-right: -100px;
+    }
+}
 
-  .single-project__title{
+.single-project__title {
     font-size: 24px;
     font-family: 'ITC Avant Garde Pro Md';
     color: #000000;
-
-    @include medium{
-      font-size: 300px;
-      opacity: 0.3;
-      margin-left: 110px;
-      margin-bottom: 0;
+    @include medium-single {
+        font-size: 219px;
+        opacity: 0.03;
+        margin: 20% 0 0 110px;
     }
-  }
-
-  .single-project__card{
-    @include medium{
-      display: flex;
-      flex-direction: row;
-      align-items: baseline;
+    @include large {
+        font-size: 300px;
+        margin: 0 0 0 110px;
     }
-  }
+}
 
-  .single-project__infos{
+.single-project__card {
+    @include medium-single {
+        display: flex;
+        flex-direction: row;
+        align-items: baseline;
+    }
+}
+
+.single-project__infos {
     font-size: 13px;
-    margin: 30px 0 0 0;
+    margin: 30px 0 0;
 
-    .single-project__info{
-      display: flex;
-      flex-direction: row;
-      align-items: baseline;
-      margin: 8px 0 0 0;
+    .single-project__info {
+        display: flex;
+        flex-direction: row;
+        align-items: baseline;
+        margin: 8px 0 0;
+        @include medium-single {
+            margin: 0 70px 0 0;
+        }
+        @include large {
+            margin: 0 70px 0 0;
+        }
 
-      @include medium{
-        margin: 0 70px 0 0;
-      }
-
-      p {
-        margin: 0;
-        padding: 0;
-      }
+        p {
+            margin: 0;
+            padding: 0;
+        }
     }
 
-    .single-project__subtitle{
-      margin: 0 5px 0 0;
-      font-weight: bold;
-      font-size: 13px;
-      font-family: 'ITC Avant Garde Pro Md';
+    .single-project__subtitle {
+        margin: 0 5px 0 0;
+        font-weight: bold;
+        font-size: 13px;
+        font-family: 'ITC Avant Garde Pro Md';
     }
 
-    .single-project__small-info{
-      color: #8E9093;
+    .single-project__small-info {
+        color: #8E9093;
     }
-  }
+}
 
-
-  .single-project__description{
+.single-project__description {
     font-family: 'Aktiv Grotesk Corp Reg';
     font-size: 13px;
-    margin: 40px 0 40px 0;
+    margin: 40px 0;
     line-height: 1.7;
-
-    @include medium{
-      display: block;
-      width: 250px;
-      margin: 0;
+    @include medium-single {
+        display: block;
+        width: 250px;
+        margin: 0;
     }
+}
 
-  }
-
-  .single-project__main-content{
-    @include medium{
-      display: flex;
-      flex-direction: row;
-      margin-top: 165px;
+.single-project__main-content {
+    @include medium-single {
+        display: flex;
+        flex-direction: row;
+        margin-top: 108px;
     }
-  }
-  .single-project__photo{
+    @include large {
+        margin-top: 165px;
+    }
+}
+
+.single-project__photo {
     width: 100%;
-    margin: 0 0 45px 0;
-
-    @include medium{
-      width: 837px;
-      height: 551px;
-      margin-right: 170px;
-      position: relative;
+    margin: 0 0 45px;
+    @include medium-single {
+        width: auto;
+        height: 427px;
+        margin-right: 140px;
+        position: relative;
     }
-  }
+    @include large {
+        height: 551px;
+        margin-right: 170px;
+    }
+}
 
-  .single-project__background-container{
+.single-project__background-container {
     display: none;
-    @include medium{
-      display: block;
-      width: 670px;
-      height: 100%;
-      overflow: hidden;
-      position: absolute;
-      margin-left: 400px;
-      z-index: -1;
-      top: 0;
+    @include medium-single {
+        display: block;
+        width: 470px;
+        height: 100%;
+        overflow: hidden;
+        position: absolute;
+        margin-left: 270px;
+        z-index: -1;
+        top: 0;
+    }
+    @include large {
+        width: 670px;
+        height: 100%;
+        margin-left: 400px;
     }
 
-    .single-project__bg-photo{
-      height: 100%;
-      opacity: 0.1;
+    .single-project__bg-photo {
+        height: 100%;
+        opacity: 0.2;
     }
 
-    .single-project__bg-photo--teaser{
-      opacity: 0.5;
-      filter: grayscale(100%);
+    .single-project__bg-photo--teaser {
+        opacity: 0.5;
+        filter: grayscale(100%);
+        height: 100%;
+    }
+}
+
+.single-project__teasing {
+    margin: 80px 0 0;
+    @include medium-single {
+        margin: 0;
+        flex-shrink: 0;
+        margin: 40% 0 0;
+    }
+    @include large {
+        margin: 40% 0 0;
     }
 
-  }
-
-  .single-project__teasing{
-    margin: 80px 0 0 0;
-
-    @include medium{
-      margin: 0;
-      flex-shrink: 0;
-      margin-top: 40%;
-      margin: 40% 0 0 110px;
+    .single-project__subtitle {
+        font-size: 24px;
+        color: #353535;
+        margin: 0 0 18px;
+        font-family: 'ITC Avant Garde Pro Md';
+        @include medium-single {
+            font-size: 24px;
+        }
+        @include large {
+            font-size: 30px;
+        }
     }
 
-    .single-project__subtitle{
-      font-size: 24px;
-      color: #353535;
-      margin: 0 0 18px 0;
-      font-family: 'ITC Avant Garde Pro Md';
-
-      @include medium{
-        font-size: 30px;
-      }
+    .single-project__link {
+        text-decoration: none;
+        font-family: 'Aktiv Grotesk Corp Reg';
+        color: #8E9093;
     }
-
-    .single-project__link{
-      text-decoration: none;
-      font-family: 'Aktiv Grotesk Corp Reg';
-      color: #8E9093;
-    }
-  }
-
 }
