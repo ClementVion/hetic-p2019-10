@@ -7,6 +7,11 @@ module.exports = {
         path: __dirname,
         filename: "bundle.js"
     },
+    plugins: [
+    new webpack.ProvidePlugin({
+            Grapnel: "grapnel"
+        })
+    ],
     module: {
       preLoaders: [
           {

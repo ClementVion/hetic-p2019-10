@@ -1,6 +1,6 @@
 // Define the app main container
 var container = document.querySelector('.container');
-
+var balam  = 'rrrr';
 // Define the router and the routes
 var router = new Grapnel({
     pushState: true
