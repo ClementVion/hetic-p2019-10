@@ -93,25 +93,19 @@ document.addEventListener('DOMContentLoaded', function(){
 	function updateLoadProgress(loaded, total) {
 		return new Promise(
 			function (resolve) {
-				var percentStep = Math.round( (100/total)*loaded ), // percent update when an asset is loaded
-					elm = document.querySelector('.loading__percents'), // element which contain loading percents
-					percent = parseInt(elm.innerHTML), // get current loading
-					loadingProgress = document.querySelector('.loading__progress'),
-					interval = setInterval(function(){ 
-						// update current loading
-						percent = parseInt(elm.innerHTML);
-						if( percent < percentStep ) {
-							percent++;
-							var progress = -(100 - percent);
-							loadingProgress.style.transform = "translateX("+ progress +"%)";
-							elm.innerHTML = percent + '';
-						}
-						if( percent >= 100 && loaded == total){
-							stopPreloadingAnim(); // remove preloading animation
-							resolve(); // return that all images has been loaded
-							window.clearInterval(interval);
-						}
-					}, 160);
+				setTimeout(function(){
+					var progress = Math.round( (100/total)*loaded ), // percent update when an asset is loaded
+						percentElm = document.querySelector('.loading__percents'), // element which contain loading percents
+						loadingProgress = document.querySelector('.loading__progress');
+
+					loadingProgress.style.transform = "translateX("+ -(100-progress) +"%)";
+					percentElm.innerHTML = progress + '%';
+					console.log(loadingProgress.style.transform);
+					if( progress >= 100 && loaded == total && loadingProgress.style.transform == "translateX(0%)"){
+						stopPreloadingAnim(); // remove preloading animation
+						resolve(); // return that all images has been loaded
+					}
+				},2000);
 			});	
 	}
 
@@ -123,15 +117,14 @@ document.addEventListener('DOMContentLoaded', function(){
 
 	function stopPreloadingAnim() {
 		// remove loading screen
-		var loadingScreen = document.querySelector('.loading');
-		// loadingScreen.style.display = 'none';
+		setTimeout(function(){
+			var loadingScreen = document.querySelector('.loading');
+			loadingScreen.style.display = 'none';
+		},300);
+
 	}
 
 });
-
-
-
-
 
 
 
