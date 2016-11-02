@@ -8,6 +8,8 @@
     font-family: 'Aktiv Grotesk Corp Reg';
     margin: 0 auto 60px;
     width: 288px;
+    // height: 100%;
+    // align-items: center;
     @include small {
         width: 335px;
     }
@@ -195,7 +197,7 @@
         margin: 40% 0 0;
     }
     @include large {
-        margin: 40% 0 0;
+        margin: 10% 0 0;
     }
 
     .single-project__subtitle {
