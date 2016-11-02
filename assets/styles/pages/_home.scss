@@ -163,24 +163,26 @@
 		
 		.project__imageBox{
 			@include size(90%,100vh);
-
+			position: relative;
 			@include homeMedium{
 				overflow: hidden;
 			}
 		}
 
-		img.project__imageBackground{
+		.project__imageBackground{
 			@include size(auto,500px);
-			top: 80px;
-			z-index: 0;
-			opacity: 0.2;
-			transform: translateX(70px);
+			// top: 80px;
 			position: absolute;
+			top: 100%;
+			z-index: 0;
+			opacity: 1;
+			// transform: translateX(70px);
+			transition: transform 1200ms cubic-bezier(0.77, 0, 0.175, 1);
 
 			@include homeSmall{
 				@include size(auto,100vh);
-				position: static;
-				// transform: translateX(-250px);
+				// position: static;
+				transform: translateX(-250px);
 			}
 
 			@include homeMedium{
@@ -189,6 +191,10 @@
 
 			@include homeSemiLarge{
 				transform: translateX(110px);
+			}
+
+			&.active{
+				top: 0%;
 			}
 
 		}

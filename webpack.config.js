@@ -7,6 +7,12 @@ module.exports = {
         path: __dirname,
         filename: "bundle.js"
     },
+    plugins: [
+      new webpack.ProvidePlugin({
+        underscore: 'underscore',
+        gsap : 'gsap'
+      })
+    ],
     module: {
       preLoaders: [
           {
@@ -48,7 +54,7 @@ module.exports = {
   devServer: {
       open: true,
       plugins: [
-      new webpack.HotModuleReplacementPlugin()
+      new webpack.HotModuleReplacementPlugin(),
     ],
       colors: true,
       progress: true,
