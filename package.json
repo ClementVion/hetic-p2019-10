@@ -1,0 +1,45 @@
+{
+  "name": "webpack-test",
+  "version": "1.0.0",
+  "description": "Project by :  Camille Alvarez de Jesus, Gauthier Derilleux-Bes, David Taing, Arnaud Villani, Clément Vion, Claire Zunda.",
+  "main": "bundle.js",
+  "scripts": {
+    "start": "webpack-dev-server",
+    "build": "webpack --config webpack.conf.build.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-core": "^6.17.0",
+    "babel-loader": "^6.2.5",
+    "babel-preset-es2015": "^6.16.0",
+    "copy-webpack-plugin": "^3.0.1",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "file-loader": "^0.9.0",
+    "html-loader": "^0.4.4",
+    "image-webpack-loader": "^3.0.0",
+    "jshint": "^2.9.3",
+    "jshint-loader": "^0.8.3",
+    "node-libs-browser": "^1.0.0",
+    "node-sass": "^3.10.1",
+    "path": "^0.12.7",
+    "sass-loader": "^4.0.2",
+    "url-loader": "^0.5.7",
+    "webpack": "^1.13.2",
+    "webpack-dev-server": "^1.16.2"
+  },
+  "dependencies": {
+    "css-loader": "^0.25.0",
+    "grapnel": "^0.6.4",
+    "style-loader": "^0.13.1",
+    "webpack": "^1.13.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ClementVion/hetic-p2019-10.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ClementVion/hetic-p2019-10/issues"
+  },
+  "homepage": "https://github.com/ClementVion/hetic-p2019-10#readme"
+}
