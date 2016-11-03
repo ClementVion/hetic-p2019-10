@@ -19,8 +19,9 @@ class ScrollToNext {
 
     detectEnd(){
         var container = document.querySelector(".singleProject");
-        console.log(document.body.scrollLeft);
-        console.log(container.clientWidth);
+        if (document.body.scrollLeft >= container.clientWidth) {
+            console.log("ENDENDEND");
+        }
     }
 }
 
