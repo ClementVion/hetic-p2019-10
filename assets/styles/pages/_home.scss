@@ -28,7 +28,7 @@
 		display: flex;
 		justify-content: inherit;
 	   	flex-direction: column;
-	   	padding: 25% 17% 0% 5%;
+	   	padding: 0% 17% 0% 5%;
 
 	   	@include homeMedium{
 			padding: 0 17% 0% 5%;
@@ -46,6 +46,7 @@
 			font-size: 24px;
 			line-height: 24px;
 			overflow: hidden;
+			z-index: 10;
 
 			@include homeSmall{
 				bottom: 60px;
@@ -140,7 +141,7 @@
 		}
 		
 		.project__imageFrontBox{
-			@include size(540px,400px);
+			@include size(100%);
 			overflow: hidden;
 			z-index: 10;
 			top: calc(50% - 112.5px);
@@ -159,6 +160,17 @@
 			@include homeSemiLarge{
 				left: 25%;
 			}
+			
+			// resize this container for anim on .project__imageFront
+			@media screen and (max-width: 600px) {
+		        height: 256px;
+		    }
+		    @media screen and (min-width: 600px) and (max-width: 1000px) {
+		        height: 400px;
+		    }
+		    @media screen and (min-width: 1000px) {
+		        height: 450px;
+		    }
 		}
 
 		.project__imageFront{
@@ -181,10 +193,22 @@
 			@include size(90%,100vh);
 			position: relative;
 			display: flex;	
-			justify-content: center;
+			// justify-content: center;
 			@include homeMedium{
 				overflow: hidden;
 			}
+
+			// resize this container for anim on .project__imageBackground
+			@media screen and (max-width: 600px) {
+		        // height: 460px;
+		        justify-content: flex-end;
+		    }
+		    @media screen and (min-width: 600px) and (max-width: 900px) {
+		        height: 100vh;
+		    }
+		    @media screen and (min-width: 900px) {
+		        height: 100vh;
+		    }
 		}
 
 		.project__imageBackground{

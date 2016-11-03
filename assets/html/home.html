@@ -1,68 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title></title>
-	<meta name="viewport" content="initial-scale=1.0">
-	<link rel="stylesheet" href="">
-	<script async type="text/javascript" src="../../bundle.js" ></script>
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="viewport" content="initial-scale=1.0">
+    <link rel="stylesheet" href="">
+    <script async type="text/javascript" src="../../bundle.js" ></script>
 </head>
 <body>
 
 <div class="home">
 
-	<header>
-		<ul class="menu">
-			<li class="menu__all-works"> <a href="#">All works</a></li>
-			<li class="menu__about"> <a href="#">About</a></li>
-			<li class="menu__back-home"> <a href="#">Back home</a></li>
-		</ul>
-	</header>
-	
-	<div class="project">
-		
-		<div class="project__informationsContainer">
-			<div class="project__titleBox">
-				<h2 class="project__title">Guerlain</h2>
-				<h2 class="project__title">Back in the 80's</h2>
-				<h2 class="project__title">GirlZ pop</h2>
-				<h2 class="project__title">Anais Profit x Heju</h2>
-				<h2 class="project__title">Tropical</h2>
-			</div>
-			<p class="project__description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto quibusdam quaerat a officiis. </p>
+    <header>
+        <ul class="menu">
+            <li class="menu__all-works"> <a href="#">All works</a></li>
+            <li class="menu__about"> <a href="#">About</a></li>
+            <li class="menu__back-home"> <a href="#">Back home</a></li>
+        </ul>
+    </header>
+    
+    <div class="project">
+        
+        <div class="project__informationsContainer">
+            <div class="project__titleBox">
+                <h2 class="project__title">Guerlain</h2>
+                <h2 class="project__title">Back in the 80's</h2>
+                <h2 class="project__title">GirlZ pop</h2>
+                <h2 class="project__title">Anais Profit x Heju</h2>
+                <h2 class="project__title">Tropical</h2>
+            </div>
+            <p class="project__description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto quibusdam quaerat a officiis. </p>
 
-			<div class="project__see">Voir le projet</div>
+            <div class="project__see">Voir le projet</div>
 
-		</div>
+        </div>
 
-		<div class="project__imgContainer">
-			<div class="project__imageFrontBox">
-				<img src="../img/GUERLAIN_HOME_540-400.jpg"  srcset="../img/GUERLAIN_HOME_540-400.jpg 2x, ../img/GUERLAIN_HOME_540-400.jpg 540w, ../img/GUERLAIN_HOME_285-256.jpg 285w"  width="540" height="400" alt="" class="project__imageFront">
-				<img src="../img/BACKIN80_HOME_540-400.jpg"  srcset="../img/BACKIN80_HOME_540-400.jpg 2x, ../img/BACKIN80_HOME_540-400.jpg 540w, ../img/BACKIN80_HOME_285-256.jpg 285w"  width="540" height="400" alt="" class="project__imageFront">
-				<img src="../img/CAKE_HOME_540-400.jpg"  srcset="../img/CAKE_HOME_540-400.jpg 2x, ../img/CAKE_HOME_540-400.jpg 540w, ../img/CAKE_HOME_285-256.jpg 285w"  width="540" height="400" alt="" class="project__imageFront">
-				<img src="../img/HEJU_HOME_540-400.jpg"  srcset="../img/HEJU_HOME_540-400.jpg 2x, ../img/HEJU_HOME_540-400.jpg 540w, ../img/HEJU_HOME_285-256.jpg 285w"  width="540" height="400" alt="" class="project__imageFront">
-				<img src="../img/TROPICAL_HOME_540-400.jpg"  srcset="../img/TROPICAL_HOME_540-400.jpg 2x, ../img/TROPICAL_HOME_540-400.jpg 540w, ../img/TROPICAL_HOME_285-256.jpg 285w"  width="540" height="400" alt="" class="project__imageFront">
-			</div>	
-			<div class="project__imageBox">
-				<img project-id="0" src="../img/GUERLAIN_HOME_671-900.jpg"  srcset="../img/GUERLAIN_HOME_671-900.jpg 2x, ../img/GUERLAIN_HOME_540-400.jpg 540w, ../img/GUERLAIN_HOME_285-256.jpg 285w"  width="671" height="900" alt="" class="project__imageBackground">
-				<img project-id="1" src="../img/BACKIN80_HOME_671-900.jpg"  srcset="../img/BACKIN80_HOME_671-900.jpg 2x, ../img/BACKIN80_HOME_540-400.jpg 540w, ../img/BACKIN80_HOME_285-256.jpg 285w"  width="671" height="900" alt="" class="project__imageBackground">
-				<img project-id="2" src="../img/CAKE_HOME_671-900.jpg"  srcset="../img/CAKE_HOME_671-900.jpg 2x, ../img/CAKE_HOME_540-400.jpg 540w, ../img/CAKE_HOME_285-256.jpg 285w"  width="671" height="900" alt="" class="project__imageBackground">
-				<img project-id="3" src="../img/HEJU_HOME_671-900.jpg"  srcset="../img/HEJU_HOME_671-900.jpg 2x, ../img/HEJU_HOME_540-400.jpg 540w, ../img/HEJU_HOME_285-256.jpg 285w"  width="671" height="900" alt="" class="project__imageBackground">
-				<img project-id="4" src="../img/TROPICAL_HOME_671-900.jpg"  srcset="../img/TROPICAL_HOME_671-900.jpg 2x, ../img/TROPICAL_HOME_540-400.jpg 540w, ../img/TROPICAL_HOME_285-256.jpg 285w"  width="671" height="900" alt="" class="project__imageBackground">
-			</div>
-		</div>
+        <div class="project__imgContainer">
+            <div class="project__imageFrontBox">
+                <picture>
+                    <source media="(max-width: 600px)" srcset="../img/GUERLAIN_HOME_285-256.jpg">
+                    <source media="(max-width: 1000px)" srcset="../img/GUERLAIN_HOME_540-400.jpg">
+                    <source media="(min-width: 1000px)" srcset="../img/GUERLAIN_HOME_680-448.jpg">
+                    <img src="../img/GUERLAIN_HOME_680-448.jpg" alt="" class="project__imageFront">
+                </picture>
+                <picture>
+                    <source media="(max-width: 600px)" srcset="../img/BACKIN80_HOME_285-256.jpg">
+                    <source media="(max-width: 1000px)" srcset="../img/BACKIN80_HOME_540-400.jpg">
+                    <source media="(min-width: 1000px)" srcset="../img/BACKIN80_HOME_680-448.jpg">
+                    <img src="../img/BACKIN80_HOME_680-448.jpg" alt="" class="project__imageFront">
+                </picture>
+                <picture>
+                    <source media="(max-width: 600px)" srcset="../img/CAKE_HOME_285-256.jpg">
+                    <source media="(max-width: 1000px)" srcset="../img/CAKE_HOME_540-400.jpg">
+                    <source media="(min-width: 1000px)" srcset="../img/CAKE_HOME_680-448.jpg">
+                    <img src="../img/CAKE_HOME_680-448.jpg" alt="" class="project__imageFront">
+                </picture>
+                <picture>
+                    <source media="(max-width: 600px)" srcset="../img/HEJU_HOME_285-256.jpg">
+                    <source media="(max-width: 1000px)" srcset="../img/HEJU_HOME_540-400.jpg">
+                    <source media="(min-width: 1000px)" srcset="../img/HEJU_HOME_680-448.jpg">
+                    <img src="../img/HEJU_HOME_680-448.jpg" alt="" class="project__imageFront">
+                </picture>
+                <picture>
+                    <source media="(max-width: 600px)" srcset="../img/TROPICAL_HOME_285-256.jpg">
+                    <source media="(max-width: 1000px)" srcset="../img/TROPICAL_HOME_540-400.jpg">
+                    <source media="(min-width: 1000px)" srcset="../img/TROPICAL_HOME_680-448.jpg">
+                    <img src="../img/TROPICAL_HOME_680-448.jpg" alt="" class="project__imageFront">
+                </picture>
+            </div>  
+            <div class="project__imageBox">
+                <picture>
+                    <source media="(max-width: 600px)" srcset="../img/GUERLAIN_HOME_252-460.jpg">
+                    <source media="(max-width: 900px)" srcset="../img/GUERLAIN_HOME_469-768.jpg">
+                    <source media="(min-width: 900px)" srcset="../img/GUERLAIN_HOME_671-900.jpg">
+                    <img src="../img/GUERLAIN_HOME_671-900.jpg" alt="" class="project__imageBackground">
+                </picture>
+                <picture>
+                    <source media="(max-width: 600px)" srcset="../img/BACKIN80_HOME_252-460.jpg">
+                    <source media="(max-width: 900px)" srcset="../img/BACKIN80_HOME_469-768.jpg">
+                    <source media="(min-width: 900px)" srcset="../img/BACKIN80_HOME_671-900.jpg">
+                    <img src="../img/BACKIN80_HOME_671-900.jpg" alt="" class="project__imageBackground">
+                </picture>
+                <picture>
+                    <source media="(max-width: 600px)" srcset="../img/CAKE_HOME_252-460.jpg">
+                    <source media="(max-width: 900px)" srcset="../img/CAKE_HOME_469-768.jpg">
+                    <source media="(min-width: 900px)" srcset="../img/CAKE_HOME_671-900.jpg">
+                    <img src="../img/CAKE_HOME_671-900.jpg" alt="" class="project__imageBackground">
+                </picture>
+                <picture>
+                    <source media="(max-width: 600px)" srcset="../img/HEJU_HOME_252-460.jpg">
+                    <source media="(max-width: 900px)" srcset="../img/HEJU_HOME_469-768.jpg">
+                    <source media="(min-width: 900px)" srcset="../img/HEJU_HOME_671-900.jpg">
+                    <img src="../img/HEJU_HOME_671-900.jpg" alt="" class="project__imageBackground">
+                </picture>
+                <picture>
+                    <source media="(max-width: 600px)" srcset="../img/TROPICAL_HOME_252-460.jpg">
+                    <source media="(max-width: 900px)" srcset="../img/TROPICAL_HOME_469-768.jpg">
+                    <source media="(min-width: 900px)" srcset="../img/TROPICAL_HOME_671-900.jpg">
+                    <img src="../img/TROPICAL_HOME_671-900.jpg" alt="" class="project__imageBackground">
+                </picture>
+<!--                <img project-id="0" src="../img/GUERLAIN_HOME_671-900.jpg"  alt="" class="project__imageBackground">
+                <img project-id="1" src="../img/BACKIN80_HOME_671-900.jpg"  alt="" class="project__imageBackground">
+                <img project-id="2" src="../img/CAKE_HOME_671-900.jpg" alt="" class="project__imageBackground">
+                <img project-id="3" src="../img/HEJU_HOME_671-900.jpg" alt="" class="project__imageBackground">
+                <img project-id="4" src="../img/TROPICAL_HOME_671-900.jpg" alt="" class="project__imageBackground"> -->
+            </div>
+        </div>
 
-	</div>
+    </div>
 
-	<div class="carousel">
-		<ul class="carousel__select">
-			<li class="carousel__option carousel__option--on"> <span>1</span> </li>
-			<li class="carousel__option"> <span>2</span> </li>
-			<li class="carousel__option"> <span>3</span> </li>
-			<li class="carousel__option"> <span>4</span> </li>
-			<li class="carousel__option"> <span>5</span> </li>
-		</ul>
-	</div>
+    <div class="carousel">
+        <ul class="carousel__select">
+            <li class="carousel__option carousel__option--on"> <span>1</span> </li>
+            <li class="carousel__option"> <span>2</span> </li>
+            <li class="carousel__option"> <span>3</span> </li>
+            <li class="carousel__option"> <span>4</span> </li>
+            <li class="carousel__option"> <span>5</span> </li>
+        </ul>
+    </div>
 
 </div>
 
