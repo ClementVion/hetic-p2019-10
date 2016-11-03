@@ -1,6 +1,6 @@
 // Define the app main container
 var container = document.querySelector('.container');
-var balam  = 'rrrr';
+
 // Define the router and the routes
 var router = new Grapnel({
     pushState: true
@@ -11,7 +11,7 @@ router.get('/home', function() {
     getTemplate('home');
 });
 
-router.get('/project/:id?', function(req){
+router.get('/project', function(req){
     var id = req.params.id;
     getTemplate('single-project');
 });
