@@ -131,16 +131,13 @@
 			z-index: 10;
 			top: calc(50% - 112.5px);
 			left: 0;
-			@include size(225px);
 			position: absolute;
 
 			@include homeSmall{
-				@include size(285px);
 				top :calc(50% - 142.5px);
 			}
 
 			@include homeMedium{
-				@include size(480px);
 				top :calc(50% - 225px);
 				left: 5%;
 			}
@@ -164,6 +161,8 @@
 		.project__imageBox{
 			@include size(90%,100vh);
 			position: relative;
+			display: flex;	
+			justify-content: center;
 			@include homeMedium{
 				overflow: hidden;
 			}
@@ -182,15 +181,15 @@
 			@include homeSmall{
 				@include size(auto,100vh);
 				// position: static;
-				transform: translateX(-250px);
+				// transform: translateX(-250px);
 			}
 
 			@include homeMedium{
-				transform: translateX(-190px);
+				// transform: translateX(-190px);
 			}
 
 			@include homeSemiLarge{
-				transform: translateX(110px);
+				// transform: translateX(110px);
 			}
 
 		}

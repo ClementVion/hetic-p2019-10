@@ -4,7 +4,6 @@
 		slides = document.querySelectorAll('.project__imageBackground'),
 		tl1 = new TimelineMax(),
 		tl2 = new TimelineMax(),
-		transformXValue,
 	initSmoothScroll = function ()
 	{	
 		let throttled = _.throttle(magnet, 3000, {leading: true, trailing: false});		
@@ -35,13 +34,6 @@
 	},
 	initSlides = function ()
 	{
-		// return 'matrix(XX,XX,XX,XX,XX,XX)'
-		// split the string to make it an array
-		transformXValue = window.getComputedStyle(slides[0], null).getPropertyValue('transform'),
-		transformXValue = transformXValue.split('(')[1].split(')')[0].split(',');
-		transformXValue = parseInt(transformXValue[4]);
-		// console.log(transformXValue);
-
 		slides[0].style.top = '0';
 		for (var i = 1; i < slides.length; i++) {
 			slides[i].style.display = 'none';
@@ -79,7 +71,7 @@
 					{
 						display: 'none',
 						top: '100%',
-						transform: 'translateY(0) transformX(' + transformXValue + 'px)',
+						transform: 'translateY(0)',
 						zIndex: 1
 					});
 				},2400);
