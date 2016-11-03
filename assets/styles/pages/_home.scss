@@ -76,7 +76,7 @@
 			    width: 290px;
 			    bottom: 120px;
 			    display: block;
-			}	
+			}
 
 			@include homeLarge{
 				bottom: 200px;
@@ -88,7 +88,7 @@
 			cursor: pointer;
 			transform: translateX(0);
 			transition: ease-in-out 0.1s;
-			
+
 			@include homeMedium{
 				display: block;
 			}
@@ -122,7 +122,7 @@
 
 	.project__imgContainer{
 		@include size(50%);
-		
+
 		@include homeSemiLarge{
 			@include size(43%);
 		}
@@ -148,7 +148,7 @@
 			@include homeSemiLarge{
 				left: 25%;
 			}
-			
+
 
 			// @include homeMedium{
 			// 	@include size(50%);
@@ -160,7 +160,7 @@
 			// }
 
 		}
-		
+
 		.project__imageBox{
 			@include size(90%,100vh);
 
@@ -196,6 +196,3 @@
 	}
 
 }
-
-
-

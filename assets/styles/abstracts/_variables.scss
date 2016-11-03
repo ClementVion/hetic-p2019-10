@@ -2,24 +2,14 @@
 // This file contains all application-wide Sass variables.
 // -----------------------------------------------------------------------------
 
-// Colors
-
-$main-button-color : #ffffff;
-
-// Breakpoints map
-// @prop {String} keys - Keys are identifiers mapped to a given length
-// @prop {Map} values - Values are actual breakpoints expressed in pixels
-/* $breakpoints: (
-  'small': 400px,
-  'medium': 768px,
-  'large': 1024px,
-) !default;
- */    
-
 // Breakpoints
 $home-small: 350px;
 $home-medium: 700px;
 $home-semi-large: 950px;
 $home-large: 1100px;
 
+$page-small: 375px;
+$page-large: 1200px;
+$page-xs: 380px;
+$medium-single: 700px;
 // Fonts

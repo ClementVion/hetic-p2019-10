@@ -11,9 +11,9 @@ module.exports = {
         filename: "bundle.js",
         publicPath: '/static/',
     },
-    module: 
+    module:
     {
-  		preLoaders: 
+  		preLoaders:
       [
     		{
         	test: /\.js$/,
@@ -21,22 +21,22 @@ module.exports = {
         	loader: 'jshint-loader'
 	      }
       ],
-      loaders: 
+      loaders:
         [
           {
             test: /\.html$/,
             loader: "html-loader"
           },
-          { 
-          	test: /\.scss$/, 
-	        	loader: ExtractTextPlugin.extract("style","css!sass"),
+          {
+          	test: /\.scss$/,
+	        loader: ExtractTextPlugin.extract("style","css?minimize!sass")
           },
           {
 		        test: /\.es6$/,
 		        exclude: /node_modules/,
 		        loader: 'babel-loader',
 		        query: {
-              presets: ['es2015'] 
+              presets: ['es2015']
 		        }
 		      },
           {
@@ -46,16 +46,16 @@ module.exports = {
             include: __dirname+"/assets/img"
           },
           {
-           test: /\.(png|woff|woff2|eot|ttf|svg)$/, loader: 'url-loader?limit=100000' 
+           test: /\.(png|woff|woff2|eot|ttf|svg)$/, loader: 'url-loader?limit=100000'
           }
         ]
 		  },
-      plugins : 
+      plugins :
       [
           new ExtractTextPlugin("./static/css/app.css"),
           new OptimizeCssAssetsPlugin()
       ],
- 	    resolve: 
+ 	    resolve:
       {
         extensions: ['', '.js', '.es6']
       },

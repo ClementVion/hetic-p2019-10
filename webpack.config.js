@@ -20,16 +20,16 @@ module.exports = {
             test: /\.html$/,
             loader: "html-loader"
           },
-          { 
-            test: /\.scss$/, 
-            loaders: ["style", "css", "sass"] 
+          {
+            test: /\.scss$/,
+            loaders: ["style", "css", "sass"]
           },
           {
             test: /\.es6$/,
             exclude: /node_modules/,
             loader: 'babel-loader',
             query: {
-              presets: ['es2015'] 
+              presets: ['es2015']
             }
           },
           {
@@ -38,7 +38,7 @@ module.exports = {
             include: __dirname+"/assets/img"
           },
           {
-           test: /\.(png|woff|woff2|eot|ttf|svg)$/, loader: 'url-loader?limit=100000' 
+           test: /\.(png|woff|woff2|eot|ttf|svg)$/, loader: 'url-loader?limit=100000'
           }
         ]
      },
