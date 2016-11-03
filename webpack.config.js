@@ -7,6 +7,11 @@ module.exports = {
         path: __dirname,
         filename: "bundle.js"
     },
+    plugins: [
+    new webpack.ProvidePlugin({
+            Grapnel: "grapnel"
+        })
+    ],
     module: {
       preLoaders: [
           {
@@ -21,11 +26,19 @@ module.exports = {
             loader: "html-loader"
           },
           {
+            test: /\.hbs$/,
+            loader: "handlebars-template-loader"
+          },
+          {
+            test: /\.json$/,
+            loader: "json"
+          },
+          {
             test: /\.scss$/,
             loaders: ["style", "css", "sass"]
           },
           {
-            test: /\.es6$/,
+            test: /\.(es6|js)$/,
             exclude: /node_modules/,
             loader: 'babel-loader',
             query: {
@@ -47,6 +60,7 @@ module.exports = {
     },
   devServer: {
       open: true,
+      historyApiFallback: true,
       plugins: [
       new webpack.HotModuleReplacementPlugin()
     ],
