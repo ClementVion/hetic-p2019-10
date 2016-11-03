@@ -13,7 +13,7 @@ router.get('/home', function() {
 
 router.get('/project', function(req){
     var id = req.params.id;
-    getTemplate('single-project');
+    getTemplate('page-project');
 });
 
 router.get('/all-works', function(req){
