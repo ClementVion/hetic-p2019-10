@@ -1,12 +1,6 @@
-(function(){
-let compiled = require('../partials/hello.hbs')
-let content = require('../content/name.json')
-let o = compiled(content)
-
-
-if (document.querySelector('.coucou')) {
-  document.querySelector('.coucou').innerHTML += o;
-} else {
-  console.log('oooo')
-}
+(function (){
+    console.log("hello content.es6");
+    let compiled = require('../partials/page-project.hbs')
+    let content = require('../content/name.json')
+    document.body.innerHTML = compiled(content);
 })();

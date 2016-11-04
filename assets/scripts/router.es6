@@ -7,7 +7,6 @@ var router = new Grapnel({
 });
 
 router.get('/home', function() {
-    console.log("calling home");
     getTemplate('home');
 });
 
@@ -20,15 +19,13 @@ router.get('/all-works', function(req){
     getTemplate('all-works');
 });
 
-function getTemplate(name) {
+function getTemplate(name){
     console.log("get template start function");
+    var template = require('../../assets/html/page-project.html');
     var xhr = new XMLHttpRequest();
     xhr.open('GET', 'assets/html/' + name + '.html', false);
     xhr.onreadystatechange = function() {
-        console.log(this.readyState);
-        console.log(this.responseText);
-        container.innerHTML = this.responseText;
+        container.innerHTML = template({name: 'Hello'});
     };
-    console.log('over');
     xhr.send();
 };

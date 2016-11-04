@@ -9,7 +9,7 @@ module.exports = {
     },
     plugins: [
     new webpack.ProvidePlugin({
-            Grapnel: "grapnel"
+            Grapnel: "grapnel",
         })
     ],
     module: {
@@ -23,7 +23,7 @@ module.exports = {
         loaders: [
           {
             test: /\.html$/,
-            loader: "html-loader"
+            loader: "mustache"
           },
           {
             test: /\.hbs$/,
