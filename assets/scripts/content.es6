@@ -6,6 +6,7 @@
         slides = document.querySelectorAll('.project__imageBackground'),
         frontSlides = document.querySelectorAll('.project__imageFront'),
         titlesSlides = document.querySelectorAll('.project__title'),
+        descriptionSlides = document.querySelectorAll('.project__description'),
         chapters = document.querySelectorAll('.carousel__option'),
         // Timelines for tweenmax
         tl1 = new TimelineMax(), 
@@ -46,6 +47,7 @@
         frontSlides[0].style.top = '0';
         slides[0].style.top = '0';
         titlesSlides[0].style.top = '0';
+        descriptionSlides[0].style.top = '0';
 
         for (let j = 1; j < frontSlides.length; j++) {
             frontSlides[j].style.display = 'none';
@@ -55,6 +57,9 @@
         }
         for (let k = 1; k < titlesSlides.length; k++) {
             titlesSlides[k].style.display = 'none';
+        }
+        for (let l = 1; l < descriptionSlides.length; l++) {
+            descriptionSlides[l].style.display = 'none';
         }
 
     },
@@ -73,6 +78,7 @@
         slides[selectedProject].style.display = 'block';
         frontSlides[selectedProject].style.display = 'block';
         titlesSlides[selectedProject].style.display = 'block';
+        descriptionSlides[selectedProject].style.display = 'block';
 
         setTimeout(function(){
             isScrolling = true;
@@ -85,6 +91,10 @@
                 y: '-100%', 
             }, '-=0.1');            
             tl1.to(titlesSlides[prevProject], 0.4,
+            {
+                y: '100%',  
+            }, '-= 0.4');
+            tl1.to(descriptionSlides[prevProject], 0.2,
             {
                 y: '100%',  
             }, '-= 0.4');
@@ -104,6 +114,11 @@
                     y: '-=100%',
                     zIndex: '0',    
                 }, '-=0.4');
+                tl2.to(descriptionSlides[selectedProject], 0.6,
+                {
+                    y: '-=100%',
+                    zIndex: '0',    
+                }, '-=0.6');
                 setTimeout(function(){
                     tl2.to(slides[prevProject], 0,
                     {
@@ -120,6 +135,13 @@
                         zIndex: 1
                     });
                     tl2.to(titlesSlides[prevProject], 0,
+                    {
+                        display: 'none',
+                        top: '100%',
+                        transform: 'translateY(0)',
+                        zIndex: 1
+                    });
+                    tl2.to(descriptionSlides[prevProject], 0,
                     {
                         display: 'none',
                         top: '100%',
