@@ -1,19 +1,23 @@
 // Define the app main container
 var container = document.querySelector('.container');
+var routes = {
+    'projects/:id': function(req) {
+        getTemplate('page-project', req.params.id);
+    },
+    '/': function(req) {
+        getTemplate('page-home');
+        var home = require('../../assets/scripts/page-home.es6');
+    },
+    '/*': function(req, e) {
+        if (!e.parent()) {
+            getTemplate('404');
+        }
+    }
+}
 
-// Define the router and the routes
-var router = new Grapnel({
-    pushState: true,
-    root: '/'
-});
-
-router.get('home', function(req) {
-    getTemplate('home');
-});
-
-router.get('projects/:id', function(req) {
-    getTemplate('page-project', req.params.id);
-});
+Grapnel.listen({
+    pushState: true
+}, routes);
 
 function getTemplate(name, id) {
     var template = require('../../assets/html/' + name + '.html');
