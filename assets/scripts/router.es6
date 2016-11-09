@@ -3,29 +3,27 @@ var container = document.querySelector('.container');
 
 // Define the router and the routes
 var router = new Grapnel({
-    pushState: true
+    pushState: true,
+    root: '/'
 });
 
-router.get('/home', function() {
+router.get('home', function(req) {
     getTemplate('home');
 });
 
-router.get('/project', function(req){
-    var id = req.params.id;
+router.get('projects/:id', function(req){
+    console.log("projects/id");
+    console.log(req.params.id);
     getTemplate('page-project');
 });
 
-router.get('/all-works', function(req){
-    getTemplate('all-works');
-});
-
 function getTemplate(name){
-    console.log("get template start function");
+    console.log(name);
     var template = require('../../assets/html/page-project.html');
     var xhr = new XMLHttpRequest();
     xhr.open('GET', 'assets/html/' + name + '.html', false);
     xhr.onreadystatechange = function() {
-        container.innerHTML = template({name: 'Hello'});
+        container.innerHTML = template(require('../content/name.json'));
     };
     xhr.send();
 };

@@ -61,6 +61,7 @@ module.exports = {
   devServer: {
       open: true,
       historyApiFallback: true,
+      index: 'index.html',
       plugins: [
       new webpack.HotModuleReplacementPlugin()
     ],
