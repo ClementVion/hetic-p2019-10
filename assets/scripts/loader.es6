@@ -11,16 +11,10 @@ document.addEventListener('DOMContentLoaded', function(){
 
 	function manageLoadings() {
 		// load the first images during preloading
-		launchLoading('.images-while-preload')
+		launchLoading('.images-preload')
 		.then(
 			function (value) {
-				console.log('first');
-				// launch load of next images
-				launchLoading('.images-after-preload')
-				.then(
-					function (value) { 
-						console.log('second');
-					});
+				console.log('loaded !');
 			});
 	}
 
@@ -51,12 +45,6 @@ document.addEventListener('DOMContentLoaded', function(){
 			    		}	
 				    );
 				}
-
-				// Promise.all(promises).then(function() { // check if all promises are resolved
-				// 	resolve('Images succefully loaded'); // return loads success
-				// }).catch(function(err) {
-		  //   		reject(err)
-		  // 		});
 		  	}
 	  	)
 	}
