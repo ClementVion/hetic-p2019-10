@@ -4,6 +4,7 @@
 	right: 20px;
 	top: calc(50% - 85px);
 	margin: 0;
+	z-index: 10;
 }
 
 .carousel__select{
@@ -18,29 +19,53 @@
 	cursor: pointer;
 
 	span{
-		opacity: 1;
+		opacity: 0;
+		display: inline-block;
+		transform: translateX(0px);
+		transition: opacity 0.1s ease-in, transform 0.15s ease-in;
 	}
 
-	&:before{
-		opacity: 0;
-		transform: translateX(0px);
+	&:after{
+		opacity: 1;
 		content:'';
 		display: inline-block;
 		padding: 0 0 1.5px 0;
 		width: 10px;
 		background: #707070;
 		vertical-align: middle;
+		transform: translateX(0px) translateX(0);
+		transform-origin: right right;
+		transition: opacity 0.1s ease-in, transform 0.15s ease-in;
+	}
+
+	&:hover{
+		span{
+			opacity: 1;
+			transform: translateX(14px);
+			transition: opacity 0.1s ease-in, transform 0.15s ease-in;
+		}
+
+		&:after{
+			opacity: 0;
+			transform: translateX(10px) translateX(0);
+			transform-origin: right right;
+			transition: opacity 0.1s ease-in, transform 0.15s ease-in;
+		}
 	}
 
 }
 
-.carousel__option.carousel__option--on{
+.carousel__option--on{
 	span{
-		opacity: 0;
+		opacity: 1;
+		transform: translateX(14px);
+		transition: opacity 0.1s ease-in, transform 0.15s ease-in;
 	}
 
-	&:before{
-		opacity: 1;
-		transform: translateX(9.5px);
+	&:after{
+		opacity: 0;
+		transform: translateX(10px) translateX(0);
+		transform-origin: right right;
+		transition: opacity 0.1s ease-in, transform 0.15s ease-in;
 	}
 }

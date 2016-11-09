@@ -27,3 +27,4 @@ class ScrollToNext {
 
 var test = new Scroll();
 var scrollToNext = new ScrollToNext();
+console.log('hello');
