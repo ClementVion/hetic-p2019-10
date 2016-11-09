@@ -11,19 +11,21 @@ router.get('home', function(req) {
     getTemplate('home');
 });
 
-router.get('projects/:id', function(req){
-    console.log("projects/id");
-    console.log(req.params.id);
-    getTemplate('page-project');
+router.get('projects/:id', function(req) {
+    getTemplate('page-project', req.params.id);
 });
 
-function getTemplate(name){
-    console.log(name);
-    var template = require('../../assets/html/page-project.html');
+function getTemplate(name, id) {
+    var template = require('../../assets/html/' + name + '.html');
     var xhr = new XMLHttpRequest();
-    xhr.open('GET', 'assets/html/' + name + '.html', false);
+    xhr.open('GET', '../../assets/html/' + name + '.html', false);
     xhr.onreadystatechange = function() {
-        container.innerHTML = template(require('../content/name.json'));
+        if (id) {
+            var compile = template(require('../content/' + id + '.json'));
+        } else {
+            var compile = template();
+        }
+        container.innerHTML = compile;
     };
     xhr.send();
 };
