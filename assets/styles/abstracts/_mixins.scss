@@ -1,23 +1,73 @@
-/// Responsive breakpoint manager
 /// @access public
 /// @param {String} $breakpoint - Breakpoint
 /// @requires $breakpoints
 
-@mixin respond-to($breakpoint) {
-  $raw-query: map-get($breakpoints, $breakpoint);
-
-  @if $raw-query {
-    $query: if(
-      type-of($raw-query) == 'string',
-      unquote($raw-query),
-      inspect($raw-query)
-    );
-
-    @media #{$query} {
-      @content;
+// Responsive manager
+@mixin homeSmall {
+    @media (min-width: #{$home-small}) {
+        @content;
     }
-  } @else {
-    @error 'No value found for `#{$breakpoint}`. '
-         + 'Please make sure it is defined in `$breakpoints` map.';
-  }
+}
+
+@mixin homeMedium {
+    @media (min-width: #{$home-medium}) {
+        @content;
+    }
+}
+
+@mixin homeSemiLarge {
+    @media (min-width: #{$home-semi-large}) {
+        @content;
+    }
+}
+
+@mixin homeLarge {
+    @media (min-width: #{$home-large}) {
+        @content;
+    }
+}
+
+@mixin medium {
+    @media (min-width: #{$medium}) {
+        @content;
+    }
+}
+
+@mixin medium-single {
+    @media (min-width: #{$medium-single}) {
+        @content;
+    }
+}
+
+@mixin large {
+    @media (min-width: #{$page-large}) {
+        @content;
+    }
+}
+
+@mixin small {
+    @media (min-width: #{$page-small}) {
+        @content;
+    }
+}
+
+// Responsive height
+
+@mixin medium-height {
+    @media (min-height: #{$medium-height}) {
+        @content;
+    }
+}
+//
+//
+// @mixin large-height {
+//     @media (min-height: #{$large}) {
+//         @content;
+//     }
+// }
+
+// Size manager
+@mixin size($width,$height: auto) {
+    width: $width;
+    height: $height;
 }

@@ -1,3 +1,39 @@
 // -----------------------------------------------------------------------------
 // This file contains all styles related to the header of the site/application.
 // -----------------------------------------------------------------------------
+
+.main-header{
+	@include size(100%,0px);
+	position: fixed;
+	font-family: 'Aktiv Grotesk Corp';
+}
+
+.menu{
+	display: flex;
+	margin: 30px 5%;
+	padding: 0;
+	font-size: 13px;
+	justify-content: space-between;
+
+	li{
+		list-style: none;
+
+		a{
+			text-decoration: none;
+			color: #353535;
+		}
+	}
+
+	@include homeMedium{
+		justify-content: flex-start;
+	}
+
+}
+
+.menu__back-home{
+	display: none;
+}
+
+.menu__about{
+	margin-left: 30px;
+}

@@ -1,6 +1,7 @@
 var webpack = require("webpack");
 var path = require("path");
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
+var OptimizeCssAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 
 module.exports = {
     devtool: 'cheap-module-source-map',
@@ -10,9 +11,9 @@ module.exports = {
         filename: "bundle.js",
         publicPath: '/static/',
     },
-    module: 
+    module:
     {
-  		preLoaders: 
+  		preLoaders:
       [
     		{
         	test: /\.js$/,
@@ -20,22 +21,22 @@ module.exports = {
         	loader: 'jshint-loader'
 	      }
       ],
-      loaders: 
+      loaders:
         [
           {
             test: /\.html$/,
             loader: "html-loader"
           },
-          { 
-          	test: /\.scss$/, 
-	        	loader: ExtractTextPlugin.extract("style","css?minimize!sass"),
+          {
+          	test: /\.scss$/,
+	        loader: ExtractTextPlugin.extract("style","css?minimize!sass")
           },
           {
 		        test: /\.es6$/,
 		        exclude: /node_modules/,
 		        loader: 'babel-loader',
 		        query: {
-              presets: ['es2015'] 
+              presets: ['es2015']
 		        }
 		      },
           {
@@ -49,11 +50,12 @@ module.exports = {
           }
         ]
 		  },
-      plugins : 
+      plugins :
       [
-        new ExtractTextPlugin("./static/css/app.css")
+          new ExtractTextPlugin("./static/css/app.css"),
+          new OptimizeCssAssetsPlugin()
       ],
- 	    resolve: 
+ 	    resolve:
       {
         extensions: ['', '.js', '.es6']
       },
