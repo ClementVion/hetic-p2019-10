@@ -32,7 +32,10 @@ class ScrollToNext {
     scrollBar() {
         let container = document.querySelector(".singleProject");
         let scrollbar = document.querySelector('.scrollbar');
-        scrollbar.style.width = ((document.body.scrollLeft + window.innerWidth) / container.clientWidth) * 100 + "%";
+        console.log('scrollLEft: ' + document.body.scrollLeft);
+        console.log('windowWidth :' + window.innerWidth);
+        console.log('containerWidth :' + container.clientWidth);
+        scrollbar.style.width = (document.body.scrollLeft  / (container.clientWidth - window.innerWidth)) * 100 + "%";
     }
 }
 

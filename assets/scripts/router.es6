@@ -2,6 +2,7 @@ var container = document.querySelector('.container');
 
 function callLoad(){
      getTemplate("page-project", "tropical");
+     navigate('/projects/tropical');
  }
 
 document.querySelector(".link").addEventListener("click", function(){
