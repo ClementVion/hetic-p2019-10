@@ -16,15 +16,24 @@ class Scroll {
 class ScrollToNext {
     constructor() {
         window.addEventListener('wheel', (event) => this.detectEnd());
+        window.addEventListener('wheel', (event) => this.scrollBar());
+
     }
 
     detectEnd() {
-        var container = document.querySelector(".singleProject");
-        if (document.body.scrollLeft >= container.clientWidth) {
-            console.log("ENDENDEND");
+        let container = document.querySelector(".singleProject");
+        console.log(document.body.scrollLeft + window.innerWidth);
+        console.log(container.clientWidth);
+        if (document.body.scrollLeft + window.innerWidth >= container.clientWidth) {
+            console.log("END");
         }
     }
-}
 
+    scrollBar() {
+        let container = document.querySelector(".singleProject");
+        let scrollbar = document.querySelector('.scrollbar');
+        scrollbar.style.width = ((document.body.scrollLeft + window.innerWidth) / container.clientWidth) * 100 + "%";
+    }
+}
 var test = new Scroll();
 var scrollToNext = new ScrollToNext();
