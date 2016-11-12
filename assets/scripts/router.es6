@@ -47,4 +47,23 @@ function getTemplate(name, id) {
         callLoad();
     });
 };
- 
+
+// function getHeader(page) {
+//     console.log(page);
+//     var template = require('../../assets/html/partials/header.html');
+//     var xhr = new XMLHttpRequest();
+//     xhr.open('GET', '../../assets/html/partials/header.html', false);
+//     xhr.onreadystatechange = function() {
+//         if (page != 'page-home') {
+//             console.log(page);
+//             var param = {project: page};
+//             var compile = template(param);
+//         } else {
+//             var compile = template();
+//         }
+        
+//         container.innerHTML = compile;
+//     };
+//     xhr.send();
+// };
+    
