@@ -55,7 +55,6 @@ module.exports = {
     devServer: {
         open: true,
         historyApiFallback: true,
-        index: '/home',
         plugins: [
             new webpack.HotModuleReplacementPlugin()
         ],

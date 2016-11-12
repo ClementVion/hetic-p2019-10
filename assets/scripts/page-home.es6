@@ -9,12 +9,39 @@
         titlesSlides = document.querySelectorAll('.project__title'),
         descriptionSlides = document.querySelectorAll('.project__description'),
         chapters = document.querySelectorAll('.carousel__option'),
+        projectLinks = document.querySelectorAll('.project__link'),
         // Timelines for tweenmax
         tl1 = new TimelineMax(), 
         tl2 = new TimelineMax(),
         // Prevents glitch with scroll
         isScrolling = false,
-    
+        isAnimating = false,
+        newLocation = '',
+        firstLoad = false,
+    // Animations on project link clik
+    projectAnimation = function()
+    {
+        for (let i = 0; i < projectLinks.length; i++) {
+            projectLinks[i].addEventListener('click', function(e)
+            {
+                document.querySelector('.container').classList.add('fade');
+                // e.preventDefault();
+                // //detect which page has been selected
+                // let newPage = this.getAttribute('href');
+                // console.log(newPage);
+                // //if the page is not already being animated - trigger animation
+                // if( !isAnimating ) {
+                //     changePage(newPage, true);
+                // }
+                // firstLoad = true;
+
+            });
+        }
+    },
+    changePage = function()
+    {
+
+    },
     // Detect and launch scroll animations
     initSmoothScroll = function ()
     {   
@@ -190,8 +217,7 @@
         initSmoothScroll();
         initSlides();
         chaptersScroll();
-        // automaticScroll();
-        // selectSlide(3);
+        projectAnimation();
     };
     init();
 

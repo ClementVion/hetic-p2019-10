@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Anais Profit | {{title}}</title>
+	<meta name="viewport" content="initial-scale=1.0">
+	<script async type="text/javascript" src="../../bundle.js" ></script>
+</head>
+<body>
+
+<header class="main-header">
+	<ul class="menu">
+		<li class="menu__all-works"> <a href="#">All works</a></li>
+		<li class="menu__about"> <a href="#">About</a></li>
+		{{#project}}
+  			<li class="menu__back-home"> <a href="#">Back home</a></li>
+		{{/project}}
+		
+	</ul>
+</header>

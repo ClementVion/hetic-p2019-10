@@ -26,3 +26,14 @@ body{
 a {
 
 }
+
+::-webkit-scrollbar {
+	display: none;
+    // width: 0px;  /* remove scrollbar space */
+    // background: transparent;  /* optional: just make scrollbar invisible */
+}
+
+.container.fade{
+	opacity: 0;
+	transition: opacity 0.5s ease;
+}
