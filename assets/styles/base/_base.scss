@@ -1,31 +1,24 @@
 // -----------------------------------------------------------------------------
 // This file contains very basic styles.
 // -----------------------------------------------------------------------------
-
 /**
  * Set up a decent box model on the root element
  */
 html {
-  box-sizing: border-box;
-  height: 100%;
-  margin: 0;
+    box-sizing: border-box;
+    height: 100%;
+    margin: 0;
 }
 
-body{
-  height: 100%;
+body {
+    height: 100%;
+    overflow-x: hidden;
 }
 
 body{
 	color: #353535;
 }
 
-
-/**
- * Basic styles for links
- */
-a {
-
-}
 
 ::-webkit-scrollbar {
 	display: none;
@@ -37,3 +30,7 @@ a {
 	opacity: 0;
 	transition: opacity 0.5s ease;
 }
+/**
+ * Basic styles for links
+ */
+a {}

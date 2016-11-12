@@ -28,7 +28,6 @@ document.querySelector(".link").addEventListener("click", function(){
 // }, routes);
 
 function getTemplate(name, id) {
-    console.log("GET THAT FUCKING TEMPLATE");
     var template = require('../../assets/html/' + name + '.html');
     var container = document.querySelector('.container');
     var xhr = new XMLHttpRequest();
