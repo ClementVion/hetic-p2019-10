@@ -42,7 +42,7 @@ function getTemplate(name, id) {
         container.innerHTML += compile;
     };
     xhr.send();
-    
+
     document.querySelector(".link").addEventListener("click", function(){
         callLoad();
     });
@@ -61,9 +61,8 @@ function getTemplate(name, id) {
 //         } else {
 //             var compile = template();
 //         }
-        
+
 //         container.innerHTML = compile;
 //     };
 //     xhr.send();
 // };
-    
