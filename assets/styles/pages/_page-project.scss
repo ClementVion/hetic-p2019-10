@@ -2,7 +2,7 @@
 // This file contains styles that are specific to the single project page.
 // -----------------------------------------------------------------------------
 
-.singleProject {
+.project {
     display: flex;
     flex-direction: column;
     font-family: 'Aktiv Grotesk Corp';
@@ -27,7 +27,7 @@
     }
 }
 
-.singleProject__scroll {
+.project__scroll {
     display: none;
     @include medium-single {
         display: inline;
@@ -45,7 +45,7 @@
     }
 }
 
-.singleProject__scroll:after {
+.project__scroll:after {
     content: "";
     position: absolute;
     width: 18px;
@@ -55,7 +55,7 @@
     transform: rotate(90deg) translate(30px, 23px);
 }
 
-.singleProject__header {
+.project__header {
     color: #353535;
     @include medium-single {
         margin-right: -80px;
@@ -66,7 +66,7 @@
     }
 }
 
-.singleProject__title {
+.project__title {
     font-size: 24px;
     font-family: 'ITC Avant Garde Pro';
     color: #000000;
@@ -81,7 +81,7 @@
     }
 }
 
-.singleProject__card {
+.project__card {
     @include medium-single {
         display: flex;
         flex-direction: row;
@@ -89,11 +89,11 @@
     }
 }
 
-.singleProject__infos {
+.project__infos {
     font-size: 13px;
     margin: 30px 0 0;
 
-    .singleProject__info {
+    .project__info {
         display: flex;
         flex-direction: row;
         align-items: baseline;
@@ -111,19 +111,19 @@
         }
     }
 
-    .singleProject__subtitle {
+    .project__subtitle {
         margin: 0 5px 0 0;
         font-weight: bold;
         font-size: 13px;
         font-family: 'ITC Avant Garde Pro';
     }
 
-    .singleProject__small-info {
+    .project__small-info {
         color: #8E9093;
     }
 }
 
-.singleProject__description {
+.project__description {
     font-family: 'Aktiv Grotesk Corp';
     font-size: 13px;
     margin: 40px 0;
@@ -135,7 +135,7 @@
     }
 }
 
-.singleProject__main-content {
+.project__main-content {
     height: 100%;
     @include medium-single {
         display: flex;
@@ -147,7 +147,7 @@
     }
 }
 
-.singleProject__photo {
+.project__photo {
     width: 100%;
     @include medium-single {
         width: auto;
@@ -159,7 +159,7 @@
     }
 }
 
-.singleProject__background-container {
+.project__background-container {
     display: none;
     @include medium-single {
         display: block;
@@ -175,13 +175,13 @@
         height: 100%;
     }
 
-    .singleProject__bg-photo {
+    .project__bg-photo {
         height: 100%;
         opacity: 0.30;
     }
 }
 
-.singleProject__teasing {
+.project__teasing {
     display: flex;
     flex-direction: row;
 
@@ -190,7 +190,7 @@
     }
 }
 
-.singleProject__subtitle {
+.project__subtitle {
     font-size: 24px;
     color: #353535;
     margin: 0 0 18px;
@@ -203,20 +203,20 @@
     }
 }
 
-.singleProject__link {
+.project__link {
     text-decoration: none;
     font-family: 'Aktiv Grotesk Corp';
     color: #8E9093;
 }
 
-.singleProject__teasing-infos{
+.project__teasing-infos{
     @include medium-single{
         width: 230px;
         margin: 0 150px 0 0;
     }
 }
 
-.singleProject__bg-photo--teaser {
+.project__bg-photo--teaser {
     display: none;
     @include medium-single{
         display: block;
@@ -226,7 +226,7 @@
     }
 }
 
-.singleProject__photo-wrap{
+.project__photo-wrap{
     width: 100%;
     margin: 0 0 45px 0;
 
