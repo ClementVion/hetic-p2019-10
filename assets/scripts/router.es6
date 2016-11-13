@@ -4,17 +4,16 @@ let container = document.querySelector('.container');
    un click sur une div et en chargeant le template de la page suivante dans le container,
 */
 
-document.querySelector(".link").addEventListener("click", function(){
-    callLoad();
-});
+// document.querySelector(".link").addEventListener("click", function(e){
+//     callLoad();
+// });
 
-function callLoad(){
-     getTemplate("page-project", "tropical");
- }
+// function callLoad(){
+//      getTemplate("page-project", "tropical");
+//  }
 
  function getTemplate(name, id) {
      let template = require('../../assets/html/' + name + '.html');
-     let container = document.querySelector('.container');
      let xhr = new XMLHttpRequest();
      xhr.open('GET', '../../assets/html/' + name + '.html', false);
      xhr.onreadystatechange = function() {
@@ -24,12 +23,9 @@ function callLoad(){
              var compile = template();
          }
          container.innerHTML += compile;
+        listenClicks(container);
      };
      xhr.send();
-
-     document.querySelector(".link").addEventListener("click", function(){
-         callLoad();
-     });
  };
 
 /* Système de route fonctionnel (renvoie le bon template et les bons paramètres etc)
@@ -37,25 +33,36 @@ mais qui ne permet pas d'append un template à la suite d'un autre au sein du m�
 (la page se recharge, et le template est chargé dans le container vide de l'index.html)
  */
  
-// var routes = {
-//     '/projects/:id': function(req) {
-//         getTemplate('page-project', req.params.id);
-//     },
-//     '/': function(req) {
-//         getTemplate('page-home');
-//         var home = require('../../assets/scripts/page-home.es6');
-//     },
-//     '/*': function(req, e) {
-//         if (!e.parent()) {
-//             getTemplate('404');
-//         }
-//     }
-// }
-//
-// Grapnel.listen({
-//     pushState: true
-// }, routes);
+var router = new Grapnel({
+    pushState: true
+});
 
+router.get('/projects/:id', function(req) {
+    getTemplate('page-project', req.params.id);
+});
+
+router.get('/', function(req) {
+    getTemplate('page-home');
+    var home = require('../../assets/scripts/page-home.es6');
+});
+
+router.get('/*', function(req, e) {
+    if (!e.parent()) {
+        getTemplate('404');
+    }
+});
+
+// Listen for clicks to navigate
+function listenClicks(element) {
+  var links = element.getElementsByTagName('a');
+  for (let i = 0; i < links.length; i++) {
+    links[i].addEventListener('click', function(e) {
+      e.preventDefault();
+      router.navigate(e.target.pathname);
+    });
+  }
+}
+listenClicks(document);
 
 // function getHeader(page) {
 //     console.log(page);
