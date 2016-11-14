@@ -7,7 +7,6 @@ function getTemplate(name, id) {
     window.setTimeout(function()
         {
             container.classList.toggle('container--visible');
-            console.log('hhiiiiiii');
         }, 1000);
     let template = require('../../assets/html/' + name + '.html');
     let xhr = new XMLHttpRequest();
@@ -39,7 +38,6 @@ router.get('/projects/:id', function(req) {
 
 router.get('/', function(req) {
     getTemplate('page-home');
-    console.log('home');
         window.setTimeout(function()
         {   
            home.init();
@@ -65,16 +63,6 @@ function initClicks(element) {
 }
 
 function listenClicks(e) {
-    container.classList.toggle('container--visible');
-    console.log('toggle');
-    window.setTimeout(function()
-    {
-        container.innerHTML = '';
-        router.navigate(e.target.pathname);  
-    },1000);
-}
-
-window.onbeforeunload = function() {
     container.classList.toggle('container--visible');
     console.log('toggle');
     window.setTimeout(function()
