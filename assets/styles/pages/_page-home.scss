@@ -6,12 +6,17 @@
 
 }
 
+.container--visible .project{
+	opacity: 1;
+}
 .project{
 	@include size(100%, 100vh);
 	position: relative;
 	display: flex;
 	overflow: hidden;
 	font-family: 'Aktiv Grotesk Corp';
+	opacity: 0;
+	transition: opacity 1s ease-in;
 	flex-direction: column;
 
 	@include homeMedium{

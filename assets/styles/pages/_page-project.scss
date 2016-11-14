@@ -10,6 +10,9 @@
     width: 288px;
     height: 100%;
     align-items: center;
+    opacity: 0;
+    transform: translateX(30%);
+    transition: opacity 1s ease-out, transform 0.3s ease-out;
     @include small {
         width: 335px;
     }
@@ -25,6 +28,12 @@
         width: auto;
         height: 100%;
     }
+}
+
+.container--visible .singleProject{
+    opacity: 1;
+    transform: translateX(0%);
+    transition: opacity 1s ease-out, transform 0.3s ease-out;
 }
 
 .singleProject__scroll {

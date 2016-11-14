@@ -1,49 +1,50 @@
+let home = require('./page-home.es6');
+let project = require('./page-project.es6');
 let container = document.querySelector('.container');
+let body = document.querySelector('body');
 
-/* Système temporaire permettant de travailler les transitions entre les pages en écoutant
-   un click sur une div et en chargeant le template de la page suivante dans le container,
-*/
+function getTemplate(name, id) {
+    window.setTimeout(function()
+        {
+            container.classList.toggle('container--visible');
+            console.log('hhiiiiiii');
+        }, 1000);
+    let template = require('../../assets/html/' + name + '.html');
+    let xhr = new XMLHttpRequest();
+    xhr.open('GET', '../../assets/html/' + name + '.html', false);
+    xhr.onreadystatechange = function() {
+        if (id) {
+            var compile = template(require('../content/' + id + '.json'));
+        } else {
+            var compile = template();
+        }
+        container.innerHTML += compile;
+    };
+    xhr.send();
+};
 
-// document.querySelector(".link").addEventListener("click", function(e){
-//     callLoad();
-// });
-
-// function callLoad(){
-//      getTemplate("page-project", "tropical");
-//  }
-
- function getTemplate(name, id) {
-     let template = require('../../assets/html/' + name + '.html');
-     let xhr = new XMLHttpRequest();
-     xhr.open('GET', '../../assets/html/' + name + '.html', false);
-     xhr.onreadystatechange = function() {
-         if (id) {
-             var compile = template(require('../content/' + id + '.json'));
-         } else {
-             var compile = template();
-         }
-         container.innerHTML += compile;
-        listenClicks(container);
-     };
-     xhr.send();
- };
-
-/* Système de route fonctionnel (renvoie le bon template et les bons paramètres etc)
-mais qui ne permet pas d'append un template à la suite d'un autre au sein du même container
-(la page se recharge, et le template est chargé dans le container vide de l'index.html)
- */
- 
 var router = new Grapnel({
     pushState: true
 });
 
 router.get('/projects/:id', function(req) {
     getTemplate('page-project', req.params.id);
+    // document.querySelector('.project').style.display = 'none';
+    window.setTimeout(function()
+        {   
+            project.init();
+        }
+    ,1000);
 });
 
 router.get('/', function(req) {
     getTemplate('page-home');
-    var home = require('../../assets/scripts/page-home.es6');
+    console.log('home');
+        window.setTimeout(function()
+        {   
+           home.init();
+        }
+    ,1000);
 });
 
 router.get('/*', function(req, e) {
@@ -53,32 +54,34 @@ router.get('/*', function(req, e) {
 });
 
 // Listen for clicks to navigate
-function listenClicks(element) {
-  var links = element.getElementsByTagName('a');
+function initClicks(element) {
+  let links = element.getElementsByTagName('a');
   for (let i = 0; i < links.length; i++) {
     links[i].addEventListener('click', function(e) {
-      e.preventDefault();
-      router.navigate(e.target.pathname);
+        e.preventDefault();
+        listenClicks(e);
     });
   }
 }
-listenClicks(document);
 
-// function getHeader(page) {
-//     console.log(page);
-//     var template = require('../../assets/html/partials/header.html');
-//     var xhr = new XMLHttpRequest();
-//     xhr.open('GET', '../../assets/html/partials/header.html', false);
-//     xhr.onreadystatechange = function() {
-//         if (page != 'page-home') {
-//             console.log(page);
-//             var param = {project: page};
-//             var compile = template(param);
-//         } else {
-//             var compile = template();
-//         }
+function listenClicks(e) {
+    container.classList.toggle('container--visible');
+    console.log('toggle');
+    window.setTimeout(function()
+    {
+        container.innerHTML = '';
+        router.navigate(e.target.pathname);  
+    },1000);
+}
 
-//         container.innerHTML = compile;
-//     };
-//     xhr.send();
-// };
+window.onbeforeunload = function() {
+    container.classList.toggle('container--visible');
+    console.log('toggle');
+    window.setTimeout(function()
+    {
+        container.innerHTML = '';
+        router.navigate(e.target.pathname);  
+    },1000);
+}
+
+initClicks(body);

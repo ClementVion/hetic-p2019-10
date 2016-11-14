@@ -1,4 +1,6 @@
-(function() {
+module.exports = {
+
+    init: function() {
 
     // Index of slides
     let prevProject = null,
@@ -22,7 +24,7 @@
         projectAnimation = function() {
             for (let i = 0; i < projectLinks.length; i++) {
                 projectLinks[i].addEventListener('click', function(e) {
-                    document.querySelector('.container').classList.add('fade');
+                    // document.querySelector('.container').classList.add('fade');
                     // e.preventDefault();
                     // //detect which page has been selected
                     // let newPage = this.getAttribute('href');
@@ -202,5 +204,10 @@
         };
     init();
 
-
-}());
+    },
+    stopEvents: function() {
+        var el = document.querySelector('.container'),
+        elClone = el.cloneNode(true);
+        el.parentNode.replaceChild(elClone, el);
+    }
+}

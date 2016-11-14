@@ -63,14 +63,5 @@ module.exports = {
     },
     resolve: {
         extensions: ['', '.js', '.es6']
-    },
-    devServer: {
-        open: true,
-        historyApiFallback: true,
-        plugins: [
-            new webpack.HotModuleReplacementPlugin(),
-        ],
-        colors: true,
-        progress: true,
-    },
+    }
 }
