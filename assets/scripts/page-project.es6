@@ -1,28 +1,35 @@
-class Scroll {
- constructor ( ) {
-     window.addEventListener('wheel', (event) => this.scrollHorizontaly(event));
- }
+module.exports = {
 
- scrollHorizontaly (e) {
-     var container = document.querySelector(".singleProject");
-     var delta = Math.max(-1, Math.min(1, (e.wheelDelta || -e.detail)));
-     document.documentElement.scrollLeft -= (delta*25);
-     document.body.scrollLeft -= (delta*25);
-     e.preventDefault();
- }
-}
+    init: function(){
+        
+        class Scroll {
+         constructor ( ) {
+             window.addEventListener('wheel', (event) => this.scrollHorizontaly(event));
+         }
 
-class ScrollToNext {
-    constructor() {
-        window.addEventListener('wheel', (event) => this.detectEnd());
-    }
-
-    detectEnd(){
-        var container = document.querySelector(".singleProject");
-        if (document.body.scrollLeft >= container.clientWidth) {
+         scrollHorizontaly (e) {
+             var container = document.querySelector(".singleProject");
+             var delta = Math.max(-1, Math.min(1, (e.wheelDelta || -e.detail)));
+             document.documentElement.scrollLeft -= (delta*25);
+             document.body.scrollLeft -= (delta*25);
+             e.preventDefault();
+         }
         }
+
+        class ScrollToNext {
+            constructor() {
+                window.addEventListener('wheel', (event) => this.detectEnd());
+            }
+
+            detectEnd(){
+                var container = document.querySelector(".singleProject");
+                if (document.body.scrollLeft >= container.clientWidth) {
+                }
+            }
+        }
+
+        var test = new Scroll();
+        var scrollToNext = new ScrollToNext();
+
     }
 }
-
-var test = new Scroll();
-var scrollToNext = new ScrollToNext();

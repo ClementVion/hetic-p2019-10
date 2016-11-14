@@ -29,11 +29,13 @@
 
 .singleProject__scroll {
     display: none;
+
     @include medium-single {
         display: inline;
         font-family: 'Aktiv Grotesk Corp';
         font-size: 13px;
-        opacity: 0.33;
+        opacity: 0;
+        transition: opacity cubic-bezier(0.645, 0.045, 0.355, 1);
         width: 50px;
         position: absolute;
         transform: rotate(-90deg) translateX(-430px);
@@ -58,11 +60,9 @@
 .singleProject__header {
     color: #353535;
     @include medium-single {
-        margin-right: -80px;
         z-index: -1;
     }
     @include large {
-        margin-right: -100px;
     }
 }
 
@@ -70,9 +70,11 @@
     font-size: 24px;
     font-family: 'ITC Avant Garde Pro';
     color: #000000;
+    transform: translateX(150px);
+    transition: opacity cubic-bezier(0.645, 0.045, 0.355, 1), transform cubic-bezier(0.645, 0.045, 0.355, 1);
+    opacity: 0;
     @include medium-single {
         font-size: 219px;
-        opacity: 0.03;
         margin: 20% 0 0 110px;
     }
     @include large {
@@ -82,6 +84,8 @@
 }
 
 .singleProject__card {
+    transition: cubic-bezier(0.645, 0.045, 0.355, 1);
+    opacity: 0;
     @include medium-single {
         display: flex;
         flex-direction: row;
