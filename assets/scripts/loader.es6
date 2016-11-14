@@ -1,39 +1,27 @@
 launchLoading('.preload');
-console.log('bik');
-/**
-*  launchLoading()
-*  Launch the detection of the loading of each assets
-*  @param string, class of elements that must wait loading
-*  @return bool
-*/
 
+let home = require('./page-home.es6');
+let tl = new TimelineMax();
+
+// Launch the detection of the loading of each assets
 function launchLoading(cl){
-	var assets = document.querySelectorAll(cl), // Get assets
-		promisesResolved = 0, // number of promises resolved updated at each iteration
-		content = document.querySelectorAll('.content'); // Get content to display after load
+	let assets = document.querySelectorAll(cl), // Get assets
+		promisesResolved = 0; // number of promises resolved updated at each iteration
+		
 	for (var elm of assets) {
 	    loadAssets(elm)
     	.then( 
     		function(value) { 
     			// update load progress
     			promisesResolved++;
-    			updateLoadProgress(promisesResolved, assets.length)
-    			.then(
-    				function (value) {
-    					resolve(); // return that all images has been loaded to trigger next action
-    				});
+    			updateLoadProgress(promisesResolved, assets.length);
     		}	
 	    );
 	}
 }
 
-/**
-*  loadAssets()
-*  Detect if one asset is loaded 
-*  @param object, DOM element
-*  @return resolve() or reject()
-*/
 
+// Detect if one asset is loaded 
 function loadAssets(elm) {
 	return new Promise(
 		function (resolve) {
@@ -48,24 +36,18 @@ function loadAssets(elm) {
 		});
 }
 
-/**
-*  updateLoadProgress()
-*  Update the percentage of preloading progress
-*  @param int, number of assets currently loaded
-*  @param int, total numbers of assets to load
-*  @return 
-*/
 
+// Update the percentage of preloading progress
 function updateLoadProgress(loaded, total) {
 	return new Promise(
 		function (resolve) {
 			setTimeout(function(){
-				var progress = Math.round( (100/total)*loaded ), // percent update when an asset is loaded
+				let progress = Math.round( (100/total)*loaded ), // percent update when an asset is loaded
 					percentElm = document.querySelector('.loading__percents'), // element which contain loading percents
 					loadingProgress = document.querySelector('.loading__progress');
 
 				loadingProgress.style.transform = "translateX("+ -(100-progress) +"%)";
-				percentElm.innerHTML = progress + '%';
+				percentElm.innerHTML = progress;
 				if( progress >= 100 && loaded == total && loadingProgress.style.transform == "translateX(0%)"){
 					stopPreloadingAnim(); // remove preloading animation
 					resolve(); // return that all images has been loaded
@@ -74,18 +56,36 @@ function updateLoadProgress(loaded, total) {
 		});	
 }
 
-/**
-*  stopPreloadingAnim()
-*  @return 
-*/
 
 function stopPreloadingAnim() {
 	// remove loading screen
 	setTimeout(function(){
-		var loadingScreen = document.querySelector('.loading');
-		loadingScreen.style.display = 'none';
-	},300);
+		let content = document.querySelector('.content'),
+			loadingContainer = document.querySelector('.loading'),
+			loadingLayout = loadingContainer.querySelector('.loading__layout');
 
+		loadingLayout.style.transform = "translateX(0%)";
+		loadingContainer.style.opacity = "0";
+		setTimeout(function(){
+			home.init();
+		}, 600);
+		setTimeout(function(){
+			loadingContainer.style.display = "none";
+			let projectSee = document.querySelector('.project__see'),
+				menu = document.querySelectorAll('.menu li');
+			tl.to(projectSee, 0.7,
+			{
+				opacity: '1',
+				x: '0'
+			}, '0.8');
+			tl.to(menu, 0.7,
+			{
+				opacity: '1',
+				x: '0'
+			}, '0.9');
+		}, 800);
+		// loadingContainer.style.display = 'none';
+	},1000);
 }
 
 

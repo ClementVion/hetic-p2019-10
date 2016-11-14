@@ -17,6 +17,9 @@
 
 	li{
 		list-style: none;
+		opacity: 0;
+		transition: cubic-bezier(0.645, 0.045, 0.355, 1);
+		transform: translateX(-60px);
 
 		a{
 			text-decoration: none;

@@ -2,7 +2,7 @@
 // This file contains styles that are specific to the home page.
 // -----------------------------------------------------------------------------
 
-.home{
+.content{
 
 }
 
@@ -120,8 +120,9 @@
 	.project__see{
 		bottom: 80px;
 		cursor: pointer;
-		transform: translateX(0);
-		transition: ease-in-out 0.1s;
+		opacity: 0;
+		transition: cubic-bezier(0.645, 0.045, 0.355, 1);
+		transform: translateX(-60px);
 
 		@include homeSmall{
 			display: none;

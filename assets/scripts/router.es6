@@ -7,7 +7,7 @@ var routes = {
     },
     '/': function(req) {
         getTemplate('page-home');
-        getTemplate('loader');
+        require('../../assets/scripts/loader.es6');
         var home = require('../../assets/scripts/page-home.es6');
     },
     '/*': function(req, e) {
