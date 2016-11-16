@@ -45,10 +45,5 @@ module.exports = {
 
         let test = new Scroll();
         let scrollToNext = new ScrollToNext();
-    },
-    stopEvents: function() {
-        var el = document.querySelector('.container'),
-        elClone = el.cloneNode(true);
-        el.parentNode.replaceChild(elClone, el);
     }
 }
