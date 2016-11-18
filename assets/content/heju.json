@@ -1,0 +1,157 @@
+{
+   "name":"Heju x Anaïs Profit",
+   "description": "Heju is a French blog about design, architecture and DIYs, managed by Helene and Julien.<br>We wanted to combine our different passions to create a small DIY doll house.<br>The furnitures pattern have been made available to download for free on the blog.",
+   "date" :"",
+   "credits": [
+       {
+         "title": "Pictures",
+         "content":"Heju"
+       }
+   ],
+   "projects": [
+       {
+           "desktop": "../assets/img/pop_image_desktop_1.jpg",
+           "tablet": "../assets/img/pop_image_tablet_1.jpg",
+           "mobile": "../assets/img/pop_image_mobile_1.jpg",
+           "backgrounds":[
+               {
+                   "desktop": "../assets/img/pop_image_desktop_1.jpg",
+                   "tablet": "../assets/img/pop_image_tablet_1.jpg",
+                   "mobile": "../assets/img/pop_image_mobile_1.jpg"
+               }
+           ]
+       },
+       {
+           "desktop": "../assets/img/pop_image_desktop_2.jpg",
+           "tablet": "../assets/img/pop_image_tablet_2.jpg",
+           "mobile": "../assets/img/pop_image_mobile_2.jpg",
+           "backgrounds":[
+               {
+                   "desktop": "../assets/img/pop_image_desktop_2.jpg",
+                   "tablet": "../assets/img/pop_image_tablet_2.jpg",
+                   "mobile": "../assets/img/pop_image_mobile_2.jpg"
+               }
+           ]
+       },
+       {
+           "desktop": "../assets/img/pop_image_desktop_3.jpg",
+           "tablet": "../assets/img/pop_image_tablet_3.jpg",
+           "mobile": "../assets/img/pop_image_mobile_3.jpg",
+           "backgrounds":[
+               {
+                   "desktop": "../assets/img/pop_image_desktop_3.jpg",
+                   "tablet": "../assets/img/pop_image_tablet_3.jpg",
+                   "mobile": "../assets/img/pop_image_mobile_3.jpg"
+               }
+           ]
+       },
+       {
+           "desktop": "../assets/img/pop_image_desktop_4.jpg",
+           "tablet": "../assets/img/pop_image_tablet_4.jpg",
+           "mobile": "../assets/img/pop_image_mobile_4.jpg",
+           "backgrounds":[
+              {
+                   "desktop": "../assets/img/pop_image_desktop_4.jpg",
+                   "tablet": "../assets/img/pop_image_tablet_4.jpg",
+                   "mobile": "../assets/img/pop_image_mobile_4.jpg"
+              }
+           ]
+       },
+       {
+           "desktop": "../assets/img/pop_image_desktop_5.jpg",
+           "tablet": "../assets/img/pop_image_tablet_5.jpg",
+           "mobile": "../assets/img/pop_image_mobile_5.jpg",
+           "backgrounds":[
+              {
+                   "desktop": "../assets/img/pop_image_desktop_5.jpg",
+                   "tablet": "../assets/img/pop_image_tablet_5.jpg",
+                   "mobile": "../assets/img/pop_image_mobile_5.jpg"
+              }
+           ]
+       },
+       {
+           "desktop": "../assets/img/pop_image_desktop_6.jpg",
+           "tablet": "../assets/img/pop_image_tablet_6.jpg",
+           "mobile": "../assets/img/pop_image_mobile_6.jpg",
+           "backgrounds":[
+              {
+                   "desktop": "../assets/img/pop_image_desktop_6.jpg",
+                   "tablet": "../assets/img/pop_image_tablet_6.jpg",
+                   "mobile": "../assets/img/pop_image_mobile_6.jpg"
+              }
+           ]
+       },
+       {
+           "desktop": "../assets/img/pop_image_desktop_7.jpg",
+           "tablet": "../assets/img/pop_image_tablet_7.jpg",
+           "mobile": "../assets/img/pop_image_mobile_7.jpg",
+           "backgrounds":[
+               {
+                   "desktop": "../assets/img/pop_image_desktop_7.jpg",
+                   "tablet": "../assets/img/pop_image_tablet_7.jpg",
+                   "mobile": "../assets/img/pop_image_mobile_7.jpg"
+               }
+           ]
+       },
+       {
+           "desktop": "../assets/img/pop_image_desktop_8.jpg",
+           "tablet": "../assets/img/pop_image_tablet_8.jpg",
+           "mobile": "../assets/img/pop_image_mobile_8.jpg",
+           "backgrounds":[
+               {
+                   "desktop": "../assets/img/pop_image_desktop_8.jpg",
+                   "tablet": "../assets/img/pop_image_tablet_8.jpg",
+                   "mobile": "../assets/img/pop_image_mobile_8.jpg"
+               }
+           ]
+       },
+       {
+           "desktop": "../assets/img/pop_image_desktop_9.jpg",
+           "tablet": "../assets/img/pop_image_tablet_9.jpg",
+           "mobile": "../assets/img/pop_image_mobile_9.jpg",
+           "backgrounds":[
+               {
+                   "desktop": "../assets/img/pop_image_desktop_9.jpg",
+                   "tablet": "../assets/img/pop_image_tablet_9.jpg",
+                   "mobile": "../assets/img/pop_image_mobile_9.jpg"
+               }
+           ]
+       },
+       {
+           "desktop": "../assets/img/pop_image_desktop_10.jpg",
+           "tablet": "../assets/img/pop_image_tablet_10.jpg",
+           "mobile": "../assets/img/pop_image_mobile_10.jpg",
+           "backgrounds":[
+               {
+                   "desktop": "../assets/img/pop_image_desktop_10.jpg",
+                   "tablet": "../assets/img/pop_image_tablet_10.jpg",
+                   "mobile": "../assets/img/pop_image_mobile_10.jpg"
+               }
+           ]
+       },
+       {
+           "desktop": "../assets/img/pop_image_desktop_11.jpg",
+           "tablet": "../assets/img/pop_image_tablet_11.jpg",
+           "mobile": "../assets/img/pop_image_mobile_11.jpg",
+           "backgrounds":[
+               {
+                   "desktop": "../assets/img/pop_image_desktop_11.jpg",
+                   "tablet": "../assets/img/pop_image_tablet_11.jpg",
+                   "mobile": "../assets/img/pop_image_mobile_11.jpg"
+               }
+           ]
+       }
+   ],
+   "teasing": [
+       {
+           "name": "Tropical",
+           "photo":[
+               {
+                 "desktop": "../assets/img/tropical_image_desktop_1.jpg",
+                 "tablet": "../assets/img/tropical_image_tablet_1.jpg",
+                 "mobile": "../assets/img/tropical_image_mobile_1.jpg"
+               }
+           ]
+       }
+   ]
+ }

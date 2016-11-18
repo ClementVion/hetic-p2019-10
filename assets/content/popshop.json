@@ -1,0 +1,97 @@
+{
+   "name":"Cake toppers",
+   "description": "Thepopshop.fr is a website created by Anaïs and Alice, both passionate about food and design.<br>Always looking for female new talents, this collaboration was born with the ambition of baking many colorful and offbeat cake toppers !",
+   "date" :"",
+   "credits": [
+       {
+         "title": "",
+         "content":""
+       }
+   ],
+   "projects": [
+       {
+           "desktop": "../assets/img/pop_image_desktop_1.jpg",
+           "tablet": "../assets/img/pop_image_tablet_1.jpg",
+           "mobile": "../assets/img/pop_image_mobile_1.jpg",
+           "backgrounds":[
+               {
+                   "desktop": "../assets/img/pop_image_desktop_1.jpg",
+                   "tablet": "../assets/img/pop_image_tablet_1.jpg",
+                   "mobile": "../assets/img/pop_image_mobile_1.jpg"
+               }
+           ]
+       },
+       {
+           "desktop": "../assets/img/pop_image_desktop_2.jpg",
+           "tablet": "../assets/img/pop_image_tablet_2.jpg",
+           "mobile": "../assets/img/pop_image_mobile_2.jpg",
+           "backgrounds":[
+               {
+                   "desktop": "../assets/img/pop_image_desktop_2.jpg",
+                   "tablet": "../assets/img/pop_image_tablet_2.jpg",
+                   "mobile": "../assets/img/pop_image_mobile_2.jpg"
+               }
+           ]
+       },
+       {
+           "desktop": "../assets/img/pop_image_desktop_3.jpg",
+           "tablet": "../assets/img/pop_image_tablet_3.jpg",
+           "mobile": "../assets/img/pop_image_mobile_3.jpg",
+           "backgrounds":[
+               {
+                   "desktop": "../assets/img/pop_image_desktop_3.jpg",
+                   "tablet": "../assets/img/pop_image_tablet_3.jpg",
+                   "mobile": "../assets/img/pop_image_mobile_3.jpg"
+               }
+           ]
+       },
+       {
+           "desktop": "../assets/img/pop_image_desktop_4.jpg",
+           "tablet": "../assets/img/pop_image_tablet_4.jpg",
+           "mobile": "../assets/img/pop_image_mobile_4.jpg",
+           "backgrounds":[
+              {
+                   "desktop": "../assets/img/pop_image_desktop_4.jpg",
+                   "tablet": "../assets/img/pop_image_tablet_4.jpg",
+                   "mobile": "../assets/img/pop_image_mobile_4.jpg"
+              }
+           ]
+       },
+       {
+           "desktop": "../assets/img/pop_image_desktop_5.jpg",
+           "tablet": "../assets/img/pop_image_tablet_5.jpg",
+           "mobile": "../assets/img/pop_image_mobile_5.jpg",
+           "backgrounds":[
+              {
+                   "desktop": "../assets/img/pop_image_desktop_5.jpg",
+                   "tablet": "../assets/img/pop_image_tablet_5.jpg",
+                   "mobile": "../assets/img/pop_image_mobile_5.jpg"
+              }
+           ]
+       },
+       {
+           "desktop": "../assets/img/pop_image_desktop_6.jpg",
+           "tablet": "../assets/img/pop_image_tablet_6.jpg",
+           "mobile": "../assets/img/pop_image_mobile_6.jpg",
+           "backgrounds":[
+              {
+                   "desktop": "../assets/img/pop_image_desktop_6.jpg",
+                   "tablet": "../assets/img/pop_image_tablet_6.jpg",
+                   "mobile": "../assets/img/pop_image_mobile_6.jpg"
+              }
+           ]
+       }
+   ],
+   "teasing": [
+       {
+           "name": "Heju",
+           "photo":[
+               {
+                 "desktop": "../assets/img/pop_image_desktop_1.jpg",
+                 "tablet": "../assets/img/pop_image_tablet_1.jpg",
+                 "mobile": "../assets/img/pop_image_mobile_1.jpg"
+               }
+           ]
+       }
+   ]
+}

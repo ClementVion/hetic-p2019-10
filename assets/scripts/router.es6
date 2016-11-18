@@ -1,9 +1,10 @@
 let home = require('./page-home.es6');
 let project = require('./page-project.es6');
+let routesModule = require('./routes.es6');
 let container = document.querySelector('.container');
 let body = document.querySelector('body');
 
-let routes = ['tropical'];
+let routes = routesModule.routes;
 
 function getTemplate(name, id) {
     let template = require('../../assets/html/' + name + '.html');

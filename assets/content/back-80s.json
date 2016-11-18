@@ -1,0 +1,66 @@
+{
+   "name":"Back in the 80's",
+   "description": "Back in the 80’s : Project for the brand NU, in collaboration with Avril Lecocq et Camille Tahar.",
+   "date" :"",
+   "credits": [
+       {
+         "title": "Model",
+         "content":"Félicia Dotse"
+       }
+   ],
+   "projects": [
+       {
+           "desktop": "../assets/img/electro_image_desktop_1.jpg",
+           "tablet": "../assets/img/electro_image_tablet_1.jpg",
+           "mobile": "../assets/img/electro_image_mobile_1.jpg",
+           "backgrounds":[
+               {
+                   "desktop": "../assets/img/electro_image_desktop_1.jpg",
+                   "tablet": "../assets/img/electro_image_tablet_1.jpg",
+                   "mobile": "../assets/img/electro_image_mobile_1.jpg"
+               }
+           ]
+       },
+       {
+           "desktop": "../assets/img/electro_image_desktop_2.jpg",
+           "tablet": "../assets/img/electro_image_tablet_2.jpg",
+           "mobile": "../assets/img/electro_image_mobile_2.jpg",
+           "backgrounds":[
+               {
+                   "desktop": "../assets/img/electro_image_desktop_2.jpg",
+                   "tablet": "../assets/img/electro_image_tablet_2.jpg",
+                   "mobile": "../assets/img/electro_image_mobile_2.jpg"
+               }
+           ]
+       },
+       {
+           "desktop": "../assets/img/electro_image_desktop_3.jpg",
+           "tablet": "../assets/img/electro_image_tablet_3.jpg",
+           "mobile": "../assets/img/electro_image_mobile_3.jpg",
+           "backgrounds":[
+               {
+                   "desktop": "../assets/img/electro_image_desktop_3.jpg",
+                   "tablet": "../assets/img/electro_image_tablet_3.jpg",
+                   "mobile": "../assets/img/electro_image_mobile_3.jpg"
+               }
+           ]
+       },
+       {
+           "desktop": "../assets/img/electro_image_desktop_4.jpg",
+           "tablet": "../assets/img/electro_image_tablet_4.jpg",
+           "mobile": "../assets/img/electro_image_mobile_4.jpg"
+       }
+   ],
+   "teasing": [
+       {
+           "name": "Cake Toppers",
+           "photo":[
+               {
+                 "desktop": "../assets/img/pop_image_desktop_1.jpg",
+                 "tablet": "../assets/img/pop_image_tablet_1.jpg",
+                 "mobile": "../assets/img/pop_image_mobile_1.jpg"
+               }
+           ]
+       }
+   ]
+}

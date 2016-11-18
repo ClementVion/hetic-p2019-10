@@ -1,4 +1,4 @@
-    <div class="singleProject">
+<div class="singleProject visible">
         <header class="singleProject__header">
             <div class="singleProject__scroll">
                 Scroll
@@ -25,52 +25,34 @@
             </div>
         </header>
 
+        {{#projects}}
+        {{#backgrounds}}
+        <div class="singleProject__background-container">
+            <img class="singleProject__bg-photo" src={{mobile}} srcset="{{mobile}} 500w,
+              {{tablet}} 900w,
+              {{desktop}} 1200w" alt="">
+        </div>
+        {{/backgrounds}}
+        {{/projects}}
         <div class="singleProject__main-content">
+            {{#projects}}
             <div class="singleProject__photo-wrap">
-                <img class="singleProject__photo" src="../assets/img/tropical_image_mobile_1.jpg" srcset="../assets/img/tropical_image_mobile_1.jpg 500w,
-                      ../assets/img/tropical_image_tablet_1.jpg 900w,
-                      ../assets/img/tropical_image_desktop_1.jpg 1200w" alt="">
-                <div class="singleProject__background-container">
-                    <img class="singleProject__bg-photo" src="../assets/img/tropical_image_mobile_1.jpg" srcset="../assets/img/tropical_image_mobile_1.jpg 500w,
-                          ../assets/img/tropical_image_tablet_1.jpg 900w,
-                          ../assets/img/tropical_image_desktop_1.jpg 1200w" alt="">
-                </div>
+                <img class="singleProject__photo" src={{mobile}} srcset="{{mobile}} 500w,
+                         {{tablet}} 900w,
+                         {{desktop}} 1200w" alt="">
             </div>
-            <div class="singleProject__photo-wrap">
-                <img class="singleProject__photo" src="../assets/img/tropical_image_mobile_2.jpg" srcset="../assets/img/tropical_image_mobile_2.jpg 500w,
-                      ../assets/img/tropical_image_tablet_2.jpg 900w,
-                      ../assets/img/tropical_image_desktop_2.jpg 1200w" alt="">
-                <div class="singleProject__background-container">
-                    <img class="singleProject__bg-photo" src="../assets/img/tropical_image_mobile_2.jpg" srcset="../assets/img/tropical_image_mobile_2.jpg 500w,
-                          ../assets/img/tropical_image_tablet_2.jpg 900w,
-                          ../assets/img/tropical_image_desktop_2.jpg 1200w" alt="">
-                </div>
+            {{/projects}}
+        </div>
+        {{#teasing}}
+        <div class="singleProject__teasing">
+            <div class="singleProject__teasing-infos">
+                <h3 class="singleProject__subtitle">{{name}}</h3>
+                <a class="singleProject__link" href="#">Scroll to see the next project</a>
             </div>
-            <div class="singleProject__photo-wrap">
-                <img class="singleProject__photo" src="../assets/img/tropical_image_mobile_3.jpg" srcset="../assets/img/tropical_image_mobile_3.jpg 500w,
-                      ../assets/img/tropical_image_tablet_3.jpg 900w,
-                      ../assets/img/tropical_image_desktop_3.jpg 1200w" alt="">
-                <div class="singleProject__background-container">
-                    <img class="singleProject__bg-photo" src="../assets/img/tropical_image_mobile_3.jpg" srcset="../assets/img/tropical_image_mobile_3.jpg 500w,
-                          ../assets/img/tropical_image_tablet_3.jpg 900w,
-                          ../assets/img/tropical_image_desktop_3.jpg 1200w" alt="">
-                </div>
-            </div>
-            <div class="singleProject__photo-wrap">
-                <img class="singleProject__photo" src="../assets/img/tropical_image_mobile_4.jpg" srcset="../assets/img/tropical_image_mobile_4.jpg 500w,
-                      ../assets/img/tropical_image_tablet_4.jpg 900w,
-                      ../assets/img/tropical_image_desktop_4.jpg 1200w" alt="">
-            </div>
-            <div class="singleProject__teasing">
-                <div class="singleProject__teasing-infos">
-                    <h3 class="singleProject__subtitle">Back in the 80's</h3>
-                    <a class="singleProject__link" href="#">Scroll to see the next project</a>
-                </div>
-                <div class="singleProject__background-container--teaser">
-                    <img class="singleProject__bg-photo--teaser" src="../assets/img/80s_teaser.jpg" alt="">
-                </div>
+            <div class="singleProject__background-container--teaser">
+                <img class="singleProject__bg-photo--teaser" src={{#photo}}{{desktop}}{{/photo}} alt="">
             </div>
         </div>
-    </div>
-    <div class="scrollbar">
-    </div>
+        {{/teasing}}
+    <div class="scrollbar"></div>
+</div>

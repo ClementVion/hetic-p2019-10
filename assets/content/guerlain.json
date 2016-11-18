@@ -1,0 +1,121 @@
+{
+   "name":"Guerlain",
+   "description": "Set Design and paper art made for Guerlain Instagram.<br>Work done within the agency Puppets.",
+   "date" :"",
+   "credits": [
+       {
+         "title": "Pictures",
+         "content":"Anaïs Profit, Clément Sautet and Aristide Bruchon"
+       }
+   ],
+   "projects": [
+       {
+           "desktop": "../assets/img/guerlain_image_desktop_1.jpg",
+           "tablet": "../assets/img/guerlain_image_tablet_1.jpg",
+           "mobile": "../assets/img/guerlain_image_mobile_1.jpg",
+           "backgrounds":[
+               {
+                   "desktop": "../assets/img/guerlain_image_desktop_1.jpg",
+                   "tablet": "../assets/img/guerlain_image_tablet_1.jpg",
+                   "mobile": "../assets/img/guerlain_image_mobile_1.jpg"
+               }
+           ]
+       },
+       {
+           "desktop": "../assets/img/guerlain_image_desktop_2.jpg",
+           "tablet": "../assets/img/guerlain_image_tablet_2.jpg",
+           "mobile": "../assets/img/guerlain_image_mobile_2.jpg",
+           "backgrounds":[
+               {
+                   "desktop": "../assets/img/guerlain_image_desktop_2.jpg",
+                   "tablet": "../assets/img/guerlain_image_tablet_2.jpg",
+                   "mobile": "../assets/img/guerlain_image_mobile_2.jpg"
+               }
+           ]
+       },
+       {
+           "desktop": "../assets/img/guerlain_image_desktop_3.jpg",
+           "tablet": "../assets/img/guerlain_image_tablet_3.jpg",
+           "mobile": "../assets/img/guerlain_image_mobile_3.jpg",
+           "backgrounds":[
+               {
+                   "desktop": "../assets/img/guerlain_image_desktop_3.jpg",
+                   "tablet": "../assets/img/guerlain_image_tablet_3.jpg",
+                   "mobile": "../assets/img/guerlain_image_mobile_3.jpg"
+               }
+           ]
+       },
+       {
+           "desktop": "../assets/img/guerlain_image_desktop_4.jpg",
+           "tablet": "../assets/img/guerlain_image_tablet_4.jpg",
+           "mobile": "../assets/img/guerlain_image_mobile_4.jpg",
+           "backgrounds":[
+              {
+                   "desktop": "../assets/img/guerlain_image_desktop_4.jpg",
+                   "tablet": "../assets/img/guerlain_image_tablet_4.jpg",
+                   "mobile": "../assets/img/guerlain_image_mobile_4.jpg"
+              }
+           ]
+       },
+       {
+           "desktop": "../assets/img/guerlain_image_desktop_5.jpg",
+           "tablet": "../assets/img/guerlain_image_tablet_5.jpg",
+           "mobile": "../assets/img/guerlain_image_mobile_5.jpg",
+           "backgrounds":[
+              {
+                   "desktop": "../assets/img/guerlain_image_desktop_5.jpg",
+                   "tablet": "../assets/img/guerlain_image_tablet_5.jpg",
+                   "mobile": "../assets/img/guerlain_image_mobile_5.jpg"
+              }
+           ]
+       },
+       {
+           "desktop": "../assets/img/guerlain_image_desktop_6.jpg",
+           "tablet": "../assets/img/guerlain_image_tablet_6.jpg",
+           "mobile": "../assets/img/guerlain_image_mobile_6.jpg",
+           "backgrounds":[
+              {
+                   "desktop": "../assets/img/guerlain_image_desktop_6.jpg",
+                   "tablet": "../assets/img/guerlain_image_tablet_6.jpg",
+                   "mobile": "../assets/img/guerlain_image_mobile_6.jpg"
+              }
+           ]
+       },
+       {
+           "desktop": "../assets/img/guerlain_image_desktop_7.jpg",
+           "tablet": "../assets/img/guerlain_image_tablet_7.jpg",
+           "mobile": "../assets/img/guerlain_image_mobile_7.jpg",
+           "backgrounds":[
+              {
+                   "desktop": "../assets/img/guerlain_image_desktop_7.jpg",
+                   "tablet": "../assets/img/guerlain_image_tablet_7.jpg",
+                   "mobile": "../assets/img/guerlain_image_mobile_7.jpg"
+              }
+           ]
+       },
+       {
+           "desktop": "../assets/img/guerlain_image_desktop_8.jpg",
+           "tablet": "../assets/img/guerlain_image_tablet_8.jpg",
+           "mobile": "../assets/img/guerlain_image_mobile_8.jpg",
+           "backgrounds":[
+              {
+                   "desktop": "../assets/img/guerlain_image_desktop_8.jpg",
+                   "tablet": "../assets/img/guerlain_image_tablet_8.jpg",
+                   "mobile": "../assets/img/guerlain_image_mobile_8.jpg"
+              }
+           ]
+       }
+   ],
+   "teasing": [
+       {
+           "name": "Back in the 80's",
+           "photo":[
+               {
+                 "desktop": "../assets/img/electro_image_desktop_1.jpg",
+                 "tablet": "../assets/img/electro_image_tablet_1.jpg",
+                 "mobile": "../assets/img/electro_image_mobile_1.jpg"
+               }
+           ]
+       }
+   ]
+}
