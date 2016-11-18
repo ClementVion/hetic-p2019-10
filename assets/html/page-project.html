@@ -3,24 +3,26 @@
             <div class="singleProject__scroll">
                 Scroll
             </div>
-            <h2 class="singleProject__title">Tropical</h2>
+            <h2 class="singleProject__title">{{ name }}</h2>
             <div class="singleProject__card">
                 <div class="singleProject__infos">
                     <div class="singleProject__info">
                         <h6 class="singleProject__subtitle">Date :</h6>
-                        <p class="singleProject__small-info">Balam balam</p>
+                        <p class="singleProject__small-info">{{ date }}</p>
+                    </div>
+                    {{#credits}}
+                    <div class="singleProject__info">
+                        <h6 class="singleProject__subtitle">Type :</h6>
+                        <p class="singleProject__small-info">{{ title }}</p>
                     </div>
                     <div class="singleProject__info">
-                        <h6 class="singleProject__subtitle">Lorem :</h6>
-                        <p class="singleProject__small-info">Balam balam</p>
+                        <h6 class="singleProject__subtitle">Collaboration :</h6>
+                        <p class="singleProject__small-info">{{ content }}</p>
                     </div>
-                    <div class="singleProject__info">
-                        <h6 class="singleProject__subtitle">Dolor sit :</h6>
-                        <p class="singleProject__small-info">Balam balam</p>
-                    </div>
+                    {{/credits}}
                 </div>
                 <div class="singleProject__description">
-                    <p>La nuit s'effaçait ; les étoiles pâlissaient ; c'était l'heure fraîche qui précède le jour. La lune descendue allait s'enfoncer dans la mer qu'elle nacrait sur toute sa surface.</p>
+                    <p>{{ description }}</p>
                 </div>
             </div>
         </header>
