@@ -1,0 +1,50 @@
+{
+   "name":"Tropical",
+   "description": "Personal projects",
+   "date" :"",
+   "credits": [
+       {
+         "title": "",
+         "content":""
+       }
+   ],
+   "projects": [
+       {
+           "desktop": "../assets/img/tropical_image_desktop_1.jpg",
+           "tablet": "../assets/img/tropical_image_tablet_1.jpg",
+           "mobile": "../assets/img/tropical_image_mobile_1.jpg",
+           "backgrounds":[
+               {
+                   "desktop": "../assets/img/tropical_image_desktop_1.jpg",
+                   "tablet": "../assets/img/tropical_image_tablet_1.jpg",
+                   "mobile": "../assets/img/tropical_image_mobile_1.jpg"
+               }
+           ]
+       },
+       {
+           "desktop": "../assets/img/tropical_image_desktop_2.jpg",
+           "tablet": "../assets/img/tropical_image_tablet_2.jpg",
+           "mobile": "../assets/img/tropical_image_mobile_2.jpg"
+       },
+       {
+           "desktop": "../assets/img/tropical_image_desktop_3.jpg",
+           "tablet": "../assets/img/tropical_image_tablet_3.jpg",
+           "mobile": "../assets/img/tropical_image_mobile_3.jpg"
+       },
+       {
+           "desktop": "../assets/img/tropical_image_desktop_4.jpg",
+           "tablet": "../assets/img/tropical_image_tablet_4.jpg",
+           "mobile": "../assets/img/tropical_image_mobile_4.jpg"
+       }
+   ],
+   "teasing": [
+       {
+           "name": "Back in the 80's",
+           "photo":[
+               {
+                   "desktop": "../assets/img/80s_teaser.jpg"
+               }
+           ]
+       }
+   ]
+}

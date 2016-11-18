@@ -1,33 +1,41 @@
 // -----------------------------------------------------------------------------
-// This file contains styles that are specific to the single project page.
+// This file contains styles that are specific to the single singleProject page.
 // -----------------------------------------------------------------------------
 
-.project {
+.singleProject {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     font-family: 'Aktiv Grotesk Corp';
-    margin: 0 auto 60px;
+    margin: 0 auto 60px 0;
     width: 288px;
     height: 100%;
     align-items: center;
+    opacity: 0;
+    transform: translateX(0);
     @include small {
         width: 335px;
     }
     @include medium-single {
-        display: inline-flex;
+        // box-sizing: border-box;
+        display: flex;
         flex-direction: row;
-        width: inherit;
-        margin: 0 auto 0 200px;
-        align-items: center;
+        justify-content: space-between;
+        // padding-left: 150px;
+        width: auto;
+        margin: 0;
     }
     @include large {
-        display: inline-flex;
-        width: auto;
-        height: 100%;
     }
 }
 
-.project__scroll {
+.singleProject.visible {
+    opacity: 1;
+    transform: translateX(0%);
+    transition: opacity 1s ease-out;
+}
+
+.singleProject__scroll {
     display: none;
     @include medium-single {
         display: inline;
@@ -45,7 +53,7 @@
     }
 }
 
-.project__scroll:after {
+.singleProject__scroll:after {
     content: "";
     position: absolute;
     width: 18px;
@@ -55,18 +63,24 @@
     transform: rotate(90deg) translate(30px, 23px);
 }
 
-.project__header {
+.singleProject__header {
+    opacity: 1;
     color: #353535;
+    transition: opacity ease 600ms;
     @include medium-single {
-        margin-right: -80px;
+        margin-left: 150px;
         z-index: -1;
     }
     @include large {
-        margin-right: -100px;
     }
 }
 
-.project__title {
+.singleProject__header--hidden{
+    opacity: 0;
+    transition: opacity ease 600ms;
+}
+
+.singleProject__title {
     font-size: 24px;
     font-family: 'ITC Avant Garde Pro';
     color: #000000;
@@ -81,7 +95,7 @@
     }
 }
 
-.project__card {
+.singleProject__card {
     @include medium-single {
         display: flex;
         flex-direction: row;
@@ -89,11 +103,11 @@
     }
 }
 
-.project__infos {
+.singleProject__infos {
     font-size: 13px;
     margin: 30px 0 0;
 
-    .project__info {
+    .singleProject__info {
         display: flex;
         flex-direction: row;
         align-items: baseline;
@@ -111,19 +125,19 @@
         }
     }
 
-    .project__subtitle {
+    .singleProject__subtitle {
         margin: 0 5px 0 0;
         font-weight: bold;
         font-size: 13px;
         font-family: 'ITC Avant Garde Pro';
     }
 
-    .project__small-info {
+    .singleProject__small-info {
         color: #8E9093;
     }
 }
 
-.project__description {
+.singleProject__description {
     font-family: 'Aktiv Grotesk Corp';
     font-size: 13px;
     margin: 40px 0;
@@ -135,20 +149,25 @@
     }
 }
 
-.project__main-content {
+.singleProject__main-content {
     height: 100%;
+    position: absolute;
+    transform: translate(0);
     @include medium-single {
         display: flex;
         flex-direction: row;
-        // margin-top: 108px;
+        margin-top: 0px;
+        width: auto;
+        padding-left: 45%;
+        z-index: 5;
     }
     @include large {
-        margin-top: 0px;
     }
 }
 
-.project__photo {
+.singleProject__photo {
     width: 100%;
+    transform: translateX(0);
     @include medium-single {
         width: auto;
         height: 427px;
@@ -159,8 +178,9 @@
     }
 }
 
-.project__background-container {
+.singleProject__background-container {
     display: none;
+    flex-shrink: 0;
     @include medium-single {
         display: block;
         width: 570px;
@@ -168,29 +188,40 @@
         overflow: hidden;
         z-index: -1;
         top: 0;
-        margin-left: -200px;
     }
     @include large {
         width: 670px;
         height: 100%;
+        margin: 0 150px 0 -150px;
+        transform: translateX(0);
     }
 
-    .project__bg-photo {
+    .singleProject__bg-photo {
         height: 100%;
         opacity: 0.30;
     }
 }
 
-.project__teasing {
+.singleProject__background-container--translated{
+    @include large{
+        // transition: transform ease 600ms;
+        transform: translateX(-400px);
+    }
+}
+.singleProject__teasing {
     display: flex;
     flex-direction: row;
-
+    transform: translateX(0);
     @include medium-single{
         align-items: center;
     }
+
+    @include large{
+        // margin-left: -200%;
+    }
 }
 
-.project__subtitle {
+.singleProject__subtitle {
     font-size: 24px;
     color: #353535;
     margin: 0 0 18px;
@@ -203,20 +234,20 @@
     }
 }
 
-.project__link {
+.singleProject__link {
     text-decoration: none;
     font-family: 'Aktiv Grotesk Corp';
     color: #8E9093;
 }
 
-.project__teasing-infos{
+.singleProject__teasing-infos{
     @include medium-single{
         width: 230px;
         margin: 0 150px 0 0;
     }
 }
 
-.project__bg-photo--teaser {
+.singleProject__bg-photo--teaser {
     display: none;
     @include medium-single{
         display: block;
@@ -226,7 +257,7 @@
     }
 }
 
-.project__photo-wrap{
+.singleProject__photo-wrap{
     width: 100%;
     margin: 0 0 45px 0;
 

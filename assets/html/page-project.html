@@ -1,91 +1,58 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <title></title>
-    <meta name="viewport" content="initial-scale=1.0">
-    <link rel="stylesheet" href="">
-    <script type="text/javascript" src="../../bundle.js"></script>
-</head>
-
-<body>
-    <div class="project">
-        <header class="project__header">
-            <div class="project__scroll">
+<div class="singleProject visible">
+        <header class="singleProject__header">
+            <div class="singleProject__scroll">
                 Scroll
             </div>
-            <h2 class="project__title">Tropical</h2>
-            <div class="project__card">
-                <div class="project__infos">
-                    <div class="project__info">
-                        <h6 class="project__subtitle">Date :</h6>
-                        <p class="project__small-info">Balam balam</p>
+            <h2 class="singleProject__title">Tropical</h2>
+            <div class="singleProject__card">
+                <div class="singleProject__infos">
+                    <div class="singleProject__info">
+                        <h6 class="singleProject__subtitle">Date :</h6>
+                        <p class="singleProject__small-info">Balam balam</p>
                     </div>
-                    <div class="project__info">
-                        <h6 class="project__subtitle">Lorem :</h6>
-                        <p class="project__small-info">Balam balam</p>
+                    <div class="singleProject__info">
+                        <h6 class="singleProject__subtitle">Lorem :</h6>
+                        <p class="singleProject__small-info">Balam balam</p>
                     </div>
-                    <div class="project__info">
-                        <h6 class="project__subtitle">Dolor sit :</h6>
-                        <p class="project__small-info">Balam balam</p>
+                    <div class="singleProject__info">
+                        <h6 class="singleProject__subtitle">Dolor sit :</h6>
+                        <p class="singleProject__small-info">Balam balam</p>
                     </div>
                 </div>
-                <div class="project__description">
+                <div class="singleProject__description">
                     <p>La nuit s'effaçait ; les étoiles pâlissaient ; c'était l'heure fraîche qui précède le jour. La lune descendue allait s'enfoncer dans la mer qu'elle nacrait sur toute sa surface.</p>
                 </div>
             </div>
         </header>
 
-        <div class="project__main-content">
-            <div class="project__photo-wrap">
-                <img class="project__photo" src="../img/tropical_image_mobile_1.jpg" srcset="../img/tropical_image_mobile_1.jpg 500w,
-                      ../img/tropical_image_tablet_1.jpg 900w,
-                      ../img/tropical_image_desktop_1.jpg 1200w" alt="">
-                <div class="project__background-container">
-                    <img class="project__bg-photo" src="../img/tropical_image_mobile_1.jpg" srcset="../img/tropical_image_mobile_1.jpg 500w,
-                          ../img/tropical_image_tablet_1.jpg 900w,
-                          ../img/tropical_image_desktop_1.jpg 1200w" alt="">
-                </div>
+        {{#projects}}
+        {{#backgrounds}}
+        <div class="singleProject__background-container">
+            <img class="singleProject__bg-photo" src={{mobile}} srcset="{{mobile}} 500w,
+              {{tablet}} 900w,
+              {{desktop}} 1200w" alt="">
+        </div>
+        {{/backgrounds}}
+        {{/projects}}
+        <div class="singleProject__main-content">
+            {{#projects}}
+            <div class="singleProject__photo-wrap">
+                <img class="singleProject__photo" src={{mobile}} srcset="{{mobile}} 500w,
+                         {{tablet}} 900w,
+                         {{desktop}} 1200w" alt="">
             </div>
-            <div class="project__photo-wrap">
-                <img class="project__photo" src="../img/tropical_image_mobile_2.jpg" srcset="../img/tropical_image_mobile_2.jpg 500w,
-                      ../img/tropical_image_tablet_2.jpg 900w,
-                      ../img/tropical_image_desktop_2.jpg 1200w" alt="">
-                <div class="project__background-container">
-                    <img class="project__bg-photo" src="../img/tropical_image_mobile_2.jpg" srcset="../img/tropical_image_mobile_2.jpg 500w,
-                          ../img/tropical_image_tablet_2.jpg 900w,
-                          ../img/tropical_image_desktop_2.jpg 1200w" alt="">
-                </div>
+            {{/projects}}
+        </div>
+        {{#teasing}}
+        <div class="singleProject__teasing">
+            <div class="singleProject__teasing-infos">
+                <h3 class="singleProject__subtitle">{{name}}</h3>
+                <a class="singleProject__link" href="#">Scroll to see the next project</a>
             </div>
-            <div class="project__photo-wrap">
-                <img class="project__photo" src="../img/tropical_image_mobile_3.jpg" srcset="../img/tropical_image_mobile_3.jpg 500w,
-                      ../img/tropical_image_tablet_3.jpg 900w,
-                      ../img/tropical_image_desktop_3.jpg 1200w" alt="">
-                <div class="project__background-container">
-                    <img class="project__bg-photo" src="../img/tropical_image_mobile_3.jpg" srcset="../img/tropical_image_mobile_3.jpg 500w,
-                          ../img/tropical_image_tablet_3.jpg 900w,
-                          ../img/tropical_image_desktop_3.jpg 1200w" alt="">
-                </div>
-            </div>
-            <div class="project__photo-wrap">
-                <img class="project__photo" src="../img/tropical_image_mobile_4.jpg" srcset="../img/tropical_image_mobile_4.jpg 500w,
-                      ../img/tropical_image_tablet_4.jpg 900w,
-                      ../img/tropical_image_desktop_4.jpg 1200w" alt="">
-            </div>
-            <div class="project__teasing">
-                <div class="project__teasing-infos">
-                    <h3 class="project__subtitle">Back in the 80's</h3>
-                    <a class="project__link" href="#">Scroll to see the next project</a>
-                </div>
-                <div class="project__background-container--teaser">
-                    <img class="project__bg-photo--teaser" src="../img/80s_teaser.jpg" alt="">
-                </div>
+            <div class="singleProject__background-container--teaser">
+                <img class="singleProject__bg-photo--teaser" src={{#photo}}{{desktop}}{{/photo}} alt="">
             </div>
         </div>
-    </div>
-    <div class="scrollbar">
-    </div>
-
-</body>
-</html>
+        {{/teasing}}
+    <div class="scrollbar"></div>
+</div>

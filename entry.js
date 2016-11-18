@@ -1,4 +1,6 @@
 require('./assets/styles/main.scss');
-require('./assets/html/home.html');
-var content = require('./assets/scripts/content.es6');
-var project = require('./assets/scripts/page-project.es6');
+
+ window._ = require('underscore');
+ var gsap = require('gsap'),
+ project = require('./assets/scripts/page-project.es6'),
+ routing = require('./assets/scripts/router.es6');
