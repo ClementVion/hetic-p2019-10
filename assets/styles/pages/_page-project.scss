@@ -13,6 +13,7 @@
     align-items: center;
     opacity: 0;
     transform: translateX(0);
+    margin: auto;
     @include small {
         width: 335px;
     }
@@ -150,16 +151,16 @@
 }
 
 .singleProject__main-content {
-    height: 100%;
-    position: absolute;
     transform: translate(0);
     @include medium-single {
+        position: absolute;
         display: flex;
         flex-direction: row;
         margin-top: 0px;
         width: auto;
         padding-left: 45%;
         z-index: 5;
+        height: 100%;
     }
     @include large {
     }
