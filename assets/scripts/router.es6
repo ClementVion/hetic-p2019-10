@@ -14,10 +14,11 @@ var router = new Grapnel(
 );
 
 router.get('/', function(req)
-{
-    getTemplate('page-home');
+{   
     if(!container.classList.contains('loaded')){
-        loader.init();
+        getLoader('page-home');
+    } else {
+        getTemplate('page-home');
     }
     window.setTimeout(function()
     {  
@@ -32,11 +33,13 @@ router.get('/', function(req)
 
 router.get('/about', function(req)
 {
-    getTemplate('about');
+   if(!container.classList.contains('loaded')){
+        getLoader('about');
+    }
     window.setTimeout(function()
     {  
         container.classList.toggle('container--visible');
-        // initClicks(container);
+        initClicks(container);
     }
     ,1000);
 });
@@ -52,9 +55,11 @@ router.get('/projects/:id', function(req)
             }
         ,1000);
     } else {
-        getTemplate('page-project', req.params.id);
+        
         if(!container.classList.contains('loaded')){
-            loader.init();
+            getLoader('page-project', req.params.id);
+        } else {
+            getTemplate('page-project', req.params.id);
         }
         // document.querySelector('.project').style.display = 'none';
         window.setTimeout(function()
@@ -139,10 +144,26 @@ function getHeader(page) {
     } else {
         var compile = template();
     }
-    if (container.innerHTML.length > 0) {
+    if (container.innerHTML.length > 0 && !document.querySelector('.loading')) {
         container.innerHTML = '';
     }
-    container.innerHTML = compile;
+    container.innerHTML += compile;
+    };
+    xhr.send();
+ };
+
+function getLoader(name, id) {
+    var template = require('../../assets/html/loader.html');
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', '../../assets/html/loader.html', false);
+    xhr.onreadystatechange = function() {
+        if (container.innerHTML.length > 0) {
+            container.innerHTML = '';
+        }
+        var compile = template();
+        container.innerHTML = compile;
+        getTemplate(name,id);
+        loader.init();
     };
     xhr.send();
  };

@@ -85,15 +85,17 @@ module.exports = {
 					}, 800);
 				}
 				else if( content.classList.contains('singleProject') ) {
-					let project = require('./page-project.es6'),
-						projectHeader = document.querySelector('.singleProject__header'),
+					let project = require('./page-project.es6');
+
+					setTimeout(function(){
+						project.init();
+						container.classList.add('loaded');
+					}, 600);
+					setTimeout(function(){
+						var projectHeader = document.querySelector('.singleProject__header'),
 						projectTitle = projectHeader.querySelector('.singleProject__title'),
 						projectCard= projectHeader.querySelector('.singleProject__card'),
 						projectScroll= projectHeader.querySelector('.singleProject__scroll');
-					setTimeout(function(){
-						project.init();
-					}, 600);
-					setTimeout(function(){
 						loadingContainer.style.display = "none";
 						tl.to(projectTitle, 0.6,
 						{
