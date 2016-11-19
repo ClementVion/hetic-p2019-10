@@ -33,6 +33,31 @@
     }
 }
 
+@mixin aboutSmall {
+    @media (min-width: #{$about-small}) {
+        @content;
+    }
+}
+
+@mixin aboutMedium {
+    @media (min-width: #{$about-medium}) {
+        @content;
+    }
+}
+
+@mixin aboutSemiLarge {
+    @media (min-width: #{$about-semi-large}) {
+        @content;
+    }
+}
+
+@mixin aboutLarge {
+    @media (min-width: #{$about-large}) {
+        @content;
+    }
+}
+
+
 @mixin medium {
     @media (min-width: #{$medium}) {
         @content;
