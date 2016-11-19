@@ -70,10 +70,11 @@ module.exports = {
 
         // Get slides and init theirs styles
         initSlides = function() {
-            frontSlides[0].style.top = '0';
-            slides[0].style.top = '0';
-            titlesSlides[0].style.top = '0';
-            descriptionSlides[0].style.top = '0';
+            // frontSlides[0].style.top = '0';
+            // slides[0].style.top = '0';
+            // titlesSlides[0].style.top = '0';
+            // descriptionSlides[0].style.top = '0';
+            projectLinks[0].style.top = '0';
 
             for (let j = 1; j < frontSlides.length; j++) {
                 frontSlides[j].style.display = 'none';
@@ -87,62 +88,105 @@ module.exports = {
             for (let l = 1; l < descriptionSlides.length; l++) {
                 descriptionSlides[l].style.display = 'none';
             }
+            for (let m = 1; m < descriptionSlides.length; m++) {
+                projectLinks[m].style.display = 'none';
+            }
 
+            document.addEventListener('mousewheel', updatePosition);    
+            
+            function updatePosition(e)
+            {
+                e.preventDefault();
+                throttled(e.wheelDelta);
+            }
+
+            function magnet(wheelDelta)
+            {   
+                if (wheelDelta > 0) {
+                    selectSlide( (currentProject-1) );
+                }
+                if (wheelDelta < 0) {
+                    selectSlide( (currentProject+1) );
+                }
+            }
         },
 
-        // Go to a slide with animations depending an index
-        selectSlide = function(selectedProject) {
+        selectSlide = function (selectedProject)
+        {
             // check if we have to loop
-            if (selectedProject >= slides.length) {
+            if( selectedProject >= slides.length ) {
                 selectedProject = 0;
-            } else if (selectedProject < 0) {
-                selectedProject = (parseInt((slides.length) - 1));
+            }
+            else if( selectedProject < 0 ) {
+                selectedProject = (parseInt( (slides.length) - 1 ));
             }
             prevProject = currentProject;
             slides[selectedProject].style.display = 'block';
             frontSlides[selectedProject].style.display = 'block';
             titlesSlides[selectedProject].style.display = 'block';
             descriptionSlides[selectedProject].style.display = 'block';
+            projectLinks[selectedProject].style.display = 'block';
 
-            setTimeout(function() {
+            setTimeout(function(){
                 isScrolling = true;
-                tl1.to(slides[selectedProject], 0.3, {
-                    y: '-100%',
-                });
-                tl1.to(frontSlides[selectedProject], 0.2, {
-                    y: '-100%',
-                }, '-=0.1');
-                tl1.to(titlesSlides[prevProject], 0.4, {
-                    y: '100%',
+                tl1.to(slides[selectedProject], 0.3,
+                {
+                    y: '-100%', 
+                });         
+                tl1.to(frontSlides[selectedProject], 0.2,
+                {
+                    y: '-100%', 
+                }, '-=0.1');            
+                tl1.to(titlesSlides[prevProject], 0.4,
+                {
+                    y: '100%',  
                 }, '-= 0.4');
-                tl1.to(descriptionSlides[prevProject], 0.2, {
-                    y: '100%',
+                tl1.to(descriptionSlides[prevProject], 0.2,
+                {
+                    y: '100%',  
                 }, '-= 0.4');
-                setTimeout(function() {
-                    tl2.to(slides[prevProject], 0.3, {
+                tl1.to(projectLinks[prevProject], 0.2,
+                {
+                    y: '100%',  
+                }, '-= 0.4');
+                setTimeout(function(){
+                    tl2.to(slides[prevProject], 0.3,
+                    {
                         y: '-=100%',
-                        zIndex: '0',
+                        zIndex: '0',    
                     });
-                    tl2.to(frontSlides[prevProject], 0.2, {
+                    tl2.to(frontSlides[prevProject], 0.2,
+                    {
                         y: '-=100%',
-                        zIndex: '0',
+                        zIndex: '0',    
                     }, '-=0.1');
-                    tl2.to(titlesSlides[selectedProject], 0.4, {
+                    tl2.to(titlesSlides[selectedProject], 0.4,
+                    {
                         y: '-=100%',
-                        zIndex: '0',
+                        zIndex: '0',    
                     }, '-=0.4');
-                    tl2.to(descriptionSlides[selectedProject], 0.6, {
+                    tl2.to(descriptionSlides[selectedProject], 0.6,
+                    {
                         y: '-=100%',
-                        zIndex: '0',
+                        zIndex: '0',    
                     }, '-=0.6');
-                    setTimeout(function() {
-                        tl2.to(slides[prevProject], 0, {
+                    tl2.to(projectLinks[selectedProject], 0.8,
+                    {
+                        y: '-=100%',
+                        zIndex: '0',    
+                    }, '-=0.8');
+                    setTimeout(function(){
+                        tl2.to(slides[prevProject], 0,
+                        {
                             display: 'none',
                             top: '100%',
                             transform: 'translateY(0)',
                             zIndex: 1
                         });
                         tl2.to(frontSlides[prevProject], 0, {
+                        });                 
+                        tl2.to(frontSlides[prevProject], 0,
+                        {
                             display: 'none',
                             top: '100%',
                             transform: 'translateY(0)',
@@ -160,6 +204,12 @@ module.exports = {
                             transform: 'translateY(0)',
                             zIndex: 1
                         });
+                        tl2.to(projectLinks[prevProject], 0, {
+                            display: 'none',
+                            top: '100%',
+                            transform: 'translateY(0)',
+                            zIndex: 1
+                        });
                         isScrolling = false;
                     }, 1200);
                     switchChapters(currentProject, selectedProject);
@@ -169,20 +219,18 @@ module.exports = {
 
         },
 
-        // Automatic scrolling
-        automaticScroll = function() {
-            setInterval(function() {
+        automaticScroll = function () {
+            setInterval(function(){
                 selectSlide(currentProject);
             }, 3650);
         },
 
-        // Scroll with numbers on the right
-        chaptersScroll = function() {
-            for (let i = 0; i < chapters.length; i++) {
-                chapters[i].addEventListener('click', function() {
-                    let selectedChapter = parseInt(this.getAttribute('data-chapter') - 1);
-                    if (selectedChapter != currentProject && isScrolling == false) {
-                        selectSlide(selectedChapter);
+        chaptersScroll = function () {
+            for (let i = 0 ; i < chapters.length; i++){
+                chapters[i].addEventListener('click', function(){
+                    let selectedChapter = parseInt(this.getAttribute('data-chapter')-1 );
+                    if( selectedChapter != currentProject && isScrolling == false) {
+                        selectSlide( selectedChapter );
                         switchChapters(currentProject, selectedChapter);
                     }
                 });
@@ -194,15 +242,37 @@ module.exports = {
             chapters[toRemove].classList.remove('carousel__option--on');
             chapters[toAdd].classList.add('carousel__option--on');
         },
+        firstApparition = function() {
+            tl2.to(slides[0], 0.3,
+            {
+                y: '-=100%',
+                zIndex: '0',    
+            });
+            tl2.to(frontSlides[0], 0.2,
+            {
+                y: '-=100%',
+                zIndex: '0',    
+            }, '-=0.1');
+            tl2.to(titlesSlides[0], 0.4,
+            {
+                y: '-=100%',
+                zIndex: '0',    
+            }, '-=0.4');
+            tl2.to(descriptionSlides[0], 0.6,
+            {
+                y: '-=100%',
+                zIndex: '0',    
+            }, '-=0.6');
+        },
 
         // Init scrolling for home page
-        init = function() {
+        init = function ()
+        {
             initSmoothScroll();
             initSlides();
             chaptersScroll();
-            projectAnimation();
+            firstApparition();
         };
-    init();
-
+        init();
     }
 }

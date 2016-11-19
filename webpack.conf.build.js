@@ -46,7 +46,7 @@ module.exports = {
             include: __dirname+"/assets/img"
           },
           {
-           test: /\.(png|woff|woff2|eot|ttf|svg)$/, loader: 'url-loader?limit=100000'
+           test: /\.(png|woff|woff2|eot|ttf|svg)$/, loader: 'url-loader?limit=100000' 
           }
         ]
 		  },

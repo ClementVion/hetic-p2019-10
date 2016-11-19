@@ -3,10 +3,9 @@ let project = require('./page-project.es6');
 let routesModule = require('./routes.es6');
 let container = document.querySelector('.container');
 let body = document.querySelector('body');
+let loader = require('./loader.es6');
 
 let routes = routesModule.routes;
-
-
 
 var router = new Grapnel(
     {
@@ -17,16 +16,19 @@ var router = new Grapnel(
 router.get('/', function(req)
 {
     getTemplate('page-home');
-    console.log('home');
+    if(!container.classList.contains('loaded')){
+        loader.init();
+    }
     window.setTimeout(function()
     {  
         container.classList.toggle('container--visible');
-        home.init();
+        if(container.classList.contains('loaded')) {
+            home.init();
+        }
         initClicks(container);
     }
     ,1000);
 });
-
 
 router.get('/about', function(req)
 {
@@ -51,11 +53,16 @@ router.get('/projects/:id', function(req)
         ,1000);
     } else {
         getTemplate('page-project', req.params.id);
+        if(!container.classList.contains('loaded')){
+            loader.init();
+        }
         // document.querySelector('.project').style.display = 'none';
         window.setTimeout(function()
         {   
             container.classList.toggle('container--visible');
-            project.init();
+            if(container.classList.contains('loaded')) {
+                project.init();
+            }
             initClicks(container);
         }
         ,1000);
@@ -104,6 +111,7 @@ window.onpopstate = function(e)
 
 function getTemplate(name, id) 
 {
+    console.log(name);
     getHeader(name);
     let template = require('../../assets/html/' + name + '.html');
     let xhr = new XMLHttpRequest();
@@ -120,6 +128,7 @@ function getTemplate(name, id)
 };
 
 function getHeader(page) {
+    console.log('header');
      var template = require('../../assets/html/partials/header.html');
      var xhr = new XMLHttpRequest();
      xhr.open('GET', '../../assets/html/partials/header.html', false);
