@@ -24,16 +24,6 @@
                 </div>
             </div>
         </header>
-
-        {{#projects}}
-        {{#backgrounds}}
-        <div class="singleProject__background-container">
-            <img class="singleProject__bg-photo" src={{mobile}} srcset="{{mobile}} 500w,
-              {{tablet}} 900w,
-              {{desktop}} 1200w" alt="">
-        </div>
-        {{/backgrounds}}
-        {{/projects}}
         <div class="singleProject__main-content">
             {{#projects}}
             <div class="singleProject__photo-wrap">
@@ -56,3 +46,13 @@
         {{/teasing}}
     <div class="scrollbar"></div>
 </div>
+
+{{#projects}}
+{{#backgrounds}}
+<div class="singleProject__background-container">
+    <img class="singleProject__bg-photo" src={{mobile}} srcset="{{mobile}} 500w,
+      {{tablet}} 900w,
+      {{desktop}} 1200w" alt="">
+</div>
+{{/backgrounds}}
+{{/projects}}

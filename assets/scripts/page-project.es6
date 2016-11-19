@@ -2,8 +2,10 @@ class Init {
     constructor() {
         // TODO : refactor width screen detection
         // console.log(document.querySelector('.singleProject');
-        // if (parseInt(document.querySelector('.singleProject').style.width) >= 700) {
-        document.querySelector('.singleProject').style.width = (parseInt(getComputedStyle(document.querySelector('.singleProject')).width)) + (parseInt((getComputedStyle(document.querySelector('.singleProject__main-content'))).width)/2);
+        // console.log(parseInt(getComputedStyle(document.querySelector('.singleProject').width);
+        // if (parseInt(getComputedStyle(document.querySelector('.singleProject').width) >= 700)) {
+        let main = parseInt(getComputedStyle(document.querySelector('.singleProject__main-content')).width)/2.6;
+        document.querySelector('.singleProject').style.width = (main + 1100) + "px";
         // }
     }
 }
@@ -11,29 +13,45 @@ class Init {
 // TODO : refactor scroll & scroll to next (make one class?)
 class Scroll {
     constructor() {
-        window.addEventListener('wheel', (event) => this.scrollHorizontaly(event));
-    }
+        let throttled = _.throttle(scrollHorizontaly, 10, {
+            leading: true,
+            trailing: false
+        });
 
-    scrollHorizontaly(e) {
-        if (parseInt(document.querySelector('.singleProject').style.width) >= 700) {
-            // TODO: rename let(s)
-            let delta = Math.max(-1, Math.min(1, (e.wheelDelta || -e.detail))),
-                photos = document.getElementsByClassName('singleProject__main-content'),
-                singleProject = document.querySelector('.singleProject'),
-                currentPhotos = getComputedStyle(photos[0]).transform,
-                currentSingle = getComputedStyle(singleProject).transform;
+        window.addEventListener('wheel', fireScroll );
 
-            currentPhotos = parseInt(currentPhotos.split(" ")[4]);
-            currentSingle = parseInt(currentSingle.split(" ")[4]);
+        function scrollHorizontaly(e) {
+            if (parseInt(document.querySelector('.singleProject').style.width) >= 700) {
+                // TODO: rename let(s)
+                let delta = Math.max(-1, Math.min(1, (e.wheelDelta || -e.detail))),
+                    photos = document.getElementsByClassName('singleProject__main-content'),
+                    singleProject = document.querySelector('.singleProject'),
+                    currentPhotos = getComputedStyle(photos[0]).transform,
+                    currentSingle = getComputedStyle(singleProject).transform,
+                    background =  document.querySelector('.singleProject__background-container'),
+                    backgroundTransform = getComputedStyle(background).transform;
+                currentPhotos = parseInt(currentPhotos.split(" ")[4]);
+                currentSingle = parseInt(currentSingle.split(" ")[4]);
+                backgroundTransform = parseInt(backgroundTransform.split(" ")[4])
 
-                if ((currentSingle + delta * 10 <= 0) && (currentSingle + delta * 10) - window.innerWidth > (parseInt(singleProject.style.width) *-1)) {
-                    for( var i = 0; i< photos.length ;i++) {
-                        photos[i].style.transform = "matrix(1, 0, 0, 1, " + (currentPhotos + delta * 15) + ", 0)";
+                    if ((currentSingle + delta * 5 <= 0) && (currentSingle + delta * 5) - window.innerWidth > (parseInt(singleProject.style.width) *-1)) {
+                        singleProject.style.transform = "matrix(1, 0, 0, 1, " + (currentSingle + delta * 15) + ", 0)";
+                        photos[0].style.transform = "matrix(1, 0, 0, 1, " + (currentPhotos + delta * 25) + ", 0)";
                     }
-                    singleProject.style.transform = "matrix(1, 0, 0, 1, " + (currentSingle + delta * 10) + ", 0)";
-                }
+                    if (backgroundTransform > 0) {
+                        background.style.transform = "matrix(1, 0, 0, 1, " + 0 + ", 0)";
+                    }
+
+                e.preventDefault();
+            }
+        }
+
+        function fireScroll(e) {
             e.preventDefault();
-    }}
+            throttled(e);
+            console.log(e);
+        }
+    }
 }
 
 class ScrollToNext {
@@ -46,7 +64,13 @@ class ScrollToNext {
         let container = document.querySelector(".singleProject");
         let currentScroll = getComputedStyle(container).transform;
         currentScroll = parseInt(currentScroll.split(" ")[4]);
-        if (((currentScroll*-1) / (parseInt(getComputedStyle(container).width) - window.innerWidth) * 100) >= 99) {
+        let percentage = ((currentScroll*-1) / (parseInt(getComputedStyle(container).width) - window.innerWidth) * 100) < 10;
+        // if (cu) {
+            document.querySelector('.singleProject__header').classList.add('singleProject__header--hidden');
+        //     // document.querySelector('.singleProject__background-container').classList.add('singleProject__background-container--translated');
+        //     // document.querySelector('.singleProject__main-content').classList.add('singleProject__main-content--translated');
+        // }
+        if (((currentScroll*-1) / (parseInt(getComputedStyle(container).width) - window.innerWidth) * 0) >= 99) {
             console.log("END");
         }
     }
