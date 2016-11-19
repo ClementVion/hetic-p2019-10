@@ -1,0 +1,54 @@
+.about__imgBox{
+    position: absolute;
+    top: 110px;
+    right: 0;
+    width: 232px;
+    height: 299px;
+
+	@include homeMedium{
+		width: 400px;
+		height: 516px;
+	}
+
+	@include homeLarge{
+		right: 10%;
+	}
+}
+
+.about__img{
+	height:100%;
+	width: 100%;
+    opacity: 0.7;
+}
+
+.about__text{
+    position: absolute;
+    top: 298px;
+    padding: 0px 43px 10px 43px;
+    font-size: 22px;
+    line-height: 33px;
+    color: #353535;
+
+	@include homeMedium{
+	    font-size: 34px;
+	    line-height: 50px;
+	    top: 496px;
+	    padding: 0px 80px 100px 80px;
+	}
+
+	@include homeLarge{
+	    top: 240px;
+	    left: 10%;
+	    font-size: 30px;
+	    width: 530px;
+	}
+}
+
+.about__mail{
+	font-weight: bold;
+}
+
+.about__link{
+	text-decoration: none;
+	color: #DAC670;
+}

@@ -28,6 +28,16 @@ router.get('/', function(req)
 });
 
 
+router.get('/about', function(req)
+{
+    getTemplate('about');
+    window.setTimeout(function()
+    {  
+        container.classList.toggle('container--visible');
+        // initClicks(container);
+    }
+    ,1000);
+});
 
 router.get('/projects/:id', function(req) 
 {
