@@ -6,6 +6,7 @@
 	@include size(100%,0px);
 	position: fixed;
 	font-family: 'Aktiv Grotesk Corp';
+	z-index: 10;
 }
 
 .menu{
@@ -17,6 +18,11 @@
 
 	li{
 		list-style: none;
+		opacity: 0;
+		transition: all cubic-bezier(0.645, 0.045, 0.355, 1);
+		transition-duration: 0.9s;
+		// transition-delay: 3.5s;
+		transform: translateX(-60px);
 
 		a{
 			text-decoration: none;
@@ -36,4 +42,12 @@
 
 .menu__about{
 	margin-left: 30px;
+}
+
+.container--visible .menu li{
+	transition: all cubic-bezier(0.645, 0.045, 0.355, 1);
+	transition-duration: 0.9s;
+	// transition-delay: 3.5s;
+	transform: translateX(0);
+	opacity: 1;
 }
