@@ -3,26 +3,32 @@
 /// @requires $breakpoints
 
 // Responsive manager
+@mixin homeSmallMobile{
+    @media only screen and (min-width: #{$home-small}) and (max-height:500px){
+        @content;
+    }
+}
+
 @mixin homeSmall {
-    @media (min-width: #{$home-small}) {
+    @media only screen and (min-width: #{$home-small}) and (min-height:510px){
         @content;
     }
 }
 
 @mixin homeMedium {
-    @media (min-width: #{$home-medium}) {
+    @media only screen and (min-width: #{$home-medium}) {
         @content;
     }
 }
 
 @mixin homeSemiLarge {
-    @media (min-width: #{$home-semi-large}) {
+    @media only screen and (min-width: #{$home-semi-large}) {
         @content;
     }
 }
 
 @mixin homeLarge {
-    @media (min-width: #{$home-large}) {
+    @media only screen and (min-width: #{$home-large}) {
         @content;
     }
 }

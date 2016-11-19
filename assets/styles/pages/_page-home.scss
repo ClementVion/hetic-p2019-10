@@ -50,14 +50,14 @@
 	position: absolute;
 	height: 60px;
 	width: 350px;
-	bottom: 30px;
+	bottom: 60px;
 	font-size: 24px;
 	line-height: 24px;
 	overflow: hidden;
 	z-index: 10;
 
-	@include homeSmall{
-		bottom: 60px;
+	@include homeSmallMobile{
+		bottom: 0;
 	}
 
 	@include homeMedium{
@@ -65,7 +65,7 @@
 	}
 
 	@include homeSemiLarge{
-		bottom: 220px;
+		bottom: 180px;
 	}
 
 	@include homeLarge{
@@ -98,14 +98,14 @@
 	overflow:hidden;
 	width: 300px;
 	height: 100px;
+	display: none;
 
 	@include homeSmall{
-		display: none;
 	}
 
 	@include homeSemiLarge{
 	    width: 300px;
-	    bottom: 120px;
+	    bottom: 90px;
 	    display: block;
 	}
 
@@ -131,14 +131,15 @@
 	width: 170px;
 	overflow: hidden;
 	opacity: 0;
+	display: none;
 	transition: cubic-bezier(0.645, 0.045, 0.355, 1);
 	transform: translateX(-60px);
 	transition-duration: 0.9s;
 	// transition-delay: 3.5s;
 
-	@include homeSmall{
+	/* @include homeSmall{
 		display: none;
-	}
+	} */
 	
 	@include homeMedium{
 		display: block;
@@ -203,30 +204,47 @@
 	top: calc(50% - 112.5px);
 	left: 0;
 	position: absolute;
+	width: 260px;
+	height: 235px;
 
-	@include homeSmall{
-		top :calc(50% - 142.5px);
+	@include homeSmallMobile {
+		top: 20%;
+	    width: 210px;
+    	height: 157px;
+	}
+
+	@include homeSmall {
+		top: 20%;
+	    width: 400px;
+    	height: 295px;
 	}
 
 	@include homeMedium{
-		top: calc(50% - 225px);
-		left: 29%;
+	    width: 480px;
+    	height: 358px;
 	}
 
 	@include homeSemiLarge{
-		left: 31%;
+		width: 530px;
+		height: 350px;
+	}
+
+	@include large{
+		width: 610px;
+		left: 420px;
+		height: 400px;
 	}
 	
-	// resize this container for anim on .project__imageFront
+/* 	resize this container for anim on .project__imageFront
 	@media screen and (max-width: 600px) {
-        height: 256px;
+        height: 235px;
     }
     @media screen and (min-width: 600px) and (max-width: 1000px) {
         height: 400px;
     }
     @media screen and (min-width: 1000px) {
         height: 450px;
-    }
+    } */
 }
 
 .project__imageFront{
@@ -234,15 +252,24 @@
 	top: 100%;
 	z-index: 0;
 	transition: transform 800ms cubic-bezier(0.85, 0, 0.24, 0.99);
-	// @include homeMedium{
-	// 	@include size(50%);
-	// 	left: 25%;
-	// }
+	width: 260px;
 
-	// @include large{
-	// 	@include size(33%);
-	// }
+    @include homeSmallMobile{
+		width: 210px;
+	}
 
+	@include homeSmall{
+		width: 400px;
+	}
+
+	@include homeMedium{
+		width: 480px;
+	}
+
+    @include homeSemiLarge{
+		width: 610px;
+	}
+	
 }
 
 .project__imageBox{
