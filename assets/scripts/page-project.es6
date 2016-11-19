@@ -1,9 +1,10 @@
 class Init {
     constructor() {
         // TODO : refactor width screen detection
-        if (parseInt(document.querySelector('.singleProject').style.width) >= 700) {
+        // console.log(document.querySelector('.singleProject');
+        // if (parseInt(document.querySelector('.singleProject').style.width) >= 700) {
         document.querySelector('.singleProject').style.width = (parseInt(getComputedStyle(document.querySelector('.singleProject')).width)) + (parseInt((getComputedStyle(document.querySelector('.singleProject__main-content'))).width)/2);
-        }
+        // }
     }
 }
 
