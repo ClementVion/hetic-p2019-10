@@ -6,30 +6,16 @@ let body = document.querySelector('body');
 
 let routes = routesModule.routes;
 
-function getTemplate(name, id) {
-    let template = require('../../assets/html/' + name + '.html');
-    let xhr = new XMLHttpRequest();
-    xhr.open('GET', '../../assets/html/' + name + '.html', false);
-    xhr.onreadystatechange = function() {
-        if (id) {
-            var compile = template(require('../content/' + id + '.json'));
-        } else {
-            var compile = template();
-        }
-        console.log(compile);
-        if (container.innerHTML.length > 0) {
-            container.innerHTML = '';
-        }
-        container.innerHTML += compile;
-    };
-    xhr.send();
-};
 
-var router = new Grapnel({
-    pushState: true
-});
 
-router.get('/', function(req) {
+var router = new Grapnel(
+    {
+        pushState: true
+    }
+);
+
+router.get('/', function(req)
+{
     getTemplate('page-home');
     console.log('home');
     window.setTimeout(function()
@@ -43,7 +29,8 @@ router.get('/', function(req) {
 
 
 
-router.get('/projects/:id', function(req) {
+router.get('/projects/:id', function(req) 
+{
     if (routes.indexOf(req.params.id) === -1 ) {
         getTemplate('404');
         window.setTimeout(function()
@@ -56,16 +43,17 @@ router.get('/projects/:id', function(req) {
         getTemplate('page-project', req.params.id);
         // document.querySelector('.project').style.display = 'none';
         window.setTimeout(function()
-            {   
-                container.classList.toggle('container--visible');
-                project.init();
-                initClicks(container);
-            }
+        {   
+            container.classList.toggle('container--visible');
+            project.init();
+            initClicks(container);
+        }
         ,1000);
     }
 });
 
-router.get('/*', function(req, e) {
+router.get('/*', function(req, e) 
+{
     if (!e.parent()) {
         getTemplate('404');
         window.setTimeout(function()
@@ -78,7 +66,8 @@ router.get('/*', function(req, e) {
 });
 
 // Listen for clicks to navigate
-function initClicks(element) {
+function initClicks(element) 
+{
   let links = element.getElementsByTagName('a');
   for (let i = 0; i < links.length; i++) {
     links[i].addEventListener('click', function(e) {
@@ -88,18 +77,53 @@ function initClicks(element) {
   }
 }
 
-function listenClicks(e) {
+function listenClicks(e) 
+{
     container.classList.toggle('container--visible');
     window.setTimeout(function()
     {
-        console.log('1s');
         container.innerHTML = '';
         router.navigate(e.getAttribute('href'));  
     },1000);
 }
 
-window.onpopstate = function(e) {
+window.onpopstate = function(e) 
+{
     container.classList.toggle('container--visible');
 }
 
-// initClicks(container);
+function getTemplate(name, id) 
+{
+    getHeader(name);
+    let template = require('../../assets/html/' + name + '.html');
+    let xhr = new XMLHttpRequest();
+    xhr.open('GET', '../../assets/html/' + name + '.html', false);
+    xhr.onreadystatechange = function() {
+        if (id) {
+            var compile = template(require('../content/' + id + '.json'));
+        } else {
+            var compile = template();
+        }
+        container.innerHTML += compile;
+    };
+    xhr.send();
+};
+
+function getHeader(page) {
+     var template = require('../../assets/html/partials/header.html');
+     var xhr = new XMLHttpRequest();
+     xhr.open('GET', '../../assets/html/partials/header.html', false);
+     xhr.onreadystatechange = function() {
+    if (page != 'page-home') {
+        var param = {project: page};
+        var compile = template(param);
+    } else {
+        var compile = template();
+    }
+    if (container.innerHTML.length > 0) {
+        container.innerHTML = '';
+    }
+    container.innerHTML = compile;
+    };
+    xhr.send();
+ };
