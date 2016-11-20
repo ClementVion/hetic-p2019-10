@@ -172,13 +172,13 @@
         position: absolute;
         display: flex;
         flex-direction: row;
-        padding-left: 800px;
         margin-top: 0px;
         width: auto;
         // margin-left: 5%;
         margin: 0;
         z-index: 5;
         height: 100%;
+        padding-left: 1100px;
         box-sizing: border-box;
     }
     @include large {
@@ -218,7 +218,6 @@
     display: none;
     flex-shrink: 0;
     transition: transform ease 1000ms;
-    
     @include medium-single {
         display: block;
         width: 570px;
@@ -230,11 +229,12 @@
         top: 0;
         position: absolute;
         transform: translate(670px,0);
+        opacity: 0;
     }
     @include large {
         width: 670px;
         height: 100%;
-        transform: translate(670px,0);
+        // transform: translate(670px,0);
     }
 
     .singleProject__bg-photo {
@@ -243,7 +243,7 @@
     }
 }
 
-.singleProject__background-container.lazyload, 
+.singleProject__background-container.lazyload,
 .singleProject__background-container.lazyloading {
     opacity: 0;
 }
@@ -260,6 +260,24 @@
     }
 }
 
+
+.singleProject__background-container.singleProject__background-container--visible{
+    @include medium-single{
+        opacity: 1;
+        transition: all ease 1000ms;
+        transform: translate(0,0);
+    }
+}
+
+.singleProject__background-container.lazyload,
+.singleProject__background-container.lazyloading {
+    opacity: 0;
+}
+
+.singleProject__background-container.lazyloaded {
+    opacity: 1;
+    transition: opacity 300ms;
+}
 
 .singleProject__background-container--teaser{
     background: #FFFFFF;
@@ -322,6 +340,7 @@
         height: auto;
     }
 }
+
 .singleProject__bg-photo--teaser.lazyload,
 .singleProject__bg-photo--teaser.lazyloading {
     opacity: 0;
@@ -336,6 +355,7 @@
 .singleProject__bg-photo--teaser--hidden {
     opacity: 0;
 }
+
 .singleProject__photo-wrap{
     width: 100%;
     margin: 0 0 45px 0;
@@ -349,14 +369,19 @@
     }
 }
 
-.scrollbar{
+.scrollbar {
     display: none;
     @include medium-single{
         position: fixed;
+        float: left;
         display: block;
         width: 0;
+        transform: translateZ(0);
+        transform-origin: 0 0;
         height: 5px;
         background: #000000;
         bottom: 0;
+        backface-visibility: hidden;
+        transition: transform linear 30ms;
     }
 }
