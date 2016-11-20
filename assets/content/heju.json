@@ -10,134 +10,134 @@
    ],
    "projects": [
        {
-           "desktop": "../assets/img/pop_image_desktop_1.jpg",
-           "tablet": "../assets/img/pop_image_tablet_1.jpg",
-           "mobile": "../assets/img/pop_image_mobile_1.jpg",
+           "desktop": "../assets/img/heju_image_desktop_1.jpg",
+           "tablet": "../assets/img/heju_image_tablet_1.jpg",
+           "mobile": "../assets/img/heju_image_mobile_1.jpg",
            "backgrounds":[
                {
-                   "desktop": "../assets/img/pop_image_desktop_1.jpg",
-                   "tablet": "../assets/img/pop_image_tablet_1.jpg",
-                   "mobile": "../assets/img/pop_image_mobile_1.jpg"
+                   "desktop": "../assets/img/heju_image_desktop_1.jpg",
+                   "tablet": "../assets/img/heju_image_tablet_1.jpg",
+                   "mobile": "../assets/img/heju_image_mobile_1.jpg"
                }
            ]
        },
        {
-           "desktop": "../assets/img/pop_image_desktop_2.jpg",
-           "tablet": "../assets/img/pop_image_tablet_2.jpg",
-           "mobile": "../assets/img/pop_image_mobile_2.jpg",
+           "desktop": "../assets/img/heju_image_desktop_2.jpg",
+           "tablet": "../assets/img/heju_image_tablet_2.jpg",
+           "mobile": "../assets/img/heju_image_mobile_2.jpg",
            "backgrounds":[
                {
-                   "desktop": "../assets/img/pop_image_desktop_2.jpg",
-                   "tablet": "../assets/img/pop_image_tablet_2.jpg",
-                   "mobile": "../assets/img/pop_image_mobile_2.jpg"
+                   "desktop": "../assets/img/heju_image_desktop_2.jpg",
+                   "tablet": "../assets/img/heju_image_tablet_2.jpg",
+                   "mobile": "../assets/img/heju_image_mobile_2.jpg"
                }
            ]
        },
        {
-           "desktop": "../assets/img/pop_image_desktop_3.jpg",
-           "tablet": "../assets/img/pop_image_tablet_3.jpg",
-           "mobile": "../assets/img/pop_image_mobile_3.jpg",
+           "desktop": "../assets/img/heju_image_desktop_3.jpg",
+           "tablet": "../assets/img/heju_image_tablet_3.jpg",
+           "mobile": "../assets/img/heju_image_mobile_3.jpg",
            "backgrounds":[
                {
-                   "desktop": "../assets/img/pop_image_desktop_3.jpg",
-                   "tablet": "../assets/img/pop_image_tablet_3.jpg",
-                   "mobile": "../assets/img/pop_image_mobile_3.jpg"
+                   "desktop": "../assets/img/heju_image_desktop_3.jpg",
+                   "tablet": "../assets/img/heju_image_tablet_3.jpg",
+                   "mobile": "../assets/img/heju_image_mobile_3.jpg"
                }
            ]
        },
        {
-           "desktop": "../assets/img/pop_image_desktop_4.jpg",
-           "tablet": "../assets/img/pop_image_tablet_4.jpg",
-           "mobile": "../assets/img/pop_image_mobile_4.jpg",
+           "desktop": "../assets/img/heju_image_desktop_4.jpg",
+           "tablet": "../assets/img/heju_image_tablet_4.jpg",
+           "mobile": "../assets/img/heju_image_mobile_4.jpg",
            "backgrounds":[
               {
-                   "desktop": "../assets/img/pop_image_desktop_4.jpg",
-                   "tablet": "../assets/img/pop_image_tablet_4.jpg",
-                   "mobile": "../assets/img/pop_image_mobile_4.jpg"
+                   "desktop": "../assets/img/heju_image_desktop_4.jpg",
+                   "tablet": "../assets/img/heju_image_tablet_4.jpg",
+                   "mobile": "../assets/img/heju_image_mobile_4.jpg"
               }
            ]
        },
        {
-           "desktop": "../assets/img/pop_image_desktop_5.jpg",
-           "tablet": "../assets/img/pop_image_tablet_5.jpg",
-           "mobile": "../assets/img/pop_image_mobile_5.jpg",
+           "desktop": "../assets/img/heju_image_desktop_5.jpg",
+           "tablet": "../assets/img/heju_image_tablet_5.jpg",
+           "mobile": "../assets/img/heju_image_mobile_5.jpg",
            "backgrounds":[
               {
-                   "desktop": "../assets/img/pop_image_desktop_5.jpg",
-                   "tablet": "../assets/img/pop_image_tablet_5.jpg",
-                   "mobile": "../assets/img/pop_image_mobile_5.jpg"
+                   "desktop": "../assets/img/heju_image_desktop_5.jpg",
+                   "tablet": "../assets/img/heju_image_tablet_5.jpg",
+                   "mobile": "../assets/img/heju_image_mobile_5.jpg"
               }
            ]
        },
        {
-           "desktop": "../assets/img/pop_image_desktop_6.jpg",
-           "tablet": "../assets/img/pop_image_tablet_6.jpg",
-           "mobile": "../assets/img/pop_image_mobile_6.jpg",
+           "desktop": "../assets/img/heju_image_desktop_6.jpg",
+           "tablet": "../assets/img/heju_image_tablet_6.jpg",
+           "mobile": "../assets/img/heju_image_mobile_6.jpg",
            "backgrounds":[
               {
-                   "desktop": "../assets/img/pop_image_desktop_6.jpg",
-                   "tablet": "../assets/img/pop_image_tablet_6.jpg",
-                   "mobile": "../assets/img/pop_image_mobile_6.jpg"
+                   "desktop": "../assets/img/heju_image_desktop_6.jpg",
+                   "tablet": "../assets/img/heju_image_tablet_6.jpg",
+                   "mobile": "../assets/img/heju_image_mobile_6.jpg"
               }
            ]
        },
        {
-           "desktop": "../assets/img/pop_image_desktop_7.jpg",
-           "tablet": "../assets/img/pop_image_tablet_7.jpg",
-           "mobile": "../assets/img/pop_image_mobile_7.jpg",
+           "desktop": "../assets/img/heju_image_desktop_7.jpg",
+           "tablet": "../assets/img/heju_image_tablet_7.jpg",
+           "mobile": "../assets/img/heju_image_mobile_7.jpg",
            "backgrounds":[
                {
-                   "desktop": "../assets/img/pop_image_desktop_7.jpg",
-                   "tablet": "../assets/img/pop_image_tablet_7.jpg",
-                   "mobile": "../assets/img/pop_image_mobile_7.jpg"
+                   "desktop": "../assets/img/heju_image_desktop_7.jpg",
+                   "tablet": "../assets/img/heju_image_tablet_7.jpg",
+                   "mobile": "../assets/img/heju_image_mobile_7.jpg"
                }
            ]
        },
        {
-           "desktop": "../assets/img/pop_image_desktop_8.jpg",
-           "tablet": "../assets/img/pop_image_tablet_8.jpg",
-           "mobile": "../assets/img/pop_image_mobile_8.jpg",
+           "desktop": "../assets/img/heju_image_desktop_8.jpg",
+           "tablet": "../assets/img/heju_image_tablet_8.jpg",
+           "mobile": "../assets/img/heju_image_mobile_8.jpg",
            "backgrounds":[
                {
-                   "desktop": "../assets/img/pop_image_desktop_8.jpg",
-                   "tablet": "../assets/img/pop_image_tablet_8.jpg",
-                   "mobile": "../assets/img/pop_image_mobile_8.jpg"
+                   "desktop": "../assets/img/heju_image_desktop_8.jpg",
+                   "tablet": "../assets/img/heju_image_tablet_8.jpg",
+                   "mobile": "../assets/img/heju_image_mobile_8.jpg"
                }
            ]
        },
        {
-           "desktop": "../assets/img/pop_image_desktop_9.jpg",
-           "tablet": "../assets/img/pop_image_tablet_9.jpg",
-           "mobile": "../assets/img/pop_image_mobile_9.jpg",
+           "desktop": "../assets/img/heju_image_desktop_9.jpg",
+           "tablet": "../assets/img/heju_image_tablet_9.jpg",
+           "mobile": "../assets/img/heju_image_mobile_9.jpg",
            "backgrounds":[
                {
-                   "desktop": "../assets/img/pop_image_desktop_9.jpg",
-                   "tablet": "../assets/img/pop_image_tablet_9.jpg",
-                   "mobile": "../assets/img/pop_image_mobile_9.jpg"
+                   "desktop": "../assets/img/heju_image_desktop_9.jpg",
+                   "tablet": "../assets/img/heju_image_tablet_9.jpg",
+                   "mobile": "../assets/img/heju_image_mobile_9.jpg"
                }
            ]
        },
        {
-           "desktop": "../assets/img/pop_image_desktop_10.jpg",
-           "tablet": "../assets/img/pop_image_tablet_10.jpg",
-           "mobile": "../assets/img/pop_image_mobile_10.jpg",
+           "desktop": "../assets/img/heju_image_desktop_10.jpg",
+           "tablet": "../assets/img/heju_image_tablet_10.jpg",
+           "mobile": "../assets/img/heju_image_mobile_10.jpg",
            "backgrounds":[
                {
-                   "desktop": "../assets/img/pop_image_desktop_10.jpg",
-                   "tablet": "../assets/img/pop_image_tablet_10.jpg",
-                   "mobile": "../assets/img/pop_image_mobile_10.jpg"
+                   "desktop": "../assets/img/heju_image_desktop_10.jpg",
+                   "tablet": "../assets/img/heju_image_tablet_10.jpg",
+                   "mobile": "../assets/img/heju_image_mobile_10.jpg"
                }
            ]
        },
        {
-           "desktop": "../assets/img/pop_image_desktop_11.jpg",
-           "tablet": "../assets/img/pop_image_tablet_11.jpg",
-           "mobile": "../assets/img/pop_image_mobile_11.jpg",
+           "desktop": "../assets/img/heju_image_desktop_11.jpg",
+           "tablet": "../assets/img/heju_image_tablet_11.jpg",
+           "mobile": "../assets/img/heju_image_mobile_11.jpg",
            "backgrounds":[
                {
-                   "desktop": "../assets/img/pop_image_desktop_11.jpg",
-                   "tablet": "../assets/img/pop_image_tablet_11.jpg",
-                   "mobile": "../assets/img/pop_image_mobile_11.jpg"
+                   "desktop": "../assets/img/heju_image_desktop_11.jpg",
+                   "tablet": "../assets/img/heju_image_tablet_11.jpg",
+                   "mobile": "../assets/img/heju_image_mobile_11.jpg"
                }
            ]
        }

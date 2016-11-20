@@ -1,7 +1,7 @@
 module.exports = {
 
     init: function() {
-
+    let router = require('./router.es6');
     // Index of slides
     let prevProject = null,
         currentProject = 0,
@@ -20,24 +20,6 @@ module.exports = {
         isAnimating = false,
         newLocation = '',
         firstLoad = false,
-        // Animations on project link clik
-        projectAnimation = function() {
-            for (let i = 0; i < projectLinks.length; i++) {
-                projectLinks[i].addEventListener('click', function(e) {
-                    // document.querySelector('.container').classList.add('fade');
-                    // e.preventDefault();
-                    // //detect which page has been selected
-                    // let newPage = this.getAttribute('href');
-                    // console.log(newPage);
-                    // //if the page is not already being animated - trigger animation
-                    // if( !isAnimating ) {
-                    //     changePage(newPage, true);
-                    // }
-                    // firstLoad = true;
-
-                });
-            }
-        },
         changePage = function() {
 
         },

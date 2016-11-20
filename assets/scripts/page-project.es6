@@ -1,7 +1,6 @@
 module.exports = {
 
     init: function(){
-        
         class Scroll {
          constructor ( ) {
              window.addEventListener('wheel', (event) => this.scrollHorizontaly(event));
@@ -24,20 +23,19 @@ module.exports = {
             }
 
             detectEnd() {
+
                 let container = document.querySelector('.singleProject');
-                console.log(document.body.scrollLeft + window.innerWidth);
-                console.log(container.clientWidth);
                 if (document.body.scrollLeft + window.innerWidth >= container.clientWidth) {
-                    console.log("END");
+                    console.log('this');
+                    let routing = require('./router.es6');
+                    // document.querySelector('.container').classList.toggle('container--visible');
+                    // routing.init('/projects/tropical');  
                 }
             }
 
             scrollBar() {
                 let container = document.querySelector('.singleProject');
                 let scrollbar = document.querySelector('.scrollbar');
-                console.log('scrollLEft: ' + document.body.scrollLeft);
-                console.log('windowWidth :' + window.innerWidth);
-                console.log('containerWidth :' + container.clientWidth);
                 scrollbar.style.width = (document.body.scrollLeft  / (container.clientWidth - window.innerWidth)) * 100 + '%';
             }
         }
