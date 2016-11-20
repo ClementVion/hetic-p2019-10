@@ -166,6 +166,7 @@
 .singleProject__main-content {
     transform: translateX(0) translateZ(0);
     backface-visibility: hidden;
+    transition: transform ease-in 10ms;
     @include medium-single {
         top: 0;
         position: absolute;
