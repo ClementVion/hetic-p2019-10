@@ -27,9 +27,13 @@
         <div class="singleProject__main-content">
             {{#projects}}
             <div class="singleProject__photo-wrap">
-                <img class="singleProject__photo" src={{mobile}} srcset="{{mobile}} 500w,
-                         {{tablet}} 900w,
-                         {{desktop}} 1200w" alt="">
+                <img
+                    class="singleProject__photo lazyload "
+                    data-sizes="auto"
+                    data-src={{mobile}}
+                    data-srcset="{{mobile}} 500w,
+                    {{tablet}} 900w,
+                    {{desktop}} 1200w" alt="" />
             </div>
             {{/projects}}
         </div>
@@ -40,7 +44,12 @@
                 <a class="singleProject__link" href="#">Scroll to see the next project</a>
             </div>
             <div class="singleProject__background-container--teaser">
-                <img class="singleProject__bg-photo--teaser" src={{#photo}}{{desktop}}{{/photo}} alt="">
+                <img
+                    class="singleProject__bg-photo--teaser lazyload"
+                    data-sizes="auto"
+                    data-src={{#photo}}{{desktop}}{{/photo}}
+                    data-srcset="" 
+                    alt="" />
             </div>
         </div>
         {{/teasing}}
@@ -50,9 +59,13 @@
 {{#projects}}
 {{#backgrounds}}
 <div class="singleProject__background-container">
-    <img class="singleProject__bg-photo" src={{mobile}} srcset="{{mobile}} 500w,
-      {{tablet}} 900w,
-      {{desktop}} 1200w" alt="">
+      <img
+        class="singleProject__bg-photo lazyload"
+        data-sizes="auto"
+        data-src={{mobile}}
+        data-srcset="{{mobile}} 500w,
+        {{tablet}} 900w,
+        {{desktop}} 1200w" alt="" />
 </div>
 {{/backgrounds}}
 {{/projects}}
