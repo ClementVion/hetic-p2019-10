@@ -4,94 +4,50 @@
         
         <div class="project__informationsContainer">
             <div class="project__titleBox">
-                <h2 class="project__title">Guerlain</h2>
-                <h2 class="project__title">Back in the 80's</h2>
-                <h2 class="project__title">GirlZ pop</h2>
-                <h2 class="project__title">Anais Profit x Heju</h2>
-                <h2 class="project__title">Tropical</h2>
+                {{#projects}}
+                    <h2 class="project__title">{{name}}</h2>
+                {{/projects}}
             </div>
             <div class="project__descriptionBox">
-                <p class="project__description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto quibusdam quaerat a officiis. </p>
-                <p class="project__description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto quibusdam quaerat a officiis. </p>
-                <p class="project__description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto quibusdam quaerat a officiis. </p>
-                <p class="project__description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto quibusdam quaerat a officiis. </p>
-                <p class="project__description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto quibusdam quaerat a officiis. </p>
+                {{#projects}}
+                    <p class="project__description">{{description}}</p>
+                {{/projects}}
             </div>
 
             <div class="project__see">
-                <a class="project__link" href="/projects/guerlain">Voir le projet</a>
-                <a class="project__link" href="/projects/back-80s">Voir le projet</a>
-                <a class="project__link" href="/projects/popshop">Voir le projet</a>
-                <a class="project__link" href="/projects/heju">Voir le projet</a>
-                <a class="project__link" href="/projects/tropical">Voir le projet</a>
+                {{#projects}}
+                <a class="project__link" href="/projects/{{slug}}">Voir le projet</a>
+                {{/projects}}
             </div> 
 
         </div>
 
         <div class="project__imgContainer">
             <div class="project__imageFrontBox">
-                <picture>
-                    <source media="(max-width: 600px)" srcset="../../assets/img/GUERLAIN_HOME_285-256.jpg">
-                    <source media="(max-width: 1000px)" srcset="../../assets/img/GUERLAIN_HOME_540-400.jpg">
-                    <source media="(min-width: 1000px)" srcset="../../assets/img/GUERLAIN_HOME_680-448.jpg">
-                    <img src="../../assets/img/GUERLAIN_HOME_680-448.jpg" alt="" class="project__imageFront preload">
-                </picture>
-                <picture>
-                    <source media="(max-width: 600px)" srcset="../../assets/img/BACKIN80_HOME_285-256.jpg">
-                    <source media="(max-width: 1000px)" srcset="../../assets/img/BACKIN80_HOME_540-400.jpg">
-                    <source media="(min-width: 1000px)" srcset="../../assets/img/BACKIN80_HOME_680-448.jpg">
-                    <img src="../../assets/img/BACKIN80_HOME_680-448.jpg" alt="" class="project__imageFront preload">
-                </picture>
-                <picture>
-                    <source media="(max-width: 600px)" srcset="../../assets/img/CAKE_HOME_285-256.jpg">
-                    <source media="(max-width: 1000px)" srcset="../../assets/img/CAKE_HOME_540-400.jpg">
-                    <source media="(min-width: 1000px)" srcset="../../assets/img/CAKE_HOME_680-448.jpg">
-                    <img src="../../assets/img/CAKE_HOME_680-448.jpg" alt="" class="project__imageFront preload">
-                </picture>
-                <picture>
-                    <source media="(max-width: 600px)" srcset="../../assets/img/HEJU_HOME_285-256.jpg">
-                    <source media="(max-width: 1000px)" srcset="../../assets/img/HEJU_HOME_540-400.jpg">
-                    <source media="(min-width: 1000px)" srcset="../../assets/img/HEJU_HOME_680-448.jpg">
-                    <img src="../../assets/img/HEJU_HOME_680-448.jpg" alt="" class="project__imageFront preload">
-                </picture>
-                <picture>
-                    <source media="(max-width: 600px)" srcset="../../assets/img/TROPICAL_HOME_285-256.jpg">
-                    <source media="(max-width: 1000px)" srcset="../../assets/img/TROPICAL_HOME_540-400.jpg">
-                    <source media="(min-width: 1000px)" srcset="../../assets/img/TROPICAL_HOME_680-448.jpg">
-                    <img src="../../assets/img/TROPICAL_HOME_680-448.jpg" alt="" class="project__imageFront preload">
-                </picture>
+                {{#projects}}
+                    {{#imagesFront}}
+                        <img
+                            class="project__imageFront preload lazyload"
+                            data-sizes="auto"
+                            data-src={{desktop}}
+                            data-srcset="{{mobile}} 500w,
+                            {{tablet}} 700w,
+                            {{desktop}} 1000w" alt="" />
+                    {{/imagesFront}}
+                {{/projects}}  
             </div>  
             <div class="project__imageBox">
-                <picture>
-                    <source media="(max-width: 600px)" srcset="../../assets/img/GUERLAIN_HOME_252-460.jpg">
-                    <source media="(max-width: 900px)" srcset="../../assets/img/GUERLAIN_HOME_469-768.jpg">
-                    <source media="(min-width: 900px)" srcset="../../assets/img/GUERLAIN_HOME_671-900.jpg">
-                    <img src="../../assets/img/GUERLAIN_HOME_671-900.jpg" alt="" class="project__imageBackground preload">
-                </picture>
-                <picture>
-                    <source media="(max-width: 600px)" srcset="../../assets/img/BACKIN80_HOME_252-460.jpg">
-                    <source media="(max-width: 900px)" srcset="../../assets/img/BACKIN80_HOME_469-768.jpg">
-                    <source media="(min-width: 900px)" srcset="../../assets/img/BACKIN80_HOME_671-900.jpg">
-                    <img src="../../assets/img/BACKIN80_HOME_671-900.jpg" alt="" class="project__imageBackground preload">
-                </picture>
-                <picture>
-                    <source media="(max-width: 600px)" srcset="../../assets/img/CAKE_HOME_252-460.jpg">
-                    <source media="(max-width: 900px)" srcset="../../assets/img/CAKE_HOME_469-768.jpg">
-                    <source media="(min-width: 900px)" srcset="../../assets/img/CAKE_HOME_671-900.jpg">
-                    <img src="../../assets/img/CAKE_HOME_671-900.jpg" alt="" class="project__imageBackground preload">
-                </picture>
-                <picture>
-                    <source media="(max-width: 600px)" srcset="../../assets/img/HEJU_HOME_252-460.jpg">
-                    <source media="(max-width: 900px)" srcset="../../assets/img/HEJU_HOME_469-768.jpg">
-                    <source media="(min-width: 900px)" srcset="../../assets/img/HEJU_HOME_671-900.jpg">
-                    <img src="../../assets/img/HEJU_HOME_671-900.jpg" alt="" class="project__imageBackground preload">
-                </picture>
-                <picture>
-                    <source media="(max-width: 600px)" srcset="../../assets/img/TROPICAL_HOME_252-460.jpg">
-                    <source media="(max-width: 900px)" srcset="../../assets/img/TROPICAL_HOME_469-768.jpg">
-                    <source media="(min-width: 900px)" srcset="../../assets/img/TROPICAL_HOME_671-900.jpg">
-                    <img src="../../assets/img/TROPICAL_HOME_671-900.jpg" alt="" class="project__imageBackground preload">
-                </picture>
+                 {{#projects}}
+                    {{#imagesBack}}
+                        <img
+                            class="project__imageBackground preload lazyload"
+                            data-sizes="auto"
+                            data-src={{desktop}}
+                            data-srcset="{{mobile}} 500w,
+                            {{tablet}} 700w,
+                            {{desktop}} 1000w" alt="" />
+                    {{/imagesBack}}
+                {{/projects}}
             </div>
         </div>
 

@@ -37,6 +37,7 @@
     "css-loader": "^0.25.0",
     "grapnel": "^0.6.4",
     "gsap": "^1.19.0",
+    "lazysizes": "^2.0.7",
     "mustache-loader": "^0.4.0",
     "style-loader": "^0.13.1",
     "underscore": "^1.8.3",

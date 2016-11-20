@@ -5,9 +5,10 @@ module.exports = {
 		loadingContainer = document.querySelector('.loading'),
 		
 		// Launch the detection of the loading of each assets
-		launchLoading = function (cl){
+		launchLoading = function (cl) {
 			let assets = document.querySelectorAll(cl), // Get assets
 				promisesResolved = 0; // number of promises resolved updated at each iteration
+			preventLazyload(assets)
 			loadingContainer.style.display = "block";
 			for (var elm of assets) {
 			    loadAssets(elm)
@@ -20,6 +21,14 @@ module.exports = {
 			    );
 			}
 		},
+
+		// Prevent lazyload in ordre to permit preload
+		preventLazyload = function (assets) {
+			for (var elm of assets) {
+				elm.src = elm.getAttribute('data-src');
+				elm.classList.toggle('lazyload');
+			}
+		},	
 
 		// Detect if one asset is loaded 
 		loadAssets = function (elm) {

@@ -19,14 +19,13 @@ module.exports = {
         router.get('/', function(req)
         {   
             if(!container.classList.contains('loaded')){
-                getLoader('page-home');
+                getLoader('page-home', 'home');
             } else {
                 console.log('hihi');
-                getTemplate('page-home');
+                getTemplate('page-home', 'home');
             }
             window.setTimeout(function()
             {  
-                console.log('hihi');
                 container.classList.toggle('container--visible');
                 if(container.classList.contains('loaded')) {
                     home.init();
@@ -130,6 +129,7 @@ module.exports = {
                 } else {
                     var compile = template();
                 }
+                console.log(compile);
                 container.innerHTML += compile;
             };
             xhr.send();
