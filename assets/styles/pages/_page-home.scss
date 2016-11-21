@@ -9,6 +9,7 @@
 .container--visible .project{
 	opacity: 1;
 }
+
 .project{
 	@include size(100%, 100vh);
 	position: relative;
@@ -206,6 +207,8 @@
 	position: absolute;
 	width: 260px;
 	height: 235px;
+	transform: translateY(-150%);
+	transition: transform 800ms cubic-bezier(0.85, 0, 0.24, 0.99);
 
 	@include homeSmallMobile {
 		top: 20%;
@@ -247,11 +250,17 @@
     } */
 }
 
+.container--visible .project__imageFrontBox {
+	transform: translateY(0);
+	transition: transform 800ms cubic-bezier(0.85, 0, 0.24, 0.99);
+}
+
 .project__imageFront{
 	position: absolute;
 	top: 100%;
 	z-index: 0;
-	transition: transform 800ms cubic-bezier(0.85, 0, 0.24, 0.99);
+	// delay in order to let image to replace when container become visible
+	transition: transform 800ms 300ms cubic-bezier(0.85, 0, 0.24, 0.99);
 	width: 260px;
 
     @include homeSmallMobile{
@@ -275,7 +284,9 @@
 .project__imageBox{
 	@include size(90%,100vh);
 	position: relative;
-	display: flex;	
+	display: flex;
+	transform: translateY(150%);
+	transition: transform 800ms cubic-bezier(0.85, 0, 0.24, 0.99);
 	// justify-content: center;
 	@include homeMedium{
 		overflow: hidden;
@@ -292,6 +303,11 @@
     @media screen and (min-width: 900px) {
         height: 100vh;
     }
+}
+
+.container--visible .project__imageBox {
+	transform: translateY(0);
+	transition: transform 800ms cubic-bezier(0.85, 0, 0.24, 0.99);
 }
 
 .project__imageBackground{

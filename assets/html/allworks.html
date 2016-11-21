@@ -1,0 +1,26 @@
+<div class="allWorks">
+    
+    <div class="allWorks__container">
+        <h1 class="allWorks__title">all works</h1>
+    
+        <div class="allWorks__list">
+            {{#projects}}
+                <h2 class="allWorks__listTitles"><span>{{index}}</span> <a href="/projects/{{slug}}">{{name}}</a></h2>
+            {{/projects}}
+        </div>
+
+        <div class="allWorks__imageContainer">
+            {{#projects}}
+                    {{#imagesBack}}
+                        <img
+                            class="allWorks__image preload lazyload"
+                            data-sizes="auto"
+                            data-src={{desktop}}
+                            alt="" />
+                {{/imagesBack}}
+            {{/projects}}
+        </div>
+
+    </div>
+
+</div>

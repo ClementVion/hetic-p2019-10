@@ -57,6 +57,17 @@
     }
 }
 
+@mixin allworksMedium {
+    @media only screen and (min-width: #{$allworks-medium}) {
+        @content;
+    }
+}
+
+@mixin allworksLarge {
+    @media only screen and (min-width: #{$allworks-large}) {
+        @content;
+    }
+}
 
 @mixin medium {
     @media (min-width: #{$medium}) {

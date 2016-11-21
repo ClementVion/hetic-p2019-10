@@ -118,7 +118,7 @@ module.exports = {
                 tl1.to(frontSlides[selectedProject], 0.2,
                 {
                     y: '-100%',
-                }, '-=0.1');
+                }, '-=0.8');
                 tl1.to(titlesSlides[prevProject], 0.4,
                 {
                     y: '100%',
@@ -141,7 +141,7 @@ module.exports = {
                     {
                         y: '-=100%',
                         zIndex: '0',
-                    }, '-=0.1');
+                    }, '-=0.8');
                     tl2.to(titlesSlides[selectedProject], 0.4,
                     {
                         y: '-=100%',
@@ -164,8 +164,6 @@ module.exports = {
                             top: '100%',
                             transform: 'translateY(0)',
                             zIndex: 1
-                        });
-                        tl2.to(frontSlides[prevProject], 0, {
                         });
                         tl2.to(frontSlides[prevProject], 0,
                         {
@@ -193,7 +191,7 @@ module.exports = {
                             zIndex: 1
                         });
                         isScrolling = false;
-                    }, 1200);
+                    }, 1400);
                     switchChapters(currentProject, selectedProject);
                     currentProject = selectedProject;
                 }, 20);
