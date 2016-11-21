@@ -165,17 +165,17 @@ function getHeader(page) {
  };
 
 function getLoader(name, id) {
-    var template = require('../../assets/html/loader.html');
-    var xhr = new XMLHttpRequest();
-    xhr.open('GET', '../../assets/html/loader.html', false);
-    xhr.onreadystatechange = function() {
-        if (container.innerHTML.length > 0) {
-            container.innerHTML = '';
-        }
-        var compile = template();
-        container.innerHTML = compile;
-        getTemplate(name,id);
-        // loader.init();
-    };
-    xhr.send();
+    // var template = require('../../assets/html/loader.html');
+    // var xhr = new XMLHttpRequest();
+    // xhr.open('GET', '../../assets/html/loader.html', false);
+    // xhr.onreadystatechange = function() {
+    //     if (container.innerHTML.length > 0) {
+    //         container.innerHTML = '';
+    //     }
+    //     var compile = template();
+    //     container.innerHTML = compile;
+    //     getTemplate(name,id);
+    //     loader.init();
+    // };
+    // xhr.send();
  };
