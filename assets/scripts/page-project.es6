@@ -17,21 +17,16 @@ module.exports = {
         
         class ScrollToNext {
             constructor() {
-                document.querySelector('.singleProject').addEventListener('wheel', (event) => this.detectEnd());
+                // document.querySelector('.singleProject').addEventListener('wheel', (event) => this.detectEnd());
                 document.querySelector('.singleProject').addEventListener('wheel', (event) => this.scrollBar());
 
             }
 
-            detectEnd() {
-
-                let container = document.querySelector('.singleProject');
-                if (document.body.scrollLeft + window.innerWidth >= container.clientWidth) {
-                    console.log('this');
-                    let routing = require('./router.es6');
-                    // document.querySelector('.container').classList.toggle('container--visible');
-                    // routing.init('/projects/tropical');  
-                }
-            }
+            // detectEnd() {
+            //     // let container = document.querySelector('.singleProject');
+            //     // console.log(document.body.scrollLeft + window.innerWidth);
+            //     // console.log(container.clientWidth);
+            // }
 
             scrollBar() {
                 let container = document.querySelector('.singleProject');

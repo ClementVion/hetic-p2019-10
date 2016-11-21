@@ -1,7 +1,7 @@
 module.exports = {
 
     init: function() {
-    let router = require('./router.es6');
+
     // Index of slides
     let prevProject = null,
         currentProject = 0,
