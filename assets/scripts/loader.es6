@@ -6,6 +6,34 @@ module.exports = {
 
 		// Launch the detection of the loading of each assets
 		launchLoading = function (cl) {
+			var keys = {37: 1, 38: 1, 39: 1, 40: 1};
+
+			function preventDefault(e) {
+			  e = e || loadingContainer.event;
+			  if (e.preventDefault)
+			      e.preventDefault();
+			  e.returnValue = false;  
+			}
+
+			function preventDefaultForScrollKeys(e) {
+			    if (keys[e.keyCode]) {
+			        preventDefault(e);
+			        return false;
+			    }
+			}
+
+			function disableScroll() {
+			  if (loadingContainer.addEventListener) // older FF
+			      loadingContainer.addEventListener('DOMMouseScroll', preventDefault, false);
+			  loadingContainer.onwheel = preventDefault; // modern standard
+			  loadingContainer.onmousewheel = document.onmousewheel = preventDefault; // older browsers, IE
+			  loadingContainer.ontouchmove  = preventDefault; // mobile
+			  document.onkeydown  = preventDefaultForScrollKeys;
+			}
+
+
+			disableScroll();
+			
 			let assets = document.querySelectorAll(cl), // Get assets
 				promisesResolved = 0; // number of promises resolved updated at each iteration
 			preventLazyload(assets)
@@ -88,7 +116,6 @@ module.exports = {
 				}
 				else if( content.classList.contains('pageProject') ) {
 					let project = require('./page-project.es6');
-					console.log('project');
 					setTimeout(function(){
 						project.init();
 						container.classList.add('loaded');

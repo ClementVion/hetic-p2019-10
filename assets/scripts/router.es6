@@ -27,7 +27,6 @@ router.get('/', function(req)
     }
     window.setTimeout(function()
     {
-        console.log('hihi');
         container.classList.toggle('container--visible');
         if(container.classList.contains('loaded')) {
             home.init();

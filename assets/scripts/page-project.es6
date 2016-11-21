@@ -68,15 +68,12 @@ module.exports = {
                         if ((currentSingle + (delta * 5) <= 0 && (((currentSingle + (delta * 15))) * -1) <= (parseInt(getComputedStyle(singleProject).width) - window.innerWidth))) {
                             singleProject.style.transform = "matrix(1, 0, 0, 1, " + (currentSingle + delta * 30) + ", 0)";
                         } else {
-                            console.log(delta);
                             if (delta < 0) {
                                 if (document.querySelector('.singleProject').classList.contains('end-project')) {
                                     if (document.querySelector('.container').classList.contains('project--scrolling')) {
                                         if (fired === false) {
-                                            console.log(fired);
                                             fired = true;
                                             window.setTimeout(function() {
-                                                console.log('hariba');
                                                 document.querySelector('.container').classList.toggle('container--visible');
                                                 routing.router.navigate(document.querySelector('.singleProject__link').getAttribute('href'));
                                                 document.querySelector('.container').classList.toggle('project--scrolling');
