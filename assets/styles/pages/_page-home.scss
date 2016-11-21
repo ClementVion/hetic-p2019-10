@@ -82,6 +82,10 @@
     transition: 800ms 300ms cubic-bezier(.19,1,.22,1);
 } 
 
+.project__title-link:visited {
+	color: #353535;
+}
+
 .project__title{
 	top: 100%;
     height: 60px;

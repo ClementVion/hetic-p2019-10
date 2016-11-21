@@ -1,6 +1,7 @@
 let home = require('./page-home.es6');
 let project = require('./page-project.es6');
 let routesModule = require('./routes.es6');
+let allworks = require('./page-allworks.es6');
 let container = document.querySelector('.container');
 let body = document.querySelector('body');
 let loader = require('./loader.es6');
@@ -75,6 +76,9 @@ router.get('/works', function(req)
     window.setTimeout(function()
     {  
         container.classList.toggle('container--visible');
+        if(container.classList.contains('loaded')) {
+            allworks.init();
+        }
         initClicks(container);
     }
     ,1000);
