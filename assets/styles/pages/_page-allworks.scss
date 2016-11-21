@@ -62,12 +62,23 @@
     }
 }
 
+.allWorks__list a {
+    text-decoration: none;
+    color: #D8D8D8;
+    transition: color ease-in 100ms;
+    text-decoration: none;
+
+    &:hover {
+        color: #000;
+        transition: color ease-in 100ms;
+    }
+}
+
 .allWorks__listTitles {
     width: 390px;
     font-size: 24px;
     font-weight: 500;
     margin-bottom: 100px;
-    color: #D8D8D8;
     cursor: pointer;
     margin-bottom: 20px;
     opacity: 0;
@@ -89,17 +100,6 @@
 
         @include allworksLarge{
             margin-right: 50px;
-        }
-    }
-
-    a {
-        color: #D8D8D8;
-        transition: color ease-in 500ms;
-        text-decoration: none;
-
-        &:hover {
-            color: #000;
-            transition: color ease-in 500ms;
         }
     }
 }
