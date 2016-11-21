@@ -1,3 +1,31 @@
-<html>
-    <p>404</p>
+<div class="container visible notfound">
+
+    <div class="project">
+        <div class="project__informationsContainer">
+            <div class="project__titleBox">
+                    <h2 class="project__title">Page not found</h2>
+            </div>
+            <div class="project__descriptionBox">
+                    <p class="project__description">Sorry, the page you are looking for does not exist</p>
+            </div>
+            <div class="project__see">
+                <a class="project__link" href="/">Voir le projet</a>
+            </div>
+
+        </div>
+
+        <div class="project__imgContainer">
+            <div class="project__imageFrontBox">
+                        <img
+                            class="project__imageFront preload lazyload"
+                            src={{desktop}}
+                            srcset="{{mobile}} 500w,
+                            {{tablet}} 700w,
+                            {{desktop}} 1000w" alt="" />
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
 </html>

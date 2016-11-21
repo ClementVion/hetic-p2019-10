@@ -18,7 +18,7 @@ var router = new Grapnel(
 
 
 router.get('/', function(req)
-{   
+{
     previousPage = 'home';
     if(!container.classList.contains('loaded')){
         templating.getLoader('page-home', 'home');
@@ -26,7 +26,7 @@ router.get('/', function(req)
         templating.getTemplate('page-home', 'home');
     }
     window.setTimeout(function()
-    {  
+    {
         console.log('hihi');
         container.classList.toggle('container--visible');
         if(container.classList.contains('loaded')) {
@@ -37,25 +37,25 @@ router.get('/', function(req)
     ,1000);
 });
 
-router.get('/projects/:id', function(req) 
+router.get('/projects/:id', function(req)
 {
     if (routes.indexOf(req.params.id) === -1 ) {
         templating.getTemplate('404');
         window.setTimeout(function()
-            {   
+            {
                 container.classList.toggle('container--visible');
                 templating.initClicks(container);
             }
         ,1000);
     } else {
-        
+
         if(!container.classList.contains('loaded')){
             templating.getLoader('page-project', req.params.id);
         } else {
             templating.getTemplate('page-project', req.params.id);
         }
         window.setTimeout(function()
-        {   
+        {
             container.classList.toggle('container--visible');
             if(container.classList.contains('project--scrolling')){
                 document.querySelector('.container').classList.toggle('project--scrolling')
@@ -81,7 +81,7 @@ router.get('/works', function(req)
         templating.getTemplate('allworks', 'home');
     }
     window.setTimeout(function()
-    {  
+    {
         container.classList.toggle('container--visible');
         if(container.classList.contains('loaded')) {
             allworks.init();
@@ -100,28 +100,28 @@ router.get('/about', function(req)
         templating.getTemplate('about');
     }
     window.setTimeout(function()
-    {  
+    {
         container.classList.toggle('container--visible');
         templating.initClicks(container);
     }
     ,1000);
 });
 
-router.get('/*', function(req, e) 
+router.get('/*', function(req, e)
 {
     if (!e.parent()) {
         previousPage = '404';
         templating.getHeader('404');
         window.setTimeout(function()
-        {  
+        {
             container.classList.toggle('container--visible');
             templating.initClicks(container);
         }
         ,1000);
-    } 
+    }
 });
 
-window.onpopstate = function(e) 
+window.onpopstate = function(e)
 {
     container.classList.toggle('container--visible');
 }
