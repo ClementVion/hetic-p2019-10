@@ -1,11 +1,14 @@
 let home = require('./page-home.es6');
 let project = require('./page-project.es6');
 let routesModule = require('./routes.es6');
+let allworks = require('./page-allworks.es6');
 let container = document.querySelector('.container');
 let body = document.querySelector('body');
 let loader = require('./loader.es6');
+let templating = require('./templating.es6');
 
 let routes = routesModule.routes;
+let previousPage;
 
 var router = new Grapnel(
     {
@@ -16,10 +19,11 @@ var router = new Grapnel(
 
 router.get('/', function(req)
 {
+    previousPage = 'home';
     if(!container.classList.contains('loaded')){
-        getLoader('page-home', 'home');
+        templating.getLoader('page-home', 'home');
     } else {
-        getTemplate('page-home', 'home');
+        templating.getTemplate('page-home', 'home');
     }
     window.setTimeout(function()
     {
@@ -28,7 +32,7 @@ router.get('/', function(req)
         if(container.classList.contains('loaded')) {
             home.init();
         }
-        initClicks(container);
+        templating.initClicks(container);
     }
     ,1000);
 });
@@ -36,19 +40,19 @@ router.get('/', function(req)
 router.get('/projects/:id', function(req)
 {
     if (routes.indexOf(req.params.id) === -1 ) {
-        getTemplate('404');
+        templating.getTemplate('404');
         window.setTimeout(function()
             {
                 container.classList.toggle('container--visible');
-                initClicks(container);
+                templating.initClicks(container);
             }
         ,1000);
     } else {
 
         if(!container.classList.contains('loaded')){
-            getLoader('page-project', req.params.id);
+            templating.getLoader('page-project', req.params.id);
         } else {
-            getTemplate('page-project', req.params.id);
+            templating.getTemplate('page-project', req.params.id);
         }
         window.setTimeout(function()
         {
@@ -57,9 +61,12 @@ router.get('/projects/:id', function(req)
                 document.querySelector('.container').classList.toggle('project--scrolling')
             }
             if(container.classList.contains('loaded')) {
-                project.init();
+                if (previousPage !== 'project') {
+                    project.init();
+                }
+                previousPage = 'project';
             }
-            initClicks(container);
+            templating.initClicks(container);
         }
         ,1000);
     }
@@ -67,30 +74,35 @@ router.get('/projects/:id', function(req)
 
 router.get('/works', function(req)
 {
+    previousPage = 'works';
    if(!container.classList.contains('loaded')){
-        getLoader('allworks', 'home');
+        templating.getLoader('allworks', 'home');
     } else {
-        getTemplate('allworks', 'home');
+        templating.getTemplate('allworks', 'home');
     }
     window.setTimeout(function()
     {
         container.classList.toggle('container--visible');
-        initClicks(container);
+        if(container.classList.contains('loaded')) {
+            allworks.init();
+        }
+        templating.initClicks(container);
     }
     ,1000);
 });
 
 router.get('/about', function(req)
 {
+    previousPage = 'about';
    if(!container.classList.contains('loaded')){
-        getLoader('about');
+        templating.getLoader('about');
     } else {
-        getTemplate('about');
+        templating.getTemplate('about');
     }
     window.setTimeout(function()
     {
         container.classList.toggle('container--visible');
-        initClicks(container);
+        templating.initClicks(container);
     }
     ,1000);
 });
@@ -98,93 +110,20 @@ router.get('/about', function(req)
 router.get('/*', function(req, e)
 {
     if (!e.parent()) {
-        getTemplate('404');
+        previousPage = '404';
+        templating.getHeader('404');
         window.setTimeout(function()
         {
             container.classList.toggle('container--visible');
-            initClicks(container);
+            templating.initClicks(container);
         }
         ,1000);
     }
 });
 
-// Listen for clicks to navigate
-function initClicks(element)
-{
-  let links = element.getElementsByTagName('a');
-  for (let i = 0; i < links.length; i++) {
-    links[i].addEventListener('click', function(e) {
-        e.preventDefault();
-        listenClicks(this);
-    });
-  }
-}
-
-function listenClicks(e)
-{
-    container.classList.toggle('container--visible');
-    window.setTimeout(function()
-    {
-        container.innerHTML = '';
-        router.navigate(e.getAttribute('href'));
-    },1000);
-}
-
 window.onpopstate = function(e)
 {
     container.classList.toggle('container--visible');
 }
-
-function getTemplate(name, id)
-{
-    getHeader(name);
-    let template = require('../../assets/html/' + name + '.html');
-    let xhr = new XMLHttpRequest();
-    xhr.open('GET', '../../assets/html/' + name + '.html', false);
-    xhr.onreadystatechange = function() {
-        if (id) {
-            var compile = template(require('../content/' + id + '.json'));
-        } else {
-            var compile = template();
-        }
-        container.innerHTML += compile;
-    };
-    xhr.send();
-};
-
-function getHeader(page) {
-     var template = require('../../assets/html/partials/header.html');
-     var xhr = new XMLHttpRequest();
-     xhr.open('GET', '../../assets/html/partials/header.html', false);
-     xhr.onreadystatechange = function() {
-    if (page != 'page-home') {
-        var param = {project: page};
-        var compile = template(param);
-    } else {
-        var compile = template();
-    }
-    if (container.innerHTML.length > 0 && container.classList.contains('loaded')) {
-        container.innerHTML = '';
-    }
-    container.innerHTML += compile;
-    };
-    xhr.send();
- };
-
-function getLoader(name, id) {
-    var template = require('../../assets/html/loader.html');
-    var xhr = new XMLHttpRequest();
-    xhr.open('GET', '../../assets/html/loader.html', false);
-    xhr.onreadystatechange = function() {
-        if (container.innerHTML.length > 0) {
-            container.innerHTML = '';
-        }
-        var compile = template();
-        container.innerHTML = compile;
-        getTemplate(name,id);
-        loader.init();
-    };
-    xhr.send();
- };
 
  exports.router = router;

@@ -1,11 +1,11 @@
-<div class="allWorks">
+<div class="content allWorks">
     
     <div class="allWorks__container">
         <h1 class="allWorks__title">all works</h1>
     
         <div class="allWorks__list">
             {{#projects}}
-                <h2 class="allWorks__listTitles"><span>{{index}}</span> <a href="/projects/{{slug}}">{{name}}</a></h2>
+                <a href="/projects/{{slug}}" class="allWorks__listTitles"><h2><span>{{index}}</span>{{name}}</h2></a>
             {{/projects}}
         </div>
 

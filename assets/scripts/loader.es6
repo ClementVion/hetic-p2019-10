@@ -84,13 +84,6 @@ module.exports = {
 					}, 600);
 					setTimeout(function(){
 						loadingContainer.style.display = "none";
-						// let projectSee = document.querySelector('.project__see'),
-						// 	menu = document.querySelectorAll('.menu li');
-						// tl.to(projectSee, 0.7,
-						// {
-						// 	opacity: '1',
-						// 	x: '0'
-						// }, '0.8');
 					}, 800);
 				}
 				else if( content.classList.contains('pageProject') ) {
@@ -106,6 +99,15 @@ module.exports = {
 						projectCard= projectHeader.querySelector('.singleProject__card'),
 						projectScroll= projectHeader.querySelector('.singleProject__scroll');
 						loadingContainer.style.display = "none";
+						container.classList.add('loaded');
+					},1000);
+				} else {
+					let allworks = require('./page-allworks.es6');
+					setTimeout(function(){
+						allworks.init();
+						container.classList.add('loaded');
+					}, 600);
+					setTimeout(function(){
 						loadingContainer.style.display = "none";
 						container.classList.add('loaded');
 					},1000);

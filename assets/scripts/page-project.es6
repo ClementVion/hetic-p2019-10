@@ -83,7 +83,8 @@ module.exports = {
                                                 console.log('hariba');
                                                 document.querySelector('.container').classList.toggle('container--visible');
                                                 routing.router.navigate(document.querySelector('.singleProject__link').getAttribute('href'));
-                                                document.querySelector('.container').classList.toggle('project--scrolling')
+                                                document.querySelector('.container').classList.toggle('project--scrolling');
+                                                fired = false;
                                             }, 1000);
                                         }
                                     } else {

@@ -4,7 +4,7 @@
         <div class="project__informationsContainer">
             <div class="project__titleBox">
                 {{#projects}}
-                    <h2 class="project__title">{{name}}</h2>
+                    <a href="/projects/{{slug}}" class="project__titleLink"><h2 class="project__title">{{name}}</h2></a>
                 {{/projects}}
             </div>
             <div class="project__descriptionBox">
