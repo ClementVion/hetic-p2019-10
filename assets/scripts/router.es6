@@ -17,7 +17,7 @@ module.exports = {
         );
 
         router.get('/', function(req)
-        {   
+        {
             if(!container.classList.contains('loaded')){
                 getLoader('page-home', 'home');
             } else {
@@ -25,7 +25,7 @@ module.exports = {
                 getTemplate('page-home', 'home');
             }
             window.setTimeout(function()
-            {  
+            {
                 container.classList.toggle('container--visible');
                 if(container.classList.contains('loaded')) {
                     home.init();
@@ -35,25 +35,25 @@ module.exports = {
             ,1000);
         });
 
-        router.get('/projects/:id', function(req) 
+        router.get('/projects/:id', function(req)
         {
             if (routes.indexOf(req.params.id) === -1 ) {
                 getTemplate('404');
                 window.setTimeout(function()
-                    {   
+                    {
                         container.classList.toggle('container--visible');
                         initClicks(container);
                     }
                 ,1000);
             } else {
-                
+
                 if(!container.classList.contains('loaded')){
                     getLoader('page-project', req.params.id);
                 } else {
                     getTemplate('page-project', req.params.id);
                 }
                 window.setTimeout(function()
-                {   
+                {
                     container.classList.toggle('container--visible');
                     if(container.classList.contains('loaded')) {
                         project.init();
@@ -70,28 +70,28 @@ module.exports = {
                 getLoader('about');
             }
             window.setTimeout(function()
-            {  
+            {
                 container.classList.toggle('container--visible');
                 initClicks(container);
             }
             ,1000);
         });
 
-        router.get('/*', function(req, e) 
+        router.get('/*', function(req, e)
         {
             if (!e.parent()) {
                 getTemplate('404');
                 window.setTimeout(function()
-                {  
+                {
                     container.classList.toggle('container--visible');
                     initClicks(container);
                 }
                 ,1000);
-            } 
+            }
         });
 
         // Listen for clicks to navigate
-        function initClicks(element) 
+        function initClicks(element)
         {
           let links = element.getElementsByTagName('a');
           for (let i = 0; i < links.length; i++) {
@@ -102,22 +102,22 @@ module.exports = {
           }
         }
 
-        function listenClicks(e) 
+        function listenClicks(e)
         {
             container.classList.toggle('container--visible');
             window.setTimeout(function()
             {
                 container.innerHTML = '';
-                router.navigate(e.getAttribute('href'));  
+                router.navigate(e.getAttribute('href'));
             },1000);
         }
 
-        window.onpopstate = function(e) 
+        window.onpopstate = function(e)
         {
             container.classList.toggle('container--visible');
         }
 
-        function getTemplate(name, id) 
+        function getTemplate(name, id)
         {
             getHeader(name);
             let template = require('../../assets/html/' + name + '.html');

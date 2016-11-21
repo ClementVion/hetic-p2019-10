@@ -3,7 +3,7 @@ module.exports = {
 	init: function(){
 		let tl = new TimelineMax(),
 		loadingContainer = document.querySelector('.loading'),
-		
+
 		// Launch the detection of the loading of each assets
 		launchLoading = function (cl) {
 			let assets = document.querySelectorAll(cl), // Get assets
@@ -12,12 +12,12 @@ module.exports = {
 			loadingContainer.style.display = "block";
 			for (var elm of assets) {
 			    loadAssets(elm)
-		    	.then( 
-		    		function(value) { 
+		    	.then(
+		    		function(value) {
 		    			// update load progress
 		    			promisesResolved++;
 		    			updateLoadProgress(promisesResolved, assets.length);
-		    		}	
+		    		}
 			    );
 			}
 		},
@@ -28,9 +28,9 @@ module.exports = {
 				elm.src = elm.getAttribute('data-src');
 				elm.classList.toggle('lazyload');
 			}
-		},	
+		},
 
-		// Detect if one asset is loaded 
+		// Detect if one asset is loaded
 		loadAssets = function (elm) {
 			return new Promise(
 				function (resolve) {
@@ -61,7 +61,7 @@ module.exports = {
 							resolve(); // return that all images have been loaded
 						}
 					},2000);
-				});	
+				});
 		},
 
 
@@ -75,7 +75,7 @@ module.exports = {
 
 				loadingLayout.style.transform = "translateX(0%)";
 				loadingContainer.style.opacity = "0";
-				
+
 				if( content.classList.contains('home') ) {
 					let home = require('./page-home.es6');
 					setTimeout(function(){
@@ -129,7 +129,3 @@ module.exports = {
 		launchLoading('.preload');
 	}
 }
-
-
-
-

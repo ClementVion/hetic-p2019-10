@@ -26,9 +26,10 @@
 @import
   'components/button',
   'components/loader',
-  'components/carousel';
+  'components/carousel',
+  'components/lazyload';
 
-// 6. Page-specific styles
+  // 6. Page-specific styles
 @import
   'pages/page-home',
   'pages/page-project',
