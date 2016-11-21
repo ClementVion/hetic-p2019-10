@@ -41,9 +41,7 @@ module.exports = {
                         let percentImg = (currentSingle * -1 - headerSize) / (parseInt(getComputedStyle(singleProject).width) - window.innerWidth - headerSize - 570) * 100;
                         let slice = 99 / projectsLength;
                         let currentSlice = Math.round(percentImg / slice);
-                        console.log(percentImg);
                         if (percentImg >= 0 && percentImg < 100) {
-                            console.log("current slice: " + currentSlice);
                             for (var i = projectsLength; i > currentSlice; i--) {
                                 if (document.querySelector('.singleProject__background-container--visible')) {
                                     document.querySelector('.singleProject__background-container--visible').classList.remove('singleProject__background-container--visible');
@@ -70,7 +68,8 @@ module.exports = {
                                                 console.log('hariba');
                                                 document.querySelector('.container').classList.toggle('container--visible');
                                                 routing.router.navigate(document.querySelector('.singleProject__link').getAttribute('href'));
-                                                document.querySelector('.container').classList.toggle('project--scrolling')
+                                                document.querySelector('.container').classList.toggle('project--scrolling');
+                                                fired = false;
                                             }, 1000);
                                         }
                                     } else {

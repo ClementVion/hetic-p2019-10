@@ -7,6 +7,7 @@ let body = document.querySelector('body');
 let loader = require('./loader.es6');
 
 let routes = routesModule.routes;
+let previousPage;
 
 var router = new Grapnel(
     {
@@ -17,6 +18,7 @@ var router = new Grapnel(
 
 router.get('/', function(req)
 {   
+    previousPage = 'home';
     if(!container.classList.contains('loaded')){
         getLoader('page-home', 'home');
     } else {
@@ -58,7 +60,10 @@ router.get('/projects/:id', function(req)
                 document.querySelector('.container').classList.toggle('project--scrolling')
             }
             if(container.classList.contains('loaded')) {
-                project.init();
+                if (previousPage !== 'project') {
+                    project.init();
+                }
+                previousPage = 'project';
             }
             initClicks(container);
         }
@@ -68,6 +73,7 @@ router.get('/projects/:id', function(req)
 
 router.get('/works', function(req)
 {
+    previousPage = 'works';
    if(!container.classList.contains('loaded')){
         getLoader('allworks', 'home');
     } else {
@@ -86,6 +92,7 @@ router.get('/works', function(req)
 
 router.get('/about', function(req)
 {
+    previousPage = 'about';
    if(!container.classList.contains('loaded')){
         getLoader('about');
     } else {
@@ -102,6 +109,7 @@ router.get('/about', function(req)
 router.get('/*', function(req, e) 
 {
     if (!e.parent()) {
+        previousPage = '404';
         getTemplate('404');
         window.setTimeout(function()
         {  
