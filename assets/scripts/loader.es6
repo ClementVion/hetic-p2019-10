@@ -93,9 +93,9 @@ module.exports = {
 						// }, '0.8');
 					}, 800);
 				}
-				else if( content.classList.contains('singleProject') ) {
+				else if( content.classList.contains('pageProject') ) {
 					let project = require('./page-project.es6');
-
+					console.log('project');
 					setTimeout(function(){
 						project.init();
 						container.classList.add('loaded');
