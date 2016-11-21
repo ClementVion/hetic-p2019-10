@@ -50,27 +50,15 @@
     @include allworksMedium{
         transform-origin: 45% 50% 0;
         transform: rotate(-90deg);
-        bottom: -62px;
+        bottom: -125px;
         right: 70px;
         top: auto;
         left: auto;
     }   
 
     @include allworksLarge{
-        bottom: -135px;
+        bottom: -195px;
         right: 200px;
-    }
-}
-
-.allWorks__list a {
-    text-decoration: none;
-    color: #D8D8D8;
-    transition: color ease-in 100ms;
-    text-decoration: none;
-
-    &:hover {
-        color: #000;
-        transition: color ease-in 100ms;
     }
 }
 
@@ -80,9 +68,17 @@
     font-weight: 500;
     margin-bottom: 100px;
     cursor: pointer;
-    margin-bottom: 20px;
     opacity: 0;
     transform: translateX(-60px);   
+    text-decoration: none;
+    color: #D8D8D8;
+    transition: color cubic-bezier(0.645, 0.045, 0.355, 1) 100ms;
+    text-decoration: none;
+
+    &:hover {
+        color: #000;
+        transition: color cubic-bezier(0.645, 0.045, 0.355, 1) 100ms;
+    }
 
     @include allworksMedium{
         margin-bottom: 40px;
@@ -92,6 +88,10 @@
     @include allworksLarge{
         margin-bottom: 70px;
     }   
+
+    h2 {
+        font-size: 30px;
+    }
 
     span {
         margin-right: 20px;
@@ -111,7 +111,7 @@
                 transform 300ms cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 
-$delay : 5;
+$delay: 5;
 // doing this delay in css in order to avoid to do it in js but maximum 15 elements !
 @for $i from 1 through 15 {
     .container--visible .allWorks__listTitles {
