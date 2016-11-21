@@ -49,7 +49,14 @@
         {
             "desktop":"../assets/img/tropical_image_desktop_4.jpg",
             "tablet":"../assets/img/tropical_image_tablet_4.jpg",
-            "mobile":"../assets/img/tropical_image_mobile_4.jpg"
+            "mobile":"../assets/img/tropical_image_mobile_4.jpg",
+            "backgrounds":[
+                {
+                    "desktop":"../assets/img/tropical_image_desktop_4.jpg",
+                    "tablet":"../assets/img/tropical_image_tablet_4.jpg",
+                    "mobile":"../assets/img/tropical_image_mobile_4.jpg"
+                }
+            ]
         }
     ],
     "teasing":[
