@@ -16,7 +16,6 @@ var router = new Grapnel(
 
 router.get('/', function(req)
 {   
-
     if(!container.classList.contains('loaded')){
         getLoader('page-home', 'home');
     } else {
@@ -66,10 +65,27 @@ router.get('/projects/:id', function(req)
     }
 });
 
+router.get('/works', function(req)
+{
+   if(!container.classList.contains('loaded')){
+        getLoader('allworks', 'home');
+    } else {
+        getTemplate('allworks', 'home');
+    }
+    window.setTimeout(function()
+    {  
+        container.classList.toggle('container--visible');
+        initClicks(container);
+    }
+    ,1000);
+});
+
 router.get('/about', function(req)
 {
    if(!container.classList.contains('loaded')){
         getLoader('about');
+    } else {
+        getTemplate('about');
     }
     window.setTimeout(function()
     {  
