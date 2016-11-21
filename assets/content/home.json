@@ -4,7 +4,7 @@
             "name":"Guerlain",
             "slug":"guerlain",
             "index":"1",
-            "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto quibusdam quaerat a officiis.",
+            "description": "A set design and paper art project",
             "imagesFront": [
                 {
                     "desktop": "../../assets/img/GUERLAIN_HOME_680-448.jpg",
@@ -24,7 +24,7 @@
             "name":"Back in the 80's",
             "slug":"back-80s",
             "index":"2",
-            "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto quibusdam quaerat a officiis.",
+            "description": "A paper take on the rich style of the hip/hop era.",
             "imagesFront": [
                 {
                     "desktop": "../../assets/img/BACKIN80_HOME_680-448.jpg",
@@ -44,7 +44,7 @@
             "name":"GirlZ pop",
             "slug":"popshop",
             "index":"3",
-            "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto quibusdam quaerat a officiis.",
+            "description": "Colorful, girly inspiration for a 'by girls, for girls' online shop.",
             "imagesFront": [
                 {
                     "desktop": "../../assets/img/CAKE_HOME_680-448.jpg",
@@ -64,7 +64,7 @@
             "name":"Anais Profit x Heju",
             "slug":"heju",
             "index":"4",
-            "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto quibusdam quaerat a officiis.",
+            "description": "Paper meets architectur in a modern yet comfy little house.",
             "imagesFront": [
                 {
                     "desktop": "../../assets/img/HEJU_HOME_680-448.jpg",
@@ -84,7 +84,7 @@
             "name":"Tropical",
             "slug":"tropical",
             "index":"5",
-            "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto quibusdam quaerat a officiis.",
+            "description": "A personal collection of colored feathers and leaves.",
             "imagesFront": [
                 {
                     "desktop": "../../assets/img/TROPICAL_HOME_680-448.jpg",
