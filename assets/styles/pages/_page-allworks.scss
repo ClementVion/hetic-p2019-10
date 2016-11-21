@@ -1,0 +1,139 @@
+.allWorks {
+
+}
+
+.allWorks__container {
+    display: flex;
+    justify-content: flex-start;
+    height: 90vh;
+    position: relative;
+
+    @include allworksMedium{
+        align-items: flex-end;
+    }   
+}
+
+.allWorks__title {
+    margin: 120px 40px;
+    z-index: 10;
+    opacity: 0;
+    transform: translateX(-80px);
+
+
+    @include allworksMedium{
+        margin: 0 0 0 10%;
+    }   
+    
+    @include allworksLarge{
+        margin: 0 0 0 15%;
+    }   
+}
+
+.container--visible .allWorks__title {
+    opacity: 1;
+    transform: translateX(0);
+    transition: opacity 900ms 300ms cubic-bezier(0.645, 0.045, 0.355, 1), 
+                transform 900ms 300ms cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.allWorks__list {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    position: absolute;
+    z-index: 10;
+    transform: rotate(0deg);
+    top: 200px;
+    left: 40px;
+    right: 0;
+
+    @include allworksMedium{
+        transform-origin: 45% 50% 0;
+        transform: rotate(-90deg);
+        bottom: -62px;
+        right: 70px;
+        top: auto;
+        left: auto;
+    }   
+
+    @include allworksLarge{
+        bottom: -135px;
+        right: 200px;
+    }
+}
+
+.allWorks__listTitles {
+    width: 390px;
+    font-size: 24px;
+    font-weight: 500;
+    margin-bottom: 100px;
+    color: #D8D8D8;
+    cursor: pointer;
+    margin-bottom: 20px;
+    opacity: 0;
+    transform: translateX(-60px);   
+
+    @include allworksMedium{
+        margin-bottom: 40px;
+        font-size: 30px;
+    }   
+
+    @include allworksLarge{
+        margin-bottom: 70px;
+    }   
+
+    span {
+        margin-right: 20px;
+        font-weight: 700;
+        color: #000;
+
+        @include allworksLarge{
+            margin-right: 50px;
+        }
+    }
+
+    a {
+        color: #D8D8D8;
+        transition: color ease-in 500ms;
+        text-decoration: none;
+
+        &:hover {
+            color: #000;
+            transition: color ease-in 500ms;
+        }
+    }
+}
+
+.container--visible .allWorks__listTitles {
+    opacity: 1;
+    transform: translateX(0);
+    transition: opacity 300ms cubic-bezier(0.645, 0.045, 0.355, 1), 
+                transform 300ms cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+$delay : 5;
+// doing this delay in css in order to avoid to do it in js but maximum 15 elements !
+@for $i from 1 through 15 {
+    .container--visible .allWorks__listTitles {
+        &:nth-child(#{$i}) {
+            transition-delay: ($delay + $i) * 0.15s;
+        }
+    }
+}
+
+.allWorks__image {
+    // display: none;
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    right: 0;
+    opacity: 0.2;
+    opacity: 0;
+    transition: opacity 500ms;
+}
+
+.allWorks__image--visible {
+    // display: block;
+    opacity: 1;
+    transition: opacity 500ms;
+}

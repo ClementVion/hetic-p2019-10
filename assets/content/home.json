@@ -3,6 +3,7 @@
         {
             "name":"Guerlain",
             "slug":"guerlain",
+            "index":"1",
             "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto quibusdam quaerat a officiis.",
             "imagesFront": [
                 {
@@ -22,6 +23,7 @@
         {
             "name":"Back in the 80's",
             "slug":"back-80s",
+            "index":"2",
             "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto quibusdam quaerat a officiis.",
             "imagesFront": [
                 {
@@ -41,6 +43,7 @@
         {
             "name":"GirlZ pop",
             "slug":"popshop",
+            "index":"3",
             "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto quibusdam quaerat a officiis.",
             "imagesFront": [
                 {
@@ -60,6 +63,7 @@
         {
             "name":"Anais Profit x Heju",
             "slug":"heju",
+            "index":"4",
             "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto quibusdam quaerat a officiis.",
             "imagesFront": [
                 {
@@ -79,6 +83,7 @@
         {
             "name":"Tropical",
             "slug":"tropical",
+            "index":"5",
             "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto quibusdam quaerat a officiis.",
             "imagesFront": [
                 {

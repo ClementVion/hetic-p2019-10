@@ -3,6 +3,7 @@ module.exports = {
     init: function() {
         let home = require('./page-home.es6');
         let project = require('./page-project.es6');
+        let allworks = require('./page-allworks.es6');
         let routesModule = require('./routes.es6');
         let container = document.querySelector('.container');
         let body = document.querySelector('body');
@@ -21,7 +22,6 @@ module.exports = {
             if(!container.classList.contains('loaded')){
                 getLoader('page-home', 'home');
             } else {
-                console.log('hihi');
                 getTemplate('page-home', 'home');
             }
             window.setTimeout(function()
@@ -73,6 +73,18 @@ module.exports = {
             {  
                 container.classList.toggle('container--visible');
                 initClicks(container);
+            }
+            ,1000);
+        });
+
+        router.get('/allworks', function(req)
+        {
+            getTemplate('allworks', 'home');
+            window.setTimeout(function()
+            {  
+                container.classList.toggle('container--visible');
+                initClicks(container);
+                allworks.init();
             }
             ,1000);
         });
