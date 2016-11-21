@@ -1,5 +1,5 @@
 module.exports = {
-	
+
 	init: function() {
 		let titles = document.querySelectorAll('.allWorks__list a'),
 			imgs = document.querySelectorAll('.allWorks__image'),

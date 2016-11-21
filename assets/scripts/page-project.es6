@@ -17,17 +17,16 @@ module.exports = {
           }
         }
 
-        // TODO : refactor scroll & scroll to next (make one class?)
         class Scroll {
             constructor() {
-                let throttled = _.throttle(scrollHorizontaly, 20, {
+                let throttled = _.throttle(scrollHorizontaly, 25, {
                     leading: false,
                     trailing: true
                 });
 
-                let throttledBar = _.throttle(scrollBar, 20, {
-                    leading: false,
-                    trailing: true
+                let throttledBar = _.throttle(scrollBar, 25, {
+                    leading: true,
+                    trailing: false
                 });
 
                 let fired = false;
@@ -67,7 +66,7 @@ module.exports = {
                         }
 
                         if ((currentSingle + (delta * 5) <= 0 && (((currentSingle + (delta * 15))) * -1) <= (parseInt(getComputedStyle(singleProject).width) - window.innerWidth))) {
-                            singleProject.style.transform = "matrix(1, 0, 0, 1, " + (currentSingle + delta * 25) + ", 0)";
+                            singleProject.style.transform = "matrix(1, 0, 0, 1, " + (currentSingle + delta * 30) + ", 0)";
                         } else {
                             if (delta < 0) {
                                 if (document.querySelector('.singleProject').classList.contains('end-project')) {
@@ -108,11 +107,17 @@ module.exports = {
                 }
 
                 function scrollBar() {
-                    let container = document.querySelector(".singleProject");
-                    let scrollbar = document.getElementsByClassName('scrollbar');
-                    let currentScroll = getComputedStyle(container).transform;
-                    currentScroll = parseInt(currentScroll.split(" ")[4]);
-                    scrollbar[0].style.width = (currentScroll) * -1 / (parseInt(getComputedStyle(container).width) - window.innerWidth) * 100 + "%";
+                      let container = document.querySelector(".singleProject"),
+                          scrollbar = document.getElementsByClassName('scrollbar'),
+                          currentScroll = getComputedStyle(container).transform;
+
+                      currentScroll = parseInt(currentScroll.split(" ")[4]);
+                    if (currentScroll < -10) {
+                      window.setTimeout(function() {
+                        let scale = (Math.ceil((currentScroll) * -1 / (parseInt(getComputedStyle(container).width) - window.innerWidth)*100))/100;
+                        scrollbar[0].style.transform = "translateZ(0) scaleX("+scale+")";
+                      }, 10);
+                    }
                 }
 
                 function fireScroll(e) {
