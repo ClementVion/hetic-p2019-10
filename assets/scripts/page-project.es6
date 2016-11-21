@@ -20,17 +20,17 @@ module.exports = {
         class Scroll {
             constructor() {
                 let throttled = _.throttle(scrollHorizontaly, 25, {
-                    leading: false,
-                    trailing: true
-                });
-
-                let throttledBar = _.throttle(scrollBar, 25, {
                     leading: true,
                     trailing: false
                 });
 
+                // let throttledBar = _.throttle(scrollBar, 25, {
+                //     leading: true,
+                //     trailing: false
+                // });
+
                 let fired = false;
-                window.addEventListener('wheel', fireScrollBar);
+                // window.addEventListener('wheel', fireScrollBar);
                 window.addEventListener('wheel', fireScroll);
 
                 function scrollHorizontaly(e) {
@@ -39,7 +39,8 @@ module.exports = {
                             singleProject = document.querySelector('.singleProject'),
                             currentSingle = getComputedStyle(singleProject).transform,
                             background = document.getElementsByClassName('singleProject__background-container'),
-                            backgroundTransform = getComputedStyle(background[0]).transform;
+                            backgroundTransform = getComputedStyle(background[0]).transform,
+                            scrollbar = document.getElementsByClassName('scrollbar');
 
                         currentSingle = parseInt(currentSingle.split(" ")[4]);
                         backgroundTransform = parseInt(backgroundTransform.split(" ")[4]);
@@ -67,6 +68,12 @@ module.exports = {
 
                         if ((currentSingle + (delta * 5) <= 0 && (((currentSingle + (delta * 15))) * -1) <= (parseInt(getComputedStyle(singleProject).width) - window.innerWidth))) {
                             singleProject.style.transform = "matrix(1, 0, 0, 1, " + (currentSingle + delta * 30) + ", 0)";
+                            let scale = currentSingle / (parseInt(getComputedStyle(singleProject).width) - window.innerWidth );
+                            if (currentSingle < - 40) {
+                              scrollbar[0].style.transform = "translateZ(0) scaleX("+(scale*-1) +")";
+                              console.log(scale);
+                            }
+
                         } else {
                             if (delta < 0) {
                                 if (document.querySelector('.singleProject').classList.contains('end-project')) {
@@ -77,6 +84,7 @@ module.exports = {
                                                 document.querySelector('.container').classList.toggle('container--visible');
                                                 routing.router.navigate(document.querySelector('.singleProject__link').getAttribute('href'));
                                                 document.querySelector('.container').classList.toggle('project--scrolling');
+                                                let replace = new Resize();
                                                 fired = false;
                                             }, 1000);
                                         }
@@ -106,35 +114,35 @@ module.exports = {
                     }
                 }
 
-                function scrollBar() {
-                      let container = document.querySelector(".singleProject"),
-                          scrollbar = document.getElementsByClassName('scrollbar'),
-                          currentScroll = getComputedStyle(container).transform;
-
-                      currentScroll = parseInt(currentScroll.split(" ")[4]);
-                    if (currentScroll < -10) {
-                      window.setTimeout(function() {
-                        let scale = (Math.ceil((currentScroll) * -1 / (parseInt(getComputedStyle(container).width) - window.innerWidth)*100))/100;
-                        scrollbar[0].style.transform = "translateZ(0) scaleX("+scale+")";
-                      }, 10);
-                    }
-                }
+                // function scrollBar() {
+                //       let container = document.querySelector(".singleProject"),
+                //           scrollbar = document.getElementsByClassName('scrollbar'),
+                //           currentScroll = getComputedStyle(container).transform;
+                //
+                //       currentScroll = parseInt(currentScroll.split(" ")[4]);
+                //     if (currentScroll < -10) {
+                //       window.setTimeout(function() {
+                //         // let scale = (Math.ceil((currentScroll) * -1 / (parseInt(getComputedStyle(container).width) - window.innerWidth)*100))/100;
+                //         // scrollbar[0].style.transform = "translateZ(0) scaleX("+scale+")";
+                //       }, 10);
+                //     }
+                // }
 
                 function fireScroll(e) {
                     e.preventDefault();
                     throttled(e);
                 }
 
-                function fireScrollBar() {
-                    throttledBar();
-                }
+                // function fireScrollBar() {
+                //     throttledBar();
+                // }
             }
         }
 
         let start = new Init();
+        let replace = new Resize();
         let test;
         if (!test) {
-            let size = new Resize();
             test = new Scroll();
         }
     }
