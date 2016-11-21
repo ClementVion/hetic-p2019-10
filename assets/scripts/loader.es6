@@ -88,7 +88,6 @@ module.exports = {
 				}
 				else if( content.classList.contains('pageProject') ) {
 					let project = require('./page-project.es6');
-					console.log('project');
 					setTimeout(function(){
 						project.init();
 						container.classList.add('loaded');

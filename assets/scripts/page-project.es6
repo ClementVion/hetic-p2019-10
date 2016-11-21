@@ -13,7 +13,6 @@ module.exports = {
           constructor() {
             let mainContent = document.querySelector('.singleProject__main-content'),
                 header = document.querySelector('.singleProject__header');
-            console.log((window.innerWidth/10)*-1 + "px");
             mainContent.style.marginLeft = (parseInt(getComputedStyle(header).width) - parseInt(window.innerWidth)/1.3)*-1 + "px";
           }
         }
@@ -54,9 +53,7 @@ module.exports = {
                         let percentImg = (currentSingle * -1 - headerSize) / (parseInt(getComputedStyle(singleProject).width) - window.innerWidth - headerSize - 570) * 100;
                         let slice = 99 / projectsLength;
                         let currentSlice = Math.round(percentImg / slice);
-                        console.log(percentImg);
                         if (percentImg >= 0 && percentImg < 90) {
-                            console.log("current slice: " + currentSlice);
                             for (var i = projectsLength; i > currentSlice; i--) {
                                 if (document.querySelector('.singleProject__background-container--visible')) {
                                     document.querySelector('.singleProject__background-container--visible').classList.remove('singleProject__background-container--visible');
@@ -72,15 +69,12 @@ module.exports = {
                         if ((currentSingle + (delta * 5) <= 0 && (((currentSingle + (delta * 15))) * -1) <= (parseInt(getComputedStyle(singleProject).width) - window.innerWidth))) {
                             singleProject.style.transform = "matrix(1, 0, 0, 1, " + (currentSingle + delta * 25) + ", 0)";
                         } else {
-                            console.log(delta);
                             if (delta < 0) {
                                 if (document.querySelector('.singleProject').classList.contains('end-project')) {
                                     if (document.querySelector('.container').classList.contains('project--scrolling')) {
                                         if (fired === false) {
-                                            console.log(fired);
                                             fired = true;
                                             window.setTimeout(function() {
-                                                console.log('hariba');
                                                 document.querySelector('.container').classList.toggle('container--visible');
                                                 routing.router.navigate(document.querySelector('.singleProject__link').getAttribute('href'));
                                                 document.querySelector('.container').classList.toggle('project--scrolling');
