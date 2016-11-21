@@ -8,20 +8,22 @@
             <div class="singleProject__card">
                 <div class="singleProject__infos">
                     <div class="singleProject__info">
+                        <h6 class="singleProject__subtitle">{{name}}</h6>
+                        <p class="singleProject__small-info"></p>
+                    </div>
+                    <div class="singleProject__info">
+                        {{#credits}}
+                        <h6 class="singleProject__subtitle">{{title}} :</h6>
+                        <p class="singleProject__small-info">{{content}}</p>
+                        {{/credits}}
+                    </div>
+                    <div class="singleProject__info">
                         <h6 class="singleProject__subtitle">Date :</h6>
-                        <p class="singleProject__small-info">Balam balam</p>
-                    </div>
-                    <div class="singleProject__info">
-                        <h6 class="singleProject__subtitle">Lorem :</h6>
-                        <p class="singleProject__small-info">Balam balam</p>
-                    </div>
-                    <div class="singleProject__info">
-                        <h6 class="singleProject__subtitle">Dolor sit :</h6>
-                        <p class="singleProject__small-info">Balam balam</p>
+                        <p class="singleProject__small-info">{{date}}</p>
                     </div>
                 </div>
                 <div class="singleProject__description">
-                    <p>La nuit s'effaçait ; les étoiles pâlissaient ; c'était l'heure fraîche qui précède le jour. La lune descendue allait s'enfoncer dans la mer qu'elle nacrait sur toute sa surface.</p>
+                    <p style="white-space: pre;">{{description}}</p>
                 </div>
             </div>
         </header>

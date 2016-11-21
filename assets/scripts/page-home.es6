@@ -23,35 +23,14 @@ module.exports = {
         changePage = function() {
 
         },
-        // Detect and launch scroll animations
-        initSmoothScroll = function() {
+
+        // Get slides and init theirs styles
+        initSlides = function() {
+
             let throttled = _.throttle(magnet, 2000, {
                 leading: true,
                 trailing: false
             });
-
-            let slidesContainer = document.querySelector('.project__imageBox');
-            let frontSlides = document.querySelectorAll('.project__imageFront');
-
-            document.addEventListener('mousewheel', updatePosition);
-
-            function updatePosition(e) {
-                e.preventDefault();
-                throttled(e.wheelDelta);
-            }
-
-            function magnet(wheelDelta) {
-                if (wheelDelta > 0) {
-                    selectSlide((currentProject - 1));
-                }
-                if (wheelDelta < 0) {
-                    selectSlide((currentProject + 1));
-                }
-            }
-        },
-
-        // Get slides and init theirs styles
-        initSlides = function() {
             // frontSlides[0].style.top = '0';
             // slides[0].style.top = '0';
             // titlesSlides[0].style.top = '0';
@@ -248,7 +227,6 @@ module.exports = {
         // Init scrolling for home page
         init = function ()
         {
-            initSmoothScroll();
             initSlides();
             chaptersScroll();
             firstApparition();
