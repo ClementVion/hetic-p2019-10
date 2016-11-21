@@ -54,6 +54,7 @@
    "teasing": [
        {
            "name": "Cake Toppers",
+            "url": "/projects/popshop",
            "photo":[
                {
                  "desktop": "../assets/img/pop_image_desktop_1.jpg",

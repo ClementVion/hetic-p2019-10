@@ -13,6 +13,23 @@ html {
 body {
     height: 100%;
     overflow-x: hidden;
+    transform: translate(0,0);
+}
+
+body{
+	color: #353535;
+}
+
+
+::-webkit-scrollbar {
+	display: none;
+    // width: 0px;  /* remove scrollbar space */
+    // background: transparent;  /* optional: just make scrollbar invisible */
+}
+
+.container.fade{
+	opacity: 0;
+	transition: opacity 0.5s ease;
 }
 
 body{
@@ -33,4 +50,3 @@ body{
 /**
  * Basic styles for links
  */
-a {}

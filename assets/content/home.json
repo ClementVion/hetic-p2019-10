@@ -1,0 +1,99 @@
+{
+    "projects": [
+        {
+            "name":"Guerlain",
+            "slug":"guerlain",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto quibusdam quaerat a officiis.",
+            "imagesFront": [
+                {
+                    "desktop": "../../assets/img/GUERLAIN_HOME_680-448.jpg",
+                    "tablet": "../../assets/img/GUERLAIN_HOME_540-400.jpg",
+                    "mobile": "../../assets/img/GUERLAIN_HOME_285-256.jpg"
+                }
+            ],
+            "imagesBack": [
+                {
+                    "desktop": "../../assets/img/GUERLAIN_HOME_671-900.jpg",
+                    "tablet": "../../assets/img/GUERLAIN_HOME_469-768.jpg",
+                    "mobile": "../../assets/img/GUERLAIN_HOME_252-460.jpg"
+                }
+            ]
+        },
+        {
+            "name":"Back in the 80's",
+            "slug":"back-80s",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto quibusdam quaerat a officiis.",
+            "imagesFront": [
+                {
+                    "desktop": "../../assets/img/BACKIN80_HOME_680-448.jpg",
+                    "tablet": "../../assets/img/BACKIN80_HOME_540-400.jpg",
+                    "mobile": "../../assets/img/BACKIN80_HOME_285-256.jpg"
+                }
+            ],
+            "imagesBack": [
+                {
+                    "desktop": "../../assets/img/BACKIN80_HOME_671-900.jpg",
+                    "tablet": "../../assets/img/BACKIN80_HOME_469-768.jpg",
+                    "mobile": "../../assets/img/BACKIN80_HOME_252-460.jpg"
+                }
+            ]
+        },
+        {
+            "name":"GirlZ pop",
+            "slug":"popshop",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto quibusdam quaerat a officiis.",
+            "imagesFront": [
+                {
+                    "desktop": "../../assets/img/CAKE_HOME_680-448.jpg",
+                    "tablet": "../../assets/img/CAKE_HOME_540-400.jpg",
+                    "mobile": "../../assets/img/CAKE_HOME_285-256.jpg"
+                }
+            ],
+            "imagesBack": [
+                {
+                    "desktop": "../../assets/img/CAKE_HOME_671-900.jpg",
+                    "tablet": "../../assets/img/CAKE_HOME_469-768.jpg",
+                    "mobile": "../../assets/img/CAKE_HOME_252-460.jpg"
+                }
+            ]
+        },
+        {
+            "name":"Anais Profit x Heju",
+            "slug":"heju",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto quibusdam quaerat a officiis.",
+            "imagesFront": [
+                {
+                    "desktop": "../../assets/img/HEJU_HOME_680-448.jpg",
+                    "tablet": "../../assets/img/HEJU_HOME_540-400.jpg",
+                    "mobile": "../../assets/img/HEJU_HOME_285-256.jpg"
+                }
+            ],
+            "imagesBack": [
+                {
+                    "desktop": "../../assets/img/HEJU_HOME_671-900.jpg",
+                    "tablet": "../../assets/img/HEJU_HOME_469-768.jpg",
+                    "mobile": "../../assets/img/HEJU_HOME_252-460.jpg"
+                }
+            ]
+        },
+        {
+            "name":"Tropical",
+            "slug":"tropical",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto quibusdam quaerat a officiis.",
+            "imagesFront": [
+                {
+                    "desktop": "../../assets/img/TROPICAL_HOME_680-448.jpg",
+                    "tablet": "../../assets/img/TROPICAL_HOME_540-400.jpg",
+                    "mobile": "../../assets/img/TROPICAL_HOME_285-256.jpg"
+                }
+            ],
+            "imagesBack": [
+                {
+                    "desktop": "../../assets/img/TROPICAL_HOME_671-900.jpg",
+                    "tablet": "../../assets/img/TROPICAL_HOME_469-768.jpg",
+                    "mobile": "../../assets/img/TROPICAL_HOME_252-460.jpg"
+                }
+            ]
+        }
+    ]
+}

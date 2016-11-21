@@ -1,122 +1,73 @@
-<div class="singleProject visible">
-        <header class="singleProject__header">
-            <div class="singleProject__scroll">
-                Scroll
-            </div>
-            <h2 class="singleProject__title">{{ name }}</h2>
-            <div class="singleProject__card">
-                <div class="singleProject__infos">
-                    <div class="singleProject__info">
-                        <h6 class="singleProject__subtitle">Date :</h6>
-                        <p class="singleProject__small-info">{{ date }}</p>
-                    </div>
-                    {{#credits}}
-                    <div class="singleProject__info">
-                        <h6 class="singleProject__subtitle">Type :</h6>
-                        <p class="singleProject__small-info">{{ title }}</p>
-                    </div>
-                    <div class="singleProject__info">
-                        <h6 class="singleProject__subtitle">Collaboration :</h6>
-                        <p class="singleProject__small-info">{{ content }}</p>
-                    </div>
-                    {{/credits}}
+<div class="content visible singleProject">
+    <div class="singleProject visible">
+            <header class="singleProject__header">
+                <div class="singleProject__scroll">
+                    Scroll
                 </div>
-                <div class="singleProject__description">
-                    <p>{{ description }}</p>
+                <h2 class="singleProject__title">{{name}}</h2>
+                <div class="singleProject__card">
+                    <div class="singleProject__infos">
+                        <div class="singleProject__info">
+                            <h6 class="singleProject__subtitle">Date :</h6>
+                            <p class="singleProject__small-info">Balam balam</p>
+                        </div>
+                        <div class="singleProject__info">
+                            <h6 class="singleProject__subtitle">Lorem :</h6>
+                            <p class="singleProject__small-info">Balam balam</p>
+                        </div>
+                        <div class="singleProject__info">
+                            <h6 class="singleProject__subtitle">Dolor sit :</h6>
+                            <p class="singleProject__small-info">Balam balam</p>
+                        </div>
+                    </div>
+                    <div class="singleProject__description">
+                        <p>La nuit s'effaçait ; les étoiles pâlissaient ; c'était l'heure fraîche qui précède le jour. La lune descendue allait s'enfoncer dans la mer qu'elle nacrait sur toute sa surface.</p>
+                    </div>
                 </div>
-            </div>
-        </header>
-
-        {{#projects}}
-        {{#backgrounds}}
-        <div class="singleProject__background-container">
-            <img class="singleProject__bg-photo" src={{mobile}} srcset="{{mobile}} 500w,
-              {{tablet}} 900w,
-              {{desktop}} 1200w" alt="">
-        </div>
-        {{/backgrounds}}
-        {{/projects}}
-        <div class="singleProject__main-content">
+            </header>
+            <div class="singleProject__main-content">
             {{#projects}}
-            <div class="singleProject__photo-wrap">
-                <img class="singleProject__photo" src={{mobile}} srcset="{{mobile}} 500w,
-                         {{tablet}} 900w,
-                         {{desktop}} 1200w" alt="">
-            </div>
+                <div class="singleProject__photo-wrap">
+                    <img
+                        class="singleProject__photo lazyload preload"
+                        data-sizes="auto"
+                        data-src={{mobile}}
+                        data-srcset="{{mobile}} 500w,
+                        {{tablet}} 900w,
+                        {{desktop}} 1200w" alt="" />
+                </div>
             {{/projects}}
-        </div>
-        {{#teasing}}
-        <div class="singleProject__teasing">
-            <div class="singleProject__teasing-infos">
-                <h3 class="singleProject__subtitle">{{name}}</h3>
-                <a class="singleProject__link" href="#">Scroll to see the next project</a>
             </div>
-            <div class="singleProject__background-container--teaser">
-                <img class="singleProject__bg-photo--teaser" src={{#photo}}{{desktop}}{{/photo}} alt="">
+            {{#teasing}}
+            <div class="singleProject__teasing">
+                <div class="singleProject__teasing-infos">
+                    <h3 class="singleProject__subtitle">{{name}}</h3>
+                    <a class="singleProject__link" href="{{url}}">Scroll to see the next project</a>
+                </div>
+                <div class="singleProject__background-container--teaser">
+                    <img
+                        class="singleProject__bg-photo--teaser lazyload preload"
+                        data-sizes="auto"
+                        data-src={{#photo}}{{desktop}}{{/photo}}
+                        data-srcset=""
+                        alt="" />
+                </div>
             </div>
-        </div>
-        {{/teasing}}
+            {{/teasing}}
+    </div>
+    {{#projects}}
+    {{#backgrounds}}
+    <div class="singleProject__background-container">
+          <img
+            class="singleProject__bg-photo lazyload preload"
+            data-sizes="auto"
+            data-src={{mobile}}
+            data-srcset="{{mobile}} 500w,
+            {{tablet}} 900w,
+            {{desktop}} 1200w" alt="" />
+    </div>
+    {{/backgrounds}}
+    {{/projects}}
+
     <div class="scrollbar"></div>
-</div>
-<div class='loading'>
-    <img class="loading__logo" src="../../assets/img/logo.svg" alt="">
-    <h1 class="loading__title">Anaïs Profit</h1>
-    <div class="loading__layout"></div>
-    <span class='loading__percents'>0</span>
-    <div class='loading__progress'></div>
-</div>
-
-<div class="content singleProject">
-	<header class="singleProject__header">
-		<div class="singleProject__scroll">
-			Scroll
-		</div>
-		<h2 class="singleProject__title">{{name}}</h2>
-		<div class="singleProject__card">
-			<div class="singleProject__infos">
-				<div class="singleProject__info">
-					<h6 class="singleProject__subtitle">Date :</h6>
-					<p class="singleProject__small-info">Balam balam</p>
-				</div>
-				<div class="singleProject__info">
-					<h6 class="singleProject__subtitle">Lorem :</h6>
-					<p class="singleProject__small-info">Balam balam</p>
-				</div>
-				<div class="singleProject__info">
-					<h6 class="singleProject__subtitle">Dolor sit :</h6>
-					<p class="singleProject__small-info">Balam balam</p>
-				</div>
-			</div>
-			<div class="singleProject__description">
-				<p>La nuit s'effaçait ; les étoiles pâlissaient ; c'était l'heure fraîche qui précède le jour. La lune descendue allait s'enfoncer dans la mer qu'elle nacrait sur toute sa surface.</p>
-			</div>
-		</div>
-	</header>
-
-	<div class="singleProject__main-content">
-		<div>
-			<img class="singleProject__photo preload" src="../assets/img/le_printemps.jpg" alt="">
-			<div class="singleProject__background-container">
-				<img class="singleProject__bg-photo preload" src="../assets/img/le_printemps.jpg" alt="">
-			</div>
-		</div>
-		<div>
-			<img class="singleProject__photo preload" src="../assets/img/le_printemps.jpg" alt="">
-			<div class="singleProject__background-container">
-				<img class="singleProject__bg-photo preload" src="../assets/img/le_printemps.jpg" alt="">
-			</div>
-		</div>
-		<div>
-			<img class="singleProject__photo preload" src="../assets/img/le_printemps.jpg" alt="">
-		</div>
-	</div>
-
-	<div class="singleProject__teasing">
-		<h3 class="singleProject__subtitle">Back in the 80's</h3>
-		<a class="singleProject__link" href="#">Scroll to see the next project</a>
-		<div class="singleProject__background-container">
-			<img class="singleProject__bg-photo singleProject__bg-photo--teaser preload" src="../assets/img/80s_teaser.jpg" alt="">
-		</div>
-	</div>
-
 </div>

@@ -17,9 +17,9 @@ router.get('/', function(req)
 {   
 
     if(!container.classList.contains('loaded')){
-        getLoader('page-home');
+        getLoader('page-home', 'home');
     } else {
-        getTemplate('page-home');
+        getTemplate('page-home', 'home');
     }
     window.setTimeout(function()
     {  
@@ -53,10 +53,12 @@ router.get('/projects/:id', function(req)
         window.setTimeout(function()
         {   
             container.classList.toggle('container--visible');
+            if(container.classList.contains('project--scrolling')){
+                document.querySelector('.container').classList.toggle('project--scrolling')
+            }
             if(container.classList.contains('loaded')) {
                 project.init();
             }
-            listenScroll();
             initClicks(container);
         }
         ,1000);
@@ -116,15 +118,6 @@ window.onpopstate = function(e)
     container.classList.toggle('container--visible');
 }
 
-function listenScroll(e)
-{
-    document.querySelector('.singleProject').addEventListener('wheel', function(e){
-        if (document.body.scrollLeft + window.innerWidth >= container.clientWidth) {
-            console.log('end');
-        }
-    });
-}
-
 function getTemplate(name, id) 
 {
     getHeader(name);
@@ -176,3 +169,5 @@ function getLoader(name, id) {
     };
     xhr.send();
  };
+
+ exports.router = router;

@@ -109,6 +109,7 @@
    "teasing": [
        {
            "name": "Back in the 80's",
+           "url": "/projects/back-80s",
            "photo":[
                {
                  "desktop": "../assets/img/electro_image_desktop_1.jpg",

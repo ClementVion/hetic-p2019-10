@@ -145,6 +145,7 @@
    "teasing": [
        {
            "name": "Tropical",
+           "url": "/projects/tropical",
            "photo":[
                {
                  "desktop": "../assets/img/tropical_image_desktop_1.jpg",

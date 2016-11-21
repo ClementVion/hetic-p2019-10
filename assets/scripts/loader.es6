@@ -3,25 +3,34 @@ module.exports = {
 	init: function(){
 		let tl = new TimelineMax(),
 		loadingContainer = document.querySelector('.loading'),
-		
+
 		// Launch the detection of the loading of each assets
-		launchLoading = function (cl){
+		launchLoading = function (cl) {
 			let assets = document.querySelectorAll(cl), // Get assets
 				promisesResolved = 0; // number of promises resolved updated at each iteration
+			preventLazyload(assets)
 			loadingContainer.style.display = "block";
 			for (var elm of assets) {
 			    loadAssets(elm)
-		    	.then( 
-		    		function(value) { 
+		    	.then(
+		    		function(value) {
 		    			// update load progress
 		    			promisesResolved++;
 		    			updateLoadProgress(promisesResolved, assets.length);
-		    		}	
+		    		}
 			    );
 			}
 		},
 
-		// Detect if one asset is loaded 
+		// Prevent lazyload in ordre to permit preload
+		preventLazyload = function (assets) {
+			for (var elm of assets) {
+				elm.src = elm.getAttribute('data-src');
+				elm.classList.toggle('lazyload');
+			}
+		},
+
+		// Detect if one asset is loaded
 		loadAssets = function (elm) {
 			return new Promise(
 				function (resolve) {
@@ -52,7 +61,7 @@ module.exports = {
 							resolve(); // return that all images have been loaded
 						}
 					},2000);
-				});	
+				});
 		},
 
 
@@ -66,7 +75,7 @@ module.exports = {
 
 				loadingLayout.style.transform = "translateX(0%)";
 				loadingContainer.style.opacity = "0";
-				
+
 				if( content.classList.contains('home') ) {
 					let home = require('./page-home.es6');
 					setTimeout(function(){
@@ -97,19 +106,8 @@ module.exports = {
 						projectCard= projectHeader.querySelector('.singleProject__card'),
 						projectScroll= projectHeader.querySelector('.singleProject__scroll');
 						loadingContainer.style.display = "none";
-						tl.to(projectTitle, 0.6,
-						{
-							x: '0',
-							opacity: '0.03'
-						});
-						tl.to(projectCard, 0.3,
-						{
-							opacity: '1'
-						}, '-=0.3');
-						tl.to(projectScroll, 0.2,
-						{
-							opacity: '0.33'
-						});
+						loadingContainer.style.display = "none";
+						container.classList.add('loaded');
 					},1000);
 				}
 
@@ -120,7 +118,3 @@ module.exports = {
 		launchLoading('.preload');
 	}
 }
-
-
-
-
