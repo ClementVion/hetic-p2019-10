@@ -11,6 +11,7 @@
 	opacity: 0;
 	transition: opacity 1s ease-in;
 	flex-direction: column;
+	justify-content: space-between;
 
 	@include homeMedium{
 		flex-direction: row;
@@ -247,10 +248,16 @@
 		height: 350px;
 	}
 
-	@include large{
+	@include homeLarge{
 		width: 610px;
-		left: 420px;
+		left: 460px;
 		height: 400px;
+	}
+
+	@include homeUltraLarge{
+		width: 680px;
+		left: 580px;
+		height: 448px;
 	}
 	
 /* 	resize this container for anim on .project__imageFront
@@ -291,6 +298,10 @@
 
     @include homeSemiLarge{
 		width: 610px;
+	}
+
+	@include homeUltraLarge{
+		width: 680px;
 	}
 	
 }

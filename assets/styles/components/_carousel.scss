@@ -5,6 +5,14 @@
 	top: calc(50% - 85px);
 	margin: 0;
 	z-index: 10;
+
+	@include homeLarge{
+		margin: 0 15px;
+	}
+
+	// @include homeUltraLarge{
+	// 	margin: 0 15px;
+	// }
 }
 
 .carousel__select{

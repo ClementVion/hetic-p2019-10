@@ -26,7 +26,6 @@ module.exports = {
 
         // Get slides and init theirs styles
         initSlides = function() {
-
             let throttled = _.throttle(magnet, 2000, {
                 leading: true,
                 trailing: false
