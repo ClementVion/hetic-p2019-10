@@ -128,3 +128,60 @@
 	</div>
 
 </div>
+=======
+<div class="singleProject visible">
+    <header class="singleProject__header">
+        <div class="singleProject__scroll">
+            Scroll
+        </div>
+        <h2 class="singleProject__title">{{name}}</h2>
+        <div class="singleProject__card">
+            <div class="singleProject__infos">
+                <div class="singleProject__info">
+                    <h6 class="singleProject__subtitle">Date :</h6>
+                    <p class="singleProject__small-info">Balam balam</p>
+                </div>
+                <div class="singleProject__info">
+                    <h6 class="singleProject__subtitle">Lorem :</h6>
+                    <p class="singleProject__small-info">Balam balam</p>
+                </div>
+                <div class="singleProject__info">
+                    <h6 class="singleProject__subtitle">Dolor sit :</h6>
+                    <p class="singleProject__small-info">Balam balam</p>
+                </div>
+            </div>
+            <div class="singleProject__description">
+                <p>La nuit s'effaçait ; les étoiles pâlissaient ; c'était l'heure fraîche qui précède le jour. La lune descendue allait s'enfoncer dans la mer qu'elle nacrait sur toute sa surface.</p>
+            </div>
+        </div>
+    </header>
+    <div class="singleProject__main-content">
+        {{#projects}}
+        <div class="singleProject__photo-wrap">
+            <img class="singleProject__photo lazyload " data-sizes="auto" data-src={{mobile}} data-srcset="{{mobile}} 500w,
+                    {{tablet}} 900w,
+                    {{desktop}} 1200w" alt="" />
+        </div>
+        {{/projects}}
+    </div>
+    {{#teasing}}
+    <div class="singleProject__teasing">
+        <div class="singleProject__teasing-infos">
+            <h3 class="singleProject__subtitle">{{name}}</h3>
+            <a class="singleProject__link" href="#">Scroll to see the next project</a>
+        </div>
+        <div class="singleProject__background-container--teaser">
+            <img class="singleProject__bg-photo--teaser lazyload" data-sizes="auto" data-src={{#photo}}{{desktop}}{{/photo}} data-srcset="" alt="" />
+        </div>
+    </div>
+    {{/teasing}}
+</div>
+{{#projects}} {{#backgrounds}}
+<div class="singleProject__background-container">
+    <img class="singleProject__bg-photo lazyload" data-sizes="auto" data-src={{mobile}} data-srcset="{{mobile}} 500w,
+        {{tablet}} 900w,
+        {{desktop}} 1200w" alt="" />
+</div>
+{{/backgrounds}} {{/projects}}
+
+<div class="scrollbar"></div>

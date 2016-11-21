@@ -74,8 +74,8 @@ module.exports = {
                 projectLinks[m].style.display = 'none';
             }
 
-            document.addEventListener('mousewheel', updatePosition);    
-            
+            document.addEventListener('mousewheel', updatePosition);
+
             function updatePosition(e)
             {
                 e.preventDefault();
@@ -83,7 +83,7 @@ module.exports = {
             }
 
             function magnet(wheelDelta)
-            {   
+            {
                 if (wheelDelta > 0) {
                     selectSlide( (currentProject-1) );
                 }
@@ -113,49 +113,49 @@ module.exports = {
                 isScrolling = true;
                 tl1.to(slides[selectedProject], 0.3,
                 {
-                    y: '-100%', 
-                });         
+                    y: '-100%',
+                });
                 tl1.to(frontSlides[selectedProject], 0.2,
                 {
-                    y: '-100%', 
-                }, '-=0.1');            
+                    y: '-100%',
+                }, '-=0.1');
                 tl1.to(titlesSlides[prevProject], 0.4,
                 {
-                    y: '100%',  
+                    y: '100%',
                 }, '-= 0.4');
                 tl1.to(descriptionSlides[prevProject], 0.2,
                 {
-                    y: '100%',  
+                    y: '100%',
                 }, '-= 0.4');
                 tl1.to(projectLinks[prevProject], 0.2,
                 {
-                    y: '100%',  
+                    y: '100%',
                 }, '-= 0.4');
                 setTimeout(function(){
                     tl2.to(slides[prevProject], 0.3,
                     {
                         y: '-=100%',
-                        zIndex: '0',    
+                        zIndex: '0',
                     });
                     tl2.to(frontSlides[prevProject], 0.2,
                     {
                         y: '-=100%',
-                        zIndex: '0',    
+                        zIndex: '0',
                     }, '-=0.1');
                     tl2.to(titlesSlides[selectedProject], 0.4,
                     {
                         y: '-=100%',
-                        zIndex: '0',    
+                        zIndex: '0',
                     }, '-=0.4');
                     tl2.to(descriptionSlides[selectedProject], 0.6,
                     {
                         y: '-=100%',
-                        zIndex: '0',    
+                        zIndex: '0',
                     }, '-=0.6');
                     tl2.to(projectLinks[selectedProject], 0.8,
                     {
                         y: '-=100%',
-                        zIndex: '0',    
+                        zIndex: '0',
                     }, '-=0.8');
                     setTimeout(function(){
                         tl2.to(slides[prevProject], 0,
@@ -166,7 +166,7 @@ module.exports = {
                             zIndex: 1
                         });
                         tl2.to(frontSlides[prevProject], 0, {
-                        });                 
+                        });
                         tl2.to(frontSlides[prevProject], 0,
                         {
                             display: 'none',
@@ -228,22 +228,22 @@ module.exports = {
             tl2.to(slides[0], 0.3,
             {
                 y: '-=100%',
-                zIndex: '0',    
+                zIndex: '0',
             });
             tl2.to(frontSlides[0], 0.2,
             {
                 y: '-=100%',
-                zIndex: '0',    
+                zIndex: '0',
             }, '-=0.1');
             tl2.to(titlesSlides[0], 0.4,
             {
                 y: '-=100%',
-                zIndex: '0',    
+                zIndex: '0',
             }, '-=0.4');
             tl2.to(descriptionSlides[0], 0.6,
             {
                 y: '-=100%',
-                zIndex: '0',    
+                zIndex: '0',
             }, '-=0.6');
         },
 

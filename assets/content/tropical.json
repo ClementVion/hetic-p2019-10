@@ -1,61 +1,62 @@
-{  
+
+{
     "name":"Tropical",
     "description":"Personal projects",
     "date":"",
-    "credits":[  
-        {  
+    "credits":[
+        {
             "title":"Paper Craft",
             "content":""
         }
     ],
-    "projects":[  
-        {  
+    "projects":[
+        {
             "desktop":"../assets/img/tropical_image_desktop_1.jpg",
             "tablet":"../assets/img/tropical_image_tablet_1.jpg",
             "mobile":"../assets/img/tropical_image_mobile_1.jpg",
-            "backgrounds":[  
-                {  
+            "backgrounds":[
+                {
                     "desktop":"../assets/img/tropical_image_desktop_1.jpg",
                     "tablet":"../assets/img/tropical_image_tablet_1.jpg",
                     "mobile":"../assets/img/tropical_image_mobile_1.jpg"
                 }
             ]
         },
-        {  
+        {
             "desktop":"../assets/img/tropical_image_desktop_2.jpg",
             "tablet":"../assets/img/tropical_image_tablet_2.jpg",
             "mobile":"../assets/img/tropical_image_mobile_2.jpg",
-            "backgrounds":[  
-                {  
+            "backgrounds":[
+                {
                     "desktop":"../assets/img/tropical_image_desktop_2.jpg",
                     "tablet":"../assets/img/tropical_image_tablet_2.jpg",
                     "mobile":"../assets/img/tropical_image_mobile_2.jpg"
                 }
             ]
         },
-        {  
+        {
             "desktop":"../assets/img/tropical_image_desktop_3.jpg",
             "tablet":"../assets/img/tropical_image_tablet_3.jpg",
             "mobile":"../assets/img/tropical_image_mobile_3.jpg",
-            "backgrounds":[  
-                {  
+            "backgrounds":[
+                {
                     "desktop":"../assets/img/tropical_image_desktop_3.jpg",
                     "tablet":"../assets/img/tropical_image_tablet_3.jpg",
                     "mobile":"../assets/img/tropical_image_mobile_3.jpg"
                 }
             ]
         },
-        {  
+        {
             "desktop":"../assets/img/tropical_image_desktop_4.jpg",
             "tablet":"../assets/img/tropical_image_tablet_4.jpg",
             "mobile":"../assets/img/tropical_image_mobile_4.jpg"
         }
     ],
-    "teasing":[  
-        {  
+    "teasing":[
+        {
             "name":"Guerlain",
-            "photo":[  
-                {  
+            "photo":[
+                {
                     "desktop":"../assets/img/guerlain_image_desktop_1.jpg",
                     "tablet":"../assets/img/guerlain_image_tablet_1.jpg",
                     "mobile":"../assets/img/guerlain_image_mobile_1.jpg"
