@@ -1,11 +1,11 @@
 .allWorks {
-
+    font-family: 'Aktiv Grotesk Corp';
 }
 
 .allWorks__container {
     display: flex;
     justify-content: flex-start;
-    height: 90vh;
+    height: calc(90vh - 100px);
     position: relative;
 
     @include allworksMedium{
@@ -15,6 +15,7 @@
 
 .allWorks__title {
     margin: 120px 40px;
+    font-weight: 500;
     z-index: 10;
     opacity: 0;
     transform: translateX(-80px);
@@ -51,20 +52,21 @@
         transform-origin: 45% 50% 0;
         transform: rotate(-90deg);
         bottom: -125px;
-        right: 70px;
+        right: 250px;
         top: auto;
         left: auto;
     }   
 
     @include allworksLarge{
         bottom: -195px;
-        right: 200px;
+        right: 450px;
     }
 }
 
 .allWorks__listTitles {
     width: 390px;
     font-size: 24px;
+    font-family: 'Aktiv Grotesk Corp';
     font-weight: 500;
     margin-bottom: 100px;
     cursor: pointer;
@@ -95,7 +97,7 @@
 
     span {
         margin-right: 20px;
-        font-weight: 700;
+        font-weight: 500;
         color: #000;
 
         @include allworksLarge{

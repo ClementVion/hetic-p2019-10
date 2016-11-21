@@ -30,10 +30,6 @@ module.exports = {
                 leading: true,
                 trailing: false
             });
-            // frontSlides[0].style.top = '0';
-            // slides[0].style.top = '0';
-            // titlesSlides[0].style.top = '0';
-            // descriptionSlides[0].style.top = '0';
             projectLinks[0].style.top = '0';
 
             for (let j = 1; j < frontSlides.length; j++) {
