@@ -15,14 +15,14 @@ var router = new Grapnel(
 
 
 router.get('/', function(req)
-{   
+{
     if(!container.classList.contains('loaded')){
         getLoader('page-home', 'home');
     } else {
         getTemplate('page-home', 'home');
     }
     window.setTimeout(function()
-    {  
+    {
         console.log('hihi');
         container.classList.toggle('container--visible');
         if(container.classList.contains('loaded')) {
@@ -33,25 +33,25 @@ router.get('/', function(req)
     ,1000);
 });
 
-router.get('/projects/:id', function(req) 
+router.get('/projects/:id', function(req)
 {
     if (routes.indexOf(req.params.id) === -1 ) {
         getTemplate('404');
         window.setTimeout(function()
-            {   
+            {
                 container.classList.toggle('container--visible');
                 initClicks(container);
             }
         ,1000);
     } else {
-        
+
         if(!container.classList.contains('loaded')){
             getLoader('page-project', req.params.id);
         } else {
             getTemplate('page-project', req.params.id);
         }
         window.setTimeout(function()
-        {   
+        {
             container.classList.toggle('container--visible');
             if(container.classList.contains('project--scrolling')){
                 document.querySelector('.container').classList.toggle('project--scrolling')
@@ -73,7 +73,7 @@ router.get('/works', function(req)
         getTemplate('allworks', 'home');
     }
     window.setTimeout(function()
-    {  
+    {
         container.classList.toggle('container--visible');
         initClicks(container);
     }
@@ -88,28 +88,28 @@ router.get('/about', function(req)
         getTemplate('about');
     }
     window.setTimeout(function()
-    {  
+    {
         container.classList.toggle('container--visible');
         initClicks(container);
     }
     ,1000);
 });
 
-router.get('/*', function(req, e) 
+router.get('/*', function(req, e)
 {
     if (!e.parent()) {
         getTemplate('404');
         window.setTimeout(function()
-        {  
+        {
             container.classList.toggle('container--visible');
             initClicks(container);
         }
         ,1000);
-    } 
+    }
 });
 
 // Listen for clicks to navigate
-function initClicks(element) 
+function initClicks(element)
 {
   let links = element.getElementsByTagName('a');
   for (let i = 0; i < links.length; i++) {
@@ -120,22 +120,22 @@ function initClicks(element)
   }
 }
 
-function listenClicks(e) 
+function listenClicks(e)
 {
     container.classList.toggle('container--visible');
     window.setTimeout(function()
     {
         container.innerHTML = '';
-        router.navigate(e.getAttribute('href'));  
+        router.navigate(e.getAttribute('href'));
     },1000);
 }
 
-window.onpopstate = function(e) 
+window.onpopstate = function(e)
 {
     container.classList.toggle('container--visible');
 }
 
-function getTemplate(name, id) 
+function getTemplate(name, id)
 {
     getHeader(name);
     let template = require('../../assets/html/' + name + '.html');

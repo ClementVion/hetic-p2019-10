@@ -2,7 +2,20 @@ module.exports = {
     init: function() {
         let routing = require('./router.es6');
         class Init {
-            constructor() {}
+            constructor() {
+              window.onresize = function(event) {
+                let resize = new Resize();
+              };
+            }
+        }
+
+        class Resize {
+          constructor() {
+            let mainContent = document.querySelector('.singleProject__main-content'),
+                header = document.querySelector('.singleProject__header');
+            console.log((window.innerWidth/10)*-1 + "px");
+            mainContent.style.marginLeft = (parseInt(getComputedStyle(header).width) - parseInt(window.innerWidth)/1.3)*-1 + "px";
+          }
         }
 
         // TODO : refactor scroll & scroll to next (make one class?)
@@ -42,7 +55,7 @@ module.exports = {
                         let slice = 99 / projectsLength;
                         let currentSlice = Math.round(percentImg / slice);
                         console.log(percentImg);
-                        if (percentImg >= 0 && percentImg < 100) {
+                        if (percentImg >= 0 && percentImg < 90) {
                             console.log("current slice: " + currentSlice);
                             for (var i = projectsLength; i > currentSlice; i--) {
                                 if (document.querySelector('.singleProject__background-container--visible')) {
@@ -85,8 +98,13 @@ module.exports = {
                         }
                         if (currentSingle > (-500) && delta < 0) {
                             document.querySelector('.singleProject__header').classList.add('singleProject__header--hidden');
+                              window.setTimeout(function() {
+                                document.querySelector('.singleProject__header').classList.add('singleProject__header--translated');
+                            }, 1000);
+                            window.setTimeout
                         }
                         if (currentSingle == 0 && currentSingle > -400 && delta >= 0) {
+                          document.querySelector('.singleProject__header').classList.remove('singleProject__header--translated');
                             document.querySelector('.singleProject__header').classList.remove('singleProject__header--hidden');
                         }
 
@@ -113,21 +131,10 @@ module.exports = {
             }
         }
 
-        class ScrollToNext {
-            constructor() {
-                window.addEventListener('wheel', (event) => this.detectEnd());
-                // window.addEventListener('wheel', (event) => this.scrollBar());
-            }
-
-            detectEnd() {
-                let container = document.querySelector(".singleProject");
-                let currentScroll = getComputedStyle(container).transform;
-                currentScroll = parseInt(currentScroll.split(" ")[4]);
-                // let percentage = ((currentScroll*-1) / (parseInt(getComputedStyle(container).width) - window.innerWidth) * 100) < 10;
-            }
-        }
+        let start = new Init();
         let test;
         if (!test) {
+            let size = new Resize();
             test = new Scroll();
         }
     }
