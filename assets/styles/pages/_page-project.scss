@@ -9,24 +9,27 @@
     font-family: 'Aktiv Grotesk Corp';
     margin: 0 auto 60px 0;
     width: 288px;
-    height: 100%;
+    height: auto;
     align-items: center;
     opacity: 0;
-    transform: translateX(0);
+    transform: translateX(0px);
     margin: auto;
+    margin-top: 35px;
+    margin-bottom: 35px;
     @include small {
         width: 335px;
     }
     @include medium-single {
-        // box-sizing: border-box;
-        display: flex;
+        box-sizing: border-box;
+        display: inline-flex;
         flex-direction: row;
-        justify-content: space-between;
-        // padding-left: 150px;
+        padding-left: 150px;
         width: auto;
+        height: 100%;
         margin: 0;
     }
     @include large {
+        padding-left: 300px;
     }
 }
 
@@ -67,22 +70,26 @@
 .singleProject__header {
     opacity: 1;
     color: #353535;
-    transition: opacity ease 600ms;
+    transition: all ease 800ms;
     @include medium-single {
-        margin-left: 150px;
+        // margin-right: -400px;
         z-index: -1;
         display: flex;
         flex-direction: column;
         flex-wrap: nowrap;
         width: 1800px;
+        // transform: translate(0px,0px);
     }
     @include large {
+        // margin-right: -1100px;
+
     }
 }
 
 .singleProject__header--hidden{
     opacity: 0;
-    transition: opacity ease 600ms;
+    transition: all ease 800ms;
+    // transform: translate(-180px,0px);
 }
 
 .singleProject__title {
@@ -97,7 +104,7 @@
     @include medium-single {
         font-size: 219px;
         opacity: 0.03;
-        margin: 20% 0 0 110px;
+        margin: 10% 0 0 110px;
     }
     @include large {
         font-size: 300px;
@@ -169,20 +176,20 @@
     transition: transform ease-in 10ms;
     @include medium-single {
         top: 0;
-        position: absolute;
         display: flex;
         flex-direction: row;
         margin-top: 0px;
         width: auto;
-        // margin-left: 5%;
         margin: 0;
         z-index: 5;
         height: 100%;
-        padding-left: 1100px;
-        box-sizing: border-box;
+        margin-left: -900px;
+        transform: translateX(0px) translateZ(0);
+
     }
     @include large {
-        // margin-left: 5%;
+        // transform: translateX(-1100px) translateZ(0);
+        margin-left: -1100px;
     }
 }
 
@@ -217,24 +224,22 @@
 .singleProject__background-container {
     display: none;
     flex-shrink: 0;
-    transition: transform ease 1000ms;
+    transition: all ease 1.5s;
     @include medium-single {
         display: block;
         width: 570px;
         height: 100%;
         overflow: hidden;
         z-index: -1;
-        // margin: 0 150px 0 1200px;
-        right: 0;
+        left: 0;
         top: 0;
         position: absolute;
-        transform: translate(670px,0);
+        transform: translate(70%,0);
         opacity: 0;
     }
     @include large {
         width: 670px;
         height: 100%;
-        // transform: translate(670px,0);
     }
 
     .singleProject__bg-photo {
@@ -253,19 +258,12 @@
     transition: opacity 300ms;
 }
 
-.singleProject__background-container--translated {
-    @include large{
-        transition: transform ease 250ms;
-        transform: translateX(0);
-    }
-}
-
 
 .singleProject__background-container.singleProject__background-container--visible{
     @include medium-single{
         opacity: 1;
-        transition: all ease 1000ms;
-        transform: translate(0,0);
+        transition: all ease 1.5s;
+        transform: translate(70%,0);
     }
 }
 
@@ -281,22 +279,32 @@
 
 .singleProject__background-container--teaser{
     background: #FFFFFF;
-
+    @include medium-single{
+        width: 570px;
+        overflow: hidden;
+    }
     @include large{
-        width: 670px;
+        // width: 670px;
     }
 }
 .singleProject__teasing {
     display: flex;
     flex-direction: row;
     transform: translateX(0);
+    margin-bottom: 15px;
     @include medium-single{
+        margin: 0;
         align-items: center;
+        width: auto;
     }
 
     @include large{
-        // margin-left: 200px;
+        margin: 0;
     }
+}
+
+.singleProject__teasing-visible{
+
 }
 
 .singleProject__subtitle {
@@ -330,14 +338,15 @@
     @include medium-single{
         width: 570px;
         display: block;
-        opacity: 0.5;
+        // TODO see with lazyloading to remove important
+        opacity: 0.5 !important;
         filter: grayscale(100%);
         height: 100%;
     }
 
     @include large{
-        width: 670px;
-        height: auto;
+        width: auto;
+        height: 100%;
     }
 }
 
@@ -373,7 +382,7 @@
     display: none;
     @include medium-single{
         position: fixed;
-        float: left;
+        left: 0;
         display: block;
         width: 0;
         transform: translateZ(0);

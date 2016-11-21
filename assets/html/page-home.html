@@ -1,0 +1,68 @@
+
+<div class="project">
+
+    <div class="project__informationsContainer">
+        <div class="project__titleBox">
+            {{#projects}}
+                <h2 class="project__title">{{name}}</h2>
+            {{/projects}}
+        </div>
+        <div class="project__descriptionBox">
+            {{#projects}}
+                <p class="project__description">{{description}}</p>
+            {{/projects}}
+        </div>
+
+        <div class="project__see">
+            {{#projects}}
+            <a class="project__link" href="/projects/{{slug}}">Voir le projet</a>
+            {{/projects}}
+        </div>
+
+    </div>
+
+    <div class="project__imgContainer">
+        <div class="project__imageFrontBox">
+            {{#projects}}
+                {{#imagesFront}}
+                    <img
+                        class="project__imageFront preload lazyload"
+                        data-sizes="auto"
+                        data-src={{desktop}}
+                        data-srcset="{{mobile}} 500w,
+                        {{tablet}} 700w,
+                        {{desktop}} 1000w" alt="" />
+                {{/imagesFront}}
+            {{/projects}}
+        </div>
+        <div class="project__imageBox">
+             {{#projects}}
+                {{#imagesBack}}
+                    <img
+                        class="project__imageBackground preload lazyload"
+                        data-sizes="auto"
+                        data-src={{desktop}}
+                        data-srcset="{{mobile}} 500w,
+                        {{tablet}} 700w,
+                        {{desktop}} 1000w" alt="" />
+                {{/imagesBack}}
+            {{/projects}}
+        </div>
+    </div>
+
+</div>
+
+<div class="carousel">
+    <ul class="carousel__select">
+        <li class="carousel__option carousel__option--on" data-chapter="1"> <span>1</span> </li>
+        <li class="carousel__option" data-chapter="2"> <span>2</span> </li>
+        <li class="carousel__option" data-chapter="3"> <span>3</span> </li>
+        <li class="carousel__option" data-chapter="4"> <span>4</span> </li>
+        <li class="carousel__option" data-chapter="5"> <span>5</span> </li>
+    </ul>
+</div>
+
+</div>
+
+</body>
+</html>
