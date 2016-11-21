@@ -416,14 +416,14 @@
         position: fixed;
         left: 0;
         display: block;
-        width: 0;
-        transform: translateZ(0);
+        width: 100%;
+        transform: scaleX(0) translateZ(0);
         transform-origin: 0 0;
         height: 5px;
         background: #000000;
         bottom: 0;
         backface-visibility: hidden;
-        transition: transform linear 30ms;
+        transition: transform ease-in 80ms;
     }
 }
 
