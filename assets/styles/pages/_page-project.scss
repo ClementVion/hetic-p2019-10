@@ -29,7 +29,7 @@
         margin: 0;
     }
     @include large {
-        padding-left: 300px;
+        padding-left: 200px;
     }
 }
 
@@ -206,13 +206,13 @@
         margin: 0;
         z-index: 5;
         height: 100%;
-        margin-left: -900px;
+        margin-left: -600px;
         transform: translateX(0px) translateZ(0);
 
     }
     @include large {
         // transform: translateX(-1100px) translateZ(0);
-        margin-left: -1100px;
+        margin-left: -600px;
     }
 }
 
@@ -252,17 +252,17 @@
 .singleProject__background-container {
     display: none;
     flex-shrink: 0;
-    transition: all ease 1.5s;
+    transition: all ease 1s;
     @include medium-single {
         display: block;
         width: 570px;
         height: 100%;
         overflow: hidden;
         z-index: -1;
-        left: 0;
+        right: 0;
         top: 0;
         position: absolute;
-        transform: translate(70%,0);
+        transform: translate(0,0);
         opacity: 0;
     }
     @include large {
@@ -291,8 +291,8 @@
     @include medium-single{
         opacity: 1;
         background: #FFFFFF;
-        transition: all ease 1.5s;
-        transform: translate(70%,0);
+        transition: all ease 1s;
+        transform: translate(0,0);
     }
 }
 

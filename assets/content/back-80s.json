@@ -48,7 +48,14 @@
        {
            "desktop": "../assets/img/electro_image_desktop_4.jpg",
            "tablet": "../assets/img/electro_image_tablet_4.jpg",
-           "mobile": "../assets/img/electro_image_mobile_4.jpg"
+           "mobile": "../assets/img/electro_image_mobile_4.jpg",
+           "backgrounds":[
+               {
+                   "desktop": "../assets/img/electro_image_desktop_4.jpg",
+                   "tablet": "../assets/img/electro_image_tablet_4.jpg",
+                   "mobile": "../assets/img/electro_image_mobile_4.jpg"
+               }
+           ]
        }
    ],
    "teasing": [
