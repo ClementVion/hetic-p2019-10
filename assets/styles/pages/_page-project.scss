@@ -41,11 +41,12 @@
 
 .singleProject__scroll {
     display: none;
+    opacity: 0;
+    transition: 800ms 600ms cubic-bezier(.19,1,.22,1);
     @include medium-single {
         display: inline;
         font-family: 'Aktiv Grotesk Corp';
         font-size: 13px;
-        opacity: 0.33;
         width: 50px;
         position: absolute;
         transform: rotate(-90deg) translateX(-430px);
@@ -56,6 +57,12 @@
         -webkit-transform: rotate(-90deg) translateX(-630%);
     }
 }
+
+.container--visible .singleProject__scroll {
+    opacity: 0.33;
+    transition: 800ms 600ms cubic-bezier(.19,1,.22,1);
+}
+
 
 .singleProject__scroll:after {
     content: "";
@@ -99,11 +106,12 @@
     display: flex;
     flex-wrap: nowrap;
     width: 200%;
-    opacity: 0.03;
-    transition: all ease 300ms;
+    opacity: 0;
+    transform: translateX(-150px);
+    transition: 800ms cubic-bezier(.19,1,.22,1);
     @include medium-single {
         font-size: 219px;
-        opacity: 0.03;
+        opacity: 0;
         margin: 10% 0 0 110px;
     }
     @include large {
@@ -112,17 +120,30 @@
     }
 }
 
+.container--visible .singleProject__title {
+    transform: translateX(0);
+    opacity: 0.03;
+    transition: 800ms cubic-bezier(.19,1,.22,1);
+} 
+
 .singleProject__title--hidden{
     opacity: 0;
 }
 
 .singleProject__card {
+    opacity: 0;
+    transition: 1000ms 300ms cubic-bezier(.19,1,.22,1);
     @include medium-single {
         display: flex;
         flex-direction: row;
         align-items: baseline;
     }
 }
+
+.container--visible .singleProject__card {
+    opacity: 1;
+    transition: 1000ms 300ms cubic-bezier(.19,1,.22,1);
+} 
 
 .singleProject__infos {
     font-size: 13px;
@@ -174,6 +195,8 @@
     transform: translateX(0) translateZ(0);
     backface-visibility: hidden;
     transition: transform ease-in 10ms;
+    opacity: 0;
+    transition: 800ms 600ms cubic-bezier(.19,1,.22,1);
     @include medium-single {
         top: 0;
         display: flex;
@@ -191,6 +214,11 @@
         // transform: translateX(-1100px) translateZ(0);
         margin-left: -1100px;
     }
+}
+
+.container--visible .singleProject__main-content {
+    opacity: 1;
+    transition: 800ms 600ms cubic-bezier(.19,1,.22,1);
 }
 
 .singleProject__main-content--translated{
