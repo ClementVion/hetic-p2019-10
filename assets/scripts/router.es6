@@ -110,7 +110,7 @@ router.get('/*', function(req, e)
 {
     if (!e.parent()) {
         previousPage = '404';
-        templating.getHeader('404');
+        templating.getTemplate('404');
         window.setTimeout(function()
         {
             container.classList.toggle('container--visible');
