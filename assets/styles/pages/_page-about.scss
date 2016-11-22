@@ -30,14 +30,14 @@
     color: #353535;
 
 	@include homeMedium{
-	    font-size: 34px;
+	    font-size: 30px;
 	    line-height: 50px;
 	    top: 496px;
 	    padding: 0px 80px 100px 80px;
 	}
 
 	@include homeLarge{
-	    top: 240px;
+	    top: 170px;
 	    left: 10%;
 	    font-size: 30px;
 	    width: 530px;

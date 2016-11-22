@@ -3,37 +3,38 @@ module.exports = {
 	init: function(){
 		let tl = new TimelineMax(),
 		loadingContainer = document.querySelector('.loading'),
-
+		keys = {37: 1, 38: 1, 39: 1, 40: 1},
+		preventDefault = function (e) {
+			e = e || loadingContainer.event;
+			if (e.preventDefault)
+			  e.preventDefault();
+			e.returnValue = false;  
+		},
+		preventDefaultForScrollKeys = function(e) {
+		    if (keys[e.keyCode]) {
+		        preventDefault(e);
+		        return false;
+		    }
+		},
+		disableScroll = function() {
+			if (loadingContainer.addEventListener) // older FF
+				loadingContainer.addEventListener('DOMMouseScroll', preventDefault, false);
+			loadingContainer.onwheel = preventDefault; // modern standard
+			loadingContainer.onmousewheel = loadingContainer.onmousewheel = preventDefault; // older browsers, IE
+			loadingContainer.ontouchmove  = preventDefault; // mobile
+			loadingContainer.onkeydown  = preventDefaultForScrollKeys;
+		},
+		enableScroll = function() {
+		    if (loadingContainer.removeEventListener)
+		        loadingContainer.removeEventListener('DOMMouseScroll', preventDefault, false);
+		    loadingContainer.onmousewheel = loadingContainer.onmousewheel = null; 
+		    loadingContainer.onwheel = null; 
+		    loadingContainer.ontouchmove = null;  
+		    loadingContainer.onkeydown = null;  
+		},
 		// Launch the detection of the loading of each assets
 		launchLoading = function (cl) {
-			var keys = {37: 1, 38: 1, 39: 1, 40: 1};
-
-			function preventDefault(e) {
-			  e = e || loadingContainer.event;
-			  if (e.preventDefault)
-			      e.preventDefault();
-			  e.returnValue = false;  
-			}
-
-			function preventDefaultForScrollKeys(e) {
-			    if (keys[e.keyCode]) {
-			        preventDefault(e);
-			        return false;
-			    }
-			}
-
-			function disableScroll() {
-			  if (loadingContainer.addEventListener) // older FF
-			      loadingContainer.addEventListener('DOMMouseScroll', preventDefault, false);
-			  loadingContainer.onwheel = preventDefault; // modern standard
-			  loadingContainer.onmousewheel = document.onmousewheel = preventDefault; // older browsers, IE
-			  loadingContainer.ontouchmove  = preventDefault; // mobile
-			  document.onkeydown  = preventDefaultForScrollKeys;
-			}
-
-
 			disableScroll();
-			
 			let assets = document.querySelectorAll(cl), // Get assets
 				promisesResolved = 0; // number of promises resolved updated at each iteration
 			preventLazyload(assets)
@@ -112,6 +113,7 @@ module.exports = {
 					}, 600);
 					setTimeout(function(){
 						loadingContainer.style.display = "none";
+						enableScroll();
 					}, 800);
 				}
 				else if( content.classList.contains('pageProject') ) {
@@ -126,6 +128,7 @@ module.exports = {
 						projectCard= projectHeader.querySelector('.singleProject__card'),
 						projectScroll= projectHeader.querySelector('.singleProject__scroll');
 						loadingContainer.style.display = "none";
+						enableScroll();
 						container.classList.add('loaded');
 					},1000);
 				} else {
@@ -136,6 +139,7 @@ module.exports = {
 					}, 600);
 					setTimeout(function(){
 						loadingContainer.style.display = "none";
+						enableScroll();
 						container.classList.add('loaded');
 					},1000);
 				}

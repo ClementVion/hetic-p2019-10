@@ -1,9 +1,10 @@
 module.exports = {
     init: function() {
+        console.log('zizi');
         let routing = require('./router.es6');
         class Init {
             constructor() {
-              window.onresize = function(event) {
+              document.querySelector('.singleProject').onresize = function(event) {
                 let resize = new Resize();
               };
             }
@@ -24,14 +25,13 @@ module.exports = {
                     trailing: false
                 });
 
-                // let throttledBar = _.throttle(scrollBar, 25, {
-                //     leading: true,
-                //     trailing: false
-                // });
-
                 let fired = false;
                 // window.addEventListener('wheel', fireScrollBar);
+<<<<<<< HEAD
                 window.addEventListener('mousewheel', fireScroll);
+=======
+                document.querySelector('.singleProject').addEventListener('wheel', fireScroll);
+>>>>>>> 9952067c2e89fbdefd212c407b6d853f75c9353f
 
                 function scrollHorizontaly(e) {
                     if (parseInt(getComputedStyle(document.querySelector('.singleProject')).width) >= 700) {
@@ -134,6 +134,7 @@ module.exports = {
                 // }
 
                 function fireScroll(e) {
+                    console.log('this');
                     e.preventDefault();
                     throttled(e);
                 }
@@ -152,3 +153,4 @@ module.exports = {
         }
     }
 }
+
