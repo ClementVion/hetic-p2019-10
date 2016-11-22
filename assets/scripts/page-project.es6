@@ -1,10 +1,13 @@
 module.exports = {
     init: function() {
-        console.log('zizi');
         let routing = require('./router.es6');
         class Init {
             constructor() {
-              document.querySelector('.singleProject').onresize = function(event) {
+                for (let i = 0; i < document.querySelectorAll('.singleProject__photo').length; i++) {
+                   document.querySelectorAll('.singleProject__photo')[i].style.width = document.querySelector('.singleProject__photo:first-child').offsetWidth + 'px';
+                   console.log(document.querySelectorAll('.singleProject__photo')[i].style.width);
+                }
+                document.querySelector('.singleProject').onresize = function(event) {
                 let resize = new Resize();
               };
             }
@@ -24,14 +27,10 @@ module.exports = {
                     leading: true,
                     trailing: false
                 });
-
+                console.log(this);
                 let fired = false;
                 // window.addEventListener('wheel', fireScrollBar);
-<<<<<<< HEAD
-                window.addEventListener('mousewheel', fireScroll);
-=======
-                document.querySelector('.singleProject').addEventListener('wheel', fireScroll);
->>>>>>> 9952067c2e89fbdefd212c407b6d853f75c9353f
+                document.querySelector('.singleProject').addEventListener('wheel', scrollHorizontaly);
 
                 function scrollHorizontaly(e) {
                     if (parseInt(getComputedStyle(document.querySelector('.singleProject')).width) >= 700) {
@@ -71,14 +70,12 @@ module.exports = {
                             singleProject.style.mozTransform = "matrix(1, 0, 0, 1, " + (currentSingle + delta * 25) + ", 0)";
                             singleProject.style.msTransform = "matrix(1, 0, 0, 1, " + (currentSingle + delta * 25) + ", 0)";
 
-                            let scale = currentSingle / (parseInt(getComputedStyle(singleProject).width) - window.innerWidth );
-                            if (currentSingle < - 40) {
-                              scrollbar[0].style.transform = "translateZ(0) scaleX("+(scale*-1) +")";
-                              scrollbar[0].style.webKittransform = "translateZ(0) scaleX("+(scale*-1) +")";
-                              scrollbar[0].style.mozTransform = "translateZ(0) scaleX("+(scale*-1) +")";
-                              scrollbar[0].style.msTransform = "translateZ(0) scaleX("+(scale*-1) +")";
-                            }
-
+                            let scale = -1 * (currentSingle / (parseInt(singleProject.offsetWidth) - window.innerWidth ));
+                            console.log(singleProject.offsetWidth);
+                              scrollbar[0].style.transform = "translateZ(0) scaleX("+(scale) +")";
+                              scrollbar[0].style.webKittransform = "translateZ(0) scaleX("+(scale) +")";
+                              scrollbar[0].style.mozTransform = "translateZ(0) scaleX("+(scale) +")";
+                              scrollbar[0].style.msTransform = "translateZ(0) scaleX("+(scale) +")";
                         } else {
                             if (delta < 0) {
                                 if (document.querySelector('.singleProject').classList.contains('end-project')) {
@@ -89,17 +86,23 @@ module.exports = {
                                                 document.querySelector('.container').classList.toggle('container--visible');
                                                 routing.router.navigate(document.querySelector('.singleProject__link').getAttribute('href'));
                                                 document.querySelector('.container').classList.toggle('project--scrolling');
+                                                document.querySelector('.singleProject').classList.toggle('end-project');
                                                 let replace = new Resize();
+                                                 scrollbar[0].style.transform = "translateZ(0) scaleX(0)";
                                                 fired = false;
                                             }, 1000);
                                         }
                                     } else {
                                         if (fired === false) {
-                                            document.querySelector('.container').classList.add('project--scrolling');
+                                                document.querySelector('.container').classList.add('project--scrolling');
+                                                document.querySelector('.scrollbar').style.opacity = '0';
+
                                         }
                                     }
                                 } else {
-                                    document.querySelector('.singleProject').classList.add('end-project');
+                                    window.setTimeout(function(){
+                                        document.querySelector('.singleProject').classList.toggle('end-project');
+                                    }, 300);
                                 }
                             }
                         }
@@ -134,7 +137,6 @@ module.exports = {
                 // }
 
                 function fireScroll(e) {
-                    console.log('this');
                     e.preventDefault();
                     throttled(e);
                 }

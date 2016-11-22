@@ -34,7 +34,7 @@ module.exports = {
 		},
 		// Launch the detection of the loading of each assets
 		launchLoading = function (cl) {
-			disableScroll();
+			// disableScroll();
 			let assets = document.querySelectorAll(cl), // Get assets
 				promisesResolved = 0; // number of promises resolved updated at each iteration
 			preventLazyload(assets)

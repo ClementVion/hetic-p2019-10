@@ -1,8 +1,9 @@
 var webpack = require("webpack");
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
+require('babel-polyfill');
 
 module.exports = {
-    entry: "./entry.js",
+    entry: ['babel-polyfill','./entry.js'],
     output: {
         path: __dirname,
         filename: "bundle.js"
