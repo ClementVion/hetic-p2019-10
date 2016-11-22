@@ -48,12 +48,12 @@
         font-size: 13px;
         width: 50px;
         position: absolute;
-        transform: rotate(-90deg) translateX(-430px);
-        -webkit-transform: rotate(-90deg) translateX(-630%);
+        transform: rotate(-90deg) translateX(-550%);
+        -webkit-transform: rotate(-90deg) translateX(-550%);
     }
     @include large {
-        transform: rotate(-90deg) translateX(-430px);
-        -webkit-transform: rotate(-90deg) translateX(-630%);
+        transform: rotate(-90deg) translateX(-300%);
+        -webkit-transform: rotate(-90deg) translateX(-300%);
     }
 }
 
@@ -108,6 +108,7 @@
     opacity: 0;
     transform: translateX(-150px);
     transition: 800ms cubic-bezier(.19,1,.22,1);
+    font-weight: 500;
     @include medium-single {
         font-size: 219px;
         opacity: 0;
@@ -136,6 +137,11 @@
         display: flex;
         flex-direction: row;
         align-items: baseline;
+        margin-left: 120px;
+    }
+
+    @include large{
+      // margin-left: ;
     }
 }
 
@@ -154,10 +160,10 @@
         align-items: baseline;
         margin: 8px 0 0;
         @include medium-single {
-            margin: 0 70px 0 0;
+            margin: 0 70px 5px 0;
+            max-width: 230px;
         }
         @include large {
-            margin: 0 70px 0 0;
         }
 
         p {
@@ -250,7 +256,7 @@
 .singleProject__background-container {
     display: none;
     flex-shrink: 0;
-    transition: all ease 1s;
+    transition: all ease 1.5s;
     @include medium-single {
         display: block;
         width: 570px;
@@ -270,7 +276,7 @@
 
     .singleProject__bg-photo {
         height: 100%;
-        opacity: 0.30;
+        opacity: 0.4;
     }
 }
 
@@ -289,7 +295,7 @@
     @include medium-single{
         opacity: 1;
         background: #FFFFFF;
-        transition: all ease 1s;
+        transition: all ease 1.5s;
         transform: translate(0,0);
     }
 }
@@ -423,7 +429,7 @@
         background: #000000;
         bottom: 0;
         backface-visibility: hidden;
-        transition: transform ease-in 100ms;
+        transition: transform linear 0ms;
     }
 }
 

@@ -32,7 +32,7 @@ module.exports = {
         },
         {
             test: /\.scss$/,
-            loaders: ["style", "css", "sass"]
+            loaders: ["style", "css", 'postcss-loader', "sass"]
         },
         {
             test: /\.(es6|js)$/,

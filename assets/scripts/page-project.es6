@@ -19,7 +19,7 @@ module.exports = {
 
         class Scroll {
             constructor() {
-                let throttled = _.throttle(scrollHorizontaly, 25, {
+                let throttled = _.throttle(scrollHorizontaly, 20, {
                     leading: true,
                     trailing: false
                 });
@@ -31,7 +31,7 @@ module.exports = {
 
                 let fired = false;
                 // window.addEventListener('wheel', fireScrollBar);
-                window.addEventListener('wheel', fireScroll);
+                window.addEventListener('mousewheel', fireScroll);
 
                 function scrollHorizontaly(e) {
                     if (parseInt(getComputedStyle(document.querySelector('.singleProject')).width) >= 700) {
@@ -41,7 +41,6 @@ module.exports = {
                             background = document.getElementsByClassName('singleProject__background-container'),
                             backgroundTransform = getComputedStyle(background[0]).transform,
                             scrollbar = document.getElementsByClassName('scrollbar');
-
                         currentSingle = parseInt(currentSingle.split(" ")[4]);
                         backgroundTransform = parseInt(backgroundTransform.split(" ")[4]);
 
@@ -67,11 +66,17 @@ module.exports = {
                         }
 
                         if ((currentSingle + (delta * 5) <= 0 && (((currentSingle + (delta * 15))) * -1) <= (parseInt(getComputedStyle(singleProject).width) - window.innerWidth))) {
-                            singleProject.style.transform = "matrix(1, 0, 0, 1, " + (currentSingle + delta * 30) + ", 0)";
+                            singleProject.style.transform = "matrix(1, 0, 0, 1, " + (currentSingle + delta * 25) + ", 0)";
+                            singleProject.style.webKittransform = "matrix(1, 0, 0, 1, " + (currentSingle + delta * 25) + ", 0)";
+                            singleProject.style.mozTransform = "matrix(1, 0, 0, 1, " + (currentSingle + delta * 25) + ", 0)";
+                            singleProject.style.msTransform = "matrix(1, 0, 0, 1, " + (currentSingle + delta * 25) + ", 0)";
+
                             let scale = currentSingle / (parseInt(getComputedStyle(singleProject).width) - window.innerWidth );
                             if (currentSingle < - 40) {
                               scrollbar[0].style.transform = "translateZ(0) scaleX("+(scale*-1) +")";
-                              console.log(scale);
+                              scrollbar[0].style.webKittransform = "translateZ(0) scaleX("+(scale*-1) +")";
+                              scrollbar[0].style.mozTransform = "translateZ(0) scaleX("+(scale*-1) +")";
+                              scrollbar[0].style.msTransform = "translateZ(0) scaleX("+(scale*-1) +")";
                             }
 
                         } else {
