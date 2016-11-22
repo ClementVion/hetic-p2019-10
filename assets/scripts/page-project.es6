@@ -27,11 +27,7 @@ module.exports = {
 
                 let fired = false;
                 // window.addEventListener('wheel', fireScrollBar);
-<<<<<<< HEAD
-                window.addEventListener('mousewheel', fireScroll);
-=======
                 document.querySelector('.singleProject').addEventListener('wheel', fireScroll);
->>>>>>> 9952067c2e89fbdefd212c407b6d853f75c9353f
 
                 function scrollHorizontaly(e) {
                     if (parseInt(getComputedStyle(document.querySelector('.singleProject')).width) >= 700) {
