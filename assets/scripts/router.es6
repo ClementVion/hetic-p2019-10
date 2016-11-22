@@ -60,9 +60,7 @@ router.get('/projects/:id', function(req)
                 document.querySelector('.container').classList.toggle('project--scrolling')
             }
             if(container.classList.contains('loaded')) {
-                if (previousPage !== 'project') {
                     project.init();
-                }
                 previousPage = 'project';
             }
             templating.initClicks(container);
