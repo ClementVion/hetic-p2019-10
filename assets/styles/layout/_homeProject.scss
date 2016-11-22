@@ -36,7 +36,7 @@
 	}
 
 	@include homeSemiLarge{
-		padding: 0 35% 0% 4%;
+		padding: 0 35% 0% 135px;
 	}
 }
 
@@ -61,7 +61,7 @@
 	}
 
 	@include homeSemiLarge{
-		bottom: 180px;
+		bottom: 160px;
 	}
 
 	@include homeLarge{
@@ -117,7 +117,7 @@
 
 	@include homeSemiLarge{
 	    width: 300px;
-	    bottom: 90px;
+	    bottom: 70px;
 	    display: block;
 	}
 
