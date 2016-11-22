@@ -4,6 +4,7 @@ module.exports = {
 		let tl = new TimelineMax(),
 		loadingContainer = document.querySelector('.loading'),
 		keys = {37: 1, 38: 1, 39: 1, 40: 1},
+		container = document.querySelector('.container'),
 		preventDefault = function (e) {
 			e = e || loadingContainer.event;
 			if (e.preventDefault)
@@ -34,6 +35,7 @@ module.exports = {
 		},
 		// Launch the detection of the loading of each assets
 		launchLoading = function (cl) {
+			container.classList.remove('container--visible');
 			disableScroll();
 			let assets = document.querySelectorAll(cl), // Get assets
 				promisesResolved = 0; // number of promises resolved updated at each iteration
@@ -104,6 +106,11 @@ module.exports = {
 
 				loadingLayout.style.transform = "translateX(0%)";
 				loadingContainer.style.opacity = "0";
+
+				container.classList.remove('container--visible');
+				setTimeout(function(){
+					container.classList.add('container--visible');
+				},1000);
 
 				if( content.classList.contains('home') ) {
 					let home = require('./page-home.es6');
