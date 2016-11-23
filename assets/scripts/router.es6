@@ -88,7 +88,7 @@ router.get('/about', () => {
 
 router.get('/*', (req, e) => {
   if (!e.parent()) {
-    templating.getHeader('404');
+    templating.getTemplate('404');
     window.setTimeout(() => {
       container.classList.toggle('container--visible');
       templating.initClicks(container);

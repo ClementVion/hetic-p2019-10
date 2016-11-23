@@ -147,12 +147,12 @@ module.exports = {
             }
         }
 
-        let start = new Init();
-        let replace = new Resize();
-        let test;
-        if (!test) {
-            test = new Scroll();
-        }
-    }
+      const start = new Init();
+      const replace = new Resize();
+      let test;
+      if (!test) {
+          test = new Scroll();
+      }
+  }
 }
 

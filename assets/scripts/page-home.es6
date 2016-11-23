@@ -168,7 +168,7 @@ module.exports = {
 
     function automaticScroll() {
       setInterval(() => {
-          selectSlide(currentProject);
+        selectSlide(currentProject);
       }, 3650);
     }
 
@@ -179,10 +179,10 @@ module.exports = {
     }
 
     function chapterAddEventListener() {
-      const selectedChapter = parseInt(this.getAttribute('data-chapter') - 1);
+      const selectedChapter = parseInt(this.getAttribute('data-chapter') - 1, 10);
       if (selectedChapter !== currentProject && isScrolling === false) {
-          selectSlide(selectedChapter);
-          switchChapters(currentProject, selectedChapter);
+        selectSlide(selectedChapter);
+        switchChapters(currentProject, selectedChapter);
       }
     }
 

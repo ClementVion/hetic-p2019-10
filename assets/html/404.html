@@ -1,28 +1,30 @@
-<div class="container visible notfound">
+<div class="content pageNotfound">
 
-    <div class="project">
-        <div class="project__informationsContainer">
-            <div class="project__titleBox">
-                    <h2 class="project__title">Page not found</h2>
+    <div class="notfound">
+        <div class="notfound__informationsContainer">
+            <div class="notfound__titleBox">
+                    <h2 class="notfound__title">Page not found</h2>
             </div>
-            <div class="project__descriptionBox">
-                    <p class="project__description">Sorry, the page you are looking for does not exist</p>
+            <div class="notfound__descriptionBox">
+                    <p class="notfound__description">Sorry, the page you are looking for does not exist</p>
             </div>
-            <div class="project__see">
-                <a class="project__link" href="/">Voir le projet</a>
-            </div>
+
+            <div class="notfound__see">
+                <a class="notfound__link" href="/">Home</a>
+            </div> 
 
         </div>
 
-        <div class="project__imgContainer">
-            <div class="project__imageFrontBox">
-                        <img
-                            class="project__imageFront preload lazyload"
-                            src={{desktop}}
-                            srcset="{{mobile}} 500w,
-                            {{tablet}} 700w,
-                            {{desktop}} 1000w" alt="" />
-            </div>
+        <div class="notfound__imgContainer">
+            <div class="notfound__imageBox">
+                <img
+                    class="notfound__imageBackground lazyload"
+                    data-sizes="auto"
+                    data-src="../../assets/img/BACKIN80_HOME_671-900.jpg"
+                    data-srcset="../../assets/img/BACKIN80_HOME_252-460.jpg 500w,
+                    ../../assets/img/BACKIN80_HOME_469-768.jpg 700w,
+                    ../../assets/img/BACKIN80_HOME_671-900.jpg 1000w" alt="" />
+            </div>        
         </div>
     </div>
 </div>
