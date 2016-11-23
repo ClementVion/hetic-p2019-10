@@ -29,8 +29,11 @@ module.exports = {
                     if (document.querySelector('.singleProject').addEventListener) {
                         if (navigator.userAgent.toLowerCase().indexOf('firefox') > -1) {
                             document.querySelector('.singleProject').addEventListener("scroll", scrollHorizontally, false);
-                        } else {
+                        }
+                        else {
                             document.querySelector('.singleProject').addEventListener("mousewheel", move, false);
+                            console.log("stop scroll");
+                            document.querySelector('.singleProject').addEventListener("scroll", stopScroll, false);
                         }
                     } else {
                         document.querySelector('.singleProject').addEventListener("wheel",move);
@@ -45,6 +48,9 @@ module.exports = {
                   e.preventDefault();
                 }
 
+                function stopScroll(e){
+                  e.preventDefault();
+                }
                 function scrollHorizontally(delta) {
                     let singleProject = document.querySelector('.singleProject'),
                         currentSingle = singleProject.scrollLeft,
@@ -114,7 +120,6 @@ module.exports = {
                     //       scrollbar[0].style.transform = "translateZ(0) scaleX("+scale+")";
                     //     }, 10);
                     // }
-
                 }
 
                 function end(){
