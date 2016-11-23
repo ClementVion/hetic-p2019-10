@@ -26,7 +26,7 @@
     opacity: 0;
     transform: translateZ(0) translateX(0px);
     margin: auto;
-    margin-top: 35px;
+    margin-top: 0px;
     margin-bottom: 35px;
     backface-visibility: hidden;
 
@@ -264,6 +264,7 @@
     }
     @include large {
         height: 551px;
+        margin-top: 20px;
     }
 }
 
@@ -339,12 +340,12 @@
     opacity: 1;
     transition: opacity 0.4s ease-in;
     background: #FFFFFF;
-    @include medium-single{
-        width: 570px;
+    @include medium-single {
+        // width: 570px;
         height: 100%;
         overflow: hidden;
     }
-    @include large{
+    @include large {
         // width: 670px;
     }
 }
@@ -394,7 +395,7 @@
 .singleProject__bg-photo--teaser {
     display: none;
     @include medium-single{
-        width: 570px;
+        // width: 570px;
         display: block;
         // TODO see with lazyloading to remove important
         opacity: 0.5 !important;
@@ -403,7 +404,7 @@
     }
 
     @include large{
-        width: auto;
+        // width: auto;
     }
 }
 
