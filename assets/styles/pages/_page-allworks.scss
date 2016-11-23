@@ -44,14 +44,14 @@
     position: absolute;
     z-index: 10;
     transform: rotate(0deg);
-    top: 200px;
+    top: 170px;
     left: 40px;
     right: 0;
 
     @include allworksMedium{
         transform-origin: 45% 50% 0;
         transform: rotate(-90deg);
-        bottom: -125px;
+        bottom: -55px;
         right: 250px;
         top: auto;
         left: auto;
@@ -68,7 +68,7 @@
     font-size: 24px;
     font-family: 'Aktiv Grotesk Corp';
     font-weight: 500;
-    margin-bottom: 100px;
+    margin-bottom: 0px;
     cursor: pointer;
     opacity: 0;
     transform: translateX(-60px);   
@@ -92,7 +92,13 @@
     }   
 
     h2 {
-        font-size: 30px;
+        font-size: 22px;
+        margin: 10px 0;
+
+        @include allworksMedium{
+            font-size: 30px;
+            margin: 10px 0;
+        } 
     }
 
     span {
