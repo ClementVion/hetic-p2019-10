@@ -3,7 +3,6 @@
 // 1. Configuration and helpers
 @import
   'abstracts/variables',
-  'abstracts/functions',
   'abstracts/mixins';
 
 // 2. Vendors
@@ -13,23 +12,18 @@
 // 3. Base stuff
 @import
   'base/base',
-  'base/fonts',
-  'base/typography',
-  'base/helpers';
+  'base/fonts';
 
 // 4. Layout-related sections
 @import
   'layout/header',
-  'layout/footer',
   'layout/404',
   'layout/homeProject';
 
 // 5. Components
 @import
-  'components/button',
   'components/loader',
-  'components/carousel',
-  'components/lazyload';
+  'components/carousel';
 
   // 6. Page-specific styles
 @import

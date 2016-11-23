@@ -180,9 +180,16 @@ module.exports = {
       */
       function updatePosition(e) {
         e.preventDefault();
-        throttled(e.wheelDelta);
+        throttled(e.wheelDelta || -e.detail );
       }
-      document.addEventListener('mousewheel', updatePosition);
+      // document.addEventListener('mousewheel', updatePosition);
+
+      if (document.addEventListener) {
+          document.addEventListener("DOMMouseScroll", updatePosition, false);
+          document.addEventListener("mousewheel", updatePosition, false);
+      } else {
+          document.addEventListener("wheel", updatePosition);
+      }
     }
 
     /**
