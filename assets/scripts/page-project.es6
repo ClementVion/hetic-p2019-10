@@ -30,10 +30,10 @@ module.exports = {
                         if (navigator.userAgent.toLowerCase().indexOf('firefox') > -1) {
                             document.querySelector('.singleProject').addEventListener("scroll", scrollHorizontally, false);
                         } else {
-                            document.querySelector('.singleProject').addEventListener("scroll", scrollHorizontally, false);
+                            document.querySelector('.singleProject').addEventListener("mousewheel", move, false);
                         }
                     } else {
-                        document.querySelector('.singleProject').addEventListener("wheel", scrollHorizontally);
+                        document.querySelector('.singleProject').addEventListener("wheel",move);
                     }
                 }
 
@@ -105,7 +105,6 @@ module.exports = {
                     const scrollbar = document.getElementsByClassName('scrollbar');
                     window.setTimeout(() => {
                       const scale = (currentSingle / (container.offsetWidth - headerSize));
-                      // console.log((container.offsetWidth +) / ((container.offsetWidth - window.innerWidth) - (singleProject.scrollLeft)));
                       scrollbar[0].style.transform = `translateZ(0) scaleX(${scale})`;
                     }, 10);
                   }
