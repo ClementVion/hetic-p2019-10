@@ -57,9 +57,7 @@ module.exports = {
                         background = document.getElementsByClassName('singleProject__background-container'),
                         backgroundTransform = getComputedStyle(background[0]).transform,
                         container = document.querySelector('.singleProject__bigContainer'),
-                        scrollbar = document.querySelector('.scrollbar'),
                         slice = (container.offsetWidth) / projectsLength,
-                        scale = (currentSingle / (container.offsetWidth - window.innerWidth) * 100) / 100,
                         projectsLength = document.getElementsByClassName('singleProject__photo-wrap').length,
                         headerStyle = getComputedStyle(document.querySelector('.singleProject__header')),
                         headerSize = parseInt(headerStyle.length) + parseInt(headerStyle.marginLeft);
@@ -67,7 +65,7 @@ module.exports = {
                     if (singleProject.scrollLeft < document.querySelector('.singleProject__bigContainer').offsetWidth - window.innerWidth) {
                         fadeBackground();
                         animTitle();
-                        // scrollBar();
+                        scrollBar();
 
                     } else {
                       console.log("end");
@@ -109,20 +107,16 @@ module.exports = {
                       }
                     }
 
-                    // function scrollBar() {
-                    //     let  scrollbar = document.getElementsByClassName('scrollbar');
-                    //     window.setTimeout(function() {
-                    //       let scale = (currentSingle / (container.offsetWidth - headerSize));
-                    //       console.log(scale);
-                    //       console.log('container : '+ container.offsetWidth );
-                    //       console.log('currentScroll : '+ currentSingle);
-                    //       console.log('window.innerWidth : ' +window.innerWidth);
-                    //       scrollbar[0].style.transform = "translateZ(0) scaleX("+scale+")";
-                    //     }, 10);
-                    // }
+                  function scrollBar() {
+                    const scrollbar = document.getElementsByClassName('scrollbar');
+                    window.setTimeout(() => {
+                      const scale = (currentSingle / (container.offsetWidth - headerSize));
+                      scrollbar[0].style.transform = `translateZ(0) scaleX(${scale})`;
+                    }, 10);
+                  }
                 }
 
-                function end(){
+                function end() {
                   if (document.querySelector('.singleProject').classList.contains('end-project')) {
                       if (document.querySelector('.container').classList.contains('project--scrolling')) {
                           if (fired === false) {
