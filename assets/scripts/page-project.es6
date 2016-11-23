@@ -32,8 +32,6 @@ module.exports = {
                         }
                         else {
                             document.querySelector('.singleProject').addEventListener("mousewheel", move, false);
-                            console.log("stop scroll");
-                            document.querySelector('.singleProject').addEventListener("scroll", stopScroll, false);
                         }
                     } else {
                         document.querySelector('.singleProject').addEventListener("wheel",move);
