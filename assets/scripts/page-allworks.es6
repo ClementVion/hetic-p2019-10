@@ -1,26 +1,27 @@
 module.exports = {
 
-	init: function() {
-		let titles = document.querySelectorAll('.allWorks__list a'),
-			imgs = document.querySelectorAll('.allWorks__image'),
-			title = document.querySelector('.allWorks__title'),
+  init: () => {
+    const titles = document.querySelectorAll('.allWorks__list a');
+    const imgs = document.querySelectorAll('.allWorks__image');
 
-		initHovers = function() {
-			for(let i = 0; i < imgs.length ; i++) {
-				titles[i].addEventListener('mouseenter', function() {
-					imgs[i].classList.add('allWorks__image--visible');
-				});
-				titles[i].addEventListener('mouseout', function(e) {
-			        var e = event.toElement || event.relatedTarget;
-    				if (e.parentNode == this || e == this) {
-           				return;
-        			}
-					imgs[i].classList.remove('allWorks__image--visible');
-				});
-			}
-		};
-
-		initHovers();
-	}
-
-}
+    /**
+    * Initialize hovers on projects links
+    * @returns {void}
+    */
+    function initHovers() {
+      for (const img of imgs.keys()) {
+        titles[img].addEventListener('mouseenter', () => {
+          imgs[img].classList.add('allWorks__image--visible');
+        });
+        titles[img].addEventListener('mouseout', function checkChildren(event) {
+          event = event.toElement || event.relatedTarget;
+          if (event.parentNode === this ||  event === this) {
+            return;
+          }
+          imgs[img].classList.remove('allWorks__image--visible');
+        });
+      }
+    }
+    initHovers();
+  },
+};

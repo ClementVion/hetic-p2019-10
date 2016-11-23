@@ -224,7 +224,6 @@
     -moz-transition : transform linear 0.10s;
     transition: transform linear 0.10s;
     opacity: 0;
-
     @include medium-single {
         top: 0;
         display: flex;
@@ -442,6 +441,7 @@
     @include medium-single{
         position: fixed;
         left: 0;
+        opacity: 1;
         display: block;
         width: 100%;
         transform: scaleX(0) translateZ(0);
@@ -450,11 +450,9 @@
         background: #000000;
         bottom: 0;
         backface-visibility: hidden;
-        transition: transform linear 0ms;
+        transition: transform ease-in 0.1ms, opacity 1s ease-in;
     }
 }
-
-
 
 .project--scrolling .singleProject__photo-wrap {
     transform: translateX(-100%);

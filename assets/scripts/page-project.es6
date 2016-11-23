@@ -90,7 +90,6 @@ module.exports = {
                             }
                         }
                     }
-
                     function animTitle(){
                       if (currentSingle > 500 && delta > 0) {
                           document.querySelector('.singleProject__header').classList.add('singleProject__header--hidden');
@@ -115,6 +114,7 @@ module.exports = {
                     //       scrollbar[0].style.transform = "translateZ(0) scaleX("+scale+")";
                     //     }, 10);
                     // }
+
                 }
 
                 function end(){
@@ -141,7 +141,6 @@ module.exports = {
                 }
             }
         }
-
     let start = new Init();
     let scroll = new Scroll();
   }

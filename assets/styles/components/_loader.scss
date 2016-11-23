@@ -16,8 +16,18 @@
     z-index: 30;
 	width: 150px;
 	margin: auto;
-	top: 150px;
+	top: 100px;
 	animation: fadeIn .9s;
+
+	@include homeSmallMobile{
+		left: calc(50% - 60px);
+		width: 120px;
+		top: 10px;
+	}
+
+	@include homeSmall{
+		top: 150px;
+	}
 
 }
 
@@ -29,6 +39,11 @@
 	text-align: center;
 	top: 320px;
 	animation: fadeIn .9s;
+
+	@include homeSmallMobile{
+		font-size: 25px;
+		top: 160px;
+	}
 }
 
 .loading__layout {
