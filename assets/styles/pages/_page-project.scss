@@ -340,13 +340,14 @@
     opacity: 1;
     transition: opacity 0.4s ease-in;
     background: #FFFFFF;
+    object-fit: contain;
     @include medium-single {
-        // width: 570px;
+        width: 570px;
         height: 100%;
         overflow: hidden;
     }
     @include large {
-        // width: 670px;
+        width: 670px;
     }
 }
 .singleProject__teasing {
