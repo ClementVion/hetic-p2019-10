@@ -38,8 +38,6 @@ router.get('/', function(req)
 
 router.get('/projects/:id', function(req)
 {
-  console.log("HELLO");
-
     if (routes.indexOf(req.params.id) === -1 ) {
         templating.getTemplate('404');
         window.setTimeout(function()

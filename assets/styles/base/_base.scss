@@ -22,23 +22,19 @@ body{
 
 ::scrollbar {
 	display: none;
-    // width: 0px;  /* remove scrollbar space */
-    // background: transparent;  /* optional: just make scrollbar invisible */
 }
 
-// ::-webkit-scrollbar {
-// 	display: none;
-//     // width: 0px;  /* remove scrollbar space */
-//     // background: transparent;  /* optional: just make scrollbar invisible */
-// }
-//
-// ::-moz-scrollbar{
-//   display: none;
-// }
-//
-// ::-ms-scrollbar{
-//   display: none;
-// }
+::-webkit-scrollbar {
+	display: none;
+}
+
+::-moz-scrollbar{
+  display: none;
+}
+
+::-ms-scrollbar{
+  display: none;
+}
 
 .container.fade{
 	opacity: 0;
@@ -52,14 +48,13 @@ body{
 
 ::-webkit-scrollbar {
 	display: none;
-    // width: 0px;  /* remove scrollbar space */
-    // background: transparent;  /* optional: just make scrollbar invisible */
 }
 
 .container.fade{
 	opacity: 0;
 	transition: opacity 0.5s ease;
 }
+
 /**
  * Basic styles for links
  */

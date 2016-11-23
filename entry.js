@@ -1,7 +1,5 @@
-//# sourceMappingURL=http://example.com/path/to/your/sourcemap.map
-console.log("sarasz");
+require('babel-polyfill');
 require('./assets/styles/main.scss');
-
 window._ = require('underscore');
 var gsap = require('gsap'),
 lazyload = require('lazysizes'),

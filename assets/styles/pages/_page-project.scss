@@ -2,6 +2,18 @@
 // This file contains styles that are specific to the single singleProject page.
 // -----------------------------------------------------------------------------
 
+
+// TODO check if creates bugs in other pages, style putted to remove scrollbar under firefox
+.container {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.content.home{
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
 .singleProject {
     display: flex;
     flex-direction: column;
@@ -12,10 +24,12 @@
     height: auto;
     align-items: center;
     opacity: 0;
-    transform: translateX(0px);
+    transform: translateZ(0) translateX(0px);
     margin: auto;
     margin-top: 35px;
     margin-bottom: 35px;
+    backface-visibility: hidden;
+
     @include small {
         width: 335px;
     }
@@ -23,12 +37,13 @@
         box-sizing: border-box;
         display: inline-flex;
         flex-direction: row;
+        flex-wrap: nowrap;
         padding-left: 120px;
-        width: auto;
+        width: 100%;
         height: 100%;
-        margin: 0;
-    }
-    @include large {
+        overflow-x: scroll;
+        overflow-y: hidden;
+        // display: none;
     }
 }
 
@@ -36,6 +51,20 @@
     opacity: 1;
     transform: translateX(0%);
     transition: opacity 1s ease-out;
+}
+
+.singleProject__bigContainer{
+  display: flex;
+  flex-direction: column;
+
+  @include medium-single{
+    display: inline-flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    width: auto;
+    height: 100%;
+    align-items: center;
+  }
 }
 
 .singleProject__scroll {
@@ -78,14 +107,11 @@
     color: #353535;
     transition: all ease 800ms;
     @include medium-single {
-        // margin-right: -400px;
         z-index: -1;
         display: flex;
         flex-direction: column;
         flex-wrap: nowrap;
         width: 1800px;
-    }
-    @include large {
     }
 }
 
@@ -138,10 +164,6 @@
         flex-direction: row;
         align-items: baseline;
         margin-left: 120px;
-    }
-
-    @include large{
-      // margin-left: ;
     }
 }
 
@@ -199,21 +221,24 @@
 .singleProject__main-content {
     transform: translateX(0) translateZ(0);
     backface-visibility: hidden;
-    transition: transform ease-in 10ms;
+    -moz-transition : transform linear 0.10s;
+    transition: transform linear 0.10s;
     opacity: 0;
-    transition: 800ms 600ms cubic-bezier(.19,1,.22,1);
+
     @include medium-single {
         top: 0;
         display: flex;
         flex-direction: row;
+        flex-wrap: nowrap;
         margin-top: 0px;
         width: auto;
         margin: 0;
         z-index: 5;
         height: 100%;
         margin-right: 100px;
+        -ms-transform : translateX(0px) translateZ(0);
+        -moz-transform : translateX(0px) translateZ(0);
         transform: translateX(0px) translateZ(0);
-
     }
     @include large {
       margin-right: 150px;
@@ -222,7 +247,6 @@
 
 .container--visible .singleProject__main-content {
     opacity: 1;
-    transition: 800ms 600ms cubic-bezier(.19,1,.22,1);
 }
 
 .singleProject__main-content--translated{
@@ -233,6 +257,7 @@
 .singleProject__photo {
     width: 100%;
     transform: translateX(0);
+
     @include medium-single {
         width: auto;
         height: 427px;
@@ -256,7 +281,7 @@
 .singleProject__background-container {
     display: none;
     flex-shrink: 0;
-    transition: all ease 1.5s;
+    transition: opacity ease 1.5s;
     @include medium-single {
         display: block;
         width: 570px;
@@ -266,7 +291,8 @@
         right: 0;
         top: 0;
         position: absolute;
-        transform: translate(0,0);
+        transform: translate3D(0,0,0);
+        backface-visibility: hidden;
         opacity: 0;
     }
     @include large {
@@ -295,8 +321,8 @@
     @include medium-single{
         opacity: 1;
         background: #FFFFFF;
-        transition: all ease 1.5s;
-        transform: translate(0,0);
+        transition: opacity ease 1.5s;
+        transform: translate3D(0,0,0);
     }
 }
 
@@ -316,6 +342,7 @@
     background: #FFFFFF;
     @include medium-single{
         width: 570px;
+        height: 100%;
         overflow: hidden;
     }
     @include large{
@@ -330,16 +357,11 @@
     @include medium-single{
         margin: 0;
         align-items: center;
-        width: auto;
+        height: 100%;
     }
-
     @include large{
         margin: 0;
     }
-}
-
-.singleProject__teasing-visible{
-
 }
 
 .singleProject__subtitle {
@@ -378,12 +400,11 @@
         // TODO see with lazyloading to remove important
         opacity: 0.5 !important;
         filter: grayscale(100%);
-        height: 100%;
+        min-height: 100%;
     }
 
     @include large{
         width: auto;
-        height: 100%;
     }
 }
 
