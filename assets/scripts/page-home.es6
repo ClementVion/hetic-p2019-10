@@ -16,12 +16,11 @@ module.exports = {
     const tl2 = new TimelineMax();
     // Prevents glitch with scroll
     let isScrolling = false;
-    
 
   /**
    * Chapters selection with numbers on the right
-   * @param {string} toRemove the name of the page.
-   * @param {string} toAdd the id of the page we load
+   * @param {int} toRemove, index of the chapter number to remove.
+   * @param {int} toAdd, index of the chapter number to add
    * @returns {void}
    */
     function switchChapters(toRemove, toAdd) {

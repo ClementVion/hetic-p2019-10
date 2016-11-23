@@ -14,8 +14,8 @@ module.exports = {
           imgs[img].classList.add('allWorks__image--visible');
         });
         titles[img].addEventListener('mouseout', function checkChildren(event) {
-          const o = event.toElement || event.relatedTarget;
-          if (o.parentNode === this || o === this) {
+          event = event.toElement || event.relatedTarget;
+          if (event.parentNode === this ||  event === this) {
             return;
           }
           imgs[img].classList.remove('allWorks__image--visible');
