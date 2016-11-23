@@ -3,8 +3,12 @@ const routing = require('./router.es6');
 
 const container = document.querySelector('.container');
 
+/**
+ * When click on the link, navigate
+ * @param {object} elem the link clicked.
+ * @returns {void}
+ */
 function listenClicks(elem) {
-  console.log(elem);
   container.classList.toggle('container--visible');
   window.setTimeout(() => {
     container.innerHTML = '';
@@ -12,18 +16,27 @@ function listenClicks(elem) {
   }, 1000);
 }
 
-// Listen for clicks to navigate
-function initClicks (element) {
+
+/**
+ * Listens to the clicks on the links
+ * @param {object} element the container we want to watch.
+ * @returns {void}
+ */
+function initClicks(element) {
   const links = element.getElementsByTagName('a');
   for (const link of links) {
     link.addEventListener('click', (e) => {
-      console.log(this);
       e.preventDefault();
       listenClicks(link);
     });
   }
 }
 
+/**
+ * Gets the header
+ * @param {string} page the page we load the header in.
+ * @returns {void}
+ */
 function getHeader(page) {
   const template = require('../../assets/html/partials/header.html');
   const xhr = new XMLHttpRequest();
@@ -47,12 +60,18 @@ function getHeader(page) {
   xhr.send();
 }
 
+/**
+ * Gets the body template
+ * @param {string} name the name of the page.
+ * @param {string} id the id of the page we load
+ * @returns {void}
+ */
 function getTemplate(name, id) {
   getHeader(name);
   const template = require('../../assets/html/' + name + '.html');
   const xhr = new XMLHttpRequest();
 
-  xhr.open('GET', '../../assets/html/' + name + '.html', false);
+  xhr.open('GET', `../../assets/html/${name}.html`, false);
   xhr.onreadystatechange = () => {
     if (id) {
       const compile = template(require('../content/' + id + '.json'));
@@ -65,6 +84,12 @@ function getTemplate(name, id) {
   xhr.send();
 }
 
+/**
+ * Gets the loader
+ * @param {string} name the name of the page.
+ * @param {string} id the id of the page we load
+ * @returns {void}
+ */
 function getLoader(name, id) {
   const template = require('../../assets/html/loader.html');
   const xhr = new XMLHttpRequest();

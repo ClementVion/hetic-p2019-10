@@ -5,14 +5,26 @@ module.exports = {
     const keys = { 37: 1, 38: 1, 39: 1, 40: 1 };
     const container = document.querySelector('.container');
 
+    /**
+    * Prevent default behavior
+    * Fired on mousewheel
+    * @param{object} e the event
+    * @returns {void}
+    */
     function preventDefault(e) {
-      e = e || loadingContainer.event;
-      if (e.preventDefault) {
-        e.preventDefault();
-        e.returnValue = false;
+      const o = e || loadingContainer.event;
+      if (o.preventDefault) {
+        o.preventDefault();
+        o.returnValue = false;
       }
     }
 
+    /**
+    * Prevent default behavior of scrolling keys
+    * Fired when the when a key is pushed
+    * @param{object} e the event
+    * @returns {void}
+    */
     function preventDefaultForScrollKeys(e) {
       if (keys[e.keyCode]) {
         preventDefault(e);
@@ -20,6 +32,11 @@ module.exports = {
       }
     }
 
+    /**
+    * Disable the scroll
+    * Fired when the loader appears
+    * @returns {void}
+    */
     function disableScroll() {
       if (loadingContainer.addEventListener) {
         loadingContainer.addEventListener('DOMMouseScroll', preventDefault, false);
@@ -30,6 +47,11 @@ module.exports = {
       }
     }
 
+    /**
+    * Enable the scroll
+    * Fired when the loader fades
+    * @returns {void}
+    */
     function enableScroll() {
       if (loadingContainer.removeEventListener) {
         loadingContainer.removeEventListener('DOMMouseScroll', preventDefault, false);
@@ -40,7 +62,12 @@ module.exports = {
       }
     }
 
-    // Prevent lazyload in ordre to permit preload
+
+    /**
+    * Prevent lazyload in ordre to permit preload
+    * @param{array} assets the assets to load
+    * @returns {void}
+    */
     function preventLazyload(assets) {
       for (const elm of assets) {
         elm.src = elm.getAttribute('data-src');
@@ -48,7 +75,12 @@ module.exports = {
       }
     }
 
-    // Detect if one asset is loaded
+
+    /**
+    * Detect if one asset is loaded
+    * @param{object} elm ADD DESCRIPTION
+    * @returns {void}
+    */
     function loadAssets(elm) {
       return new Promise(
         (resolve) => {
@@ -64,12 +96,14 @@ module.exports = {
       );
     }
 
+    /**
+    * Update the percentage of preloading progress
+    * @returns {void}
+    */
     function stopPreloadingAnim() {
     // remove loading screen
-      const container = document.querySelector('.container');
       setTimeout(() => {
         const content = document.querySelector('.content');
-        const loadingContainer = document.querySelector('.loading');
         const loadingLayout = loadingContainer.querySelector('.loading__layout');
 
         loadingLayout.style.transform = 'translateX(0%)';
@@ -116,7 +150,13 @@ module.exports = {
       }, 1000);
     }
 
-    // Update the percentage of preloading progress
+
+    /**
+    * Update the percentage of preloading progress
+    * @param {int} loaded the number of loaded assets
+    * @param {int} total the total number of assets.
+    * @returns {void}
+    */
     function updateLoadProgress(loaded, total) {
       return new Promise(
       (resolve) => {
@@ -125,7 +165,7 @@ module.exports = {
           const percentElm = document.querySelector('.loading__percents'); // element which contain loading percents
           const loadingProgress = document.querySelector('.loading__progress');
 
-          loadingProgress.style.transform = 'translateX(' + -(100 - progress) + '%)';
+          loadingProgress.style.transform = `translateX(-${100 - progress}%)`;
           percentElm.innerHTML = progress;
           if (progress >= 100 && loaded === total && loadingProgress.style.transform === 'translateX(0%)') {
             stopPreloadingAnim(); // remove preloading animation
@@ -151,7 +191,7 @@ module.exports = {
       for (const elm of assets) {
         loadAssets(elm)
         .then(
-          function(value) {
+          (value) => {
           // update load progress
             promisesResolved += 1;
             updateLoadProgress(promisesResolved, assets.length);

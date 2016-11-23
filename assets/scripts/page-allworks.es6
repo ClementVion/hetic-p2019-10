@@ -4,17 +4,21 @@ module.exports = {
     const titles = document.querySelectorAll('.allWorks__list a');
     const imgs = document.querySelectorAll('.allWorks__image');
 
+    /**
+    * Initialize hovers on projects links
+    * @returns {void}
+    */
     function initHovers() {
-      for (let i = 0; i < imgs.length; i++) {
-        titles[i].addEventListener('mouseenter', () => {
-          imgs[i].classList.add('allWorks__image--visible');
+      for (const img of imgs.keys()) {
+        titles[img].addEventListener('mouseenter', () => {
+          imgs[img].classList.add('allWorks__image--visible');
         });
-        titles[i].addEventListener('mouseout', function checkChildren(event) {
+        titles[img].addEventListener('mouseout', function checkChildren(event) {
           const o = event.toElement || event.relatedTarget;
           if (o.parentNode === this || o === this) {
             return;
           }
-          imgs[i].classList.remove('allWorks__image--visible');
+          imgs[img].classList.remove('allWorks__image--visible');
         });
       }
     }
