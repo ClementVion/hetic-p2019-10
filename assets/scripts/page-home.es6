@@ -17,12 +17,30 @@ module.exports = {
     // Prevents glitch with scroll
     let isScrolling = false;
     
-    function selectSlide(selectedProject) {
+
+  /**
+   * Chapters selection with numbers on the right
+   * @param {string} toRemove the name of the page.
+   * @param {string} toAdd the id of the page we load
+   * @returns {void}
+   */
+    function switchChapters(toRemove, toAdd) {
+      chapters[toRemove].classList.remove('carousel__option--on');
+      chapters[toAdd].classList.add('carousel__option--on');
+    }
+
+    /**
+    * Moves the slides
+    * @param {number} project the project of the number we want to display.
+    * @returns {void}
+    */
+    function selectSlide(project) {
+      let selectedProject = project;
       // check if we have to loop
       if (selectedProject >= slides.length) {
         selectedProject = 0;
       } else if (selectedProject < 0) {
-        selectedProject = (parseInt((slides.length) - 1));
+        selectedProject = parseInt((slides.length) - 1, 10);
       }
       prevProject = currentProject;
       slides[selectedProject].style.display = 'block';
@@ -122,8 +140,17 @@ module.exports = {
         }, 20);
       }, 20);
     }
-      // Get slides and init theirs styles
+
+    /**
+    * Get slides and init theirs styles
+    * @returns {void}
+    */
     function initSlides() {
+      /**
+      * Init magnetic scroll
+      * @param {number} wheelDelta the delta returned by the mousewheel event
+      * @returns {void}
+      */
       function magnet(wheelDelta) {
         if (wheelDelta > 0) {
           selectSlide((currentProject - 1));
@@ -137,47 +164,32 @@ module.exports = {
         trailing: false,
       });
       projectLinks[0].style.top = '0';
-      for (let j = 1; j < frontSlides.length; j++) {
-        frontSlides[j].style.display = 'none';
-      }
-      for (let i = 1; i < slides.length; i++) {
-        slides[i].style.display = 'none';
-      }
-      for (let k = 1; k < titlesSlides.length; k++) {
-        titlesSlides[k].style.display = 'none';
-      }
-      for (let l = 1; l < descriptionSlides.length; l++) {
-        descriptionSlides[l].style.display = 'none';
-      }
-      for (let m = 1; m < descriptionSlides.length; m++) {
-        projectLinks[m].style.display = 'none';
+      for (const slide of slides.keys()) {
+        if (slide !== 0) {
+          slides[slide].style.display = 'none';
+          frontSlides[slide].style.display = 'none';
+          titlesSlides[slide].style.display = 'none';
+          projectLinks[slide].style.display = 'none';
+          descriptionSlides[slide].style.display = 'none';
+        }
       }
 
+      /**
+      * Get slides and init theirs styles
+      * @param {object} e the event object
+      * @returns {void}
+      */
       function updatePosition(e) {
         e.preventDefault();
         throttled(e.wheelDelta);
-      } 
+      }
       document.addEventListener('mousewheel', updatePosition);
     }
 
-    // Chapters selection with numbers on the right
-    function switchChapters(toRemove, toAdd) {
-      chapters[toRemove].classList.remove('carousel__option--on');
-      chapters[toAdd].classList.add('carousel__option--on');
-    }
-
-    function automaticScroll() {
-      setInterval(() => {
-        selectSlide(currentProject);
-      }, 3650);
-    }
-
-    function chaptersScroll() {
-        for (const chapter of chapters) {
-          chapter.addEventListener('click', chapterAddEventListener);
-        }
-    }
-
+    /**
+    * Get slides and init theirs styles
+    * @returns {void}
+    */
     function chapterAddEventListener() {
       const selectedChapter = parseInt(this.getAttribute('data-chapter') - 1, 10);
       if (selectedChapter !== currentProject && isScrolling === false) {
@@ -186,6 +198,20 @@ module.exports = {
       }
     }
 
+    /**
+    * Get slides and init theirs styles
+    * @returns {void}
+    */
+    function chaptersScroll() {
+        for (const chapter of chapters) {
+          chapter.addEventListener('click', chapterAddEventListener);
+        }
+    }
+
+    /**
+    * Get slides and init theirs styles
+    * @returns {void}
+    */
     function firstApparition() {
       tl2.to(slides[0], 0.3,
         {
@@ -209,7 +235,10 @@ module.exports = {
         }, '-=0.6');
     }
 
-      // Init scrolling for home page
+    /**
+    * Init scrolling for home page.
+    * @returns {void}
+    */
     function init() {
       initSlides();
       chaptersScroll();
