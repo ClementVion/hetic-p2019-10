@@ -8,3 +8,4 @@ project = require('./assets/scripts/page-project.es6'),
 routing = require('./assets/scripts/router.es6'),
 templating = require('./assets/scripts/templating.es6'),
 loader = require('./assets/scripts/loader.es6');
+require('babel-runtime/core-js/promise').default = require('bluebird');

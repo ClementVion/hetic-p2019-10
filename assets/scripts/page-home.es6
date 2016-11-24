@@ -180,15 +180,15 @@ module.exports = {
       */
       function updatePosition(e) {
         e.preventDefault();
-        throttled(e.wheelDelta || -e.detail );
+        throttled(e.wheelDelta || -e.detail);
       }
       // document.addEventListener('mousewheel', updatePosition);
 
-      if (document.addEventListener) {
-          document.addEventListener("DOMMouseScroll", updatePosition, false);
-          document.addEventListener("mousewheel", updatePosition, false);
+      if (document.querySelector('.home').addEventListener) {
+        document.querySelector('.home').addEventListener('DOMMouseScroll', updatePosition, false);
+        document.querySelector('.home').addEventListener('mousewheel', updatePosition, false);
       } else {
-          document.addEventListener("wheel", updatePosition);
+        document.querySelector('.home').addEventListener('wheel', updatePosition);
       }
     }
 

@@ -1,14 +1,3 @@
-// -----------------------------------------------------------------------------
-// This file contains styles that are specific to the single singleProject page.
-// -----------------------------------------------------------------------------
-
-
-// TODO check if creates bugs in other pages, style putted to remove scrollbar under firefox
-.container {
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-}
 .content.home{
   height: 100%;
   width: 100%;
@@ -19,15 +8,12 @@
     flex-direction: column;
     justify-content: space-between;
     font-family: 'Aktiv Grotesk Corp';
-    margin: 0 auto 60px 0;
+    margin: 0 auto 0 auto;
     width: 288px;
     height: auto;
     align-items: center;
     opacity: 0;
     transform: translateZ(0) translateX(0px);
-    margin: auto;
-    margin-top: 0px;
-    margin-bottom: 35px;
     backface-visibility: hidden;
 
     @include small {
@@ -43,7 +29,6 @@
         height: 100%;
         overflow-x: scroll;
         overflow-y: hidden;
-        // display: none;
     }
 }
 
@@ -78,11 +63,9 @@
         width: 50px;
         position: absolute;
         transform: rotate(-90deg) translateX(-550%);
-        -webkit-transform: rotate(-90deg) translateX(-550%);
     }
     @include large {
         transform: rotate(-90deg) translateX(-300%);
-        -webkit-transform: rotate(-90deg) translateX(-300%);
     }
 }
 
@@ -185,8 +168,6 @@
             margin: 0 70px 5px 0;
             max-width: 230px;
         }
-        @include large {
-        }
 
         p {
             margin: 0;
@@ -221,7 +202,6 @@
 .singleProject__main-content {
     transform: translateX(0) translateZ(0);
     backface-visibility: hidden;
-    -moz-transition : transform linear 0.10s;
     transition: transform linear 0.10s;
     opacity: 0;
     @include medium-single {
@@ -235,8 +215,6 @@
         z-index: 5;
         height: 100%;
         margin-right: 100px;
-        -ms-transform : translateX(0px) translateZ(0);
-        -moz-transform : translateX(0px) translateZ(0);
         transform: translateX(0px) translateZ(0);
     }
     @include large {
@@ -398,7 +376,6 @@
     @include medium-single{
         // width: 570px;
         display: block;
-        // TODO see with lazyloading to remove important
         opacity: 0.5 !important;
         filter: grayscale(100%);
         min-height: 100%;

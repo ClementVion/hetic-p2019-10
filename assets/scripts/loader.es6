@@ -4,7 +4,6 @@ module.exports = {
     const loadingContainer = document.querySelector('.loading');
     const keys = { 37: 1, 38: 1, 39: 1, 40: 1 };
     const container = document.querySelector('.container');
-
     /**
     * Prevent default behavior
     * Fired on mousewheel
@@ -182,6 +181,7 @@ module.exports = {
    * @returns {void}
    */
     function launchLoading(cl) {
+      scroll(0,0)
       container.classList.remove('container--visible');
       disableScroll();
       const assets = document.querySelectorAll(cl); // Get assets

@@ -44,14 +44,14 @@
     position: absolute;
     z-index: 10;
     transform: rotate(0deg);
-    top: 170px;
+    top: 200px;
     left: 40px;
     right: 0;
 
     @include allworksMedium{
         transform-origin: 45% 50% 0;
         transform: rotate(-90deg);
-        bottom: -55px;
+        bottom: -125px;
         right: 250px;
         top: auto;
         left: auto;
@@ -68,7 +68,7 @@
     font-size: 24px;
     font-family: 'Aktiv Grotesk Corp';
     font-weight: 500;
-    margin-bottom: 0px;
+    margin-bottom: 100px;
     cursor: pointer;
     opacity: 0;
     transform: translateX(-60px);   
@@ -92,7 +92,7 @@
     }   
 
     h2 {
-        font-size: 22px;
+        font-size: 30px;
         margin: 10px 0;
 
         @include allworksMedium{
@@ -129,19 +129,27 @@ $delay: 5;
     }
 }
 
-.allWorks__image {
-    // display: none;
+.allWorks__imageContainer{
     position: absolute;
     z-index: 0;
     top: 0;
+    height: 100vh;
+    width: 50%;
     right: 150px;
-    opacity: 0.2;
+    object-fit: contain;
+}
+
+.allWorks__image {
+    position: absolute;
     opacity: 0;
+    width: 100%;
+    height: 100%;
     transition: opacity 500ms;
 }
 
+
+
 .allWorks__image--visible {
-    // display: block;
     opacity: 1;
     transition: opacity 500ms;
 }

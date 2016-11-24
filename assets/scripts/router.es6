@@ -3,14 +3,11 @@ const project = require('./page-project.es6');
 const routesModule = require('./routes.es6');
 const allworks = require('./page-allworks.es6');
 const templating = require('./templating.es6');
+const  Grapnel = require('grapnel');
 
 const container = document.querySelector('.container');
 const routes = routesModule.routes;
-const router = new Grapnel(
-  {
-    pushState: true,
-  },
-);
+const router = new Grapnel({pushState: true});
 
 
 router.get('/', () => {

@@ -23,11 +23,11 @@ function listenClicks(elem) {
  * @returns {void}
  */
 function initClicks(element) {
-  const links = element.getElementsByTagName('a');
-  for (const link of links) {
-    link.addEventListener('click', (e) => {
+  const links = element.querySelectorAll('a');
+  for (const link of links.keys()) {
+    links[link].addEventListener('click', (e) => {
       e.preventDefault();
-      listenClicks(link);
+      listenClicks(links[link]);
     });
   }
 }
