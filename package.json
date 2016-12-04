@@ -5,7 +5,7 @@
   "main": "bundle.js",
   "scripts": {
     "start": "webpack-dev-server",
-    "build": "webpack --config webpack.conf.build.js"
+    "build": "env NODE_ENV=production webpack --config webpack.conf.build && gulp copy-assets-to-dist && gulp replace-path"
   },
   "author": "",
   "license": "ISC",
@@ -44,6 +44,7 @@
     "gulp-rename": "1.2.2",
     "gulp-sass": "^2.3.2",
     "gulp-uglify": "^2.0.0",
+    "gulp-replace": "^0.5.4",
     "handlebars": "^4.0.5",
     "handlebars-loader": "^1.4.0",
     "handlebars-template-loader": "^0.7.0",

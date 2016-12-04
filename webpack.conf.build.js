@@ -1,70 +1,61 @@
-var webpack = require("webpack");
-var path = require("path");
-var ExtractTextPlugin = require("extract-text-webpack-plugin");
+const path = require("path");
+const webpack = require("webpack");
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 module.exports = {
   devtool: 'cheap-module-source-map',
   entry: ['babel-polyfill', './entry.js'],
-  output: {
-    path: path.join(__dirname, 'dist'),
-    filename: "bundle.js",
-    publicPath: './static/',
-},
-  module: 
+  resolve:
   {
-		preLoaders: 
-    [
-      {
-        test: /\.js$/,
-        exclude: /node_modules/,
-        loader: 'jshint-loader'
+    extensions: ['', '.js', '.es6', '.css']
+  },
+  output: {
+    path: path.join(__dirname, '/../dist'),
+    filename: "bundle.js",
+    publicPath: '',
+  },
+  plugins : [
+    new webpack.DefinePlugin({
+      'process.env.NODE_ENV': '"production"',
+    }),
+    new webpack.NoErrorsPlugin(),
+    new webpack.optimize.UglifyJsPlugin(),
+    new ExtractTextPlugin('style.css')
+  ],
+  module:
+  {
+    loaders: [
+    {
+      test: /\.(es6|js)$/,
+      exclude: /node_modules/,
+      loader: 'babel',
+      query: {
+          presets: ['es2015']
       }
-    ],
-    loaders: 
-      [
-        {
-          test: /\.json$/,
-          loader: 'json-loader'
-        },
-      // {
-      //   test: /\.html$/,
-      //   loader: ExtractTextPlugin.extract("html-loader"),
-      // },
-        //   { 
-        //   	test: /\.scss$/, 
-	       //  	loader: ExtractTextPlugin.extract("style","css?minimize!sass"),
-        //   },
-      {
-        test: /\.es6\.js$/, loader: "babel",
-          exclude: /node_modules/,
-          query: {
-            cacheDirectory: true,
-            presets: ['es2015'],
-        }
-      },
-          {
-            test: /\.(jpg|png)$/,
-            loaders: ['file-loader?emitFile=false&name=[path][name].[ext]',
-                    'image-webpack?bypassOnDebug&optimizationLevel=7&interlaced=false'],
-          }
-        ]
-		  },
-      plugins : 
-      [
-        new ExtractTextPlugin("./static/css/app.css"),
-        new ExtractTextPlugin("./static/html/[name].html")
-
-      ],
- 	    resolve: 
-      {
-        extensions: ['', '.js', '.es6']
-      },
-    devServer: {
-    	open: true,
-	    plugins: [
-			new webpack.HotModuleReplacementPlugin()
-		],
-    	colors: true,
-    	progress: true,
     },
+    {
+      test: /\.html$/,
+      loader: "mustache"
+    },
+    {
+      test: /\.scss$/,
+      loaders: ["style", "css", "sass"]
+    },
+    {
+      test: /\.(jpe?g|png|gif|svg)$/i,
+      loaders: [
+        'file-loader?name=[path][name].[ext]',
+      ]
+    },
+    {
+      test: /\.json?$/,
+      loaders: ['json'],
+    },
+    {
+      test: /\.(woff|woff2|eot|ttf|svg)$/,
+      loader: 'file-loader?name=[path][name].[ext]'
+    }],
+  	colors: true,
+  	progress: true,
+  },
 }
