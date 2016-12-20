@@ -47,7 +47,7 @@ router.get('/projects/:id', (req) => {
         document.querySelector('.container').classList.toggle('project--scrolling');
       }
       if (container.classList.contains('loaded')) {
-        project.init();
+          project.init();
       }
       templating.initClicks(container);
     }
