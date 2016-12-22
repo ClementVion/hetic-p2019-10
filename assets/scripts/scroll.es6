@@ -1,6 +1,6 @@
 module.exports = {
   init: (scrollBar, checkEnd) => {
-    var VirtualScroll = (function(){
+    var VirtualScroll = (function(document){
 
       var vs = {};
 
@@ -67,6 +67,7 @@ module.exports = {
       }
 
       var onWheel = function(e) {
+        e.preventDefault();
         // In Chrome and in Firefox (at least the new one)
         event.deltaX = e.wheelDeltaX || e.deltaX * -1;
         event.deltaY = e.wheelDeltaY || e.deltaY * -1;
@@ -85,6 +86,7 @@ module.exports = {
       }
 
       var onMouseWheel = function(e) {
+        e.preventDefault();
         // In Safari, IE and in Chrome if 'wheel' isn't defined
         event.deltaX = (e.wheelDeltaX) ? e.wheelDeltaX : 0;
         event.deltaY = (e.wheelDeltaY) ? e.wheelDeltaY : e.wheelDelta;
@@ -92,6 +94,7 @@ module.exports = {
       }
 
       var onTouchStart = function(e) {
+        e.preventDefault();
         var t = (e.targetTouches) ? e.targetTouches[0] : e;
         touchStartX = t.pageX;
         touchStartY = t.pageY;
@@ -173,7 +176,7 @@ module.exports = {
       }
 
       return vs;
-    })();
+    })(document);
     return VirtualScroll;
   },
   run: (firstParam, scrollBar, checkEnd) => {
@@ -181,7 +184,7 @@ module.exports = {
     const section = document.querySelector('.singleProject');
     let sectionWidth = section.getBoundingClientRect().width;
 
-    section.addEventListener('touchmove', function(e) {
+    document.addEventListener('touchmove', function(e) {
       e.preventDefault();
     });
 
@@ -216,8 +219,6 @@ module.exports = {
     run();
   },
   destroy: (firstParam) => {
-    console.log('oooooooiiiiiio');
-    let VirtualScroll = firstParam;
-    VirtualScroll = null;
+    const VirtualScroll = firstParam;
   },
 };

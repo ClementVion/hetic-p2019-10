@@ -1,3 +1,8 @@
+// TODO : Classic scroll on mobile device
+// TODO : Title animation, etc....
+// TODO : Differents animations on mobile device 
+// TODO : Add a fine end of project detection
+
 module.exports = {
   init: () => {
     console.log('page loaded');
@@ -86,7 +91,11 @@ module.exports = {
   // }
   //
 
-  //
+    function stopScrollLinks() {
+      const links = Array.from(document.querySelectorAll('a'));
+      links.forEach(link => link.addEventListener('click', () => { virtualScroll.off(); }));
+    }
+
     function animTitle() {
       if (targetX > 0) {
         if (!document.querySelector('.singleProject__header').classList.contains('singleProject__header--hidden')) {
@@ -137,5 +146,7 @@ module.exports = {
         }, 1000);
       }
     }
+
+    stopScrollLinks();
   },
 };
