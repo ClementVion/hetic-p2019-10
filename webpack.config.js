@@ -7,7 +7,7 @@ const autoprefixer = require('autoprefixer')
 
 module.exports = createConfig([
   entryPoint('./entry.js'),
-  setOutput('./dist/bundle.js'),
+  setOutput('./dist/public/bundle.js'),
   sass(),
   babel(),
   postcss([
