@@ -30,7 +30,7 @@ module.exports = createConfig([
         {
             test: /\.json$/,
             loader: "json"
-        },
+        }
       ]
     }
   })
