@@ -1,3 +1,6 @@
 node_modules/
 dist/public/
 dist/node_modules/
+!dist/package.json
+!dist/Procfile
+!dist/server.js
