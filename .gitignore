@@ -1,5 +1,5 @@
 node_modules/
-dist/*
+dist/
 !dist/package.json
 !dist/Procfile
 !dist/server.js
