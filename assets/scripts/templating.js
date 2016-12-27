@@ -1,5 +1,5 @@
-const loader = require('./loader.es6');
-const routing = require('./router.es6');
+const loader = require('./loader.js');
+const routing = require('./router.js');
 
 const container = document.querySelector('.container');
 

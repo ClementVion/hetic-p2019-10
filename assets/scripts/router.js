@@ -1,9 +1,9 @@
-const home = require('./page-home.es6');
-const project = require('./page-project.es6');
-const routesModule = require('./routes.es6');
-const allworks = require('./page-allworks.es6');
-const templating = require('./templating.es6');
-const  Grapnel = require('grapnel');
+const home = require('./page-home.js');
+const project = require('./page-project.js');
+const routesModule = require('./routes.js');
+const allworks = require('./page-allworks.js');
+const templating = require('./templating.js');
+const Grapnel = require('grapnel');
 
 const container = document.querySelector('.container');
 const routes = routesModule.routes;
