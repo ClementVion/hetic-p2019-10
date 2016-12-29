@@ -8,6 +8,8 @@ module.exports = {
     console.log('page loaded');
     const routing = require('./router.js');
     const scroll = require('./scroll.js');
+    const headerStyle = getComputedStyle(document.querySelector('.singleProject__header'));
+    const headerSize = parseInt(headerStyle.length, 10) + parseInt(headerStyle.marginLeft, 10);
     let fired = false;
     let firstPage = true;
 
@@ -16,15 +18,38 @@ module.exports = {
       const scale = (-1 * targetX) / ((sectionWidth - window.innerWidth));
       scrollbar[0].style.transform = `translateZ(0) scaleX(${scale})`;
     }
+
+    function animBackgrounds(targetX, sectionWidth){
+      let percentImg = ((targetX*-1 - headerSize) / (sectionWidth - window.innerWidth)) * 100;
+      console.log(percentImg);
+      if (percentImg >= 0 && percentImg < 90) {
+        let photos = document.getElementsByClassName('singleProject__photo-wrap');
+        let background = document.getElementsByClassName('singleProject__background-container');
+        for (var i = (photos.length) - 1; i >= 0; i--) {
+          if (targetX*-1 >= photos[i].offsetLeft - photos[i].offsetWidth) {
+            if (background[i].classList.contains('singleProject__background-container--visible') === false) {
+              if (document.querySelector('.singleProject__background-container--visible')) {
+                document.querySelector('.singleProject__background-container--visible').classList.remove('singleProject__background-container--visible');
+              }
+              background[i].classList.add('singleProject__background-container--visible');
+            }
+            return;
+          }
+        }
+      } else if (document.querySelector('.singleProject__background-container--visible')) {
+        document.querySelector('.singleProject__background-container--visible').classList.remove('singleProject__background-container--visible');
+      }
+    }
+
     let virtualScroll = scroll.init();
-    console.log(virtualScroll);
+    // console.log(virtualScroll);
     window.setTimeout(() => {
-      scroll.run(virtualScroll, scrollBar, checkEnd);
+      scroll.run(virtualScroll, scrollBar, checkEnd, animBackgrounds);
     }, 1000);
 
     const singleProject = document.querySelector('.singleProject');
   //   const currentSingle = singleProject.scrollLeft;
-  //   const background = document.getElementsByClassName('singleProject__background-container');
+    // const background = document.getElementsByClassName('singleProject__background-container');
   //   const backgroundTransform = getComputedStyle(background[0]).transform;
     // const photos = document.querySelectorAll('.singleProject__photo');
   //   const projectsLength = document.getElementsByClassName('singleProject__photo-wrap').length;

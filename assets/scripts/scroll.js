@@ -1,5 +1,5 @@
 module.exports = {
-  init: (scrollBar, checkEnd) => {
+  init: (scrollBar, checkEnd, animBackgrounds) => {
     var VirtualScroll = (function(document){
 
       var vs = {};
@@ -179,7 +179,7 @@ module.exports = {
     })(document);
     return VirtualScroll;
   },
-  run: (firstParam, scrollBar, checkEnd) => {
+  run: (firstParam, scrollBar, checkEnd, animBackgrounds) => {
     const VirtualScroll = firstParam;
     const section = document.querySelector('.singleProject');
     let sectionWidth = section.getBoundingClientRect().width;
@@ -194,9 +194,10 @@ module.exports = {
       targetX += e.deltaY;
       targetX = Math.max( (sectionWidth - window.innerWidth) * -1, targetX);
       targetX = Math.min(0, targetX);
-      console.log(sectionWidth - window.innerWidth);
-      console.log(-targetX);
+      // console.log(sectionWidth - window.innerWidth);
+      // console.log(-targetX);
       scrollBar(targetX, sectionWidth);
+      animBackgrounds(targetX, sectionWidth);
       // animTitle();
       window.setTimeout(() => {
         checkEnd(targetX, sectionWidth);
