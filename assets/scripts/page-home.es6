@@ -11,6 +11,10 @@ module.exports = {
     const descriptionSlides = document.querySelectorAll('.project__description');
     const chapters = document.querySelectorAll('.carousel__option');
     const projectLinks = document.querySelectorAll('.project__link');
+
+    let touchStartY = null;
+    let deltaY = null;
+
     // Timelines for tweenmax
     const tl1 = new TimelineMax();
     const tl2 = new TimelineMax();
@@ -209,9 +213,9 @@ module.exports = {
     * @returns {void}
     */
     function chaptersScroll() {
-        for (const chapter of chapters) {
-          chapter.addEventListener('click', chapterAddEventListener);
-        }
+      for (const chapter of chapters) {
+        chapter.addEventListener('click', chapterAddEventListener);
+      }
     }
 
     /**
@@ -241,6 +245,41 @@ module.exports = {
         }, '-=0.6');
     }
 
+    function detectTouch() {
+      const hasTouch = 'ontouchstart' in document;
+
+      if(hasTouch) {
+        document.addEventListener('touchstart', onTouchStart);
+        document.addEventListener('touchmove', onTouchMove);
+        document.addEventListener('touchend', onTouchEnd);
+      }
+    }
+
+    function onTouchStart(e) {
+      const t = (e.targetTouches) ? e.targetTouches[0] : e;
+      touchStartY = t.pageY;
+      console.log(`y: ${touchStartY}`);
+    }
+
+    function onTouchMove(e) {
+      // e.preventDefault(); // < This needs to be managed externally
+      const t = (e.targetTouches) ? e.targetTouches[0] : e;
+      deltaY = (t.pageY - touchStartY);
+      // touchStartY = deltaY;
+    }
+
+    function onTouchEnd(e) {
+      if (deltaY < 0) {
+        selectSlide(currentProject - 1);
+        return;
+      }
+
+      if (deltaY > 0) {
+        selectSlide(currentProject + 1);
+        return;
+      }
+    }
+
     /**
     * Init scrolling for home page.
     * @returns {void}
@@ -249,6 +288,7 @@ module.exports = {
       initSlides();
       chaptersScroll();
       firstApparition();
+      detectTouch();
     }
     init();
   },
