@@ -249,6 +249,7 @@ module.exports = {
       const hasTouch = 'ontouchstart' in document;
 
       if(hasTouch) {
+        console.log('touchscreen');
         document.addEventListener('touchstart', onTouchStart);
         document.addEventListener('touchmove', onTouchMove);
         document.addEventListener('touchend', onTouchEnd);

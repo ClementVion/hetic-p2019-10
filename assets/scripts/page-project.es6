@@ -16,12 +16,14 @@ module.exports = {
       const scale = (-1 * targetX) / ((sectionWidth - window.innerWidth));
       scrollbar[0].style.transform = `translateZ(0) scaleX(${scale})`;
     }
-    let virtualScroll = scroll.init();
-    console.log(virtualScroll);
+
+    const hasTouch = 'ontouchstart' in document;
+
+    const virtualScroll = scroll.init();
     window.setTimeout(() => {
       scroll.run(virtualScroll, scrollBar, checkEnd);
     }, 1000);
-
+  
     const singleProject = document.querySelector('.singleProject');
   //   const currentSingle = singleProject.scrollLeft;
   //   const background = document.getElementsByClassName('singleProject__background-container');
@@ -93,7 +95,7 @@ module.exports = {
 
     function stopScrollLinks() {
       const links = Array.from(document.querySelectorAll('a'));
-      links.forEach(link => link.addEventListener('click', () => { virtualScroll.off(); }));
+      links.forEach(link => link.addEventListener('click', () => {virtualScroll.off();}));
     }
 
     function animTitle() {
