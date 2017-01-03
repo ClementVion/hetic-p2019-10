@@ -114,7 +114,7 @@ module.exports = {
         }, 1000);
 
         if (content.classList.contains('home')) {
-          const home = require('./page-home.es6');
+          const home = require('./page-home.js');
           setTimeout(() => {
             home.init();
             container.classList.add('loaded');
@@ -124,7 +124,7 @@ module.exports = {
             enableScroll();
           }, 800);
         } else if (content.classList.contains('pageProject')) {
-          const project = require('./page-project.es6');
+          const project = require('./page-project.js');
           setTimeout(() => {
             project.init();
             container.classList.add('loaded');
@@ -135,7 +135,7 @@ module.exports = {
             container.classList.add('loaded');
           }, 1000);
         } else {
-          const allworks = require('./page-allworks.es6');
+          const allworks = require('./page-allworks.js');
           setTimeout(() => {
             allworks.init();
             container.classList.add('loaded');

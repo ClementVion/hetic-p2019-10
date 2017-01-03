@@ -1,13 +1,13 @@
 // TODO : Classic scroll on mobile device
 // TODO : Title animation, etc....
-// TODO : Differents animations on mobile device 
+// TODO : Differents animations on mobile device
 // TODO : Add a fine end of project detection
 
 module.exports = {
   init: () => {
     console.log('page loaded');
-    const routing = require('./router.es6');
-    const scroll = require('./scroll.es6');
+    const routing = require('./router.js');
+    const scroll = require('./scroll.js');
     let fired = false;
     let firstPage = true;
 
