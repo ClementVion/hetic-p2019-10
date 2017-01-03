@@ -361,6 +361,10 @@
     text-decoration: none;
     font-family: 'Aktiv Grotesk Corp';
     color: #8E9093;
+    padding-bottom: 50px;
+    @include large {
+        padding-bottom: 0;
+    }
 }
 
 .singleProject__teasing-infos{

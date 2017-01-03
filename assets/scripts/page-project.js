@@ -43,6 +43,8 @@ module.exports = {
 
     let virtualScroll = scroll.init();
     // console.log(virtualScroll);
+    const hasTouch = 'ontouchstart' in document;
+
     window.setTimeout(() => {
       scroll.run(virtualScroll, scrollBar, checkEnd, animBackgrounds);
     }, 1000);
@@ -118,7 +120,7 @@ module.exports = {
 
     function stopScrollLinks() {
       const links = Array.from(document.querySelectorAll('a'));
-      links.forEach(link => link.addEventListener('click', () => { virtualScroll.off(); }));
+      links.forEach(link => link.addEventListener('click', () => {virtualScroll.off();}));
     }
 
     function animTitle() {

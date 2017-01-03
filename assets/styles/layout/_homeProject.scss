@@ -339,7 +339,7 @@
 }
 
 .project__imageBackground{
-	@include size(auto,500px);
+	@include size(auto,100%);
 	// top: 80px;
 	position: absolute;
 	top: 100%;
