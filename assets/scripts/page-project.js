@@ -22,7 +22,6 @@ module.exports = {
 
       function animBackgrounds(targetX, sectionWidth){
         let percentImg = ((targetX*-1 - headerSize) / (sectionWidth - window.innerWidth)) * 100;
-        console.log(percentImg);
         if (percentImg >= 0 && percentImg < 90) {
           let photos = document.getElementsByClassName('singleProject__photo-wrap');
           let background = document.getElementsByClassName('singleProject__background-container');
@@ -47,7 +46,7 @@ module.exports = {
       const hasTouch = 'ontouchstart' in document;
 
       window.setTimeout(() => {
-        scroll.run(virtualScroll, scrollBar, checkEnd, animBackgrounds);
+        scroll.run(virtualScroll, scrollBar, checkEnd, animBackgrounds, animTitle);
       }, 1000);
 
       const singleProject = document.querySelector('.singleProject');
@@ -124,24 +123,25 @@ module.exports = {
         links.forEach(link => link.addEventListener('click', () => {virtualScroll.off();}));
       }
 
-      function animTitle() {
-        if (targetX > 0) {
+      function animTitle(targetX) {
+        console.log(targetX);
+        if (targetX *-1 > 0) {
+          console.log('indaloupe');
           if (!document.querySelector('.singleProject__header').classList.contains('singleProject__header--hidden')) {
+            console.log('tarascon');
             document.querySelector('.singleProject__header').classList.add('singleProject__header--hidden');
             window.setTimeout(() => {
               document.querySelector('.singleProject__header').classList.add('singleProject__header--translated');
             }, 1000);
           }
         }
-        if (targetX < 200) {
+        if (targetX *-1 < 200) {
           if (document.querySelector('.singleProject__header').classList.contains('singleProject__header--hidden')) {
             document.querySelector('.singleProject__header').classList.remove('singleProject__header--translated');
             document.querySelector('.singleProject__header').classList.remove('singleProject__header--hidden');
           }
         }
       }
-    //
-
 
       function checkEnd(targetX, sectionWidth) {
         if ((-1 * targetX) > (sectionWidth - window.innerWidth) - 100) {
@@ -176,6 +176,9 @@ module.exports = {
       }
 
       stopScrollLinks();
+    }
+    else {
+      document.querySelector('.singleProject__link').innerText = 'Click to see next project'
     }
   },
 };

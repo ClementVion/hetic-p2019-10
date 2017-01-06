@@ -179,7 +179,7 @@ module.exports = {
     })(document);
     return VirtualScroll;
   },
-  run: (firstParam, scrollBar, checkEnd, animBackgrounds) => {
+  run: (firstParam, scrollBar, checkEnd, animBackgrounds, animTitle) => {
     const VirtualScroll = firstParam;
     const section = document.querySelector('.singleProject');
     let sectionWidth = section.getBoundingClientRect().width;
@@ -198,9 +198,9 @@ module.exports = {
       // console.log(-targetX);
       scrollBar(targetX, sectionWidth);
       animBackgrounds(targetX, sectionWidth);
-      // animTitle();
       window.setTimeout(() => {
         checkEnd(targetX, sectionWidth);
+        animTitle(targetX);
       }, 10);
     });
 
