@@ -448,6 +448,11 @@
     opacity: 0;
 }
 
+.project--scrolling .scrollbar{
+  opacity: 0;
+  transition: transform ease-in 0.1ms, opacity 1s ease-in;
+}
+
 .project--scrolling .singleProject__background-container--teaser{
     opacity: 0;
 }

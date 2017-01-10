@@ -20,12 +20,13 @@ module.exports = {
 
       function animBackgrounds(targetX, sectionWidth){
         let percentImg = ((targetX*-1 - headerSize) / (sectionWidth - window.innerWidth)) * 100;
-        console.log('percent :' + percentImg);
         if (percentImg >= 0 && percentImg < 90) {
           let photos = document.getElementsByClassName('singleProject__photo-wrap');
           let background = document.getElementsByClassName('singleProject__background-container');
           for (var i = (photos.length) - 1; i >= 0; i--) {
-            if (targetX*-1 >= photos[i].offsetLeft - photos[i].offsetWidth) {
+            if (targetX*-1 >= photos[i].offsetLeft) {
+              console.log('targetX : ' + targetX * -1);
+              console.log(photos[i].offsetLeft);
               if (background[i].classList.contains('singleProject__background-container--visible') === false) {
                 if (document.querySelector('.singleProject__background-container--visible')) {
                   document.querySelector('.singleProject__background-container--visible').classList.remove('singleProject__background-container--visible');
