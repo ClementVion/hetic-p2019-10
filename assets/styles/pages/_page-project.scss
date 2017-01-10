@@ -34,7 +34,6 @@
     opacity: 1;
     transform: translateX(0%);
     transition: opacity 1s ease-out;
-    height: 100%;
 }
 
 .singleProject__bigContainer{
@@ -90,7 +89,9 @@
     opacity: 1;
     color: #353535;
     transition: all ease 800ms;
+    padding-top: 60px;
     @include medium-single {
+        padding-top: 0;
         z-index: -1;
         display: flex;
         flex-direction: column;
@@ -114,17 +115,18 @@
     color: #000000;
     display: flex;
     flex-wrap: nowrap;
-    width: 200%;
     opacity: 0;
     transform: translateX(-150px);
     transition: 800ms cubic-bezier(.19,1,.22,1);
     font-weight: 500;
     @include medium-single {
+        width: 200%;
         font-size: 219px;
         opacity: 0;
         margin: 10% 0 0 110px;
     }
     @include large {
+        width: 200%;
         font-size: 300px;
         margin: 0 0 0 110px;
     }
@@ -132,8 +134,14 @@
 
 .container--visible .singleProject__title {
     transform: translateX(0);
-    opacity: 0.03;
+    opacity: 1;
     transition: 800ms cubic-bezier(.19,1,.22,1);
+    @include medium-single {
+        opacity: 0.03;
+    }
+    @include large {
+        opacity: 0.03;
+    }
 }
 
 .singleProject__title--hidden{
@@ -205,6 +213,7 @@
     backface-visibility: hidden;
     transition: transform linear 0.10s;
     opacity: 0;
+    width: 100%;
     @include medium-single {
         top: 0;
         display: flex;
@@ -435,8 +444,13 @@
         background: #000000;
         bottom: 0;
         backface-visibility: hidden;
-        transition: transform ease-in 0.1ms, opacity 1s ease-in;
+        transition: transform ease-in 0.1ms, opacity 0.3s ease-in;
     }
+}
+
+.project--scrolling .scrollbar {
+  opacity: 0;
+  transition: transform ease-in 0.1ms, opacity 0.3s ease-in;
 }
 
 .project--scrolling .singleProject__photo-wrap {
@@ -450,4 +464,9 @@
 
 .project--scrolling .singleProject__background-container--teaser{
     opacity: 0;
+}
+
+.project--scrolling .scrollbar {
+    opacity: 0;
+    transition: opacity 0.3s ease-in;
 }

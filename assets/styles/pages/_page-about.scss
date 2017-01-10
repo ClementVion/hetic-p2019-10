@@ -1,3 +1,6 @@
+.content.about {
+	padding-top: 298px;
+}
 .about__imgBox{
     position: absolute;
     top: 110px;
@@ -28,16 +31,15 @@
 }
 
 .about__text{
-    position: absolute;
-    top: 298px;
+    // margin-top: 250px;
     padding: 0px 43px 10px 43px;
     font-size: 22px;
     line-height: 33px;
     color: #353535;
-	opacity: 0;
-    transform: translateY(-60px);
-    transition: opacity 300ms 300ms cubic-bezier(0.645, 0.045, 0.355, 1), 
-                transform 300ms 300ms cubic-bezier(0.645, 0.045, 0.355, 1);
+	// opacity: 0;
+    // transform: translateY(-60px);
+    // transition: opacity 300ms 300ms cubic-bezier(0.645, 0.045, 0.355, 1), 
+    //             transform 300ms 300ms cubic-bezier(0.645, 0.045, 0.355, 1);
 
 	@include homeMedium{
 	    font-size: 30px;

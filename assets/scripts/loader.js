@@ -121,19 +121,21 @@ module.exports = {
           }, 600);
           setTimeout(() => {
             loadingContainer.style.display = 'none';
+
             enableScroll();
           }, 800);
         } else if (content.classList.contains('pageProject')) {
           const project = require('./page-project.js');
           setTimeout(() => {
             project.init();
-            container.classList.add('loaded');
           }, 600);
           setTimeout(() => {
             loadingContainer.style.display = 'none';
             enableScroll();
-            container.classList.add('loaded');
           }, 1000);
+          setTimeout(() => {
+            container.classList.add('loaded');
+          }, 1600);
         } else {
           const allworks = require('./page-allworks.js');
           setTimeout(() => {
@@ -157,6 +159,7 @@ module.exports = {
     * @returns {void}
     */
     function updateLoadProgress(loaded, total) {
+      loadingContainer.style.top = document.querySelector('body').scrollTop + 'px';
       return new Promise(
       (resolve) => {
         setTimeout(() => {
@@ -181,13 +184,13 @@ module.exports = {
    * @returns {void}
    */
     function launchLoading(cl) {
-      scroll(0,0)
       container.classList.remove('container--visible');
       disableScroll();
       const assets = document.querySelectorAll(cl); // Get assets
       let promisesResolved = 0; // number of promises resolved updated at each iteration
       preventLazyload(assets);
       loadingContainer.style.display = 'block';
+      document.scrollTop = 0;
       for (const elm of assets) {
         loadAssets(elm)
         .then(

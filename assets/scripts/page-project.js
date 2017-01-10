@@ -21,7 +21,9 @@ module.exports = {
       }
 
       function animBackgrounds(targetX, sectionWidth){
+        console.log(targetX);
         let percentImg = ((targetX*-1 - headerSize) / (sectionWidth - window.innerWidth)) * 100;
+        console.log(percentImg);
         if (percentImg >= 0 && percentImg < 90) {
           let photos = document.getElementsByClassName('singleProject__photo-wrap');
           let background = document.getElementsByClassName('singleProject__background-container');
@@ -161,7 +163,7 @@ module.exports = {
                 routing.router.navigate(document.querySelector('.singleProject__link').getAttribute('href'));
                 document.querySelector('.container').classList.toggle('project--scrolling');
                 virtualScroll.off();
-                resize();
+                // resize();
                 fired = false;
               }, 1000);
             }
