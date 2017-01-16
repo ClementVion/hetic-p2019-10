@@ -21,11 +21,20 @@ gulp.task('copy-assets-to-dist', () => {
     .pipe(clean({force: true}));*/
 })
 
+// gulp.task('replace-path', () => {
+//   gulp.src([
+//     'dist/public/bundle.js',
+//     'dist/html/*.html',
+//   ]).pipe(replace('../../assets/', '/'))
+//     .pipe(replace('../assets/', '/'))
+//     .pipe(gulp.dest('dist/public/'));
+// })
+
 gulp.task('replace-path', () => {
-  gulp.src([
-    'dist/public/bundle.js',
-    'dist/html/*.html',
-  ]).pipe(replace('../../assets/', '/'))
-    .pipe(replace('../assets/', '/'))
+  gulp.src(['dist/public/bundle.js',])
+    .pipe(replace('/assets/', '/'))
     .pipe(gulp.dest('dist/public/'));
+  gulp.src(['dist/public/html/*.html'])
+  .pipe(replace('/assets/', '/'))
+  .pipe(gulp.dest('dist/public/html/'));
 })

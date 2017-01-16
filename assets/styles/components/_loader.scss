@@ -1,6 +1,6 @@
 .loading{
 	display: none;
-	position: absolute;
+	position: fixed;
 	width: 100%;
 	height: 100%;
 	font-size: 34px;
@@ -71,7 +71,7 @@
 	width: 100%;
 	height: 100vh;
 	position: absolute;
-	transform: translateX(-100%);
+	transform: translate3d(-100%,0,0);
 	transition: all .4s;
 	transform-origin: 0 0;
 	background: #f7f7f7;

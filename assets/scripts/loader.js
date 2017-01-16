@@ -100,7 +100,8 @@ module.exports = {
     * @returns {void}
     */
     function stopPreloadingAnim() {
-    // remove loading screen
+      // window.scrollTo(0,0);
+      // remove loading screen
       setTimeout(() => {
         const content = document.querySelector('.content');
         const loadingLayout = loadingContainer.querySelector('.loading__layout');
@@ -159,14 +160,18 @@ module.exports = {
     function updateLoadProgress(loaded, total) {
       return new Promise(
       (resolve) => {
+
         setTimeout(() => {
           const progress = Math.round((100 / total) * loaded); // update when asset is loaded
           const percentElm = document.querySelector('.loading__percents'); // element which contain loading percents
           const loadingProgress = document.querySelector('.loading__progress');
 
-          loadingProgress.style.transform = `translateX(-${100 - progress}%)`;
+          loadingProgress.style.transform = 'translate3d(-' + (100 - progress) + '%, 0px, 0px)';
           percentElm.innerHTML = progress;
-          if (progress >= 100 && loaded === total && loadingProgress.style.transform === 'translateX(0%)') {
+
+          window.scrollTo(0,0);
+
+          if (progress >= 100 && loaded === total && loadingProgress.style.transform === 'translate3d(0%, 0px, 0px)') {
             stopPreloadingAnim(); // remove preloading animation
             resolve(); // return that all images have been loaded
           }
@@ -184,6 +189,7 @@ module.exports = {
       scroll(0,0)
       container.classList.remove('container--visible');
       disableScroll();
+      window.scrollTo(0,0);
       const assets = document.querySelectorAll(cl); // Get assets
       let promisesResolved = 0; // number of promises resolved updated at each iteration
       preventLazyload(assets);
@@ -192,14 +198,13 @@ module.exports = {
         loadAssets(elm)
         .then(
           (value) => {
-          // update load progress
+            // update load progress
             promisesResolved += 1;
             updateLoadProgress(promisesResolved, assets.length);
           },
         );
       }
     }
-
     launchLoading('.preload');
   },
 };

@@ -166,7 +166,6 @@
 
 .singleProject__infos {
     font-size: 13px;
-    margin: 30px 0 0;
 
     .singleProject__info {
         display: flex;
@@ -194,12 +193,24 @@
     .singleProject__small-info {
         color: #8E9093;
     }
+
+    @include medium-single {
+      margin: 30px 0 0;
+    }
+
+    .singleProject__info:nth-child(1){
+      display: none;
+      @include medium-single {
+        display: block;
+      }
+    }
+
 }
 
 .singleProject__description {
     font-family: 'Aktiv Grotesk Corp';
     font-size: 13px;
-    margin: 40px 0;
+    margin: 20px 0;
     line-height: 1.7;
     @include medium-single {
         display: block;
@@ -211,7 +222,7 @@
 .singleProject__main-content {
     transform: translateX(0) translateZ(0);
     backface-visibility: hidden;
-    transition: transform linear 0.10s;
+    transition: transform linear 0.10s, margin ease 1s 0.7s;
     opacity: 0;
     width: 100%;
     @include medium-single {

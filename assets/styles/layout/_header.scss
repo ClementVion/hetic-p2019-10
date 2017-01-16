@@ -3,6 +3,7 @@
 // -----------------------------------------------------------------------------
 
 .main-header{
+  position: fixed;
 	@include size(100%,0px);
 	font-family: 'Aktiv Grotesk Corp';
 	z-index: 10;
