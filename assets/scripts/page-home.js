@@ -62,7 +62,7 @@ module.exports = {
           {
             y: '-100%',
           });
-        tl1.to(titlesSlides[prevProject], 0.4,
+        tl1.to(titlesSlides[prevProject], 0.2,
           {
             y: '100%',
           }, '-= 0.4');
