@@ -19,6 +19,7 @@
     @include small {
         width: 335px;
     }
+
     @include medium-single {
         box-sizing: border-box;
         display: inline-flex;
@@ -237,6 +238,8 @@
         height: 100%;
         margin-right: 100px;
         transform: translateX(0px) translateZ(0);
+        padding-left: 0px;
+        // box-sizing: border-box;
     }
     @include large {
       margin-right: 150px;
@@ -340,10 +343,10 @@
     transition: opacity 0.4s ease-in;
     background: #FFFFFF;
     object-fit: contain;
+    overflow: hidden;
     @include medium-single {
         width: 570px;
         height: 100%;
-        overflow: hidden;
     }
     @include large {
         width: 670px;
@@ -360,7 +363,6 @@
         height: 100%;
     }
     @include large{
-        margin: 0;
     }
 }
 
