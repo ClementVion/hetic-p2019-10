@@ -167,7 +167,7 @@ module.exports = {
         trailing: false,
       });
       projectLinks[0].style.top = '0';
-      for (const slide of slides.keys()) {
+      for (let slide of slides.keys()) {
         if (slide !== 0) {
           slides[slide].style.display = 'none';
           frontSlides[slide].style.display = 'none';
@@ -213,7 +213,7 @@ module.exports = {
     * @returns {void}
     */
     function chaptersScroll() {
-      for (const chapter of chapters) {
+      for (let chapter of chapters) {
         chapter.addEventListener('click', chapterAddEventListener);
       }
     }

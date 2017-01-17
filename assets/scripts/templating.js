@@ -24,7 +24,7 @@ function listenClicks(elem) {
  */
 function initClicks(element) {
   const links = element.querySelectorAll('a');
-  for (const link of links.keys()) {
+  for (let link of links.keys()) {
     links[link].addEventListener('click', (e) => {
       e.preventDefault();
       listenClicks(links[link]);

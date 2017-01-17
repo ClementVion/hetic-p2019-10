@@ -68,7 +68,7 @@ module.exports = {
     * @returns {void}
     */
     function preventLazyload(assets) {
-      for (const elm of assets) {
+      for (let elm of assets) {
         elm.src = elm.getAttribute('data-src');
         elm.classList.toggle('lazyload');
       }
@@ -194,7 +194,7 @@ module.exports = {
       let promisesResolved = 0; // number of promises resolved updated at each iteration
       preventLazyload(assets);
       loadingContainer.style.display = 'block';
-      for (const elm of assets) {
+      for (let elm of assets) {
         loadAssets(elm)
         .then(
           (value) => {

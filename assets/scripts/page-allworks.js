@@ -9,7 +9,7 @@ module.exports = {
     * @returns {void}
     */
     function initHovers() {
-      for (const img of imgs.keys()) {
+      for (let img of imgs.keys()) {
         titles[img].addEventListener('mouseenter', () => {
           imgs[img].classList.add('allWorks__image--visible');
         });
@@ -22,7 +22,7 @@ module.exports = {
         });
       }
     }
-    
+
     if (parseInt(getComputedStyle(document.querySelector('.container')).width, 10) >= 700) {
       initHovers();
     } else {
