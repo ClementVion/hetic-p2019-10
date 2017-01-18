@@ -22,7 +22,7 @@ module.exports = {
       function animBackgrounds(targetX, sectionWidth){
         console.log(targetX);
         let percentImg = ((targetX*-1 - headerSize) / (sectionWidth - window.innerWidth)) * 100;
-        if (percentImg >= 0 && percentImg < 70) {
+        if (percentImg >= 0 && percentImg < 80) {
           let photos = document.getElementsByClassName('singleProject__photo-wrap');
           let background = document.getElementsByClassName('singleProject__background-container');
           for (var i = (photos.length) - 1; i >= 0; i--) {
@@ -47,8 +47,8 @@ module.exports = {
       const hasTouch = 'ontouchstart' in document;
 
       window.setTimeout(() => {
-        scroll.run(virtualScroll, scrollBar, checkEnd, animBackgrounds, animTitle, resize);
-      }, 1000);
+        scroll.run(virtualScroll, scrollBar, checkEnd, animBackgrounds, animTitle);
+      }, 2000);
 
       const singleProject = document.querySelector('.singleProject');
 
@@ -61,8 +61,10 @@ module.exports = {
         if (parseInt(getComputedStyle(singleProject).width, 10) >= 700) {
           const mainContent = document.querySelector('.singleProject__main-content');
           const header = document.querySelector('.singleProject__header');
+          let toTransform = `${(parseInt(getComputedStyle(header).width, 10) - (parseInt(window.innerWidth, 10) / 1.3)) * -1}px`;
           mainContent.style.marginLeft = `${(parseInt(getComputedStyle(header).width, 10) - (parseInt(window.innerWidth, 10) / 1.3)) * -1}px`;
-          singleProject.style.width = (parseInt(singleProject.offsetWidth) - parseInt(mainContent.style.marginLeft)) - headerSize + 'px';
+          // mainContent.style.transform = 'translateX('+(toTransform)+')';
+          // singleProject.style.width = (parseInt(singleProject.offsetWidth) + parseInt(toTransform) ) + 'px';
         }
       }
 

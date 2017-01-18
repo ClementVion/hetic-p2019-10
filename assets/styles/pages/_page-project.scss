@@ -19,7 +19,6 @@
     @include small {
         width: 335px;
     }
-
     @include medium-single {
         box-sizing: border-box;
         display: inline-flex;
@@ -223,7 +222,7 @@
 .singleProject__main-content {
     transform: translateX(0) translateZ(0);
     backface-visibility: hidden;
-    transition: transform linear 0.10s, margin ease 1s 0.7s;
+    transition: margin ease 1s 0.5s;
     opacity: 0;
     width: 100%;
     @include medium-single {
