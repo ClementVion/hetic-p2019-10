@@ -14,6 +14,7 @@ module.exports = {
 
       function scrollBar(targetX, sectionWidth) {
         const scrollbar = document.getElementsByClassName('scrollbar');
+        const mainContent = document.querySelector('.singleProject__main-content');
         const scale = (-1 * targetX) / ((sectionWidth - window.innerWidth));
         scrollbar[0].style.transform = `translateZ(0) scaleX(${scale})`;
       }
@@ -61,6 +62,7 @@ module.exports = {
           const mainContent = document.querySelector('.singleProject__main-content');
           const header = document.querySelector('.singleProject__header');
           mainContent.style.marginLeft = `${(parseInt(getComputedStyle(header).width, 10) - (parseInt(window.innerWidth, 10) / 1.3)) * -1}px`;
+          singleProject.style.width = (parseInt(singleProject.offsetWidth) - parseInt(mainContent.style.marginLeft)) - headerSize + 'px';
         }
       }
 

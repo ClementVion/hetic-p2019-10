@@ -182,7 +182,9 @@ module.exports = {
   run: (firstParam, scrollBar, checkEnd, animBackgrounds, animTitle) => {
     const VirtualScroll = firstParam;
     const section = document.querySelector('.singleProject');
+    const mainContent = document.querySelector('.singleProject__main-content');
     let sectionWidth = section.getBoundingClientRect().width;
+    console.log('SECTION WIDTH  '+sectionWidth);
 
     document.addEventListener('touchmove', function(e) {
       e.preventDefault();
