@@ -58,14 +58,14 @@ module.exports = {
           {
             y: '-100%',
           });
-        tl1.to(frontSlides[selectedProject], 0.2,
+        tl1.to(frontSlides[selectedProject], 0.4,
           {
             y: '-100%',
           });
         tl1.to(titlesSlides[prevProject], 0.2,
           {
             y: '100%',
-          }, '-= 0.4');
+          }, '0');
         tl1.to(descriptionSlides[prevProject], 0.2,
           {
             y: '100%',
@@ -84,7 +84,7 @@ module.exports = {
             {
               y: '-=100%',
               zIndex: '0',
-            });
+            }, '+=0.2');
           tl2.to(titlesSlides[selectedProject], 0.4,
             {
               y: '-=100%',

@@ -4,7 +4,7 @@
   "description": "Project by :  Camille Alvarez de Jesus, Gauthier Derilleux-Bes, David Taing, Arnaud Villani, Clément Vion, Claire Zunda.",
   "main": "bundle.js",
   "scripts": {
-    "start": "NODE_ENV=development webpack-dev-server --config webpack.config.js",
+    "start": "NODE_ENV=development webpack-dev-server --config webpack.config.js -port 3000 --hot --host 0.0.0.0",
     "build": "env NODE_ENV=production webpack --config webpack.config.js && gulp copy-assets-to-dist && gulp replace-path"
   },
   "author": "",

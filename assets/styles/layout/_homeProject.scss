@@ -36,7 +36,7 @@
 	}
 
 	@include homeSemiLarge{
-		padding: 0 35% 0% 135px;
+		padding: 0 35% 0% 100px;
 	}
 }
 
@@ -44,11 +44,11 @@
 	color: #353535;
 	margin-bottom: 20px;
 	position: absolute;
-	height: 100px;
+	height: 110px;
 	width: 350px;
 	bottom: 60px;
 	font-size: 30px;
-	line-height: 48px;
+	line-height: 52px;
 	overflow: hidden;
 	z-index: 10;
 	opacity: 0;
