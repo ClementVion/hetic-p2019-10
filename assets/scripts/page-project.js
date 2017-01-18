@@ -3,14 +3,14 @@
 
 module.exports = {
   init: () => {
-    if (parseInt(getComputedStyle(document.querySelector('.singleProject')).width) >= 700) {
-      console.log('page loaded');
+    if (parseInt(getComputedStyle(document.querySelector('.singleProject')).width, 10) >= 700) {
       const routing = require('./router.js');
       const scroll = require('./scroll.js');
       const headerStyle = getComputedStyle(document.querySelector('.singleProject__header'));
       const headerSize = parseInt(headerStyle.length, 10) + parseInt(headerStyle.marginLeft, 10);
       let fired = false;
       let firstPage = true;
+      let grayscale = 100;
 
       function scrollBar(targetX, sectionWidth) {
         const scrollbar = document.getElementsByClassName('scrollbar');
@@ -20,14 +20,12 @@ module.exports = {
       }
 
       function animBackgrounds(targetX, sectionWidth){
-        console.log(targetX);
         let percentImg = ((targetX*-1 - headerSize) / (sectionWidth - window.innerWidth)) * 100;
         if (percentImg >= 0 && percentImg < 80) {
           let photos = document.getElementsByClassName('singleProject__photo-wrap');
           let background = document.getElementsByClassName('singleProject__background-container');
           for (var i = (photos.length) - 1; i >= 0; i--) {
             if (targetX*-1 >= photos[i].offsetLeft) {
-              console.log('targetX : ' + targetX * -1);
               if (background[i].classList.contains('singleProject__background-container--visible') === false) {
                 if (document.querySelector('.singleProject__background-container--visible')) {
                   document.querySelector('.singleProject__background-container--visible').classList.remove('singleProject__background-container--visible');
@@ -86,8 +84,14 @@ module.exports = {
       }
 
       function checkEnd(targetX, sectionWidth) {
-        if ((-1 * targetX) > (sectionWidth - window.innerWidth) - 100) {
-          end();
+        if ((-1 * targetX) > (sectionWidth - window.innerWidth) - 300) {
+          grayscale = Math.round(grayscale);
+          console.log((targetX));
+          grayscale = (-1 * ((-1 * targetX) - (sectionWidth - window.innerWidth)) / 3);
+          document.querySelector('.singleProject__bg-photo--teaser').style.filter = 'grayscale(' + grayscale + '%)';
+          if(grayscale <= 0){
+            end();
+          }
         } else if (document.querySelector('.singleProject').classList.contains('end-project')) {
           document.querySelector('.singleProject').classList.remove('end-project');
         }
@@ -113,14 +117,14 @@ module.exports = {
         } else {
           window.setTimeout(() => {
             document.querySelector('.singleProject').classList.add('end-project');
-          }, 1000);
+          }, 30);
         }
       }
       resize();
       stopScrollLinks();
     }
     else {
-      document.querySelector('.singleProject__link').innerText = 'Click to see next project'
+      document.querySelector('.singleProject__link').innerText = 'Click to see next project';
     }
   },
 };
