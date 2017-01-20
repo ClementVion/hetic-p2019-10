@@ -25,13 +25,6 @@ module.exports = {
 
     if (parseInt(getComputedStyle(document.querySelector('.container')).width, 10) >= 700) {
       initHovers();
-    } else {
-      const allTags = document.querySelector('body').getElementsByTagName('*');
-      for (var i = 0, len = allTags.length; i < len; i++) {
-          // allTags[i] is an element within the container object
-          // allTags[i].id is the id of the element (if there is one)
-        allTags[i].classList.add('notransition');
-      }
     }
   },
 };

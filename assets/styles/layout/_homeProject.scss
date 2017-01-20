@@ -46,6 +46,7 @@
 	position: absolute;
 	height: 110px;
 	width: 350px;
+	max-width: 80%;
 	bottom: 60px;
 	font-size: 30px;
 	line-height: 52px;
@@ -60,14 +61,17 @@
 
 	@include homeMedium{
 		bottom: 70px;
+		max-width: none;	
 	}
 
 	@include homeSemiLarge{
 		bottom: 160px;
+		max-width: none;	
 	}
 
 	@include homeLarge{
 		bottom: 300px;
+		max-width: none;	
 	}
 
 }

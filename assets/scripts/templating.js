@@ -33,6 +33,22 @@ function initClicks(element) {
 }
 
 /**
+ * Disable transitions on small screens
+ * Disable select on small screens
+ * @returns {void}
+ */
+function mobileBehaviour() {
+  console.log('checking');
+  if (parseInt(getComputedStyle(document.querySelector('.container')).width, 10) <= 700) {
+    const allTags = document.querySelector('body').getElementsByTagName('*');
+    for (var i = 0, len = allTags.length; i < len; i++) {
+      allTags[i].classList.add('notransition');
+      allTags[i].classList.add('noSelect');
+    }
+  }
+}
+
+/**
  * Gets the header
  * @param {string} page the page we load the header in.
  * @returns {void}
@@ -80,6 +96,9 @@ function getTemplate(name, id) {
       const compile = template();
       container.innerHTML += compile;
     }
+    mobileBehaviour();
+    console.log(window.pageYOffset);
+    window.scrollTo(0,0);
   };
   xhr.send();
 }

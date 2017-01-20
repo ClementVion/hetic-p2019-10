@@ -250,16 +250,15 @@ module.exports = {
 
       if(hasTouch) {
         console.log('touchscreen');
-        document.addEventListener('touchstart', onTouchStart);
-        document.addEventListener('touchmove', onTouchMove);
-        document.addEventListener('touchend', onTouchEnd);
+        document.querySelector('.home').addEventListener('touchstart', onTouchStart);
+        document.querySelector('.home').addEventListener('touchmove', onTouchMove);
+        document.querySelector('.home').addEventListener('touchend', onTouchEnd);
       }
     }
 
     function onTouchStart(e) {
       const t = (e.targetTouches) ? e.targetTouches[0] : e;
       touchStartY = t.pageY;
-      console.log(`y: ${touchStartY}`);
     }
 
     function onTouchMove(e) {
