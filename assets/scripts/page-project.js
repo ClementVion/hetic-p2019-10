@@ -67,7 +67,7 @@ module.exports = {
       }
 
       function animTitle(targetX) {
-        if (targetX *-1 >= 100) {
+        if (targetX *-1 >= 200) {
           if (!document.querySelector('.singleProject__header').classList.contains('singleProject__header--hidden')) {
             document.querySelector('.singleProject__header').classList.add('singleProject__header--hidden');
             window.setTimeout(() => {
@@ -75,7 +75,7 @@ module.exports = {
             }, 1000);
           }
         }
-        if (targetX *-1 < 100) {
+        if (targetX *-1 < 200) {
           if (document.querySelector('.singleProject__header').classList.contains('singleProject__header--hidden')) {
             document.querySelector('.singleProject__header').classList.remove('singleProject__header--translated');
             document.querySelector('.singleProject__header').classList.remove('singleProject__header--hidden');
