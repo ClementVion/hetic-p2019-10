@@ -83,21 +83,25 @@ module.exports = {
         }
       }
 
-      function checkEnd(targetX, sectionWidth) {
+      function colorTeaser(targetX, sectionWidth) {
         if ((-1 * targetX) > (sectionWidth - window.innerWidth) - 300) {
-          grayscale = Math.round(grayscale);
-          console.log((targetX));
-          grayscale = (-1 * ((-1 * targetX) - (sectionWidth - window.innerWidth)) / 3);
+          grayscale = Math.round((-1 * ((-1 * targetX) - (sectionWidth - window.innerWidth)) / 3));
           document.querySelector('.singleProject__bg-photo--teaser').style.filter = 'grayscale(' + grayscale + '%)';
-          if(grayscale <= 0){
+        }
+      }
+      function checkEnd(targetX, sectionWidth, deltaY) {
+        if ((-1 * targetX) > (sectionWidth - window.innerWidth) - 10 && deltaY < 0) {
+          // console.log(deltaY);
+          window.setTimeout(() => {
             end();
-          }
+          }, 400);
         } else if (document.querySelector('.singleProject').classList.contains('end-project')) {
           document.querySelector('.singleProject').classList.remove('end-project');
         }
       }
 
       function end() {
+        // console.log('happy');
         if (document.querySelector('.singleProject').classList.contains('end-project')) {
           if (document.querySelector('.container').classList.contains('project--scrolling')) {
             if (fired === false) {
@@ -116,9 +120,9 @@ module.exports = {
             document.querySelector('.container').classList.add('project--scrolling');
           }
         } else {
-          // window.setTimeout(() => {
+          window.setTimeout(() => {
             document.querySelector('.singleProject').classList.add('end-project');
-          // }, 30);
+          }, 1000);
         }
       }
       resize();
