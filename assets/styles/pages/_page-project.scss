@@ -188,10 +188,16 @@
         font-weight: bold;
         font-size: 13px;
         font-family: 'ITC Avant Garde Pro';
+
+        .light{
+          font-family: 'Aktiv Grotesk Corp';
+          font-weight: 400;
+          color: #8E9093;
+        }
     }
 
     .singleProject__small-info {
-        color: #8E9093;
+      color: #8E9093;
     }
 
     @include medium-single {
