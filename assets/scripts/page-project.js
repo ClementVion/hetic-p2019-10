@@ -67,7 +67,7 @@ module.exports = {
       }
 
       function animTitle(targetX) {
-        if (targetX *-1 >= 0) {
+        if (targetX *-1 >= 100) {
           if (!document.querySelector('.singleProject__header').classList.contains('singleProject__header--hidden')) {
             document.querySelector('.singleProject__header').classList.add('singleProject__header--hidden');
             window.setTimeout(() => {
