@@ -111,13 +111,14 @@ module.exports = {
                 fired = false;
               }, 1000);
             }
-          } else if ((fired === false)) {
+          }
+          if ((fired === false)) {
             document.querySelector('.container').classList.add('project--scrolling');
           }
         } else {
-          window.setTimeout(() => {
+          // window.setTimeout(() => {
             document.querySelector('.singleProject').classList.add('end-project');
-          }, 30);
+          // }, 30);
         }
       }
       resize();
