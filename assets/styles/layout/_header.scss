@@ -3,10 +3,10 @@
 // -----------------------------------------------------------------------------
 
 .main-header{
-  position: fixed;
-	@include size(100%,0px);
+  position: absolute;
+  z-index: 100;
+	@include size(100%, 0px);
 	font-family: 'Aktiv Grotesk Corp';
-	z-index: 10;
 	padding-top: 30px;
 	@include homeMedium{
 		position: fixed;
