@@ -172,7 +172,7 @@ module.exports = {
           window.scrollTo(0,0);
 
           if (progress >= 100 && loaded === total && loadingProgress.style.transform === 'translate3d(0%, 0px, 0px)') {
-            stopPreloadingAnim(); // remove preloading animation
+            // stopPreloadingAnim(); // remove preloading animation
             resolve(); // return that all images have been loaded
           }
         }, 2000);
