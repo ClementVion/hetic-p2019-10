@@ -28,6 +28,7 @@ module.exports = {
    * @returns {void}
    */
     function switchChapters(toRemove, toAdd) {
+      console.log('switching');
       chapters[toRemove].classList.remove('carousel__option--on');
       chapters[toAdd].classList.add('carousel__option--on');
     }
@@ -262,22 +263,24 @@ module.exports = {
     }
 
     function onTouchMove(e) {
-      // e.preventDefault(); // < This needs to be managed externally
+      e.preventDefault(); // < This needs to be managed externally
       const t = (e.targetTouches) ? e.targetTouches[0] : e;
       deltaY = (t.pageY - touchStartY);
       // touchStartY = deltaY;
     }
 
     function onTouchEnd(e) {
-      if (deltaY < 0) {
-        selectSlide(currentProject - 1);
-        return;
-      }
+      console.log(deltaY)
+      if (isScrolling === false) {
+        if (deltaY < 0) {
+          selectSlide(currentProject - 1);
+        }
 
-      if (deltaY > 0) {
-        selectSlide(currentProject + 1);
-        return;
+        if (deltaY > 0) {
+          selectSlide(currentProject + 1);
+        }
       }
+      deltaY = 0;
     }
 
     /**
