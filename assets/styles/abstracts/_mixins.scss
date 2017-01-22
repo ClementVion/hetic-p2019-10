@@ -99,6 +99,11 @@
     }
 }
 
+@mixin mobileLandscape{
+  @media (max-width: #{$medium}) and (orientation: landscape) {
+      @content;
+  }
+}
 // Responsive height
 
 @mixin medium-height {

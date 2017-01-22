@@ -4,7 +4,7 @@
 
 .main-header{
   position: absolute;
-  z-index: 100;
+  z-index: 10;
 	@include size(100%, 0px);
 	font-family: 'Aktiv Grotesk Corp';
 	padding-top: 30px;

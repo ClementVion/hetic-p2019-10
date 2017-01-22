@@ -1,5 +1,4 @@
 module.exports = {
-
   init: () => {
     // Index of slides
     let prevProject = null;
