@@ -16,7 +16,8 @@
 	@include mobileLandscape{
 		display: flex;
     flex-direction: column-reverse;
-    margin-top: 480px;
+    margin-top: 150px;
+		margin-bottom: 30px;
 	}
 }
 
@@ -31,8 +32,7 @@
 
 	@include mobileLandscape{
 		position: relative;
-		margin: 20px auto 20px auto;
-		top: 0;
+		margin: 20px auto 50px auto;
 	}
 
 	@include homeMedium{
@@ -48,6 +48,11 @@
 .container--visible .about__imgBox {
     opacity: 1;
     transition: opacity 600ms cubic-bezier(0.645, 0.045, 0.355, 1);
+
+		@include mobileLandscape{
+			position: relative;
+			margin: 270px auto 0 auto;
+		}
 }
 
 .about__img{
@@ -69,6 +74,7 @@
 
 	@include mobileLandscape{
 		position: relative;
+		margin-top: 70px;
 	}
 
 	@include homeMedium{
