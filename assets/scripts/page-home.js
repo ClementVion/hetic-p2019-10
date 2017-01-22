@@ -13,7 +13,7 @@ module.exports = {
 
     let touchStartY = null;
     let deltaY = null;
-
+    let scrollTime;
     // Timelines for tweenmax
     const tl1 = new TimelineMax();
     const tl2 = new TimelineMax();
@@ -137,7 +137,7 @@ module.exports = {
                 zIndex: 1,
               });
             isScrolling = false;
-          }, 1400);
+          }, scrollTime);
           switchChapters(currentProject, selectedProject);
           currentProject = selectedProject;
         }, 20);
@@ -247,7 +247,7 @@ module.exports = {
 
     function detectTouch() {
       const hasTouch = 'ontouchstart' in document;
-
+      scrollTime = (hasTouch) ? 50 : 1400;
       if(hasTouch) {
         console.log('touchscreen');
         document.querySelector('.home').addEventListener('touchstart', onTouchStart);
@@ -271,11 +271,11 @@ module.exports = {
     function onTouchEnd(e) {
       console.log(deltaY)
       if (isScrolling === false) {
-        if (deltaY < 0) {
+        if (deltaY > 0) {
           selectSlide(currentProject - 1);
         }
 
-        if (deltaY > 0) {
+        if (deltaY < 0) {
           selectSlide(currentProject + 1);
         }
       }

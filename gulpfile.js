@@ -15,11 +15,10 @@ gulp.task('copy-assets-to-dist', () => {
   gulp.src([
     './index.html',
   ]).pipe(gulp.dest('dist/public/'));
-  /*gulp.src([
-    'dist/public/*.{woff,eot,ttf}',
-  ]).pipe(gulp.dest('dist/public/fonts/'))
-    .pipe(clean({force: true}));*/
-})
+  gulp.src([
+      'assets/fonts/*',
+    ]).pipe(gulp.dest('dist/public/fonts/'));
+  })
 
 // gulp.task('replace-path', () => {
 //   gulp.src([

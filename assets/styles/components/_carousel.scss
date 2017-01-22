@@ -9,7 +9,7 @@
 	@include homeLarge{
 		margin: 0 5px;
 	}
-	@include homeMediumLandscape{
+	@include mobileLandscape{
 		display: none;
 	}
 }

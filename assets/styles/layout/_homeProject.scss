@@ -64,7 +64,7 @@
 		max-width: none;	
 	}	
 
-	@include homeMediumLandscape{
+	@include mobileLandscape{
 		bottom: 30%;
 		max-width: none;	
 	}
@@ -247,7 +247,7 @@
     	height: 137px;
 	}
 
-	@include homeMediumLandscape {
+	@include mobileLandscape {
 		object-fit: fill;
 		left: auto;
 		right: 20px;
@@ -320,7 +320,7 @@
 		width: 480px;
 	}
 
-	@include homeMediumLandscape {
+	@include mobileLandscape {
 		width: auto;
 		min-width: 210px;
 		max-width: 100%;
@@ -343,7 +343,7 @@
 	transform: translateY(150%);
 	transition: transform 800ms cubic-bezier(0.85, 0, 0.24, 0.99);
 	// justify-content: center;
-	@include homeMediumLandscape{
+	@include mobileLandscape{
 		right: 0;
 	}
 
@@ -388,7 +388,7 @@
 		// transform: translateX(-190px);
 	}
 
-	@include homeMediumLandscape{
+	@include mobileLandscape{
 		bottom: 100px;
 		right: 0;
 		max-width: none;	
