@@ -200,7 +200,7 @@ module.exports = {
       scrollBar(targetX, sectionWidth);
       animBackgrounds(targetX, sectionWidth);
       window.setTimeout(() => {
-        checkEnd(targetX, sectionWidth);
+        checkEnd(targetX, sectionWidth, e.deltaY);
         animTitle(targetX);
       }, 10);
     });
