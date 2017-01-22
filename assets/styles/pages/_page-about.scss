@@ -15,9 +15,8 @@
 
 	@include mobileLandscape{
 		display: flex;
-    flex-direction: column-reverse;
-    margin-top: 150px;
-		margin-bottom: 30px;
+		flex-direction: column-reverse;
+		margin-top: 100px;
 	}
 }
 
@@ -32,7 +31,6 @@
 
 	@include mobileLandscape{
 		position: relative;
-		margin: 20px auto 50px auto;
 	}
 
 	@include homeMedium{
@@ -74,7 +72,6 @@
 
 	@include mobileLandscape{
 		position: relative;
-		margin-top: 70px;
 	}
 
 	@include homeMedium{
