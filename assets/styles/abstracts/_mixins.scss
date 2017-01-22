@@ -21,6 +21,12 @@
     }
 }
 
+@mixin homeMediumLandscape {
+    @media only screen and (min-width: #{$home-small}) and (orientation: landscape) {
+        @content;
+    }
+}
+
 @mixin homeSemiLarge {
     @media only screen and (min-width: #{$home-semi-large}) {
         @content;
@@ -99,6 +105,11 @@
     }
 }
 
+@mixin mobileLandscape{
+  @media (max-width: #{$medium}) and (orientation: landscape) {
+      @content;
+  }
+}
 // Responsive height
 
 @mixin medium-height {

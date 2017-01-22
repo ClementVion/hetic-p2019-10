@@ -1,5 +1,5 @@
-const loader = require('./loader.es6');
-const routing = require('./router.es6');
+const loader = require('./loader.js');
+const routing = require('./router.js');
 
 const container = document.querySelector('.container');
 
@@ -24,11 +24,27 @@ function listenClicks(elem) {
  */
 function initClicks(element) {
   const links = element.querySelectorAll('a');
-  for (const link of links.keys()) {
+  for (let link of links.keys()) {
     links[link].addEventListener('click', (e) => {
       e.preventDefault();
       listenClicks(links[link]);
     });
+  }
+}
+
+/**
+ * Disable transitions on small screens
+ * Disable select on small screens
+ * @returns {void}
+ */
+function mobileBehaviour() {
+  console.log('checking');
+  if (parseInt(getComputedStyle(document.querySelector('.container')).width, 10) <= 700) {
+    const allTags = document.querySelector('body').getElementsByTagName('*');
+    for (var i = 0, len = allTags.length; i < len; i++) {
+      allTags[i].classList.add('notransition');
+      allTags[i].classList.add('noSelect');
+    }
   }
 }
 
@@ -80,6 +96,9 @@ function getTemplate(name, id) {
       const compile = template();
       container.innerHTML += compile;
     }
+    mobileBehaviour();
+    console.log(window.pageYOffset);
+    window.scrollTo(0,0);
   };
   xhr.send();
 }

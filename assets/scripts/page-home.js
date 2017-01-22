@@ -1,5 +1,4 @@
 module.exports = {
-
   init: () => {
     // Index of slides
     let prevProject = null;
@@ -11,6 +10,10 @@ module.exports = {
     const descriptionSlides = document.querySelectorAll('.project__description');
     const chapters = document.querySelectorAll('.carousel__option');
     const projectLinks = document.querySelectorAll('.project__link');
+
+    let touchStartY = null;
+    let deltaY = null;
+    let scrollTime;
     // Timelines for tweenmax
     const tl1 = new TimelineMax();
     const tl2 = new TimelineMax();
@@ -24,6 +27,7 @@ module.exports = {
    * @returns {void}
    */
     function switchChapters(toRemove, toAdd) {
+      console.log('switching');
       chapters[toRemove].classList.remove('carousel__option--on');
       chapters[toAdd].classList.add('carousel__option--on');
     }
@@ -54,14 +58,14 @@ module.exports = {
           {
             y: '-100%',
           });
-        tl1.to(frontSlides[selectedProject], 0.2,
+        tl1.to(frontSlides[selectedProject], 0.4,
           {
             y: '-100%',
           });
-        tl1.to(titlesSlides[prevProject], 0.4,
+        tl1.to(titlesSlides[prevProject], 0.2,
           {
             y: '100%',
-          }, '-= 0.4');
+          }, '0');
         tl1.to(descriptionSlides[prevProject], 0.2,
           {
             y: '100%',
@@ -80,7 +84,7 @@ module.exports = {
             {
               y: '-=100%',
               zIndex: '0',
-            });
+            }, '+=0.2');
           tl2.to(titlesSlides[selectedProject], 0.4,
             {
               y: '-=100%',
@@ -133,7 +137,7 @@ module.exports = {
                 zIndex: 1,
               });
             isScrolling = false;
-          }, 1400);
+          }, scrollTime);
           switchChapters(currentProject, selectedProject);
           currentProject = selectedProject;
         }, 20);
@@ -163,7 +167,7 @@ module.exports = {
         trailing: false,
       });
       projectLinks[0].style.top = '0';
-      for (const slide of slides.keys()) {
+      for (let slide of slides.keys()) {
         if (slide !== 0) {
           slides[slide].style.display = 'none';
           frontSlides[slide].style.display = 'none';
@@ -209,9 +213,9 @@ module.exports = {
     * @returns {void}
     */
     function chaptersScroll() {
-        for (const chapter of chapters) {
-          chapter.addEventListener('click', chapterAddEventListener);
-        }
+      for (let chapter of chapters) {
+        chapter.addEventListener('click', chapterAddEventListener);
+      }
     }
 
     /**
@@ -241,6 +245,43 @@ module.exports = {
         }, '-=0.6');
     }
 
+    function detectTouch() {
+      const hasTouch = 'ontouchstart' in document;
+      scrollTime = (hasTouch) ? 50 : 1400;
+      if(hasTouch) {
+        console.log('touchscreen');
+        document.querySelector('.home').addEventListener('touchstart', onTouchStart);
+        document.querySelector('.home').addEventListener('touchmove', onTouchMove);
+        document.querySelector('.home').addEventListener('touchend', onTouchEnd);
+      }
+    }
+
+    function onTouchStart(e) {
+      const t = (e.targetTouches) ? e.targetTouches[0] : e;
+      touchStartY = t.pageY;
+    }
+
+    function onTouchMove(e) {
+      e.preventDefault(); // < This needs to be managed externally
+      const t = (e.targetTouches) ? e.targetTouches[0] : e;
+      deltaY = (t.pageY - touchStartY);
+      // touchStartY = deltaY;
+    }
+
+    function onTouchEnd(e) {
+      console.log(deltaY)
+      if (isScrolling === false) {
+        if (deltaY > 0) {
+          selectSlide(currentProject - 1);
+        }
+
+        if (deltaY < 0) {
+          selectSlide(currentProject + 1);
+        }
+      }
+      deltaY = 0;
+    }
+
     /**
     * Init scrolling for home page.
     * @returns {void}
@@ -249,6 +290,7 @@ module.exports = {
       initSlides();
       chaptersScroll();
       firstApparition();
+      detectTouch();
     }
     init();
   },

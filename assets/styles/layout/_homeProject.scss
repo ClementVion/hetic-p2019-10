@@ -36,18 +36,20 @@
 	}
 
 	@include homeSemiLarge{
-		padding: 0 35% 0% 135px;
+		padding: 0 35% 0% 100px;
 	}
 }
 
 .project__titleBox{
 	color: #353535;
+	margin-bottom: 0px;
 	position: absolute;
-	height: 60px;
+	height: 110px;
 	width: 350px;
+	max-width: 90%;
 	bottom: 60px;
-	font-size: 24px;
-	line-height: 24px;
+	font-size: 30px;
+	line-height: 52px;
 	overflow: hidden;
 	z-index: 10;
 	opacity: 0;
@@ -59,14 +61,22 @@
 
 	@include homeMedium{
 		bottom: 70px;
+		max-width: none;	
+	}	
+
+	@include mobileLandscape{
+		bottom: 30%;
+		max-width: none;	
 	}
 
 	@include homeSemiLarge{
 		bottom: 160px;
+		max-width: none;	
 	}
 
 	@include homeLarge{
 		bottom: 300px;
+		max-width: none;	
 	}
 
 }
@@ -74,16 +84,16 @@
 .container--visible .project__titleBox {
     opacity: 1;
     transition: 800ms 300ms cubic-bezier(.19,1,.22,1);
-} 
+}
 
 .project__titleLink:visited {
 	color: #353535;
 }
 
 .project__title{
+	margin: 0;
 	color: #353535;
 	top: 100%;
-    height: 60px;
 	position: absolute;
 	z-index: 20;
 	transition: transform 1200ms cubic-bezier(0.77, 0, 0.175, 1);
@@ -97,6 +107,7 @@
 }
 
 .project__description, .project__see{
+	font-size: 13px;
 	line-height: 1.5;
 	font-weight: 500;
 	z-index: 20;
@@ -107,9 +118,9 @@
 .project__descriptionBox {
 	position: absolute;
 	bottom: 115px;
-	overflow:hidden;
+	overflow: hidden;
 	width: 300px;
-	height: 100px;
+	height: 60px;
 	display: none;
 	opacity: 0;
     transition: 800ms 300ms cubic-bezier(.19,1,.22,1);
@@ -124,7 +135,7 @@
 	}
 
 	@include homeLarge{
-		bottom: 200px;
+		bottom: 240px;
 		display: block;
 	}
 }
@@ -132,14 +143,14 @@
 .container--visible .project__descriptionBox {
     opacity: 1;
     transition: 800ms 300ms cubic-bezier(.19,1,.22,1);
-} 
+}
 
 .project__description{
 	top: 100%;
-	height: 100px;
+	height: 60px;
 	font-weight: normal;
 	position: absolute;
-	transition: transform 1200ms cubic-bezier(0.77, 0, 0.175, 1);		
+	transition: transform 1200ms cubic-bezier(0.77, 0, 0.175, 1);
 	color: #8E9093;
 }
 
@@ -152,6 +163,7 @@
 	overflow: hidden;
 	opacity: 0;
 	display: none;
+	font-size: 13px;
 	transition: cubic-bezier(0.645, 0.045, 0.355, 1);
 	transform: translateX(-60px);
 	transition-duration: 0.9s;
@@ -160,14 +172,14 @@
 	/* @include homeSmall{
 		display: none;
 	} */
-	
+
 	@include homeMedium{
 		display: block;
 		bottom: 30px;
 	}
 
 	@include homeLarge{
-		bottom: 120px;
+		bottom: 190px;
 	}
 }
 
@@ -235,6 +247,15 @@
     	height: 137px;
 	}
 
+	@include mobileLandscape {
+		object-fit: fill;
+		left: auto;
+		right: 20px;
+		top: auto;
+		bottom: 30%;
+		height: 40%;
+	}
+
 	@include homeSmall {
 		top: 20%;
 	    width: 400px;
@@ -262,7 +283,7 @@
 		left: 580px;
 		height: 448px;
 	}
-	
+
 /* 	resize this container for anim on .project__imageFront
 	@media screen and (max-width: 600px) {
         height: 235px;
@@ -299,6 +320,12 @@
 		width: 480px;
 	}
 
+	@include mobileLandscape {
+		width: auto;
+		min-width: 210px;
+		max-width: 100%;
+	}
+
     @include homeSemiLarge{
 		width: 610px;
 	}
@@ -306,7 +333,7 @@
 	@include homeUltraLarge{
 		width: 680px;
 	}
-	
+
 }
 
 .project__imageBox{
@@ -316,10 +343,14 @@
 	transform: translateY(150%);
 	transition: transform 800ms cubic-bezier(0.85, 0, 0.24, 0.99);
 	// justify-content: center;
+	@include mobileLandscape{
+		right: 0;
+	}
+
 	@include homeMedium{
 		overflow: hidden;
 	}
-
+	
 	// resize this container for anim on .project__imageBackground
 	@media screen and (max-width: 600px) {
         // height: 460px;
@@ -339,7 +370,7 @@
 }
 
 .project__imageBackground{
-	@include size(auto,500px);
+	@include size(auto,100%);
 	// top: 80px;
 	position: absolute;
 	top: 100%;
@@ -355,6 +386,12 @@
 
 	@include homeMedium{
 		// transform: translateX(-190px);
+	}
+
+	@include mobileLandscape{
+		bottom: 100px;
+		right: 0;
+		max-width: none;	
 	}
 
 	@include homeSemiLarge{

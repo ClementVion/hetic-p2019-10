@@ -3,17 +3,21 @@
 // -----------------------------------------------------------------------------
 
 .main-header{
-	@include size(100%,0px);
-	position: fixed;
+  position: absolute;
+  z-index: 10;
+	@include size(100%, 0px);
 	font-family: 'Aktiv Grotesk Corp';
-	z-index: 10;
+	padding-top: 30px;
+	@include homeMedium{
+		position: fixed;
+	}
 }
 
-.menu{
+.menu {
+	margin: 0;
 	display: flex;
-	margin: 30px 5%;
-	padding: 0;
-	font-size: 15px;
+	padding: 0 5% 0 5%;
+	font-size: 13px;
 	font-weight: 500;
 	justify-content: space-between;
 
