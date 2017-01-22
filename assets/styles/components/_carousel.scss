@@ -9,10 +9,9 @@
 	@include homeLarge{
 		margin: 0 5px;
 	}
-
-	// @include homeUltraLarge{
-	// 	margin: 0 15px;
-	// }
+	@include homeMediumLandscape{
+		display: none;
+	}
 }
 
 .carousel__select{

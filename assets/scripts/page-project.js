@@ -90,6 +90,7 @@ module.exports = {
         }
       }
       function checkEnd(targetX, sectionWidth, deltaY) {
+        colorTeaser(targetX, sectionWidth);
         if ((-1 * targetX) > (sectionWidth - window.innerWidth) - 10 && deltaY < 0) {
           // console.log(deltaY);
           window.setTimeout(() => {
